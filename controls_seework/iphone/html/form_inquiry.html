@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单查询</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="form_inquiry">
+    <div data-role="content" id="form_inquiry_content" class="comp"
+         comp="type:'tabs',tabType:'navbar',scrollState:true,hideLayerOpen:true,tabBorderClass:'form_tab_none',callBack:formListTab">
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" class="ui-btn-active1" tgt="inquiry_com_list">
+                        <span backTgt="inquiry_store">全部</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="select_user">
+                        <span>选人控件</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_three">
+                        <span>开关</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  tgt="inquiry_four">
+                        <span>日期</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content">
+            <div id="inquiry_com_list" class="wrapper common_inquiry comp" comp="type:'tabInquiry',actObj:'p',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',backFillTgt:'inquiry_store',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="scroller com_inquiry_list">
+                    <p objid="sdsd" value="sdssdsdad">全部</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值01</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                </div>
+            </div>
+            <div id="select_user"></div>
+            <div id="inquiry_three" class="display_none common_inquiry clearFix comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="border_bottom padding_tb_5 padding_lr_10 margin_b_5 flexible_box" >
+                    <div class="adaptive_box_flex inquiry_on_off_text">
+                        开关
+                    </div>
+                    <input type="checkbox" data-role="flipswitch"  data-on-text="" data-off-text="" />
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+            <div id="inquiry_four" class="display_none common_inquiry clearFix padding_t_10 comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="user_defind_date inquiry_text margin_b_5 margin_lr_10">
+                    <span class="user_defind_date_hint">请选择日期</span>
+                    <input type="date" data-role="none" />
+                    <span class="iphone40 calendar_40 user_defind_date_btn"></span>
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative form_inquiry_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+                    <!--<div class="form_list_item">-->
+                        <!--<p class="form_list_item_active">列表1具体内容</p>-->
+                        <!--<p>列表2:具体内容</p>-->
+                        <!--<p>列头3:具体内容</p>-->
+                        <!--<p>列头4:具体内容</p>-->
+                    <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <a href="create_form.html"  data-transition="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+        function userLink(){
+
+        }
+        /**
+         * tab扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         * @param tgtId navbar点击对应区域打开的id
+         */
+        function formListTab(thisObj,domObj,tgtId){
+            var tab_height = parseInt($("body").height()*0.8);
+            var tab_w = parseInt($("body").width());
+            var tab_de_height = 87;
+            switch (tgtId){
+                case "inquiry_com_list":
+                    var p_list = $("#inquiry_com_list").find("p").length;
+                    var obj_h = p_list * 45;
+                    if(obj_h > tab_height){
+                        $(".inquiry_content").height(tab_height);
+                    }
+                    else{
+                        $(".inquiry_content").height(obj_h);
+                    }
+                    break;
+                case "inquiry_city":
+                    $(".inquiry_content").height(tab_height);
+                    $("#inquiry_city").height(tab_height);
+                    $("#inquiry_city_list").width(tab_w);
+                    $("#inquiry_city_list_2").width(0);
+                    $(".letter_position_inquiry").css("right","4px");
+                    break;
+                case "select_user":
+                        if($("#form_inquiry").find("#work_select_range").length){
+
+                            $.openDialog("work_select_range",function(){
+                                alert("SD")
+                            });
+                        }else{
+
+                    var popupUrl = 'dialog_select_widget.html';
+                    createDialog(popupUrl,"form_inquiry","work_select_range",function(){
+
+                        $.loadedScroll("work_select_user",1,'h',function(){
+                            var _w = 45*$('#work_select_user').find("p").length + 5;
+                            $("#work_select_user").children("div").width(_w);
+//                        $("#work_select_range-popup").css("top","42px");
+                        });
+                        $(".seework_content_footer").removeClass("user_operate_content");
+                        listData($("#user_info_list"),{
+                            list_type:'selectUserDepartment',
+                            search_id:'user_search',
+                            data:[
+                                {
+                                    'letterType':'A',
+                                    'listId':'per_000',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                                    'typeName':'张小一',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'A',
+                                    'listId':'001',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小一',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'A',
+                                    'listId':'002',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                                    'typeName':'张小二',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'B',
+                                    'listId':'003',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小三',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'C',
+                                    'listId':'004',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                                    'typeName':'张小四',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'D',
+                                    'listId':'005',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'E',
+                                    'listId':'006',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴6',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'E',
+                                    'listId':'007',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴7',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'E',
+                                    'listId':'008',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴8',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'E',
+                                    'listId':'009',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴9',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'F',
+                                    'listId':'010',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴10',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'F',
+                                    'listId':'011',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴11',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                },
+                                {
+                                    'letterType':'F',
+                                    'listId':'012',
+                                    'department':'department_1',
+                                    'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                    'typeName':'张小吴12',
+                                    'job':"测试工程师",
+                                    'personNum':null
+                                }
+                            ],
+                            callback:function(){
+                                $.refreshScroll("work_select_all_user");
+                            }
+                        });
+                    },"radio");
+                    $("section.ui-page-active").children(".layout_opacity_5").trigger("tap");
+                        }
+
+                    break;
+                default :
+                    $(".inquiry_content").height(tab_de_height);
+
+            }
+        }
+        /**
+         * tab_body区域展示扩展方法
+         * @param domObj 当前点击对象
+         * @param objId 当前点击对象的objId,如果domObj没有objId属性，则objId为null
+         */
+        function userInquiry(domObj,objId){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'列表6',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'007',
+                            'listData':[
+                                {
+                                    'listTitle':'列表7',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'009',
+                            'listData':[
+                                {
+                                    'listTitle':'列表9',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#form_inquiry").bind("pagebeforeshow",function(){
+            pageInit("form_inquiry");
+            listData($("#search_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'列表1',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':true
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'列表40',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ]
+            });
+        })
+        $("#form_inquiry").bind("pageshow",function(){
+            loaded('search_result',userInfoList,userMoreInfoList);
+            $.loadedScroll("inquiry_com_list",1,"v");
+
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,112 @@
+<section data-role="page" class="background_white work_select_send_range" id="local_select_send_range">
+    <div  id="local_range_content" class="overflow_hidden wrapper border_box">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',
+        workSelectUserId:'local_send_range_select_user',defindButtonId:'local_ensure_select',selectBack:userSelect" id="local_select_range_data">
+
+        </div>
+    </div>
+    <footer  data-role="footer" data-position="fixed" data-tap-toggle="false" class="work_select_user_footer flexible_box border_top work_shade_footer">
+        <div class="adaptive_box_flex padding_lr_10 over_x_auto comp" id="local_send_range_select_user" comp="type:'headSelect',
+        personDepartmentId:'local_select_range_data',scrollId:'local_send_range_select_user',defindButtonId:'local_ensure_select',callBack:headChange">
+            <div class="scroller_h clearFix">
+
+            </div>
+        </div>
+        <div class="padding_10">
+            <a href="#"  class="blue_btn_inline gray_btn_inline" data-role="button" id="local_ensure_select">确定</a>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $("#local_select_send_range").bind("pagecreate", function () {
+            //userState——状态说明：0
+            listData($("#local_select_range_data"),{
+                list_type:'sendRange',
+                list_select:true,
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../skin/seework/images/more_user_head.png',
+                        'userState':'0',
+                        'userName':'开发部',
+                        'job':"5"
+                    },
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'004',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'005',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'006',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'007',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'008',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'009',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'0',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    },
+                    {
+                        'listId':'010',
+                        'leftImgUrl':'../../skin/seework/images/user.png',
+                        'userState':'4',
+                        'userName':'张小一',
+                        'job':"测试工程师"
+                    }
+                ]
+            });
+        })
+        $("#local_select_send_range").bind("pageshow", function () {
+            pageInit();
+            $.loadedScroll("local_range_content",1,'v',function(){
+                var _h = $('body').height();
+                var footer_h = $("#local_select_send_range").find("footer").height();
+                $("#local_range_content").outerHeight(_h - footer_h);
+            },"destroy");
+            $.loadedScroll("local_send_range_select_user",1,'h',"","destroy");
+            $("#local_ensure_select").unbind().bind("tap",function(){
+                $.closeLocalDialog("local_select_send_range");
+            })
+        })
+    </script>
+</section>

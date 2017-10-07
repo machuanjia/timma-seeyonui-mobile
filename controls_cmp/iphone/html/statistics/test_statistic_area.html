@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>统计地区</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="statistics_area">
+    <header data-role="header">
+        <h1 class="page_header_title">
+            1月份北京销售统计
+            <span></span>
+        </h1>
+        <a href="test_statistic_home.html"  class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+           data-transition="slide"></a>
+    </header>
+    <div data-role="content">
+        <div id="statisticsAreaList" class="wrapper statistic_add">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:areaDataObj,callBack:userList"></div>
+            <!--<div class="scroller">-->
+                <!--<div class="pullDown">-->
+                    <!--<span class="pullDownIcon"></span>-->
+                    <!--<div class="pullDownText">-->
+                        <!--<p>下拉刷新</p>-->
+                        <!--<p>共<label>606</label>条</p>-->
+                        <!--<p>最近更新：<label class="margin_r_5">2012-08-24</label><label>12:23</label></p>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="comp" comp="type:'list',callBack:userList" id="areaCountList">-->
+                    <!--<div class="folder_list_box nav_list_box_def">-->
+                        <!--<a href="test_statistic_detail.html" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="folder_phone_70 margin_r_5"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                                 <!--1月份移动产品销售统计-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                                <!--<span class="ico_phone_48 next_department_48"></span>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="folder_list_box nav_list_box_def">-->
+                        <!--<a href="test_statistic_detail.html" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="folder_phone_70 margin_r_5"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                               <!--2月份移动产品销售统计-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                                <!--<span class="ico_phone_48 next_department_48"></span>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="folder_list_box nav_list_box_def">-->
+                        <!--<a href="test_statistic_detail.html" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="folder_phone_70 margin_r_5"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                                <!--3月份移动产品销售统计-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                                <!--<span class="ico_phone_48 next_department_48"></span>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="folder_list_box nav_list_box_def">-->
+                        <!--<a href="test_statistic_detail.html" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="statistics_chart_phone_70 margin_r_5"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                                <!--4月份移动产品销售统计-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="folder_list_box nav_list_box_def">-->
+                        <!--<a href="test_statistic_detail.html" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="statistics_chart_phone_70 margin_r_5"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                                <!--5月份移动产品销售统计-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                <!--</div>-->
+                <!--<div class="clickDown loading">-->
+                    <!--<p class="margin_t_15">加载更多</p>-->
+                    <!--<p class="margin_t_5">还有<label>699</label>条</p>-->
+                    <!--<span class="pullDownIcon"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+    </div>
+    <script type="text/javascript">
+        function userList(obj) {
+
+        }
+        function areaDataObj(){
+            var areaDataObj = {
+                list_type:'folder',
+                list_num: "420",
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                more_num: "50",
+                data:[{
+                    'listId':'001',
+                    'transitionUrl':'test_statistic_detail.html',
+                    'leftIcon':'folder_phone_70',
+                    'centerContent':'1月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                    {
+                        'listId':'002',
+                        'transitionUrl':'test_statistic_detail.html',
+                        'leftIcon':'folder_phone_70',
+                        'centerContent':'2月份移动产品销售统计',
+                        'rightIcon':["1"]
+                    }
+                ],
+                callback:function(){
+                    loaded('statisticsAreaList',waitHeld,waitHeld);
+                }
+            };
+            return areaDataObj;
+        }
+        /**
+         *  下拉刷新获取数据方法
+         *  myScroll.refresh();        // 数据加载完成后，调用界面更新方法
+         */
+        function waitHeld(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'folder',
+                    list_num: "400",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    more_num: "50",
+                    data:[{
+                        'listId':'003',
+                        'transitionUrl':'test_statistic_detail.html',
+                        'leftIcon':'folder_phone_70',
+                        'centerContent':'3月份移动产品销售统计',
+                        'rightIcon':["1"]
+                    },
+                        {
+                            'listId':'004',
+                            'transitionUrl':'test_statistic_detail.html',
+                            'leftIcon':'folder_phone_70',
+                            'centerContent':'4月份移动产品销售统计',
+                            'rightIcon':["1"]
+                        },
+                        {
+                            'listId':'005',
+                            'transitionUrl':'test_statistic_detail.html',
+                            'leftIcon':'statistics_chart_phone_70',
+                            'centerContent':'5月份移动产品销售统计'
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#statistics_area").bind("pagebeforeshow",function(){
+            $("#statisticsAreaList .scroller").empty();
+        });
+        $("#statistics_area").bind("pageshow",function(){
+            pageInit();
+            loaded('statisticsAreaList',waitHeld,waitHeld);
+        })
+    </script>
+</section>
+</body>
+</html>

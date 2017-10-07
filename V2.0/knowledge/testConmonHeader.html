@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>JqueryMobile知识库</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+</head>
+<body>
+<section data-role="page" id="a">
+    <header data-role="header"  data-position="fixed" data-id="header1" data-theme="b">
+        <h1>测试jquery mobile头部固定——头部固定公用</h1>
+    </header>
+    <div data-role="content">
+        <p>
+            要实现header或footer的固定，只需要在header或footer中添加data-position="fixed" 和 data-id="myfooter"属性就可以了。
+        </p>
+        <div>
+            <p> 注意： </p>
+            data-id这里有一点需要注意，就是data-id的值需要保持一样。举个例子：如果我们要footer固定转屏：
+            从A页面转屏到B页面，A页面的footer设置的data-id="footer1"那B页面的footer也需要设置为data-id="footer1"，否则会失效。
+        </div>
+    </div>
+    <footer data-role="footer"  data-position="fixed" data-id="footer">
+        <div data-role="navbar" data-iconpos="top" class="navbar_btn">
+            <ul>
+                <li><a href="#a" data-transition="slide" data-icon="grid" class="ui-btn-active">a页面——头部固定</a></li>
+                <li><a href="#b" data-transition="slide" data-icon="star" >b页面——头部固定</a></li>
+                <li><a href="#c" data-transition="slide" data-icon="gear">c页面——-头部未固定</a></li>
+                <li><a href="#" data-transition="slide"  data-icon="gear">还回说明区</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<section data-role="page" id="b">
+    <header data-role="header"  data-position="fixed" data-id="header1" data-theme="b">
+        <h1>头部固定公用</h1>
+    </header>
+    <div data-role="content">
+       <div>这里是测试二中心</div>
+    </div>
+    <footer data-role="footer"  data-position="fixed" data-id="footer">
+        <div data-role="navbar" data-iconpos="top" class="navbar_btn">
+            <ul>
+                <li><a href="#a" data-transition="slide" data-icon="grid">a页面——头部固定</a></li>
+                <li><a href="#b" data-transition="slide" data-icon="star" class="ui-btn-active">b页面——头部固定</a></li>
+                <li><a href="#c" data-transition="slide" data-icon="gear">c页面——-头部未固定</a></li>
+                <li><a href="#" data-transition="slide"  data-icon="gear">还回说明区</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<section data-role="page" id="c">
+    <header data-role="header"  data-position="fixed" data-theme="b">
+        <h1>头部没有固定公用</h1>
+    </header>
+    <div data-role="content">
+        <div>这里是测试二中心</div>
+    </div>
+    <footer data-role="footer"  data-position="fixed" data-id="footer">
+        <div data-role="navbar" data-iconpos="top" class="navbar_btn">
+            <ul>
+                <li><a href="#a" data-transition="slide" data-icon="grid">a页面——头部固定</a></li>
+                <li><a href="#b" data-transition="slide" data-icon="star">b页面——头部固定</a></li>
+                <li><a href="#c" data-transition="slide" data-icon="gear" class="ui-btn-active">c页面——-头部未固定</a></li>
+                <li><a href="#" data-transition="slide"  data-icon="gear">还回说明区</a></li>
+            </ul>
+        </div>
+    </footer>
+</section>
+<script type="text/javascript">
+    $(".navbar_btn a").each(function () {
+        var anchor = $(this);
+        anchor.bind("click", function () {
+            $.mobile.changePage(anchor.attr("href"), {
+                transition: "slide",
+                changeHash: false
+            });
+            return false;
+        });
+    });
+</script>
+</body>
+</html>

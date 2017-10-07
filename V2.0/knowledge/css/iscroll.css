@@ -1,0 +1,200 @@
+/**
+*  下拉刷新、滚动翻页样式
+*  2013-04-26
+*/
+/*------------- S 默认必须样式  -------------*/
+
+
+/**
+ *
+ * 下拉样式 Pull down styles
+ *
+ */
+.pullDown, .pullUp {
+    background:#fff;
+    height:40px;
+    line-height:40px;
+    padding:5px 10px;
+    border-bottom:1px solid #ccc;
+    font-weight:bold;
+    font-size:14px;
+    color:#888;
+}
+.pullUp{
+    display: none;
+}
+.pullDown .pullDownIcon, .pullUp .pullUpIcon  {
+    display:block; float:left;
+    width:40px; height:40px;
+    background:url("../images/pull-icon.png") 0 0 no-repeat;
+    -webkit-background-size:40px 80px; background-size:40px 80px;
+    -webkit-transition-property:-webkit-transform;
+    -webkit-transition-duration:250ms;
+}
+.pullDown .pullDownIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+.pullUp .pullUpIcon  {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+.pullDown.flip .pullDownIcon {
+    -webkit-transform:rotate(-180deg) translateZ(0);
+}
+
+.pullUp.flip .pullUpIcon {
+    -webkit-transform:rotate(0deg) translateZ(0);
+}
+
+.pullDown.loading .pullDownIcon, .pullUp.loading .pullUpIcon {
+    background-position:0 100%;
+    -webkit-transform:rotate(0deg) translateZ(0);
+    -webkit-transition-duration:0ms;
+
+    -webkit-animation-name:loading;
+    -webkit-animation-duration:2s;
+    -webkit-animation-iteration-count:infinite;
+    -webkit-animation-timing-function:linear;
+}
+
+@-webkit-keyframes loading {
+    from { -webkit-transform:rotate(0deg) translateZ(0); }
+    to { -webkit-transform:rotate(360deg) translateZ(0); }
+}
+/*------------- E 默认必须样式  -------------*/
+
+
+
+
+/*------------- S 以下css主要是仿IOS滚动条样式(可选样式)  -------------*/
+/**
+ * Horizontal Scrollbar
+ */
+.myScrollbarH {
+    position:absolute;
+    z-index:100;
+    height:7px;
+    bottom:1px;
+    left:2px;
+    right:7px
+}
+
+.myScrollbarH > div {
+    height:100%;
+}
+
+/**
+ * Vertical Scrollbar
+ */
+.myScrollbarV {
+    position:absolute;
+    z-index:100;
+    width:7px;bottom:7px;top:2px;right:1px
+}
+
+.myScrollbarV > div {
+    width:100%;
+}
+
+/**
+ * Both Scrollbars
+ */
+.myScrollbarH > div,
+.myScrollbarV > div {
+    position:absolute;
+    z-index:100;
+
+    /* The following is probably what you want to customize */
+    -webkit-box-sizing:border-box;
+    -moz-box-sizing:border-box;
+    -o-box-sizing:border-box;
+    box-sizing:border-box;
+    border-width:3px;
+    -webkit-border-image:url("../images/scrollbar.png") 6 6 6 6;
+    -moz-border-image:url("../images/scrollbar.png") 6 6 6 6;
+    -o-border-image:url("../images/scrollbar.png") 6 6 6 6;
+    border-image:url("../images/scrollbar.png") 6 6 6 6;
+}
+/*------------- E 以上css主要是仿IOS滚动条样式  -------------*/
+
+
+
+.ui-content{
+    padding: 0;
+}
+.ui-bar-a, .ui-page-theme-a .ui-bar-inherit,
+html .ui-bar-a .ui-bar-inherit, html .ui-body-a .ui-bar-inherit,
+html body .ui-group-theme-a .ui-bar-inherit{
+    background-image: -webkit-gradient(linear, 0 0, 0 100%, color-stop(0, #FFFFFF), color-stop(0.05, #AFAFAF),
+    color-stop(1, #333333));
+    background-image: -moz-linear-gradient(top, #FFFFFF, #AFAFAF 5%, #333333);
+    background-image: -o-linear-gradient(top, #FFFFFF, #AFAFAF 5%, #333333);
+}
+.ui-header .ui-title, .ui-footer .ui-title{
+    text-shadow: none;
+    color: #fff;
+    font-weight: bold;
+}
+.ui-page-theme-a a:visited, html .ui-bar-a a:visited, html .ui-body-a a:visited, html body .ui-group-theme-a a:visited{
+    color: #fff;
+}
+.ui-page-theme-a a:hover{
+    color: #0000ff;
+}
+h4 a{
+    text-decoration: none;
+    color: #fff;
+}
+#wrapper {
+    position:absolute;
+    top: 44px;
+    left: 0;
+    bottom: 44px;
+    width:100%;
+    background:#fff;
+    overflow: hidden;
+}
+
+.scroller {
+    position:relative;
+    /*长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片*/
+    /*-webkit-touch-callout:none;*/
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    left: 0;
+    float:left;
+    /*出发横屏的时候width属性需去掉*/
+    width:100%;
+    padding:0;
+}
+.scroller2{
+    position:relative;
+    /*长按时不触发系统的菜单, 可用在图片上加这个属性禁止下载图片*/
+    /*-webkit-touch-callout:none;*/
+    -webkit-tap-highlight-color:rgba(0,0,0,0);
+    left: 0;
+    float:left;
+    /*出发横屏的时候width属性需去掉*/
+    /*width:100%;*/
+    padding:0;
+}
+
+#wrapper ul {
+    position:relative;
+    list-style:none;
+    padding:0;
+    margin:0;
+    width:100%;
+    text-align:left;
+}
+
+#wrapper li {
+    padding:0 10px;
+    height:40px;
+    line-height:40px;
+    border-bottom:1px solid #ccc;
+    border-top:1px solid #fff;
+    background-color:#fafafa;
+    font-size:14px;
+    text-indent: 20px;
+    font-family: "微软雅黑";
+}

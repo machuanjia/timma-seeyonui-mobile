@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>巡店轨迹地图</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?&ak=B0308cf28ef6e5b5b9f22c5243a99648&v=2.0"></script>
+    <script src=" http://developer.baidu.com/map/jsdemo/demo/convertor.js" type="text/javascript"></script>
+</head>
+<body>
+<section data-role="page" id="patorl_track_map">
+
+    <header data-role="header"  data-tap-toggle="false" data-position="fixed" class="patorl_track_header comp"
+            comp="type:'patorlTrack',activeClass:'patorl_header_active',callBack:userHeadChange" id="patorl_map_header">
+        <div class="scroller_h">
+            <ul class="ul_li_float clearFlow">
+                <li class="patorl_header_active">
+                    <a href="#" objid="001">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="002">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="003">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="004">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="005">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="006">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="007">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+    <div data-role="content" class="wrapper patorl_track_content patorl_track_map" id="my_map">
+
+    </div>
+    <p class="get_address_info" id="get_address_info"></p>
+
+    <script type="text/javascript" src="../js/map_position.js"></script>
+    <script type="text/javascript">
+        /**
+         * 头像变话扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性objid
+         */
+        function userHeadChange(obj,objId){
+
+        }
+        $("#patorl_track_map").bind("pageshow",function(){
+            $.loadedScroll("patorl_map_header",1,"h",function(){
+                var li_w =  $("#patorl_map_header").find("li").outerWidth();
+                var li_len =  $("#patorl_map_header").find("li").length;
+                var _w = li_w * li_len + 1;
+                $("#patorl_map_header").find("ul").width(_w);
+            });
+            getAddressMap([
+                {
+                    'shop_name':'成都成华店',
+                    'shop_address':'四川省成都市成华区33号',
+                    'city_name':"成都市"
+                },
+                {
+                    'shop_name':'成都金牛店',
+                    'shop_address':'四川省成都市金牛区125号',
+                    'city_name':"成都市"
+                },
+                {
+                    'shop_name':'成都锦江店',
+                    'shop_address':'四川省成都市锦江区三圣乡路5号',
+                    'city_name':"成都市"
+                },
+                {
+                    'shop_name':'成都双流店',
+                    'shop_address':'四川省成都市双流县双流路12号',
+                    'city_name':"成都市"
+                },
+                {
+                    'shop_name':'成都高新店',
+                    'shop_address':'四川省成都市高新区天府大道125号',
+                    'city_name':"成都市"
+                }
+            ],"connect");
+//            getPosition(createMap);
+
+            pageInit();
+
+        })
+    </script>
+</section>
+</body>
+</html>

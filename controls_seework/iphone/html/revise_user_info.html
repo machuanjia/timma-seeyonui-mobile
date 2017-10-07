@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>修改个人资料</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="revise_user_info" class="write_user_info" data-theme="write" data-title="修改个人资料">
+    <div data-role="content" class="wrapper revise_user_info_layout " id="revise_user_info_layout"
+         >
+        <div class="scroller">
+            <div class="user_head_info">
+                <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                <h3>张小一<span class="iphone40 woman_40 margin_l_15 user_sex"></span></h3>
+                <!--wechat_head_load 同步状态进行中-->
+                <span class="iphone48 sync_wechat_head_48 user_head_sync "></span>
+            </div>
+            <div class="write_user_info_content border_b border_radius_6">
+                <div class="flexible_box user_telephone border_bottom">
+                    <div class="user_info_title">
+                        部门
+                    </div>
+                    <div class="adaptive_box_flex">
+                        <p class="text_ellipsis padding_r_15">销售部\企划部(兼)</p>
+                    </div>
+                </div>
+                <div class="flexible_box user_telephone border_bottom">
+                    <div class="user_info_title">
+                        岗位
+                    </div>
+                    <div class="adaptive_box_flex">
+                        <p class="text_ellipsis padding_r_15">销售主管\市场人员(兼)</p>
+                    </div>
+                </div>
+                <div class="flexible_box user_telephone border_bottom">
+                    <div class="user_info_title">
+                        手机号
+                    </div>
+                    <input type="text" data-type="search" class="comp" comp="type:'focus',scrollId:'revise_user_info_layout'"/>
+                </div>
+                <div class="flexible_box user_birthday border_bottom">
+                    <div class="user_info_title">
+                        生日
+                    </div>
+                    <div class="adaptive_box_flex">
+                        <input type="text" data-role="none" class="comp" comp="type:'focus',scrollId:'revise_user_info_layout'"/>月
+                        <input type="text" data-role="none" class="margin_l_30 comp" comp="type:'focus',scrollId:'revise_user_info_layout'"/>日
+                    </div>
+                </div>
+                <div class="flexible_box user_describe">
+                    <div class="user_info_title">
+                        描述
+                    </div>
+                    <div class="adaptive_box_flex">
+                        <textarea data-role="none" class="comp"
+                                  comp="type:'focus',inputType:'textarea',scrollId:'write_user_info_layout',hinitInfo:'请输入描述信息'">请输入描述信息</textarea>
+                    </div>
+                </div>
+            </div>
+            <p class="write_hint">更换手机号后,下次登录需使用新手机号登录</p>
+            <a href="#" data-role="button" class="blue_block_btn margin_t_10 margin_b_20 margin_lr_15" >保存</a>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#revise_user_info").bind("pagebeforeshow",function(){
+            pageInit("revise_user_info");
+        })
+        $("#revise_user_info").bind("pageshow",function(){
+            $.loadedScroll("revise_user_info_layout",1,"v");
+            pageShowInit("write_user_info");
+        })
+    </script>
+</section>
+</body>
+</html>

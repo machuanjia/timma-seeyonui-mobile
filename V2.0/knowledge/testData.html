@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>数据传递测试</title>
+    <meta charset="utf-8"/>
+    <title>JqueryMobile知识库</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <link href="../../controls_common/css/common-debug.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="page1">
+    <header data-role="header" data-theme="a">
+        <h1>图书频道</h1>
+        <div data-role="navbar" >
+            <ul>
+                <li><a href="#" class="ui-btn-active" data-icon="info">图书</a></li>
+                <li><a href="#" data-icon="alert">音乐</a></li>
+                <li><a href="#" data-icon="gear">影视</a></li>
+            </ul>
+        </div>
+    </header>
+    <div data-role="content">
+        <p>这里是图书区，请放心阅读</p>
+        <a href="#" data-role="button" id="test_music">测试音乐</a>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-theme="b">
+        <h4>欢迎你的光临</h4>
+    </footer>
+    <script type="text/javascript">
+        /**
+         * 自定义数据方法说明
+         * @param definedFun 自定义方法
+         */
+        function beforechange(definedFun) {
+            $(document).unbind("pagebeforechange").bind("pagebeforechange", function(e,data){
+                if (typeof data.toPage != "string") {     //这个事件会调用两次，但每次的data内容不一样，所以要判断
+                    var thisUrlObj = $.mobile.path.parseUrl(e.target.baseURI); //  该函数解析一个URL地址，并返回一个含所有参数值的对象，这些参数值能够让我们很轻松地访问URL地址上的参数属性。
+                    var pageActiveObj = $.mobile.path.parseUrl(data.toPage);//取到page活动状态的容器对象
+                    if(typeof definedFun == "function"){
+                        definedFun(e,thisUrlObj,data,pageActiveObj);
+                    }
+                }
+            });
+        }
+        /**
+         * 解析url参数示例——字符串格式id=34&key=perfect&action=go
+         * @param string 字符串
+         */
+        function getUrlParam(string) {
+            var obj =  new Array();
+            if (string.indexOf("?") != -1) {
+                var string = string.substr(string.indexOf("?") + 1);
+                var strs = string.split("&");
+                for(var i = 0; i < strs.length; i ++) {
+                    var tempArr = strs[i].split("=");
+                    obj[i] = tempArr[1];
+                }
+            }
+            return obj;
+        }
+        /**
+         * 下一个页面数据方法
+         * @param pageUrl url地址
+         * @param sectionId 容器id
+         * @param definedFun 自定义方法
+         */
+        function setNextPageData(pageUrl,sectionId,definedFun){
+            beforechange(definedFun);
+            $.mobile.changePage(pageUrl,{
+                transition: "slide",
+                type:"post",
+                data:"对面的美女看过来",//(object或string, 默认值: undefined) Ajax 请求时发送的数据。仅当pageUrl参数的值为一个URL时可用。
+                reverse: false //转场特效是否反向
+//                changeHash: false  //断地址栏上的哈希值是否应该被更新。
+            })
+        }
+        $("#test_music").bind("tap",function(){
+            var user_url = "testData2.html";
+            var url_data = user_url+"?id=34&key=perfect&action=go";
+            setNextPageData(url_data,"#page1",function(event,thisUrlObj,data,pageActiveObj){
+                if (thisUrlObj.href.search(user_url) != -1) {
+                    var page = $(event.target).find("#page2");
+                    var ajax_data = data.options.data;
+                    var url_data = getUrlParam(thisUrlObj.href);
+                    page.find("h1").html(url_data[0]);
+                    page.find("#test_book").html(url_data[1]);
+                    page.find("h4").html(url_data[2]);
+                    pageActiveObj.find("#test_music_text").html("欢迎你来到音乐专区");
+                    pageActiveObj.find("#test_music_content").append('<p style="color: #ff0000">'+ajax_data+'</p>');
+
+                }
+            });
+        })
+    </script>
+</section>
+</body>
+</html>

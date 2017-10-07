@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图定位</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <!--<script type="text/javascript" src="http://api.map.baidu.com/api?&ak=B0308cf28ef6e5b5b9f22c5243a99648&v=2.0"></script>-->
+    <!--<script src=" http://developer.baidu.com/map/jsdemo/demo/convertor.js" type="text/javascript"></script>-->
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="map_position">
+    <header data-role="header" id="map_position_header" class="comp"
+            comp="type:'tabs',tabType:'navbar',scrollState:true,hideLayerOpen:true,
+    tabBorderClass:'form_tab_none',callBack:formListTab">
+            <div data-role="navbar" class="form_nav_bar form_nav_bar_2 map_bar form_tab_none">
+                <ul class="model_header_tabs">
+                    <li>
+                        <a href="#" tgt="inquiry_province">
+                            <span backTgt="inquiry_province">四川省</span><span class="iphone16 arrow_b_16"></span>
+                            <p></p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" tgt="inquiry_city">
+                            <span backTgt="inquiry_city">成都市</span><span class="iphone16 arrow_b_16"></span>
+                            <p></p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        <div class="tabs_body display_none inquiry_content" id="tabs_body">
+            <div id="inquiry_province" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_province',
+                tabBorderClass:'form_tab_none',changeParentId:'map_position_header',callBack:userInquiry">
+                <div class="scroller" id="inquiry_province_list">
+
+                </div>
+            </div>
+            <div id="inquiry_city" class="wrapper display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_city'
+                 ,tabBorderClass:'form_tab_none',changeParentId:'map_position_header',callBack:userInquiry">
+                <div id="inquiry_city_list" class="scroller">
+
+                </div>
+           </div>
+        </div>
+    </header>
+    <div data-role="content" id="my_map"></div>
+    <footer class="padding_tb_10 work_shade_footer align_center border_top pos_relative">
+        <p class="get_address_info" id="get_address_info"></p>
+        <a href="#" class="blue_btn_inline tag_ensure" data-role="button">确定</a>
+    </footer>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?&ak=B0308cf28ef6e5b5b9f22c5243a99648&v=2.0"></script>
+    <script src=" http://developer.baidu.com/map/jsdemo/demo/convertor.js" type="text/javascript"></script>
+    <script type="text/javascript" src="../js/map_position.js"></script>
+    <script type="text/javascript">
+        /**
+         * 查询值回填扩展方法
+         * @param thisObj 当前点击对象
+         * @param thisId 当前点击对象的自定义id（城市组件中出现）
+         */
+        function userInquiry(thisObj,thisId){
+//            $.hideLayerClose();
+        }
+        /**
+         * 搜索扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         */
+        function formListTab(thisObj,domObj){
+            var temp = thisObj.attr("tgt");
+            switch (temp){
+                case "inquiry_province":
+                    break;
+                case "inquiry_city":
+                    break;
+            }
+        }
+        $("#map_position").bind("pagebeforeshow",function(){
+            pageInit("map_position");
+            listData("inquiry_province_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'全部'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ]
+            })
+            listData("inquiry_city_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ]
+            });
+        })
+        $("#map_position").bind("pageshow",function(){
+            var _h = $('body').height();
+            var header_h = $('#map_position').find("header").outerHeight();
+            var footer_h = $('#map_position').find("footer").outerHeight();
+
+            var tab_height = parseInt($("body").height()*0.8);
+            $(".inquiry_content").height(tab_height);
+            $.loadedScroll("inquiry_province",1,"v");
+            $.loadedScroll("inquiry_city",1,"v");
+            $("#my_map").height(_h - header_h - footer_h);
+            getPosition(createMap);
+
+        })
+    </script>
+</section>
+</body>
+</html>

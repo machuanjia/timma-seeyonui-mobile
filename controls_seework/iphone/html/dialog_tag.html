@@ -1,0 +1,27 @@
+<!--<section  id="work_add_tag" class="work_add_tag background_white" >-->
+<section class="work_add_tag background_white" id="work_add_tag" data-role="popup" data-dismissible="false">
+    <header class="background_white">
+        <div class="flexible_box tag_input_bg comp" id="tag_input_bg" comp="type:'inputTag',inputId:'tag_search',tagListId:'user_tag_gather'">
+            <div class="add_new_tag">
+                <p>
+                    <span class="tag_hide"></span>
+                    <!--<span objid="002">开发部</span>-->
+                    <!--<span objid="003">开发部sd</span>-->
+                    <!--<span objid="004">开发部sdsardsasd</span>-->
+                </p>
+            </div>
+            <div class="adaptive_box_flex tag_import">
+                <input type="text" data-role="none" placeholder="添加新标签" id="tag_search"/>
+            </div>
+            <!--<a href="work_start.html" data-prefetch="true">是的撒旦法方</a>-->
+        </div>
+    </header>
+    <div class="wrapper user_tag_gather comp" id="user_tag_gather" comp="type:'dialog',scrollId:'user_tag_gather',parentId:'work_add_tag'">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',tagInputId:'tag_input_bg',tagSearchId:'tag_search',selectTag:'yes',selectBack:userSelectTag">
+            <p class="user_tag_title">我的标签</p>
+        </div>
+    </div>
+    <footer class="padding_tb_10 work_shade_footer border_top">
+        <a href="#" class="blue_btn_inline tag_ensure" data-role="button">确定</a>
+    </footer>
+</section>

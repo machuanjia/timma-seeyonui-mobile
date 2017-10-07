@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jqm—页面结构</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+</head>
+<body>
+<section data-role="page">
+    <header data-role="header">
+        <h3>panel面板测试</h3>
+    </header>
+   <div data-role="content">
+       <a href="#f1" data-role="button" data-inline="true">左侧——data-display="reveal"</a>
+       <a href="#f2" data-role="button" data-inline="true">左侧——data-display="overlay"</a>
+       <a href="#f3" data-role="button" data-inline="true">左侧——data-display="push"</a>
+       <a href="#f4" data-role="button" data-inline="true">右侧——data-display="reveal"</a>
+       <a href="#f5" data-role="button" data-inline="true">右侧——data-display="overlay"</a>
+       <a href="#f6" data-role="button" data-inline="true">右侧——data-display="push"</a>
+   </div>
+    <div data-role="panel" data-position="left" data-display="reveal" data-theme="a" id="f1">
+        <h2>你好,左侧一</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+    <div data-role="panel" data-position="left" data-display="overlay" id="f2">
+        <h2>你好,左侧二</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+    <div data-role="panel" data-position="left" data-display="push" id="f3">
+        <h2>你好,左侧三</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+    <div data-role="panel" data-position="right" data-display="reveal" data-theme="a" id="f4">
+        <h2>你好,右侧一</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+    <div data-role="panel" data-position="right" data-display="overlay" data-theme="a" id="f5">
+        <h2>你好,右侧二</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+    <div data-role="panel" data-position="right" data-display="push" data-theme="b" id="f6">
+        <h2>你好,右侧三</h2>
+        <a href="#" data-rel="close" data-role="button">关闭</a>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—会议列表模板页</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="return_receipt">
+    <header data-role="header">
+        <a href="test_meeting_details.html" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+           data-transition="slide"></a>
+        <h1 class="page_header_title">
+            回执
+        </h1>
+        <a href="#" class="ui-btn ui-btn-inline ui-btn-a">回执</a>
+    </header>
+    <div data-role="content" class="receipt_content">
+        <div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+            <div class="ui-block-a margin_tb_5">
+                <div class="iphone_radio">
+                    <span class="feedbackradio ico_phone_radio_checked30 margin_r_5" radio_value="1"></span>
+                    <span class="ico_phone_48 attend_meeting_48"></span>
+                    参加
+                </div>
+            </div>
+            <div class="ui-block-b margin_tb_5">
+                <div class="iphone_radio">
+                    <span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="0"></span>
+                    <span class="ico_phone_48 unattended_meeting_48"></span>
+                    不参加
+                </div>
+            </div>
+            <div class="ui-block-c margin_tb_5">
+                <div class="iphone_radio">
+                    <span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="-1"></span>
+                    <span class="ico_phone_48 unsure_48"></span>
+                    待定
+                </div>
+            </div>
+            <input type="hidden" value="1" id="receipt_select_value"/>
+        </div>
+        <div class="writing_content">
+            <p class="hint_text">请输入处理意见</p>
+            <textarea></textarea>
+            <p class="hint_num">150</p>
+        </div>
+        <div class="comp" comp="type:'tabs',callback:userTabs">
+            <div data-role="navbar" class="navbar_add_icon">
+                <ul>
+                    <li>
+                        <a href="#" class="tab-ui-btn-a">
+                            <span class="ico_phone_48 accessory_48"></span>
+                            (<label>10</label>)
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="tabs_body">
+                <div class="ui-grid-c accessory_upload_type">
+                    <div class="ui-block-a margin_tb_10">
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-photo">拍照</a>
+                    </div>
+                    <div class="ui-block-b margin_tb_10">
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-voice">语音</a>
+                    </div>
+                    <div class="ui-block-c margin_tb_10">
+                        <a href="test_relate_doc.html" data-transition="slide"
+                           class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-associate">关联文档</a>
+                    </div>
+                    <div class="ui-block-d margin_tb_10">
+                        <a href="#"
+                           class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-local_doc ui-btn-icon-lineheight2em">本地文件和视频</a>
+                    </div>
+                </div>
+                <div class="receipt_accessory">
+                    <ul class="receipt_accessory_type padding_10">
+                        <li>
+                            <div class="accessory_underway margin_tb_10">
+                                <div class="accessory_underway_content">
+                                    <div class="accessory_icon padding_lr_10">
+                                        <span class="ico_phone_48 mp4_48 "></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content">
+                                            <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                            <label>.DVD</label>
+                                        </p>
+                                        <p class="underway_accessory_size">500MB</p>
+                                    </div>
+                                </div>
+                                <p class="accessory_underway_bar"></p>
+                                <span class="ico_phone_48 cancel_upload_48 model_info_close"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_tb_15">
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 mp4_48 "></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">
+                                        <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                        <label>.DVD</label>
+                                    </p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 accessory_download_48 "></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        function userTabs() {
+
+        }
+        $("#return_receipt").bind("pageshow", function () {
+            pageInit();
+            $(".writing_content textarea").focus(function () {
+                $(".writing_content p").hide();
+            })
+        })
+
+    </script>
+</section>
+</body>
+</html>

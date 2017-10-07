@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选人控件</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_select_range">
+    <header data-role="header" data-tap-toggle="false" data-position="fixed" class="comp"
+        comp="type:'localSearch',pageId:'work_select_range',letterPosition:'letter_position',scrollId:'work_select_all_user'">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+        <div class="user_search_bg display_none_important">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索" autofocus="true"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+    </header>
+    <div data-role="content" class="wrapper work_select_all_user" id="work_select_all_user">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',workSelectUserId:'work_select_user',selectBack:userSelect,callBack:userLink" id="user_info_list">
+            <div class="nav_list_box organize_structure">
+                <a href="#" data-transition="sildefade" id="organize_skip">
+                    <div class="nav_list_box_left">
+                        <span class="iphone32 organization_32 margin_r_10"></span>
+                    </div>
+                    <div class="nav_list_box_center">
+                        组织结构
+                    </div>
+                    <div class="nav_list_box_right">
+                        <span class="iphone24 send_24"></span>
+                    </div>
+                </a>
+            </div>
+            <a href="#" data-role="button" data-inline="true" class="reutrn_btn work_select_return display_none">
+                <span class="iphone32 return_32"></span>
+            </a>
+        </div>
+        <div class="letter_position comp" comp="type:'letterPosition',scrollId:'work_select_all_user'"></div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false"
+            class="work_select_user_footer flexible_box border_top work_shade_footer">
+        <div class="adaptive_box_flex padding_lr_10 over_x_auto comp" id="work_select_user" comp="type:'headSelect',
+        personDepartmentId:'work_select_all_user',scrollId:'work_select_user',callBack:headChange">
+            <div class="scroller_h clearFix">
+                <!--<p class="user_head_name">-->
+                    <!--<img src="../../skin/seework/images/pic_2.png" alt=""/>-->
+                    <!--<span>张小一</span>-->
+                <!--</p>-->
+            </div>
+        </div>
+        <div class="padding_10">
+            <a href="#"  data-transition="slidefade" class="blue_btn_inline gray_btn_inline" data-role="button" id="f1">确定</a>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        function userLink(obj,objId){
+            if(objId == "0004"){
+                $("#user_info_list").find("ul").empty();
+                listData($("#user_info_list"),{
+                    list_type:'selectUserDepartment',
+                    letter_position:"none",
+                    search_id:'user_search',
+                    data:[
+                        {
+                            'letterType':'成员',
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/images/user.png',
+                            'typeName':'张红',
+                            'job':'测试工程师',
+                            'personNum':null
+                        },
+                        {
+                            'letterType':'成员',
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+                            'typeName':'张强',
+                            'job':"测试工程师",
+                            'personNum':null
+                        }
+                    ],
+                    callback:function(){
+                        $.refreshScroll("work_select_all_user");
+                    }
+                },"state");
+            }
+        }
+//        /**
+//         * 用户选择数据扩展方法
+//         * @param obj 当前点击对象
+//         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+//         */
+//        function userSelect(obj,objId){
+//            var img_obj = $("#work_select_user").find("img[objId='"+objId+"']");
+//            var img_obj_len = img_obj.length;
+//            var img_width = $("#work_select_user").children("div").outerWidth();
+//            if(img_obj_len){
+//                img_obj.remove();
+//                $("#work_select_user").children("div").width(img_width - 37);
+//            }
+//            else{
+//                var img_html = '<img src="../../skin/seework/images/pic_1.png" objId="'+objId+'"/>';
+//                $("#work_select_user").children("div").width(img_width + 37);
+//                $("#work_select_user").children("div").append(img_html);
+//            }
+//            $.refreshScroll("work_select_user");
+//        }
+//        /**
+//         * 用户头像变化
+//         * @param obj 当前点击对象
+//         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+//         */
+//        function headChange(obj,objId){
+//            var img_width = $("#work_select_user").children("div").outerWidth();
+//            obj.remove();
+//            $("#work_select_user").children("div").width(img_width - 37);
+//            $.refreshScroll("work_select_user");
+//        };
+        $("#work_select_range").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("work_select_all_user",1,'v',function(){
+                var _h = $('#work_select_range').height();
+                var header_h = $('#work_select_range').find("header").height();
+                var footer_h = $('#work_select_range').find("footer").height();
+                $("#work_select_all_user").height(_h - header_h - footer_h);
+            });
+            $.loadedScroll("work_select_user",1,'h',function(){
+                var _w = 37*$('#work_select_user').find("img").length + 5;
+                $("#work_select_user").children("div").width(_w);
+            });
+            var b = listData($("#user_info_list"),{
+                list_type:'selectUserDepartment',
+                select_type:'selectUser',
+                search_id:'user_search',
+                data:[
+                    {
+                        'letterType':'A',
+                        'listId':'per_000',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'001',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'002',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'typeName':'张小二',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'B',
+                        'listId':'003',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小三',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'C',
+                        'listId':'004',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'typeName':'张小四',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'D',
+                        'listId':'005',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'006',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴6',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'007',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴7',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'008',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴8',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'009',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴9',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'010',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴10',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'011',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴11',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'012',
+                        'department':'department_1',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'personNum':null
+                    }
+                ],
+                callback:function(){
+                    $.refreshScroll("work_select_all_user");
+                }
+            },"dataPrefetch");
+
+            $("#user_info_list").find(".list_data_content").append(b).trigger("create");
+            $.refreshScroll("work_select_all_user");
+            $("#organize_skip").bind("tap",function(){
+                $(".reutrn_btn").removeClass("display_none");
+                $("#work_select_all_user").addClass("work_select_department");
+                $("#user_info_list").find("ul").empty();
+                $(this).parent().hide();
+                listData($("#user_info_list"),{
+                    list_type:'selectUserDepartment',
+                    select_type:'selectUser',
+                    letter_position:"none",
+                    search_id:'user_search',
+                    data:[
+//                        {
+//                            'letterType':'成员',
+//                            'listId':'001',
+//                            'department':'department_1',
+//                            'leftImgUrl':'../../../skin/seework/images/user.png',
+//                            'typeName':'张红',
+//                            'job':'测试工程师',
+//                            'personNum':null
+//                        },
+//                        {
+//                            'letterType':'成员',
+//                            'listId':'002',
+//                            'department':'department_1',
+//                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+//                            'typeName':'张强',
+//                            'job':"测试工程师",
+//                            'personNum':null
+//                        },
+//                        {
+//                            'letterType':'成员',
+//                            'listId':'003',
+//                            'department':'department_1',
+//                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+//                            'typeName':'郭靖',
+//                            'job':"测试工程师",
+//                            'personNum':null
+//                        },
+                        {
+                            'letterType':'星星科技公司',
+                            'listId':'0004',
+                            'department':'department_1',
+                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+                            'typeName':' 综合管理部',
+                            'job':null,
+                            'personNum':"sdasdsa"
+                        },
+                        {
+                            'letterType':'星星科技公司',
+                            'listId':'0005',
+                            'department':'department_1',
+                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+                            'typeName':' 综合管理部5',
+                            'job':null,
+                            'personNum':null
+                        },
+                        {
+                            'letterType':'星星科技公司',
+                            'listId':'0006',
+                            'department':'department_1',
+                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+                            'typeName':' 综合管理部6',
+                            'job':null,
+                            'personNum':null
+                        },
+                        {
+                            'letterType':'星星科技公司',
+                            'listId':'0007',
+                            'department':'department_1',
+                            'leftImgUrl':'../../../skin/seework/images/more_user_head.png',
+                            'typeName':' 综合管理部7',
+                            'job':null,
+                            'personNum':null
+                        }
+                    ],
+                    callback:function(){
+                        $.refreshScroll("work_select_all_user");
+                    }
+                });
+            })
+            $("#f1").bind("tap",function(){
+                $("#work_select_range").dialog("close");
+//                $("#f2").html("233人");
+            })
+        })
+    </script>
+</section>
+</body>
+</html>

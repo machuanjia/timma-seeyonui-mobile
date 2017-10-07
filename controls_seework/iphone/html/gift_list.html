@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我的礼物</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="gift_list">
+    <div data-role="content" class="comp" comp="type:'tabs',tabType:'navbar',tabParentId:'tabs_body',scrollState:true">
+        <div data-role="navbar" class="form_nav_bar" >
+            <ul class="model_header_tabs">
+                <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="receiveGift">收到的礼物</a></li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="myGift">我的礼物</a></li>
+            </ul>
+        </div>
+        <div class="tabs_body" id="tabs_body">
+            <div class="wrapper over_y_auto serve_list_content no_content_135 no_content_hide" id="receiveGift">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',selectType:'radio',callBack:userList">
+                   <!--<ul data-role="listview" class="nav_list_box gift_list_item">-->
+                       <!--<li>-->
+                           <!--<a href="#" data-transition="slide">-->
+                               <!--<div class="nav_list_box_left">-->
+                                   <!--<img src="../../../skin/seework/iphone/images/user.png" alt="" class="user_head"/>-->
+                               <!--</div>-->
+                               <!--<div class="nav_list_box_center">-->
+                                   <!--<p>-->
+                                       <!--<label class="user_name">张小一</label>-->
+                                       <!--<label class="user_time">9-17&nbsp;9:30</label>-->
+                                   <!--</p>-->
+                                   <!--<div class="gift_content">-->
+                                       <!--送了礼物“好人卡”给您-->
+                                   <!--</div>-->
+                                   <!--<span class="gift_1"></span>-->
+                               <!--</div>-->
+                           <!--</a>-->
+                       <!--</li>-->
+                   <!--</ul>-->
+                </div>
+            </div>
+            <div class="wrapper over_y_auto display_none serve_list_content no_content_135 no_content_hide" id="myGift">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',selectType:'radio',callBack:userList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <section id="work_relevancy" class="work_relevancy" data-role="popup" data-dismissible="false">
+        <div  class="wrapper overflow_hidden comp" id="work_relevancy_content" comp="type:'dialog',scrollId:'work_relevancy_content',
+    parentId:'work_relevancy'">
+            <div class="scroller work_relevancy_content comp" comp="type:'list',listType:'dataShow',selectType:'checkbox'"></div>
+        </div>
+        <footer  class="work_shade_footer border_top padding_10 align_center border_box">
+            <a href="#" class="blue_btn_inline" data-role="button" id="f3">确定</a>
+        </footer>
+    </section>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'giftList',
+                    update_gift_num: "共10个礼物",
+                    list_refresh_type: "down",
+                    data:[
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'004',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张是电饭锅小一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小三大一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小三大一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一sd',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        },
+                        {
+                            'listId':'009',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'送了礼物“好人卡”给您',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'giftList',
+                    data:[
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八',
+                            'centerContent':'巡店任务单sadsad',
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'giftType':"1"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#gift_list").bind("pagebeforeshow",function(){
+            pageInit("gift_list");
+            listData($("#myGift"),{
+                list_type:'giftList',
+                update_gift_num: "共10个礼物",
+                list_refresh_type: "down",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'送了礼物“好人卡”给您',
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'giftType':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'送了礼物“好人卡”给您',
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'giftType':"1"
+                    },
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'送了礼物“好人卡”给您',
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'giftType':"1"
+                    }
+                ]
+            });
+            listData($("#receiveGift"),{
+                list_type:'giftList',
+                update_gift_num: "共10个礼物",
+                list_refresh_type: "down",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'送了礼物“好人卡”给您',
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'giftType':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'送了礼物“好人卡”给您',
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'giftType':"1"
+                    }
+                ]
+            });
+        })
+        $("#gift_list").bind("pageshow",function(){
+            pageShowInit("gift_list");
+            loaded('myGift',userInfoList,userMoreInfoList);
+            loaded('receiveGift',userInfoList,userMoreInfoList);
+
+
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>JqueryMobile知识库</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <link href="../../controls_common/css/common-debug.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="page2">
+    <header data-role="header" data-theme="b">
+        <h1>音乐频道</h1>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#page1">图书</a></li>
+                <li><a href="#page2" class="ui-btn-active">音乐</a></li>
+                <li><a href="#">影视</a></li>
+            </ul>
+        </div>
+    </header>
+    <div data-role="content" id="test_music_content">
+        <p id="test_music_text">这里是音乐，请放心欣赏</p>
+        <a href="testData.html" data-role="button" id="test_book">测试图书</a>
+    </div>
+    <footer data-role="footer" data-theme="b" data-position="fixed">
+        <h4>欢迎你的光临，请选择你的城市</h4>
+        <div data-role="navbar">
+            <ul>
+                <li><a href="#" class="ui-btn-active">成都</a></li>
+                <li><a href="#">北京</a></li>
+                <li><a href="#">广州</a></li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $("#page2").bind("pagebeforehide",function(event, ui){
+            alert('1. ' + ui.nextPage[0].id + ' 正在显示中... ')
+        })
+        $("#page2").bind("pagebeforeshow",function(event, ui){
+            alert('2. ' + ui.prevPage[0].id + ' 正在隐藏中... ')
+        })
+        $("#page2").bind("pagehide",function(event, ui){
+            alert('3. ' + ui.nextPage[0].id + ' 显示完成... ')
+        })
+        $("#page2").bind("pageshow",function(event, ui){
+            alert('4. ' + ui.prevPage[0].id + ' 隐藏完成... ')
+        })
+    </script>
+</section>
+</body>
+</html>

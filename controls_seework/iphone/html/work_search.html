@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>搜索</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_search">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false">
+        <div class="user_search_bg">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+        <fieldset data-role="controlgroup" data-type="horizontal" class="radio_tabs background_white">
+            <label for="brief_news">发起人</label>
+            <input type="radio" name="seeworkg_type" id="brief_news" value="0" checked="checked">
+            <label for="call_users">标题</label>
+            <input type="radio" name="seeworkg_type" id="call_users" value="1">
+            <label for="discuss_thing">标签</label>
+            <input type="radio" name="seeworkg_type" id="discuss_thing" value="2">
+        </fieldset>
+    </header>
+    <div data-role="content" class="over_y_auto wrapper  search_result no_content_135 no_seartch_result
+    comp" comp="type:'dialog',parentId:'work_search'"  id="search_result">
+        <div class="scroller search_result_content comp" comp="type:'list',listType:'dataRefresh',pullDownHide:true,searchShow:true,callBack:userSearch"></div>
+    </div>
+    <script type="text/javascript">
+        function userSearch(obj,objId){
+
+        }
+        /**
+         *  上拉加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    data:[
+                        {
+                            'listId':'0030',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"40"
+                        },
+                        {
+                            'listId':'0040',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"10月&nbsp;&nbsp;&nbsp销售",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"5"
+                        },
+                        {
+                            'listId':'0050',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三张小三张小三张小三',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'0060',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四张小四张小四',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'00070',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七张小七张小七张小七张小七',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"33"
+                        }
+                    ]
+                },"searchResult");
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#work_search").bind("pagebeforeshow",function(){
+            pageInit("work_search");
+
+        })
+        $("#work_search").bind("pageshow",function(){
+            pageShowInit("work_search");
+            $(".search_text").bind("tap",function(){
+                listData($("#search_result"),{
+                    list_type:'listInfo',
+                    search_Id:'user_search',
+                    data:[
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要我',
+                            'centertag':["工作纪要","9月","销售","安排"],
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"31"
+                        },
+                        {
+                            'listId':'004',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':["10月","销售"],
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"5"
+                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"33"
+                        }
+                    ]
+                },"searchResult");
+                loaded('search_result',null,userMoreInfoList,5,4);
+
+            })
+            $("#user_search").bind("focus",function(){
+                $.hideLayerOpen();
+            })
+
+        })
+    </script>
+</section>
+</body>
+</html>

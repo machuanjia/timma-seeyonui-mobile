@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库-弹出层</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../controls_ipad/seeyon.ui.ipad-debug.js"></script>
+    <!--高亮显示-->
+    <link href="../../docs/resource/syntaxhighlighter/styles/shCoreRDark.css" rel="stylesheet"/>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shCore.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <!--demo-->
+    <link href="../../docs/resource/demo.css" rel="stylesheet"/>
+    <script src="../../docs/resource/demo.js"></script>
+    <link href="../../icon/common-debug.css" rel="stylesheet"/>
+    <link href="../../../controls_ipad/skin/default/css/css-debug.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="demo_page">
+    <section>
+        <h3 class="demo_title">意见回复</h3>
+
+        <div class="code">
+            <a href="#" data-rel="popup" data-position-to="window"
+               data-transition="pop" class="ui-btn ui-btn-inline ui-btn-a" id="f0">意见回复弹出层</a>
+            <div id="popup_content" data-role="popup" data-overlay-theme="b">
+                <div class="return_receipt_center">
+                    <div data-role="header" class="ui-header-a ui-box-shadow">
+                        <h1>意见回复</h1>
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" data-rel="back">取消</a>
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-a" data-iconpos="notext" data-rel="back">发送</a>
+                    </div>
+                    <div class="return_receipt_input">
+                        <p class="hint_text">请输入处理意见</p>
+                        <textarea></textarea>
+
+                        <p class="hint_num"><label>150</label><label>常用语</label></p>
+                    </div>
+                    <div data-role="tabs" id="tabs">
+                        <div data-role="navbar" class="navbar_add_icon attend_meeting_nav">
+                            <ul>
+                                <li>
+                                    <a href="#receipt_accessory" class="tab-ui-btn-a ui-btn-active" data-ajax="false">
+                                        <span class="ico32 accessory_32"></span>(<label>10</label>)
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#banner_set_up" class="tab-ui-btn-a" data-ajax="false">
+                                        <span class="ico32 set_up_32"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div id="receipt_accessory">
+                            <div class="ui-grid-c padding_lr_50 receipt_accessory_center">
+                                <div class="ui-block-a margin_tb_25">
+                                    <a href="#"
+                                       class="ui-btn ui-btn-inline ui-icon-photo ui-btn-icon-top ui-btn-icon-a">拍照</a>
+                                </div>
+                                <div class="ui-block-b margin_tb_25">
+                                    <a href="#"
+                                       class="ui-btn ui-btn-inline ui-icon-voice ui-btn-icon-top ui-btn-icon-a">语言</a>
+                                </div>
+                                <div class="ui-block-c margin_tb_25">
+                                    <a href="#"
+                                       class="ui-btn ui-btn-inline ui-icon-associate ui-btn-icon-top ui-btn-icon-a">关联文档</a>
+                                </div>
+                                <div class="ui-block-d margin_tb_25">
+                                    <a href="#" class="ui-btn ui-btn-inline ui-icon-local_doc
+                        ui-btn-icon-top ui-btn-icon-a ui-btn-icon-lineheight2em">本地文件和视频</a>
+                                </div>
+                            </div>
+                            <div class="receipt_accessory_bg">
+                                <ul class="receipt_accessory_type padding_10 clearFlow">
+                                    <li>
+                                        <div class="accessory_underway margin_5 margin_b_15">
+                                            <div class="accessory_underway_content">
+                                                <div class="padding_lr_10">
+                                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                                </div>
+                                                <div class="accessory_name">
+                                                    <p class="receipt_accessory_content">
+                                                        致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                        致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                    </p>
+                                                    <p class="underway_accessory_size">500MB</p>
+                                                </div>
+                                            </div>
+                                            <p class="accessory_underway_bar"></p>
+                                            <span class="ico_pad_28 cancel_upload_28 model_info_close"></span>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content"> 你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽.DVD</p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                </p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">
+                                                    你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽
+                                                    你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽.DVD
+                                                </p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                </p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽.DVD</p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽.DVD</p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div class="accessory_finish margin_5 margin_b_15">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">你好的斯蒂文四大看得见@#$#$#%离开大家#%E十年山三打谁奥斯卡符合阿速度撒旦法卡丽.DVD</p>
+                                                <p class="accessory_size">500MB</p>
+                                            </div>
+                                            <div class="accessory_download_icon padding_lr_10">
+                                                <span class="ico40 accessory_download_40"></span>
+                                            </div>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="banner_set_up">
+                            <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                                <div class="switch_list_box_left">
+                                    隐藏意见
+                                </div>
+                                <div class="switch_list_box_right">
+                                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                           data-off-text=""/>
+                                </div>
+                            </div>
+                            <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                                <div class="switch_list_box_left">
+                                    对发起者隐藏
+                                </div>
+                                <div class="switch_list_box_right">
+                                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                           data-off-text=""/>
+                                </div>
+                            </div>
+                            <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                                <div class="switch_list_box_left">
+                                    发送消息
+                                </div>
+                                <div class="switch_list_box_right">
+                                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                           data-off-text=""/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a href="#" data-rel="popup" data-position-to="window" class="ui-btn ui-mini ui-btn-inline demo_dialog_btn"
+           style="color: #3eb249; font-weight: normal;">View Source</a>
+
+        <div id="" data-role="popup" data-overlay-theme="a" data-theme="b" class="demo_dialog">
+            <pre class="brush:html; code_pre"></pre>
+        </div>
+    </section>
+</div>
+
+<script type="text/javascript">
+    $(function(){
+        $(".return_receipt_input textarea").focus(function () {
+            $(".hint_text").hide();
+            $(".hint_num").hide();
+        });
+        $("#f0").unbind().bind("tap",function(){
+            $("#popup_content").popup("open",{
+                transition:"pop",
+                positionTo:"window"
+            })
+            $(".receipt_accessory_content").css("width","100%");
+        })
+    });
+
+</script>
+</body>
+</html>

@@ -1,0 +1,489 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>排行榜</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="store_ranking">
+    <div data-role="content" id="store_ranking_list" class="comp"
+         comp="type:'tabs',tabType:'navbar',scrollState:true,hideLayerOpen:true,tabBorderClass:'form_tab_none',callBack:formListTab">
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none" id="test1">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" tgt="inquiry_year" >
+                        <span backTgt="inquiry_year">2014年</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_month" >
+                        <span backTgt="inquiry_month">12月</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_province" >
+                        <span backTgt="inquiry_province">四川省</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_city" >
+                        <span backTgt="inquiry_city">成都市</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content">
+            <div id="inquiry_year" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_year',
+                tabBorderClass:'form_tab_none',changeParentId:'store_ranking_list',callBack:userInquiry">
+                <div class="scroller" id="inquiry_year_list">
+
+                </div>
+            </div>
+            <div id="inquiry_month" class="wrapper display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_month'
+                 ,tabBorderClass:'form_tab_none',changeParentId:'store_ranking_list',callBack:userInquiry">
+                <div id="inquiry_month_list" class="scroller">
+
+                </div>
+            </div>
+            <div id="inquiry_province" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_province',
+                tabBorderClass:'form_tab_none',changeParentId:'store_ranking_list',callBack:userInquiry">
+                <div class="scroller" id="inquiry_province_list">
+
+                </div>
+            </div>
+            <div id="inquiry_city" class="wrapper display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_city'
+                 ,tabBorderClass:'form_tab_none',changeParentId:'store_ranking_list',callBack:userInquiry">
+                <div id="inquiry_city_list" class="scroller">
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative store_ranking_result form_statistics_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller padding_lr_10  padding_b_10 border_box">
+                <ul class="ul_li_float form_statistics_title clearFlow">
+                    <li>店名</li>
+                    <li>城市</li>
+                    <li>合格率</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">1</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>86%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">2</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>75%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">3</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">4</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">5</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">9</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">10</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">77</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">6</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+                <ul class="ul_li_float clearFlow">
+                    <li><span class="ranking_num margin_r_10">99</span>成华店</li>
+                    <li>四川省成都市  </li>
+                    <li>89%</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+        /**
+         * tab扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         * @param tgtId navbar点击对应区域打开的id
+         */
+        function formListTab(thisObj,domObj,tgtId){
+//            switch (tgtId){
+//                case "inquiry_province":
+////                    $.refreshScroll("inquiry_province");
+//                    break;
+//                case "inquiry_city":
+////                    $.refreshScroll("inquiry_city");
+//                    break;
+//            }
+        }
+        /**
+         * tab_body区域展示扩展方法
+         * @param domObj 当前点击对象
+         * @param objId 当前点击对象的objId,如果domObj没有objId属性，则objId为null
+         */
+        function userInquiry(domObj,objId){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'007',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'009',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#store_ranking").bind("pageshow",function(){
+            pageInit();
+            listData("inquiry_year_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'2014年'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'2013年'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'2012年'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'2011年'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'2010年'
+                    },{
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'2009年'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'2008年'
+                    },{
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'2007年'
+                    },{
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'2006年'
+                    },{
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'2005年'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'2004年'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_year",1,"v");
+                }
+            })
+            listData("inquiry_month_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'1月'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'2月'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'3月'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'4月'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'5月'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'6月'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'7月'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'8月'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'9月'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'10月'
+                    },{
+                        'listId':'011',
+                        'letterType':'',
+                        'cityName':'11月'
+                    },
+                    {
+                        'listId':'012',
+                        'letterType':'',
+                        'cityName':'12月'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_month",1,"v");
+                }
+            })
+            listData("inquiry_province_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'全部'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_province",1,"v");
+                }
+            })
+            listData("inquiry_city_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_city",1,"v");
+                }
+            })
+            $.loadedScroll("search_result",1,"v");
+//            $.showLoader("标为关注",trues,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

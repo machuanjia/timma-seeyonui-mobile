@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选择节点执行人</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="form_node_executor">
+    <div data-role="content" class="overflow_hidden wrapper padding_lr_10 padding_t_5 border_box" id="form_node_executor_content">
+        <div class="scroller">
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 approve_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name" id="form_department_name">**部<span>[审批]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 inform_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name">上节点部门主管<span>[告知]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 deal_with_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name">发起者部门主管<span>[办理]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="border_top">
+        <a href="#" data-role="button" class="blue_block_btn  margin_tb_15 margin_lr_10" >确定</a>
+    </footer>
+    <script type="text/javascript">
+        $("#form_node_executor").bind("pagecreate",function(){
+
+        })
+        $("#form_node_executor").bind("pageshow",function(){
+            $.loadedScroll("form_node_executor_content",1,'v',function(){
+                var _h = $('body').height();
+                var footer_h = $("#form_node_executor footer").outerHeight();
+                $("#form_node_executor_content").outerHeight(_h - footer_h);
+            });
+        })
+    </script>
+</section>
+</body>
+</html>

@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新建流程表单</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="create_flow_form" class="create_flow_form">
+    <div data-role="content" class="overflow_hidden wrapper" id="create_flow_form_content">
+        <div class="scroller">
+            <div class="user_create_form_content">
+                <h1 class="form_title font_18"><span class="form_logo"></span>人员费用报销单</h1>
+                <div class="flexible_box single_text background_white border_top_bottom_form margin_t_15 margin_b_10">
+                    <p class="padding_r_5 font_16 form_color_red">报销部门</p>
+                    <p class="adaptive_box_flex">
+                        <input type="text" class="border_bottom_form font_16 form_color_black" data-role="none" value="产品部"/>
+                    </p>
+                </div>
+                <div class="double_text background_white border_top_bottom_form margin_tb_10">
+                    <p class="padding_r_15 form_color_red">报销部门</p>
+                    <textarea data-role="none" class="border_all_form font_16 form_color_black">内容内容内容内容内容内容内容内容，内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+                </div>
+
+                <div data-role="collapsible" class="detail_form margin_tb_10 border_top_bottom_form" data-iconpos="right" data-collapsed-icon="form-close"  data-expanded-icon="form-spread">
+                    <h2 class="font_16 form_color_red">费用明细（1）</h2>
+                    <!--<div class="detail_form_content">-->
+
+                    <!--</div>-->
+                </div>
+            </div>
+            <div class="form_add_property border_top_bottom background_white">
+                <a href="#" class="border_bottom flexible_box border_box padding_lr_10" id="add_accessory">
+                    <div class="adaptive_box_flex form_color_black font_14">
+                        <span class="iphone24 accessory_24 margin_r_5 margin_t_f_2"></span>添加附件
+                    </div>
+                </a>
+                <div class="picture_area  background_white  border_bottom display_none" id="picture_area">
+                    <div class="scroller_h clearFlow padding_r_5">
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 relevancy_flie_112"></span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 relevancy_flie_upload_112 picture_upload_bg">
+                              <label class="iphone32 pic_load_32"></label>
+                            </span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                           <span class="iphone112 picture_upload_112 picture_upload_bg">
+                               <label class="iphone32 pic_load_32"></label>
+                           </span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                    </div>
+                </div>
+                <a href="#" data-transition="slidefade" class="flexible_box padding_lr_10">
+                    <div class="adaptive_box_flex form_color_black font_14">
+                        <span class="iphone24 processes_24 margin_r_5 margin_t_f_2"></span>查看流程
+                    </div>
+                    <div>
+                        <span class="iphone24 send_24 margin_t_f_2"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="ui-grid-a padding_tb_15 padding_lr_10">
+                <div class="ui-block-a padding_r_5">
+                    <a href="#" data-role="button" class="white_block_btn">存草稿</a>
+                </div>
+                <div class="ui-block-b padding_l_5">
+                    <a href="#" data-role="button" class="blue_block_btn">发送</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="work_start_footer display_none">
+        <div class="ui-grid-c work_accessory_select border_top_bottom">
+            <div class="ui-block-a pos_relative">
+                <span class="iphone48 picture_48"></span>
+                <p>图片</p>
+                <form id="account-form" action="/mobile/account" method="post" data-ajax="false">
+                    <input type="file" class="picture_input" data-role="none"/>
+                </form>
+            </div>
+            <div class="ui-block-b">
+                <span class="iphone48 relevancy_flie_48"></span>
+                <p>关联</p>
+            </div>
+        </div>
+        <a href="#" data-role="button" class="blue_block_btn margin_t_10 margin_b_20 margin_lr_10" >取消</a>
+    </footer>
+    <script type="text/javascript">
+        $("#create_flow_form").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("create_flow_form_content",1,'v',function(){
+                var _h = $('#create_flow_form').height();
+                $("#create_flow_form_content").height(_h);
+            });
+            $.loadedScroll("picture_area", 1, 'h', function () {
+                var _w = $('#picture_area').find("p").outerWidth() * $('#picture_area').find("p").length;
+                $("#picture_area").children("div").width(_w);
+            });
+            $("#add_accessory").unbind().bind("tap",function(){
+                if($(".work_start_footer").hasClass("display_none")){
+                    $.hideLayerOpen(function(){
+                        $(".work_start_footer").addClass("display_none");
+                    });
+                    $(".work_start_footer").removeClass("display_none");
+                }
+                else{
+                    $(".work_start_footer").addClass("display_none");
+                }
+            })
+        })
+    </script>
+</section>
+</body>
+</html>

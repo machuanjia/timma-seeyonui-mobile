@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>关联</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_relevancy" class="work_relevancy">
+    <div data-role="content" class="wrapper overflow_hidden" id="work_relevancy_content">
+        <div class="scroller work_relevancy_content comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',callBack:userSearch"></div>
+    </div>
+    <footer data-role="footer" class="work_shade_footer border_top padding_10 align_center border_box" data-tap-toggle="false" data-position="fixed">
+        <a href="#" class="blue_btn_inline" data-role="button">确定</a>
+    </footer>
+    <script type="text/javascript">
+        function userSearch(){
+
+        }
+        $("#work_relevancy").bind("pageshow",function(){
+            pageInit();
+            listData($("#work_relevancy_content"),{
+                list_type:'listInfo',
+                data:[
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要我',
+                        'centertag':["工作纪要","9月","销售","安排"],
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"31"
+                    },
+                    {
+                        'listId':'004',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':["10月","销售"],
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"5"
+                    },
+                    {
+                        'listId':'005',
+                        'leftImgUrl':'../../../skin/seework/images/user.png',
+                        'userName':'张小三',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                        'userTime':'2014-9-17&nbsp;11:30',
+                        'replyNum':"2"
+                    },
+                    {
+                        'listId':'006',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'userName':'张小四',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'007',
+                        'leftImgUrl':'../../../skin/seework/images/user_head.png',
+                        'userName':'张小七',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':["工作纪要","9月","销售","安排","工作纪要2","工作纪要3"],
+                        'userTime':'2014-12-11&nbsp;11:30',
+                        'replyNum':"33"
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("work_relevancy_content","1","v",function(){
+                        var _h = $('#work_relevancy').height();
+                        var footer_h = $("#work_relevancy").find("footer").outerHeight();
+                        $("#work_relevancy_content").height(_h - footer_h);
+                    })
+                }
+            },"checkbox");
+
+        })
+    </script>
+</section>
+</body>
+</html>

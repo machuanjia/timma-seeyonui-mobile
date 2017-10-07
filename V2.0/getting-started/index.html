@@ -1,0 +1,297 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>起步 - SeeyonMobile</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <script type="text/javascript" src="../scripts/modelShow.js"></script>
+    <link href="../css/doc.css" rel="stylesheet" />
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <link type="text/css" rel="stylesheet" href="../scripts/syntaxhighlighter/styles/shCoreDefault.css" />
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+        $(function(){
+            commonUnit();
+        })
+    </script>
+    <link href="../show_cmp/icon/common-debug.css" rel="stylesheet" />
+</head>
+<body>
+    <header class="header">
+        <div class="nav_area">
+            <ul class="clearFix">
+                <li><a href="../../index.html" data-role="none" rel="external"><strong>SeeyonMobile</strong></a></li>
+                <li class="li_active"><a href="javascript:void(0);">起步</a></li>
+                <li><a href="../show_cmp/iphone/html/index.html" data-role="none" rel="external">iphone端组件</a></li>
+                <li><a href="../show_cmp/iphone/html/model.html" data-role="none" rel="external">iphone端原型</a></li>
+                <li><a href="../show_cmp/ipad/html/index.html" data-role="none" rel="external">ipad端组件</a></li>
+                <li><a href="../show_cmp/ipad/html/model.html" data-role="none" rel="external">ipad端原型</a></li>
+                <li><a href="../show_cmp/icon/index.html" data-role="none" rel="external">公用图标库和class类</a></li>
+                <li><a href="../knowledge/index.html" data-role="none" rel="external">JqueryMobile知识库</a></li>
+                <li><a href="../log/index.html" data-role="none" rel="external">日志</a></li>
+            </ul>
+        </div>
+        <div class="page_title_area">
+            <div class="page_title_box">
+                <div class="t">起步</div>
+                <div class="c">Beginning</div>
+            </div>
+        </div>
+    </header>
+    <div id="content" class="clearFix">
+        <div class="main_body">
+            <div id="iphone_model" class="clearFix">
+                <h1>iphone端基本模板</h1>
+                <p>iphone页面基本结构由3部分组成，但在具体业务中可以包含其中的一部分或两部分</p>
+                <div class="code_area">
+                    <div class="code_box">
+                        <pre class="brush: html;">
+                            &lt;!DOCTYPE html>
+                            &lt;html>
+                            &lt;head>
+                                &lt;title>&lt;/title>
+                                &lt;meta charset="UTF-8"/>
+                                &lt;meta name="apple-touch-fullscreen" content="yes"/>
+                                &lt;meta name="apple-mobile-web-app-capable" content="yes"/>
+                                &lt;meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+                                &lt;script type="text/javascript" src="../js/jquery-1.8.3.min.js">&lt;/script>
+                                &lt;link rel="stylesheet" type="text/css" href="../jqueryMobile1.4.0/jquery.mobile-1.4.0.min.css"/>
+                                &lt;script type="text/javascript" src="../jqueryMobile1.4.0/jquery.mobile-1.4.0.min.js">&lt;/script>
+                            &lt;/head>
+                            &lt;body>
+                            &lt;section data-role="page" id="myIphone">
+                                &lt;header data-role="header">
+                                    &lt;h1>头部&lt;/h1>
+                                &lt;/header>
+                                &lt;div data-role="content">
+                                    &lt;p>内容区&lt;/p>
+                                &lt;/div>
+                                &lt;footer data-role="footer">
+                                   &lt;h4>尾部&lt;/h4>
+                                &lt;/footer>
+                            &lt;/section>
+                           &lt;body>
+                           &lt;/html>
+                        </pre>
+                    </div>
+                </div>
+                <div class="warning_area warning0">
+                    <div class="t">&lt;!DOCTYPE html>必须放到页面第一行</div>
+                    <div class="t"> &lt;head>中的jquery mobil的css和js加载顺序必须在jquery之后</div>
+                    <div class="t"> &lt;section>中必须添加data-role="page"该属性</div>
+                    <p><code>data-role="page"</code>该属性是申明一个容器,其内部的mobile元素将会继承这个容器上所设置的属性。</p>
+                </div>
+            </div>
+            <div id="ipad_model" class="clearFix">
+                <h1>ipad端基本模板</h1>
+                <p>ipad页面基本结构由2部分组成，左侧固定，右侧自适应</p>
+                <div class="code_area">
+                    <div class="code_box">
+                        <pre class="brush: html;">
+                            &lt;!DOCTYPE html>
+                            &lt;html>
+                            &lt;head>
+                                &lt;title>&lt;/title>
+                                &lt;meta charset="UTF-8"/>
+                                &lt;meta name="apple-touch-fullscreen" content="yes"/>
+                                &lt;meta name="apple-mobile-web-app-capable" content="yes"/>
+                                &lt;meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+                                &lt;script type="text/javascript" src="../js/jquery-1.8.3.min.js">&lt;/script>
+                                &lt;link rel="stylesheet" type="text/css" href="../jqueryMobile1.4.0/jquery.mobile-1.4.0.min.css"/>
+                                &lt;script type="text/javascript" src="../jqueryMobile1.4.0/jquery.mobile-1.4.0.min.js">&lt;/script>
+                            &lt;/head>
+                           &lt;body>
+                            &lt;section data-role="page" id="myIpad">
+                                &lt;div class="layout-l">
+                                    我是左区域
+                                &lt;/div>
+                                &lt;div class="layout-r">
+                                    我是右侧区域
+                                &lt;/div>
+                            &lt;/section>
+                           &lt;body>
+                           &lt;/html>
+                        </pre>
+                    </div>
+                </div>
+                <div class="warning_area warning0">
+                    <div class="t">&lt;!DOCTYPE html>必须放到页面第一行</div>
+                    <div class="t"> &lt;head>中的jquery mobil的css和js加载顺序必须在jquery之后</div>
+                    <div class="t"> &lt;section>中必须添加data-role="page"该属性</div>
+                    <p><code>data-role="page"</code>该属性是申明一个容器,其内部的mobile元素将会继承这个容器上所设置的属性。</p>
+                </div>
+            </div>
+            <div id="directory" class="clearFix">
+                <h1>目录结构</h1>
+                <div class="code_area">
+                    <div class="code_box">
+                        <pre>
+                            SeeyonMobile/
+                            ├── controls_common/
+                            │   ├── css/
+                            │       └── common-debug.css    /*公用样式包*/
+                            │   ├── icons/
+                            │       └── index.html    /*图标库展示*/
+                            │   ├── images/           /*图标库png*/
+                            │   ├── jquery.mobile/
+                            │       ├── jquery.mobile-debug.css    /*jquery mobile css*/
+                            │       ├── jquery.mobile-debug.js    /*jquery mobile js*/
+                            │       └── images/             /*jquery mobile 原生图标库*/
+                            │   ├── script/
+                            │       └── jquery.-debug.js    /*jquery js*/
+                            │── V2.0/
+                            │   ├── controls_ipad/             /*ipad端*/
+                            │   │   ├── html/    /*ipad原型*/
+                            │   │   ├── skin/    /*ipad原型*/
+                            │   │   │   ├── default/
+                            │   │   │       ├── css/
+                            │   │   │          └── css-debug.css    /*ipad端自定义样式*/
+                            │   │   │       ├── images/           /*ipad端图标库*/
+                            │   │   ├── iscroll.js          /*iscroll滚动条js*/
+                            │   │   └── seeyon.ui.ipad-debug.js   /*ipad端自定义js*/
+                            │   ├── controls_iphone/             /*iphone端*/
+                            │   │   ├── html/    /*iphone原型*/
+                            │   │   ├── skin/    /*iphone原型*/
+                            │   │   │   ├── default/
+                            │   │   │       ├── css/
+                            │   │   │          └── css-debug.css    /*iphone端自定义样式*/
+                            │   │   │       ├── images/           /*iphone端图标库*/
+                            │   │   ├── iscroll.js          /*iscroll滚动条js*/
+                            │   │   └── seeyon.ui.iphone-debug.js   /*iphone端自定义js*/
+                            │   ├── css/
+                            │   │   └── doc.css    /*控件库展示css*/
+                            │   ├── docs/           /*文档类*/
+                            │   ├── images/         /*控件库首页展示图片*/
+                            │   ├── knowledge/      /*jquery mobile 知识库*/
+                            │   ├── log/            /*日志*/
+                            │   ├── scripts/        /*控件库展示高亮js*/
+                            └─ └── index.html      /*控件库展示起始页*/
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="support" class="clearFix">
+                <h1>浏览器支持</h1>
+                <h3>功能支持</h3>
+            	<p><label style="color: #D9534F">PC端：</label>Chrome、Firefox、360、Safari等非ie浏览器；</br>
+                    <label style="color: #D9534F">移动端：</label>主要以webkit等为内核的现代浏览器为主</p>
+            </div>
+            <div id="js_space" class="clearFix">
+                <h1>js命名空间</h1>
+            	<p>javascript模块化的第一条规则：一个模块不应该为全局名字空间添加多于一条的标记.通俗的讲：除了给全局命名空间定义一个模块的命名空间，其它的你一句代码都不要写</p>
+            	<p>1.防止全局变量被覆盖</p>
+            	<p>2.减少全局变量个数</p>
+                <div class="code_area">
+                    <div class="code_box">
+                        <pre class="brush: js;">
+                            //js文件名和命名空间名保持一致
+                            //全局变量和函数保存在命名空间中
+                            //Collaboration.js
+
+                            var Collaboration;
+
+                            if(!Collaboration) Collaboration = {};//第一级域名
+
+                            Collaboration.xxx = xxx;//变量
+
+                            Collaboration.函数名1=function(){  //函数
+
+                            }
+
+                            //---------------------------------------------------------------------------------------
+
+                            //如果js文件名相同，则需要将不同的js放到不同的目录，则需要定义多级
+
+                            var com;
+
+                            if(!com) com={};//如果com不存在，则新生成一个
+
+                            else if(typeof com!="object"){//如果已存在，但不是一个对象，则抛出一个异常
+
+                               throw new Error("com already exists and is not an object");
+                            }
+
+                            if(!com.util) com.util={};//如果com.util不存在则新生成一个
+
+                            else if(typeof com.util!="object"){//如果com存在，但不是一个对象，则抛出一个异常
+
+                                throw new Error("com.util already exists and is not an object");
+                            }
+
+                            if(!com.util.Collaboration){//如果com.util.ModuleClass存在，则直接抛出异常
+
+                                throw new Error("com.util.Collaboration already exists");
+                            }
+                            com.util.Collaboration = {//在com.util.Collaboration不存在的情况下，我们才能正常使用在此命名空间下定义的代码
+
+                                函数1:function(){ 函数体;},
+
+                                函数2:function(){ 函数体;}
+
+                            };
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="develop_standard" class="clearFix">
+                <h1>前端开发规范</h1>
+                <p>符合 web 标准, 语义化 html, 结构表现行为分离, 兼容性优良. 页面性能方面, 代码要求简洁明了有序, 尽可能的减小服务器负载, 保证最快的解析速度。</p>
+                <div class="model_hint"><label>1、命名规范</label></div>
+				<p>驼峰式命名法：是指混合使用大小写字母来构成单词的名称（适用于两个不同的单词链接如：rightContent）<b>[用于js中]</b></p>
+				<p>下划线命名法：两个单词间用”_”相连，如 menu_title（适用于上下级关系，可以准确表示两个单词间的层级关系。)<b>[用于css或js中]</b></p>
+                <div class="model_hint"><label>2、文件命名规范</label></div>
+				<p>html、css、js、images 文件命名：全英文小写命名。</p>
+                <div class="model_hint"><label>3、html 书写规范</label></div>
+				<p>声明类型统一&lt;!DOCTYPE html&gt; </p>
+				<p>标签和属性一律小写，属性值用双引号包括</p>
+				<p>给区块代码加上注释, 方便后台添加功能</p>
+                <div class="model_hint"><label>4、js书写规范</label></div>
+				<p>在变量定义的上一行用双斜杠（//）注释,注释单占一行</p>
+				<p>在方法头部详细说明该方法的功能，以及所传参数的意义</p>
+				<p>js书写规范参考java规范注意换行和分号</p>
+				<div class="code_area">
+                    <div class="code_box">
+                        <pre class="brush: html;">
+                            //显示部门，默认是
+                            var displayDepartment = true;
+                            //显示组，默认是
+                            var displayTeam = true;
+                            //显示职务，默认否
+                            var displayOtype = false;
+
+                            /**
+                            * 普通选人的对话框1
+                            * 参数分别为 相对根目录路径，初始化要显示的人员，是否多选
+                            * @param path1 路径
+                            * @param initPerson1 初始化显示人员
+                            * @param mutiple1 是否多选
+                            */
+                            function selectPerson1(path1,initPerson1,mutiple1){
+                                path = path1;
+                                initPerson = initPerson1;
+                                mutiple = mutiple1;
+                                return showSimpleDialog();
+                            }
+                        </pre>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="side_nav comp" comp="type:'modelTopChange'">
+            <ul>
+                <li><a href="#iphone_model">iphone端基本模板</a></li>
+                <li><a href="#ipad_model">ipad端基本模板</a></li>
+                <li><a href="#directory">目录结构</a></li>
+                <li><a href="#support">浏览器支持</a></li>
+                <li><a href="#js_space">js命名空间</a></li>
+				 <li><a href="#develop_standard">前端开发规范</a></li>
+            </ul>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

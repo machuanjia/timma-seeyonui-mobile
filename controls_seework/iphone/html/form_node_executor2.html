@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选择节点执行人</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="form_node_executor">
+    <div data-role="content" class="overflow_hidden wrapper" id="form_node_executor_content">
+        <div class="scroller">
+            <div data-role="collapsible" class="select_node_executor border_bottom" data-iconpos="right" data-collapsed-icon="form-close"  data-expanded-icon="form-spread">
+                <h2 class="flexible_box">
+                    <span class="iphone72 approve_72"></span>
+                    <p class="adaptive_box_flex">**部<span>[审批]</span></p>
+                    <p>选择执行人</p>
+                </h2>
+                <div class="node_executor_content comp" comp="type:'list',listType:'dataShow',selectType:'checkbox'" id="list_data_content">
+                </div>
+            </div>
+            <div data-role="collapsible" class="select_node_executor border_bottom" data-iconpos="right" data-collapsed-icon="form-close"  data-expanded-icon="form-spread">
+                <h2 class="flexible_box">
+                    <span class="iphone72 approve_72"></span>
+                    <p class="adaptive_box_flex">**部<span>[审批]</span></p>
+                    <p>选择执行人</p>
+                </h2>
+                <div class="node_executor_content comp" comp="type:'list',listType:'dataShow',selectType:'checkbox'" id="list_data_content2">
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="border_top">
+        <a href="#" data-role="button" class="blue_block_btn  margin_tb_15 margin_lr_10" >确定</a>
+    </footer>
+    <script type="text/javascript">
+        $("#form_node_executor").bind("pagebeforeshow",function(){
+            pageInit("form_node_executor");
+            listData($("#list_data_content"),{
+                list_type:'selectUserDepartment',
+                letter_position:"none",
+                data:[
+                    {
+                        'letterType':null,
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张红',
+                        'job':'测试工程师',
+                        'telphone':null,
+                        'personNum':null
+                    },
+                    {
+                        'letterType':null,
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'张强',
+                        'job':"测试工程师",
+                        'telphone':null,
+                        'personNum':null
+                    }
+
+                ]
+            });
+            listData($("#list_data_content2"),{
+                list_type:'selectUserDepartment',
+                letter_position:"none",
+                data:[
+                    {
+                        'letterType':null,
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张红',
+                        'job':'测试工程师',
+                        'telphone':null,
+                        'personNum':null
+                    },
+                    {
+                        'letterType':null,
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'张强',
+                        'job':"测试工程师",
+                        'telphone':null,
+                        'personNum':null
+                    }
+
+                ]
+            });
+        })
+        $("#form_node_executor").bind("pageshow",function(){
+            $.loadedScroll("form_node_executor_content",1,'v',function(){
+                var _h = $('body').height();
+                var footer_h = $("#form_node_executor footer").outerHeight();
+                $("#form_node_executor_content").outerHeight(_h - footer_h);
+            });
+        })
+    </script>
+</section>
+</body>
+</html>

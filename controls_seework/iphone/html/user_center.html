@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>我</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="user_center">
+    <div data-role="content" class="wrapper user_center_centent comp" id="user_center_centent"
+         comp="type:'dialog',footerTop:'fixed',parentId:'user_center'">
+        <div class="scroller">
+            <ul data-role="listview" class="nav_list_box user_center_list">
+                <li class="user_base_info">
+                    <a href="#" data-transition="slidefade">
+                        <div class="nav_list_box_left">
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                        </div>
+                        <div class="nav_list_box_center">
+                            <h2 class="padding_t_8">张小一<span class="iphone40 man_40 user_sex"></span></h2>
+                            <p>销售部&nbsp;&nbsp;销售部主管</p>
+                        </div>
+                        <div class="nav_list_box_right">
+                            <span class="iphone48 alter_info_48 user_edit"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-transition="slidefade">
+                        <div class="">
+                            <span class="iphone48 my_gift_48"></span>
+                            <span>我的礼物</span>
+                            <span class="iphone24 send_24 right"></span>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" data-transition="slidefade">
+                        <div class="border_bottom padding_b_10">
+                            <span class="iphone48 user_community_48"></span>
+                            <span>用户社区</span>
+                            <span class="iphone24 send_24 right"></span>
+                        </div>
+                        <div class="padding_t_10">
+                            <span class="iphone48 user_set_48"></span>
+                            <span>设置</span>
+                            <span class="iphone24 send_24 right"></span>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="seewprk_menu">
+        <div data-role="navbar" class="seework_menu">
+            <ul>
+                <li>
+                    <a href="serve_list.html" data-icon="seework-home" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="apply_center.html" data-icon="apply-center" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="new-built" data-transition="slidefade" class="seework_menu_bar new_built_default"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="link-man" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="me" data-transition="slidefade" class="seework_menu_bar ui-btn-active"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        $("#user_center").bind("pagebeforeshow",function(){
+            pageInit("user_center");
+        })
+        $("#user_center").bind("pageshow",function(){
+            pageShowInit("user_center");
+            $.loadedScroll("user_center_centent",1,"v")
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

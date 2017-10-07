@@ -1,0 +1,139 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库-模版页</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../../controls_common/script/iscroll.js"></script>
+	<script src="../../../../controls_cmp/ipad/js/seeyon.ui.ipad-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/ipad/skin.css" rel="stylesheet" />
+
+</head>
+<body>
+<section data-role="page">
+    <div class="layout-l">
+        <div class="nav_list_banner">会议</div>
+        <div data-role="tabs" >
+            <div data-role="navbar">
+                <ul class="model_header_tabs">
+                    <li><a href="#waitHeld" class="tab-ui-btn-a ui-btn-active" data-ajax="false">待召开</a></li>
+                    <li><a href="#endHeld" class="tab-ui-btn-a" data-ajax="false">已召开</a></li>
+                </ul>
+            </div>
+            <div id="waitHeld" class="wrapper no_content1">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj,callBack:userList"></div>
+            </div>
+            <div id="endHeld" class="wrapper ele_hide">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj2,callBack:userList"></div>
+            </div>
+        </div>
+        <div class="refresh_list">
+            <span class="ico_pad_28 refresh_28"></span>
+            <p>最近更新：<label class="refresh_data_time">2013-08-20&nbsp;&nbsp;12:33</label></p>
+        </div>
+    </div>
+    <div class="layout-r defaultBG">
+
+    </div>
+</section>
+
+    <script type="text/javascript">
+        function userList(thisObj){
+            $.loadedScroll("content_bg","1","v",function(){
+                if(parseInt($("#content_bg").css("height")) == 0){
+                    var _r = $('.layout-r');
+                    var _h = $('body').height();
+                    var _header_height = _r.children("div[class='page_header']").outerHeight(true) +
+                            _r.children("div[class='content_header']").outerHeight(true);
+                    $("#content_bg").height(_h - _header_height);
+                }
+            });
+            $.loadedScroll("f2","1","h","");
+        }
+        function dataObj(){
+            var dataObj = {
+                list_type:'nav',
+                list_num: "420",
+                list_show_num: "50",
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[{
+                    'listId':'001',
+                    'leftIcon':'attend_meeting_14',
+                    'centerContent':'会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了',
+                    'centerSub':'11-11&nbsp;10:33-11:30',
+                    'rightIcon':[1,2],
+                    'rightName':'卜宏宇'
+                },
+                    {
+                        'listId':'002',
+                        'leftIcon':'unattended_meeting_14',
+                        'centerContent':'明天下午三点小会议室集合',
+                        'centerSub':'2013-11-11&nbsp;10:33-11:30',
+                        'rightIcon':[1],
+                        'rightName':'卜宏宇2'
+                    }
+                ],
+                callback:function(){
+                    loaded('waitHeld',waitHeld,waitHeld);
+                }
+            };
+            return dataObj;
+        }
+        /**
+         *  下拉刷新获取数据方法
+         *  myScroll.refresh();        // 数据加载完成后，调用界面更新方法
+         */
+        function waitHeld(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'nav',
+                    list_num: "420",
+                    list_show_num: "50",
+                    update_time: "2014-08-27&nbsp;&nbsp;12:30",
+                    data:[{
+                        'listId':'003',
+                        'leftIcon':'accessory_14',
+                        'centerContent':'明天下午三点小会议室集合3',
+                        'centerSub':'11-11&nbsp;10:33-11:30',
+                        'rightIcon':[1,2],
+                        'rightName':'卜宏宇3'
+                    },
+                        {
+                            'listId':'004',
+                            'leftIcon':' unattended_meeting_14',
+                            'centerContent':'明天下午三点小会议室集合4',
+                            'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                            'rightIcon':[1,2],
+                            'rightName':'卜宏宇4'
+                        },
+                        {
+                            'listId':'005',
+                            'leftIcon':'accessory_14',
+                            'centerContent':'明天下午三点小会议室集合5',
+                            'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                            'rightIcon':[1],
+                            'rightName':'卜宏宇4'
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        function endHeld(obj,id){
+            setTimeout(function(){
+                $.refreshScroll(id);
+            },1000)
+        }
+        $(function () {
+            pageInit();
+        })
+    </script>
+</body>
+</html>

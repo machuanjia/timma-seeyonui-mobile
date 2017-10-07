@@ -1,0 +1,25 @@
+<section class="background_white work_select_send_range" id="work_select_send_range" data-role="popup" data-dismissible="false">
+<!--<section  id="work_select_send_range" class="background_white work_select_send_range">-->
+    <div  id="work_range_content" class="overflow_hidden wrapper border_box comp" comp="type:'dialog',scrollId:'work_range_content',parentId:'work_select_send_range'">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',workSelectUserId:'send_range_select_user',defindButtonId:'ensure_select',selectBack:userSelect,callBack:userLink"
+             id="work_select_range_data">
+            <div class="department_name border_box display_none">
+                <label>开发部</label>
+                <a href="#" data-role="button" data-inline="true" class="reutrn_btn right">
+                    <span class="iphone32 return_32"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+    <footer  class="work_select_user_footer flexible_box border_top work_shade_footer">
+        <div class="adaptive_box_flex padding_lr_10 over_x_auto comp" id="send_range_select_user" comp="type:'headSelect',
+        personDepartmentId:'work_select_range_data',scrollId:'send_range_select_user',defindButtonId:'ensure_select',callBack:headChange">
+            <div class="scroller_h clearFix">
+
+            </div>
+        </div>
+        <div class="padding_10">
+            <a href="#"  class="blue_btn_inline gray_btn_inline" data-role="button" id="ensure_select">确定</a>
+        </div>
+    </footer>
+</section>

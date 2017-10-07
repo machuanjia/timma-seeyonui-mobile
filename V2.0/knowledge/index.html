@@ -1,0 +1,1930 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8"/>
+    <title>JqueryMobile知识库</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <script type="text/javascript" src="../scripts/modelShow.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <link href="../css/doc.css" rel="stylesheet" />
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../scripts/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <link type="text/css" rel="stylesheet" href="../scripts/syntaxhighlighter/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="js/knowledge.js"></script>
+    <link href="../show_cmp/icon/common-debug.css" rel="stylesheet" />
+    <script type="text/javascript">
+        function show(id){
+            var temp = id+":"+$("#"+id)[0].checked;
+            showLoader(temp,true,"b",true,"");
+            setTimeout(function(){
+                $.mobile.loading('hide');
+            },2000);
+        }
+        function showLoader(text,text_visible,theme,text_only,html_content) {
+            $.mobile.loading('show', {
+                text: text,                  //加载器中显示的文字
+                textVisible: text_visible,  //是否显示文字
+                theme: theme,                //加载器主题样式a-b
+                textonly: text_only,        //是否只显示文字
+                html: html_content           //要显示的html内容，如图片等
+            });
+        }
+    </script>
+    <style type="text/css">
+        .jqm_event_img{
+            display: inline-block;
+            width: 100%;
+            height: 500px;
+            background: url("images/jqm_page_event.png") no-repeat;
+            background-position: center center;
+            background-size: contain;
+        }
+    </style>
+</head>
+<body class="jqm_load">
+    <header class="header">
+        <div class="nav_area">
+            <ul class="clearFix">
+                <li><a href="../../index.html" data-role="none" rel="external"><strong>SeeyonMobile</strong></a></li>
+                <li><a href="../getting-started/index.html" data-role="none" rel="external">起步</a></li>
+                <li><a href="../show_cmp/iphone/html/index.html" data-role="none" rel="external">iphone端组件</a></li>
+                <li><a href="../show_cmp/iphone/html/model.html" data-role="none" rel="external">iphone端原型</a></li>
+                <li><a href="../show_cmp/ipad/html/index.html" data-role="none" rel="external">ipad端组件</a></li>
+                <li><a href="../show_cmp/ipad/html/model.html" data-role="none" rel="external">ipad端原型</a></li>
+                <li><a href="../show_cmp/icon/index.html" data-role="none" rel="external">公用图标库和class类</a></li>
+                <li class="li_active"><a href="javascript:void(0);" data-role="none" rel="external">JqueryMobile知识库</a></li>
+                <li><a href="../log/index.html" data-role="none" rel="external">日志</a></li>
+            </ul>
+        </div>
+        <div class="page_title_area">
+            <div class="page_title_box">
+                <div class="t">JqueryMobile知识库</div>
+                <div class="c">主要列举常见的JqueryMobile组件和方法</div>
+            </div>
+        </div>
+    </header>
+    <div id="content" class="clearFix">
+        <div class="main_body">
+            <h1>一、组件样式</h1>
+            <div id="button_model" class="clearFix">
+                <h3>1、按钮</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint"><label>①、创建方式</label>
+                            使用&lt;button>元素</br>
+                            使用&lt;input>元素</br>
+                            使用data-role="button" 的&lt;a>元素
+                        </p>
+                        <p class="model_hint"><label>②、data-inline="true"</label>
+                            在框架中默认情况下按钮是横向独占根据屏幕宽度横向自适应的，但是我们在应用的应用中经常需要在一行中显示多个按钮，
+                            这时候我们就需要知道一个新的叫做内联模式的属性了data-inline="true"。
+                        </p>
+                        <div>
+                            <a href="#" data-role="button">取消</a>
+                            <a href="#" data-role="button" data-inline="true">保存</a>
+                        </div>
+                        <p class="model_hint">
+                            <label>③、data-iconpos参数</label>
+                            <label>left——图标在文字的左侧</label>
+                            <label>right——图标在文字的右侧</label>
+                            <label>top——图标在文字上面</label>
+                            <label>bottom——图标在文字下面</label>
+                            <label>notext——无文字按钮</label>
+                        </p>
+                        <div>
+                            <a href="#" data-role="button" data-inline="true" data-iconpos="left" data-icon="delete" disabled="true">按钮</a>
+                            <a href="#" data-role="button" data-inline="true" data-iconpos="right" data-icon="arrow-d">按钮</a>
+                            <a href="#" data-role="button" data-inline="true" data-iconpos="top" data-icon="arrow-u">按钮</a>
+                            <a href="#" data-role="button" data-inline="true" data-iconpos="bottom" data-icon="arrow-r">按钮</a>
+                            <a href="#" data-role="button" data-inline="true" data-iconpos="notext" data-icon="delete">按钮</a>
+                        </div>
+                        <div data-role="collapsible">
+                            <h4>jqm1.4自带图标集合</h4>
+                            <div>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-action">action</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-alert">alert</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d">arrow-d</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d-l">arrow-d-l</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-d-r">arrow-d-r</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-l">arrow-l</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-r">arrow-r</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u">arrow-u</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u-l">arrow-u-l</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-arrow-u-r">arrow-u-r</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-audio">audio</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-back">back</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bars">bars</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-bullets">bullets</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-calendar">calendar</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-camera">camera</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-d">carat-d</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-l">carat-l</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-r">carat-r</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-carat-u">carat-u</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-check">check</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-clock">clock</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-cloud">cloud</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-comment">comment</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-delete">delete</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-edit">edit</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-eye">eye</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-forbidden">forbidden</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-forward">forward</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-gear">gear</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-grid">grid</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-heart">heart</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-home">home</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-info">info</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-location">location</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-lock">lock</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-mail">mail</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-minus">minus</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-navigation">navigation</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-phone">phone</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-plus">plus</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-power">power</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-recycle">recycle</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-refresh">refresh</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-search">search</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-shop">shop</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-star">star</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-tag">tag</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-user">user</button>
+                                <button class="ui-btn ui-shadow ui-corner-all ui-btn-icon-left ui-icon-video">video</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                            &lt;a href="#" data-role="button">取消&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true">保存&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="left" data-icon="delete">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="right" data-icon="arrow-d">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="top" data-icon="arrow-u">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="bottom" data-icon="arrow-r">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="notext" data-icon="delete">按钮&lt;/a>
+                       </pre>
+                    </div>
+                </div>
+                <div class="warning_area warning0">
+                    <div class="t">按钮禁用/启用</div>
+                    <p>a标签类按钮禁用需加上class='ui-disabled'</p>
+                    <p>botton标签类按钮禁用需加上disabled='disabled'</p>
+                </div>
+            </div>
+            <div id="form_model" class="clearFix">
+                <h3>2、表单</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>①、input类</label>
+                            <label>data-clear-btn="true"——定义单击右侧的按钮将其中输入的内容清空</label>
+                        </p>
+                        <div class="ui-bar">
+                            <label for="username">Text input:</label>
+                            <input type="text" name="username" id="username" value="" data-clear-btn="true"/>
+                            <label for="textarea">Textarea:</label>
+                            <textarea cols="40" rows="8" name="textarea" id="textarea"></textarea>
+                            <label for="date">Date:</label>
+                            <input type="date" name="date" id="date" value="">
+                            <label for="search">Search Input:</label>
+                            <input type="search" name="password" id="search" value="" placeholder="Placeholder text..."/>
+                            <label for="tel">Tel:</label>
+                            <input type="tel" name="tel" id="tel" value="" placeholder="please input telephone number"/>
+                            <label for="password">Password:</label>
+                            <input type="password" name="password" id="password" value="" autocomplete="off"/>
+                            <label for="file">File:</label>
+                            <input type="file" name="file" id="file" value=""/>
+                            <label for="textinput-hide" class="ui-hidden-accessible">Text Input:</label>
+                            <input type="text" name="textinput-hide" id="textinput-hide" placeholder="ui-hidden-accessible" value=""/>
+                            <label for="textinput-disabled">text disabled</label>
+                            <input disabled="disabled" type="text" name="textinput-disabled" id="textinput-disabled" placeholder="text disabled" value=""/>
+                        </div>
+                        <p class="model_hint">
+                            <label>①、滑块类</label>
+                            <label>data-highlight="true"——滑动条中划过的部分高亮</label>
+                            <label>min、max、setp——支持最小值、最大值、单位长度</label>
+                            <label>data-role="rangeslider"——滑块组</label>
+
+                        </p>
+                        <div class="ui-bar">
+                            <div>
+                                <label for="slider">滑块:</label>
+                                <input type="range" name="slider" id="slider" value="20" min="0" max="100" />
+                            </div>
+                            <div data-role="rangeslider">
+                                <label for="range-1a">滑块左边:</label>
+                                <input type="range" name="range-1a" id="range-1a" min="0" max="100" value="0">
+                                <label for="range-1b">滑块右边:</label>
+                                <input type="range" name="range-1b" id="range-1b" min="0" max="100" value="80">
+                            </div>
+                        </div>
+                        <pre class="brush: html;">
+                            &lt;input type="range" name="slider" id="slider" value="20" min="0" max="100" />
+                        </pre>
+                        <p class="model_hint">
+                            <label>③、翻转切换开关(select类和input[type='checkbox']类)</label>
+                            <label>data-role="fieldcontain"——区域包裹容器，用增加边距和分割线的方式将容器内的元素和容器外的元素明显分隔</label>
+                            <label>data-role="slider"——将样式设置为一个翻转切换开关</label>
+                        </p>
+                        <div class="ui-bar">
+                            <div>
+                                <label for="flip-checkbox2" style="display: inline">input开关:</label>
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox2"
+                                       data-on-text="开" data-off-text="关"  />
+                            </div>
+                            <div>
+                                <label for="slider2">select开关</label>
+                                <select name="slider" id="slider2" data-role="slider">
+                                    <option value="off">关闭</option>
+                                    <option value="on">开启</option>
+                                </select>
+                            </div>
+                        </div>
+                        <pre class="brush: html;">
+                            &lt;input type="checkbox" data-role="flipswitch" name="flip-checkbox" id="flip-checkbox2"
+                                   data-on-text="开" data-off-text="关"  />
+                            &lt;select name="slider" id="slider2" data-role="slider">
+                                &lt;option value="off">关闭&lt;/option>
+                                &lt;option value="on">开启&lt;/option>
+                            &lt;/select>
+                        </pre>
+                        <p class="model_hint">
+                            <label>④、单选/复选</label>
+                            <label> data-role="controlgroup"——将几个元素设置成一组，一般是几个相同的元素类型</label>
+                            <label>data-type="horizontal|vertical"——规定水平还是垂直组合，默认是垂直。</label>
+                        </p>
+                        <div class="ui-bar">
+                            <fieldset data-role="controlgroup">
+                                <legend>单选:</legend>
+                                <label for="radio-1">选项一</label>
+                                <input type="radio" name="radio-choice-w-6" id="radio-1" value="on" onclick="show(this.id)" checked="checked">
+                                <label for="radio-2">选项二</label>
+                                <input type="radio" name="radio-choice-w-6" id="radio-2" value="off" onclick="show(this.id)">
+                                <label for="radio-3">选项三</label>
+                                <input type="radio" name="radio-choice-w-6" id="radio-3" value="other" onclick="show(this.id)">
+                            </fieldset>
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>单选(横向):</legend>
+                                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+                                <label for="radio-choice-h-2a">选项一</label>
+                                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+                                <label for="radio-choice-h-2b">选项二</label>
+                                <input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+                                <label for="radio-choice-h-2c">选项三</label>
+                            </fieldset>
+                            <fieldset data-role="controlgroup">
+                                <legend>复选:</legend>
+                                <input type="checkbox" name="checkbox-v-2a" id="checkbox-a" value="4" onclick="show(this.id)">
+                                <label for="checkbox-a">四川帅哥</label>
+                                <input type="checkbox" name="checkbox-v-2b" id="checkbox-b" value="5" onclick="show(this.id)">
+                                <label for="checkbox-b">重庆帅哥</label>
+                                <input type="checkbox" name="checkbox-v-2c" id="checkbox-c" value="6" onclick="show(this.id)">
+                                <label for="checkbox-c">上海帅哥</label>
+                            </fieldset>
+                            <fieldset data-role="controlgroup" data-type="horizontal">
+                                <legend>复选(横向):</legend>
+                                <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a" value="1 ">
+                                <label for="checkbox-v-2a">四川美女</label>
+                                <input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b" value="2">
+                                <label for="checkbox-v-2b">重庆美女</label>
+                                <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c" value="3">
+                                <label for="checkbox-v-2c">上海美女</label>
+                            </fieldset>
+                        </div>
+                        <pre class="brush: html;">
+                            &lt;fieldset data-role="controlgroup" data-type="horizontal">
+                                &lt;legend>单选(横向):&lt;/legend>
+                                &lt;input type="radio" name="radio-choice-h-2" id="radio-choice-h-2a" value="on" checked="checked">
+                                &lt;label for="radio-choice-h-2a">选项一&lt;/label>
+                                &lt;input type="radio" name="radio-choice-h-2" id="radio-choice-h-2b" value="off">
+                                &lt;label for="radio-choice-h-2b">选项二&lt;/label>
+                                &lt;input type="radio" name="radio-choice-h-2" id="radio-choice-h-2c" value="other">
+                                &lt;label for="radio-choice-h-2c">选项三&lt;/label>
+                            &lt;/fieldset>
+                            &lt;fieldset data-role="controlgroup">
+                                &lt;legend>复选:&lt;/legend>
+                                &lt;input type="checkbox" name="checkbox-v-2a" id="checkbox-a" value="4" onclick="show(this.id)">
+                                &lt;label for="checkbox-a">四川帅哥&lt;/label>
+                                &lt;input type="checkbox" name="checkbox-v-2b" id="checkbox-b" value="5" onclick="show(this.id)">
+                                &lt;label for="checkbox-b">重庆帅哥&lt;/label>
+                                &lt;input type="checkbox" name="checkbox-v-2c" id="checkbox-c" value="6" onclick="show(this.id)">
+                                &lt;label for="checkbox-c">上海帅哥&lt;/label>
+                            &lt;/fieldset>
+                        </pre>
+                        <p class="model_hint">
+                            <label>⑤、select类</label>
+                            <label>data-native-menu="false"——select选择框不以原生的形式出现，而已渲染的形式出现</label>
+                            <label>multiple="multiple"——用户需要选择下拉式多选，那么在select上加上multiple="multiple"自动会渲染出多选的效果</label>
+                        </p>
+                        <div class="ui-bar">
+                            <label for="select-choice-1" class="select">原生select:</label>
+                            <select name="select-choice-1" id="select-choice-1">
+                                <option value="1">川菜</option>
+                                <option value="2">粤菜</option>
+                                <option value="3">浙菜</option>
+                                <option value="4">广菜</option>
+                            </select>
+                            <label for="select-choice-3" class="select">jqm渲染select菜单</label>
+                            <select name="select-choice-1" id="select-choice-3" data-native-menu="false">
+                                <option>请你选择菜单</option>
+                                <option value="1">川菜</option>
+                                <option value="2">粤菜</option>
+                                <option value="3">浙菜</option>
+                                <option value="4">广菜</option>
+                            </select>
+                            <label for="select-native-4">分组菜单:</label>
+                            <select name="select-native-4" id="select-native-4" data-native-menu="false">
+                                <option>请选择</option>
+                                <optgroup label="川菜">
+                                    <option value="1">川菜——1</option>
+                                    <option value="2">川菜——2</option>
+                                    <option value="3">川菜——3</option>
+                                    <option value="4">川菜——4</option>
+                                </optgroup>
+                                <optgroup label="浙菜">
+                                    <option value="1">浙菜——1</option>
+                                    <option value="2">浙菜——2</option>
+                                    <option value="3">浙菜——3</option>
+                                </optgroup>
+                            </select>
+                        </div>
+                        <pre class="brush: html;">
+                            &lt;select name="select-native-4" id="select-native-4" data-native-menu="false">
+                                &lt;option>请选择&lt;/option>
+                                &lt;optgroup label="川菜">
+                                    &lt;option value="1">川菜——1&lt;/option>
+                                    &lt;option value="2">川菜——2&lt;/option>
+                                    &lt;option value="3">川菜——3&lt;/option>
+                                    &lt;option value="4">川菜——4&lt;/option>
+                                &lt;/optgroup>
+                                &lt;optgroup label="浙菜">
+                                    &lt;option value="1">浙菜——1&lt;/option>
+                                    &lt;option value="2">浙菜——2&lt;/option>
+                                    &lt;option value="3">浙菜——3&lt;/option>
+                                &lt;/optgroup>
+                            &lt;/select>
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="accordion_model" class="clearFix">
+                <h3>3、可折叠内容块/手风琴</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>data-role="collapsible"——创建一个可折叠内容块</label>
+                            <label>data-collapsed="false"——展开折叠</label>
+                            <label>data-inset="false"——取消圆角</label>
+                            <label>data-collapsed-icon——自定义折叠图标</label>
+                            <label>data-expanded-icon——自定义展开图标</label>
+                            <label>data-iconpos="right"——图标定位</label>
+                            <label>data-content-theme="a|b|false"——内容主题样式a或b或是没有主题样式</label>
+                            <label>data-role="collapsible-set"——父级上设置data-role="collapsible-set"，子级上课添加多个折叠区域块，视觉上形成手风琴</label>
+                        </p>
+                        <div>
+                            <div data-role="collapsible">
+                                <h4>手风琴——头部</h4>
+                                <p>手风琴——内容区域</p>
+                            </div>
+                            <div data-role="collapsible" data-collapsed="false" id="test_collapsible">
+                                <h4>手风琴——测试展开折叠方法</h4>
+                                <p>展开</p>
+                            </div>
+                            <div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                    <h3>手风琴——1</h3>
+                                    <p>这是内容区域这是内容区域这是内容区域</p>
+                                </div>
+                                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                    <h3>手风琴——2</h3>
+                                    <p>这是内容区域这是内容区域这是内容区域</p>
+                                </div>
+                                <div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-collapsed="false">
+                                    <h3>手风琴——3</h3>
+                                    <p>这是内容区域这是内容区域这是内容区域</p>
+                                </div>
+                            </div>
+                            <div data-role="popup" id="popup_collapsible" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                                <div data-role="header" data-theme="a">
+                                    <h1 style="margin: 0 20%">手风琴提示</h1>
+                                </div>
+                                <div role="main" class="ui-content">
+                                    <h3 class="ui-title">亲，手风琴已展开</h3>
+                                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">取消</a>
+                                    <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">确认</a>
+                                </div>
+                            </div>
+                            <a href="http://api.jquerymobile.com/collapsible/" class="mode_change_address" target="_blank">
+                                JqueryMobile——collapsible手风琴API
+                            </a>
+                            <script type="text/javascript">
+                                //手风琴折叠
+                                $("#test_collapsible").collapsible({
+                                    collapse: function(event,ui) {
+                                        $("#popup_collapsible").popup("open",{
+                                            transition:"pop",
+                                            positionTo:"window"
+                                        });
+                                        $("#popup_collapsible").find("h3").text("手风琴已折叠");
+                                    }
+                                });
+                                //手风琴展开
+                                $("#test_collapsible").collapsible({
+                                    expand: function(event,ui) {
+                                        $("#popup_collapsible").popup("open",{
+                                            transition:"pop",
+                                            positionTo:"window"
+                                        });
+                                        $("#popup_collapsible").find("h3").text("手风琴已展开");
+                                    }
+                                });
+                            </script>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                           &lt;div data-role="collapsible" data-collapsed="false" id="test_collapsible">
+                               &lt;h4>手风琴——头部&lt;/h4>
+                               &lt;p>展开&lt;/p>
+                           &lt;/div>
+                            &lt;div data-role="collapsible-set" data-theme="a" data-content-theme="a">
+                                &lt;div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                    &lt;h3>手风琴——1&lt;/h3>
+                                    &lt;p>这是内容区域这是内容区域这是内容区域&lt;/p>
+                                &lt;/div>
+                                &lt;div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u">
+                                    &lt;h3>手风琴——2&lt;/h3>
+                                    &lt;p>这是内容区域这是内容区域这是内容区域&lt;/p>
+                                &lt;/div>
+                                &lt;div data-role="collapsible" data-collapsed-icon="carat-d" data-expanded-icon="carat-u" data-collapsed="false">
+                                    &lt;h3>手风琴——3&lt;/h3>
+                                    &lt;p>这是内容区域这是内容区域这是内容区域&lt;/p>
+                                &lt;/div>
+                            &lt;/div>
+                       </pre>
+                        <pre class="brush: js;">
+                            //手风琴折叠
+                             $("#test_collapsible").collapsible({
+                                collapse: function(event,ui) {
+                                     $("#popup_collapsible").popup("open",{
+                                         transition:"pop",
+                                          positionTo:"window"
+                                     });
+                                     $("#popup_collapsible").find("h3").text("手风琴已折叠");
+                                }
+                            });
+                            //手风琴展开
+                            $("#test_collapsible").collapsible({
+                                expand: function(event,ui) {
+                                    $("#popup_collapsible").popup("open",{
+                                        transition:"pop",
+                                        positionTo:"window"
+                                    });
+                                    $("#popup_collapsible").find("h3").text("手风琴已展开");
+                                }
+                            });
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="list_model" class="clearFix">
+                <h3>4、list列表</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label><1>、list基本列表——属性说明</label>
+                            <label>data-role="listview"——将ul/ol设置为列表视图</label>
+                            <label>data-filter="true"——ul/ol上面设置属性data-filter="true"即可实现动态的搜索过滤的条件，即过滤列表</label>
+                            <label>data-filter-placeholder=""——提示性的过滤条件</label>
+                            <label>data-filter-theme——过滤主题</label>
+                            <label>data-filter-reveal="true"——隐藏过滤下方的条件</label>
+                        </p>
+                        <div>
+                            <label class="model_hint_title">①、只读列表</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li>Acura</li>
+                                <li>Audi</li>
+                                <li>BMW</li>
+                                <li>Cadillac</li>
+                                <li>Ferrari</li>
+                            </ul>
+                            <label class="model_hint_title">②、链接列表</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li><a href="#">Acura</a></li>
+                                <li><a href="#">Audi</a></li>
+                                <li><a href="#">BMW</a></li>
+                                <li><a href="#">Cadillac</a></li>
+                                <li><a href="#">Ferrari</a></li>
+                            </ul>
+                            <label class="model_hint_title">③、搜索列表</label>
+                            <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..." data-filter-theme="a" data-inset="true">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Banana</a></li>
+                                <li><a href="#">Cherry</a></li>
+                                <li><a href="#">Cranberry</a></li>
+                            </ul>
+                            <pre class="brush: html;">
+                               &lt;ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..."
+                                    data-filter-theme="a" data-inset="true">
+                                   &lt;li>&lt;a href="#">Apple&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Banana&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Cherry&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Cranberry&lt;/a>&lt;/li>
+                               &lt;/ul>
+                            </pre>
+                            <label class="model_hint_title">④、搜索列表-隐藏过滤条件</label>
+                            <ul data-role="listview" data-filter="true" data-filter-placeholder="Search fruits..."
+                                data-filter-theme="a" data-inset="true" data-filter-reveal="true">
+                                <li><a href="#">Apple</a></li>
+                                <li><a href="#">Banana</a></li>
+                                <li><a href="#">Cherry</a></li>
+                                <li><a href="#">Cranberry</a></li>
+                            </ul>
+                            <label class="model_hint_title">⑤、icon图标</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li data-icon="alert"><a href="#">data-icon="alert"</a></li>
+                                <li data-icon="delete"><a href="#">data-icon="delete"</a></li>
+                                <li data-icon="gear"><a href="#">data-icon="gear"</a></li>
+                                <li data-icon="info"><a href="#">data-icon="info"</a></li>
+                                <li data-icon="eye"><a href="#">data-icon="eye"</a></li>
+                            </ul>
+                        </div>
+                        <p class="model_hint">
+                            <label><2>list拓展列表——属性说明</label>
+                            <label>data-role="list-divider"——分割列表项，给任意列表项li添加data-role="list-divider"属性即可。</label>
+                            <label>data-divider-theme="a"——分割列表项主题</label>
+                            <label>data-autodividers="true"=""——通过对列表项文本的首字母进行大写来创建分隔符</label>
+                            <label>data-split-icon——指定用了一个样式为删除按钮的图作为分隔，可以看到，每一行都被划分为两个部分</label>
+                            <label>class="ui-li-count"——给span元素加上该类可以实现统计个数，即计数器</label>
+                            <label>class="ui-li-aside"——如需要增加补充信息，如日期，可以在p标签中添加属性为ui-li-aside</label>
+                        </p>
+                        <div>
+                            <label class="model_hint_title">①、列表项分组,在li中添加data-role="list-divider"</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li data-role="list-divider" data-divider-theme="a">计算机</li>
+                                <li><a href="#">C语言</a></li>
+                                <li><a href="#">Java语言</a></li>
+                                <li><a href="#">C++语言</a></li>
+                                <li data-role="list-divider" data-divider-theme="a">社会科学</li>
+                                <li><a href="#">社会信息</a></li>
+                                <li><a href="#">社会心里</a></li>
+                                <li><a href="#">人力资源</a></li>
+                            </ul>
+                            <label class="model_hint_title">②、列表项自动分组，在ul/ol添加data-autodividers="true"，通过对列表项文本的首字母进行大写来创建分隔符</label>
+                            <ul data-role="listview" data-autodividers="true" data-filter="true" data-inset="true">
+                                <li><a href="#">Adam Kinkaid</a></li>
+                                <li><a href="#">Alex Wickerham</a></li>
+                                <li><a href="#">Bob Cabot</a></li>
+                                <li><a href="#">Caleb Booth</a></li>
+                                <li><a href="#">Culver James</a></li>
+                            </ul>
+                            <label class="model_hint_title">③、有图片的列表视图</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2011.jpg" />
+                                        <h3>HTML 5实战</h3>
+                                        <p>一本全面介绍HTML 5新增特征与API的原创图书。</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2010.jpg" />
+                                        <h3>jQuery 权威指南</h3>
+                                        <p>通过一个个精选的实例详细完整地介绍jQuery的方方面面。</p>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2008.jpg" />
+                                        <h3>ASP.NET</h3>
+                                        <p>从入门到精通</p>
+                                    </a>
+                                </li>
+                            </ul>
+                            <label class="model_hint_title">④、分割按钮列表——说明：图片的大小默认缩放为80×80像素，目前jqm的列表中的分割只支持两部分，即在li中只允许两个a标签，如果多于两个，则会将最后一个a标签作为分割线右侧部分</label>
+                            <ul data-role="listview" data-split-icon="gear" data-split-theme="a" data-inset="true">
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2011.jpg" />
+                                        <h3>HTML 5实战</h3>
+                                        <p>一本全面介绍HTML 5新增特征与API的原创图书。</p>
+                                    </a>
+                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2010.jpg" />
+                                        <h3>jQuery 权威指南</h3>
+                                        <p>通过一个个精选的实例详细完整地介绍jQuery的方方面面。</p>
+                                    </a>
+                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <img src="images/test_2008.jpg" />
+                                        <h3>ASP.NET</h3>
+                                        <p>从入门到精通</p>
+                                    </a>
+                                    <a href="#purchase" data-rel="popup" data-position-to="window" data-transition="pop">Purchase album</a>
+                                </li>
+                            </ul>
+                            <div data-role="popup" id="purchase" data-theme="a" data-overlay-theme="b" class="ui-content">
+                                <h3>亲，小店询问</h3>
+                                <p>亲，您确定购买么？</p>
+                                <a href="#" data-rel="back" data-role="button" data-inline="true" data-mini="true">确定</a>
+                                <a href="#" data-rel="back" data-role="button" data-inline="true" data-mini="true">取消</a>
+                            </div>
+                            <label class="model_hint_title">⑤、icon 16×16 class=”ui-li-icon”——img元素的大小将会以16×16像素的图标显示</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li><a href="#"><img src="images/test_2011.jpg" alt="France" class="ui-li-icon ui-corner-none customize-ul-li-icon"/>France</a></li>
+                                <li><a href="#"><img src="images/de.png" alt="Germany" class="ui-li-icon"/>Germany</a></li>
+                                <li><a href="#"><img src="images/gb.png" alt="Great Britain" class="ui-li-icon"/>Great Britain</a></li>
+                                <li><a href="#"><img src="images/fi.png" alt="Finland" class="ui-li-icon"/>Finland</a></li>
+                                <li data-icon="false"><a href="#"><img src="images/us.png" alt="United States" class="ui-li-icon ui-corner-none"/>United States</a></li>
+                            </ul>
+                            <label class="model_hint_title">⑥、内容格式化与计数器</label>
+                            <ul data-role="listview" data-inset="true">
+                                <li data-role="list-divider">2010年、2011年作品集<span class="ui-li-count">2</span></li>
+                                <li>
+                                    <a href="#">
+                                        <h3>2011年作品</h3>
+                                        <p><strong>HTML5实战</strong></p>
+                                        <p>一本全面介绍HTML 5新增特征与API的原创图书。</p>
+                                    </a>
+                                    <p class="ui-li-aside">
+                                        <strong>2011.01</strong>出版
+                                    </p>
+                                </li>
+                                <li>
+                                    <a href="#">
+                                        <h3>2010年作品</h3>
+                                        <p><strong>JQuery权威指南</strong></p>
+                                        <p>通过一个个精选的实例详细完整地介绍jQuery的方方面面</p>
+                                    </a>
+                                    <p class="ui-li-aside">
+                                        <strong>2010.01</strong>出版
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="popup_model" class="clearFix">
+                <h3>5、popup组件</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>popup属性说明</label>
+                            <label>data-rel="popup"——用于打开的弹出框</label>
+                            <label>data-position-to="origin | jQuery selector | window"——规定弹出框的位置。 Origin - 默认。弹出框位于打开它的链接上。 jQuery selector - 弹出框位于指定元素上。 Window - 弹出框位于窗口屏幕中央。</label>
+                            <label>data-corners	="true | false"——规定弹出框是否有圆角</label>
+                            <label>data-overlay-theme="letter (a-z)"——规定弹出框的叠加（背景）色。默认是透明背景（none）</label>
+                            <label>data-shadow="true | false"——规定弹出框是否有阴影</label>
+                            <label>data-tolerance="30, 15, 30, 15"——规定距离窗口边缘 (top, right, bottom, left) 的距离。[该属性未得到验证]</label>
+                            <label>data-dismissible="false"——表示点击对话框以外的地方会阻止关闭该对话框，你必须重新建立一个data-rel="back"的按钮才行</label>
+                            <label>data-arrow="true"——表示在某个区域中点击触发popup会显示在该位置</label>
+                        </p>
+                        <div>
+                            <label class="model_hint_title">①、弹出层属性——data-tolerance</label>
+                            <div>
+                                <a href="#popupBasic" data-rel="popup" class="ui-btn ui-corner-all ui-shadow ui-btn-inline"  data-transition="pop">测试弹出层属性-data-tolerance</a>
+                                <div data-role="popup" id="popupBasic" data-tolerance="150 100 20 30">
+                                    <p>测试弹出层属性——data-tolerance</p>
+                                </div>
+                            </div>
+                            <label class="model_hint_title">②、照片墙</label>
+                            <div>
+                                <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade">
+                                    <img class="popphoto" src="images/1.jpg" alt="" style="width:30%">
+                                </a>
+                                <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+                                    <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right">Close</a>
+                                    <img  src="images/1.jpg" style="max-height:512px;" alt="">
+                                </div>
+                            </div>
+                            <label class="model_hint_title">③、登录示例</label>
+                            <div>
+                                <a href="#popupLogin" data-rel="popup" data-position-to="window" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-check ui-btn-icon-left ui-btn-a" data-transition="pop">登录</a>
+                                <div data-role="popup" id="popupLogin" data-theme="a" class="ui-corner-all">
+                                    <form>
+                                        <div style="padding:10px 20px;">
+                                            <h3>请输入登录信息</h3>
+                                            <label for="un" class="ui-hidden-accessible">用户名:</label>
+                                            <input type="text" name="user" id="un" value="" placeholder="用户名" data-theme="a">
+                                            <label for="pw" class="ui-hidden-accessible">密码:</label>
+                                            <input type="password" name="pass" id="pw" value="" placeholder="密码" data-theme="a">
+                                            <button type="submit" class="ui-btn ui-corner-all ui-shadow ui-btn-b ui-btn-icon-left ui-icon-check">登&nbsp;&nbsp;录</button>
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            <label class="model_hint_title">④、对话框</label>
+                            <div>
+                                <a href="#popupDialog" data-rel="popup" data-position-to="window" data-transition="pop"
+                                   class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-icon-delete ui-btn-icon-left ui-btn-b">提示删除对话框</a>
+                                <div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="a" data-dismissible="false" style="max-width:400px;">
+                                    <div data-role="header" data-theme="a">
+                                        <h1>删除提示</h1>
+                                    </div>
+                                    <div role="main" class="ui-content">
+                                        <h3 class="ui-title">亲，你确认删除你创建的内容?</h3>
+                                        <p>该内容被删除后将无法恢复，请亲慎用</p>
+                                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back">取消</a>
+                                        <a href="#" class="ui-btn ui-corner-all ui-shadow ui-btn-inline ui-btn-b" data-rel="back" data-transition="flow">确认</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <label class="model_hint_title">⑤、arrow-扩展</label>
+                            <div>
+                                <style type="text/css">
+                                    .clickable-area {
+                                        display: block;
+                                        width: 100%;
+                                        height: 300px;
+                                        background-color: #e2f3ff;
+                                    }
+                                    .clickable-area:focus {
+                                        outline: 0;
+                                    }
+                                </style>
+                                <div data-role="popup" id="popupArrow" data-arrow="true">
+                                    <p>本段文字出现在点击的区域内部</p>
+                                    <p>本段文字出现在点击的区域内部</p>
+                                </div>
+                                <a href="#" id="open-popupArrow" class="clickable-area"></a>
+                                <script type="text/javascript">
+                                    $.mobile.document.on( "click", "#open-popupArrow", function( evt ) {
+                                        $("#popupArrow" ).popup( "open", { x: evt.pageX, y: evt.pageY } );
+                                        evt.preventDefault();
+                                    });
+                                </script>
+                            </div>
+                        </div>
+                        <a href="http://api.jquerymobile.com/popup/" class="mode_change_address" target="_blank">
+                            JqueryMobile——Popup弹出层API
+                        </a>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: js">
+                            /*popup组件基本方法*/
+                             //popup——打开
+                             $("#f0").bind("tap",function(){
+                                $("#popup_content").popup("open",{
+                                    transition:"pop",
+                                    positionTo:"window"
+                                })
+                              })
+                             //popup——关闭
+                             $("#f0").bind("tap",function(){
+                                $("#popup_content").popup("close")
+                              })
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="panel_model" class="clearFix">
+                <h3>6、panel面板</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>panel面板属性讲解</label>
+                            <label>data-role="panel"——表示弹出panel效果，需要有唯一的ID标识符</label>
+                            <label>data-position="left"——默认值，意味着它将在屏幕的左边缘出现。</label>
+                            <label>data-position="right"——它出现的右边缘</label>
+                            <label>data-display=“reveal”——默认值，将页面像幻灯片一样从屏幕划出，将面板显示出来</label>
+                            <label>data-display="overlay"——面板出现在页面内容顶部上层</label>
+                            <label>data-display="push"——同时“推动”的面板和页面</label>
+                            <label>data-rel="close"——关闭当前面板</label>
+                        </p>
+                        <div>
+                            <a href="panel.html"  data-role="button" data-inline="true" target="_blank">测试地址</a>
+                        </div>
+                        <a href="http://api.jquerymobile.com/panel/" class="mode_change_address" target="_blank">
+                            JqueryMobile——Panel面板API
+                        </a>
+                    </div>
+
+                </div>
+                <div class="warning_area warning0">
+                    <div class="code_box">
+                       <pre class="brush: js">
+                           /*panel组件基本方法*/
+                            //panel——打开
+                             $("#meeting_summary").unbind().bind("tap",function(){
+                                $("#popup_content").panel("open",{
+                                    position:"right",
+                                    display:"overlay",
+                                    theme: "b"
+                                })
+                              })
+                             //panel——关闭
+                             $("#meeting_summary").unbind().bind("tap",function(){
+                                $("#popup_content").panel("close");
+                              })
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="tabs_model" class="clearFix">
+                <h3>7、选项卡</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>①、data-role="navbar"——工具条选项卡</label>
+                        </p>
+                        <div>
+                            <div data-role="navbar">
+                                <ul>
+                                    <li><a href="#" class="ui-btn-active">One</a></li>
+                                    <li><a href="#">Two</a></li>
+                                    <li><a href="#">Three</a></li>
+                                    <li><a href="#">Four</a></li>
+                                    <li><a href="#">Five</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <p class="model_hint">
+                            <label>②、data-role="tabs"——tabs选项卡</label>
+                        </p>
+                        <div>
+                            <div data-role="tabs">
+                                <div data-role="navbar">
+                                    <ul>
+                                        <li ><a href="#one" class="ui-btn-active">one</a></li>
+                                        <li><a href="#two">two</a></li>
+                                        <li><a href="#three">three</a></li>
+                                    </ul>
+                                </div>
+                                <div id="one" class="ui-body-d ui-content" >
+                                    <h3>First tab contents</h3>
+                                </div>
+                                <div id="two" class="ui-body-d ui-content">
+                                    <h3>Second tab contents</h3>
+                                </div>
+                                <div id="three" class="ui-body-d ui-content">
+                                    <h3>Third tab contents</h3>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                           &lt;div data-role="navbar">
+                               &lt;ul>
+                                   &lt;li>&lt;a href="#" class="ui-btn-active">One&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Two&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Three&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Four&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="#">Five&lt;/a>&lt;/li>
+                               &lt;/ul>
+                           &lt;/div>
+
+                           &lt;div data-role="tabs">
+                               &lt;div data-role="navbar">
+                                   &lt;ul>
+                                       &lt;li >&lt;a href="#one" class="ui-btn-active">one&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="#two">two&lt;/a>&lt;/li>
+                                       &lt;li>&lt;a href="#three">three&lt;/a>&lt;/li>
+                                   &lt;/ul>
+                               &lt;/div>
+                               &lt;div id="one" class="ui-body-d ui-content" >
+                                   &lt;h3>First tab contents&lt;/h3>
+                               &lt;/div>
+                               &lt;div id="two" class="ui-body-d ui-content">
+                                   &lt;h3>Second tab contents&lt;/h3>
+                               &lt;/div>
+                               &lt;div id="three" class="ui-body-d ui-content">
+                                   &lt;h3>Third tab contents&lt;/h3>
+                               &lt;/div>
+                           &lt;/div>
+                       </pre>
+                    </div>
+                </div>
+                <div class="warning_area warning0">
+                    <div class="t">①、data-role="navbar"选项卡说明</div>
+                    <p>a标签类中的href可以对应容器的id或是html文件名，并可加上过度效果，如果不想采用ajax跳转效果可以设置data-ajax="false"属性</p>
+                    <div class="t">②、data-role="tabs"选项卡说明</div>
+                    <p>a标签类中的href可以对容器局部的id</p>
+                    <p>目前在多页面过度测试中存在自动刷新等问题，建议在多页面中自己配置该组件，单页面中不存在问题</p>
+                </div>
+            </div>
+            <div id="search_model" class="clearFix">
+                <h3>8、搜索</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>data-type="search"/type="search"——input定义搜索输入</label>
+                            <label>data-input="#id"——与搜索inputid相关联</label>
+                            <label>data-filtertext="sometext"——去掉搜索绑定</label>
+                            <label>data-filter-reveal="true"——是否隐藏过滤条件</label>
+                        </p>
+                        <div>
+                            <input type="search" id="search-input-2" placeholder="搜索按钮">
+                            <div data-role="controlgroup" data-filter="true" data-input="#search-input-2">
+                                <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 1</a>
+                                <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 2</a>
+                                <a href="#" class="ui-btn ui-shadow ui-corner-all" data-filtertext="sometext">data-filtertext="sometext"——Button 3</a>
+                                <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 4</a>
+                                <a href="#" class="ui-btn ui-shadow ui-corner-all">Button 5</a>
+                            </div>
+                            <form>
+                                <input data-type="search" id="search-input" placeholder="搜索list列表...">
+                            </form>
+                            <ul data-role="listview" data-filter="true" data-inset="true" data-input="#search-input">
+                                <li><a href="#" class="ui-btn ui-shadow ui-corner-all">Button 1</a></li>
+                                <li>内容2</li>
+                                <li>内容3</li>
+                                <li>内容4</li>
+                                <li>内容5</li>
+                            </ul>
+                            <form>
+                                <input data-type="search" id="search-input2" placeholder="搜索list列表...">
+                            </form>
+                            <ul data-role="listview" data-filter="true" data-inset="true" data-input="#search-input2" data-filter-reveal="true">
+                                <li>内容1</li>
+                                <li>内容2</li>
+                                <li>内容3</li>
+                                <li>内容4</li>
+                                <li>内容5</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                            &lt;input type="search" id="search-input-2" placeholder="搜索按钮">
+                            &lt;div data-role="controlgroup" data-filter="true" data-input="#search-input-2">
+                                &lt;a href="#" class="ui-btn ui-shadow ui-corner-all">Button 1&lt;/a>
+                                &lt;a href="#" class="ui-btn ui-shadow ui-corner-all">Button 2&lt;/a>
+                                &lt;a href="#" class="ui-btn ui-shadow ui-corner-all" data-filtertext="sometext">data-filtertext="sometext"——Button 3&lt;/a>
+                                &lt;a href="#" class="ui-btn ui-shadow ui-corner-all">Button 4&lt;/a>
+                                &lt;a href="#" class="ui-btn ui-shadow ui-corner-all">Button 5&lt;/a>
+                            &lt;/div>
+                            &lt;form>
+                                &lt;input data-type="search" id="search-input" placeholder="搜索list列表...">
+                            &lt;/form>
+                            &lt;ul data-role="listview" data-filter="true" data-inset="true" data-input="#search-input">
+                                &lt;li>内容1&lt;/li>
+                                &lt;li>内容2&lt;/li>
+                                &lt;li>内容3&lt;/li>
+                                &lt;li>内容4&lt;/li>
+                                &lt;li>内容5&lt;/li>
+                            &lt;/ul>
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="table_model" class="clearFix">
+                <h3>9、table表格</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>data-role="table"——表示表格</label>
+                            <label>data-mode="columntoggle"——表示允许表格显示切换统计按钮</label>
+                            <label>data-priority="1"——表示表格中列显示的优先级，1最高，6最低</label>
+                            <label>data-column-btn-theme="b"——表格选择btn的主题</label>
+                            <label>data-column-btn-text="请选择显示的列"——表格选择btn的提示文字</label>
+                            <label>data-column-popup-theme="b"——表格选择项的主题</label>
+                        </p>
+                        <div>
+                            <table data-role="table" class="ui-responsive table-stroke" >
+                                <thead>
+                                    <tr>
+                                        <th data-priority="1">序号</th>
+                                        <th data-priority="2">姓名</th>
+                                        <th data-priority="3">职业</th>
+                                        <th data-priority="4">工作年限</th>
+                                        <th data-priority="5">居住地</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>王二小</td>
+                                        <td>放牛</td>
+                                        <td>10年</td>
+                                        <td>太原</td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>王二</td>
+                                        <td>修车</td>
+                                        <td>5年</td>
+                                        <td>石家庄</td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>王富贵</td>
+                                        <td>开车</td>
+                                        <td>12年</td>
+                                        <td>北京</td>
+                                    </tr>
+                                    <tr>
+                                        <td>004</td>
+                                        <td>王二</td>
+                                        <td>公司老总</td>
+                                        <td>20年</td>
+                                        <td>成都</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                            <table data-role="table" data-mode="columntoggle" class="ui-responsive table-stroke"  data-column-btn-theme="a"
+                                   data-column-btn-text="请选择需要显示的列" data-column-popup-theme="b">
+                                <thead>
+                                    <tr>
+                                        <th>序号</th>
+                                        <th data-priority="1">姓名</th>
+                                        <th data-priority="3">职业</th>
+                                        <th data-priority="2">工作年限</th>
+                                        <th data-priority="4">居住地</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>001</td>
+                                        <td>王二小</td>
+                                        <td>放牛</td>
+                                        <td>10年</td>
+                                        <td>太原</td>
+                                    </tr>
+                                    <tr>
+                                        <td>002</td>
+                                        <td>王二</td>
+                                        <td>修车</td>
+                                        <td>5年</td>
+                                        <td>石家庄</td>
+                                    </tr>
+                                    <tr>
+                                        <td>003</td>
+                                        <td>王富贵</td>
+                                        <td>开车</td>
+                                        <td>12年</td>
+                                        <td>北京</td>
+                                    </tr>
+                                    <tr>
+                                        <td>004</td>
+                                        <td>王二</td>
+                                        <td>公司老总</td>
+                                        <td>20年</td>
+                                        <td>成都</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                             &lt;table data-role="table" data-mode="columntoggle" class="ui-responsive table-stroke"  data-column-btn-theme="a"
+                                   data-column-btn-text="请选择需要显示的列" data-column-popup-theme="b">
+                                 &lt;thead>
+                                 &lt;tr>
+                                     &lt;th>序号 &lt;/th>
+                                     &lt;th data-priority="1">姓名 &lt;/th>
+                                     &lt;th data-priority="3">职业 &lt;/th>
+                                     &lt;th data-priority="2">工作年限 &lt;/th>
+                                     &lt;th data-priority="4">居住地 &lt;/th>
+                                 &lt;/tr>
+                                 &lt;/thead>
+                                 &lt;tbody>
+                                 &lt;tr>
+                                     &lt;td>001 &lt;/td>
+                                     &lt;td>王二小 &lt;/td>
+                                     &lt;td>放牛 &lt;/td>
+                                     &lt;td>10年 &lt;/td>
+                                     &lt;td>太原 &lt;/td>
+                                 &lt;/tr>
+                                 &lt;tr>
+                                     &lt;td>002 &lt;/td>
+                                     &lt;td>王二 &lt;/td>
+                                     &lt;td>修车 &lt;/td>
+                                     &lt;td>5年 &lt;/td>
+                                     &lt;td>石家庄 &lt;/td>
+                                 &lt;/tr>
+                                 &lt;tr>
+                                     &lt;td>003 &lt;/td>
+                                     &lt;td>王富贵 &lt;/td>
+                                     &lt;td>开车 &lt;/td>
+                                     &lt;td>12年 &lt;/td>
+                                     &lt;td>北京 &lt;/td>
+                                 &lt;/tr>
+                                 &lt;/tbody>
+                             &lt;/table>
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="layout_model" class="clearFix">
+                <h3>10、网格布局(最多5列)</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>①、两列式布局</label>
+                            <label>class="ui-grid-a"——父级div用class="ui-grid-a"，表示两列，子级用class="ui-block-a"、class="ui-block-b"，分别表示第一列和第二列</label>
+                            <label>class="ui-bar"——控制各子容器间距</label>
+                            <label>class="ui-bar-a"——控制各子容器主题，分为a和b</label>
+                        </p>
+                        <div class="ui-grid-a">
+                            <div class="ui-block-a" data-theme="b">
+                                <p class="ui-bar ui-bar-b">A</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-bar ui-bar-a">B</p>
+                            </div>
+                        </div>
+                        <p class="model_hint">
+                            <label>②、三列式布局</label>
+                            <label>class="ui-grid-b"——父级div用class="ui-grid-b"，表示三列，子级用class="ui-block-a"、class="ui-block-b"
+                                、class="ui-block-b"，分别表示第一列、第二列和第三列</label>
+                        </p>
+                        <div class="ui-grid-b">
+                            <div class="ui-block-a" data-theme="b">
+                                <p class="ui-bar ui-bar-a">A</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-bar ui-bar-b">B</p>
+                            </div>
+                            <div class="ui-block-c">
+                                <p class="ui-bar ui-bar-a">C</p>
+                            </div>
+                        </div>
+                        <p class="model_hint">
+                            <label>③、四列式布局</label>
+                            <label>class="ui-grid-c"——父级div用class="ui-grid-c"，表示四列，子级用class="ui-block-a"、
+                                class="ui-block-b"、class="ui-block-c"、class="ui-block-d"，分别表示第一列、第二列、第三列、第四列</label>
+                        </p>
+                        <div class="ui-grid-c">
+                            <div class="ui-block-a" data-theme="b">
+                                <p class="ui-bar ui-bar-b">A</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-bar ui-bar-a">B</p>
+                            </div>
+                            <div class="ui-block-c">
+                                <p class="ui-bar ui-bar-b">C</p>
+                            </div>
+                            <div class="ui-block-d">
+                                <p class="ui-bar ui-bar-a">D</p>
+                            </div>
+                        </div>
+                        <p class="model_hint">
+                            <label>④、五列式布局</label>
+                            <label>class="ui-grid-d"——父级div用class="ui-grid-d"，表示五列，子级用class="ui-block-a"、
+                                class="ui-block-b"、class="ui-block-c"、class="ui-block-d"、class="ui-block-e"，分别表示第一列、第二列、
+                                第三列、第四列、第五列</label>
+                        </p>
+                        <div class="ui-grid-d">
+                            <div class="ui-block-a" data-theme="b">
+                                <p class="ui-bar ui-bar-b">A</p>
+                            </div>
+                            <div class="ui-block-b">
+                                <p class="ui-bar ui-bar-a">B</p>
+                            </div>
+                            <div class="ui-block-c">
+                                <p class="ui-bar ui-bar-b">C</p>
+                            </div>
+                            <div class="ui-block-d">
+                                <p class="ui-bar ui-bar-a">D</p>
+                            </div>
+                            <div class="ui-block-e">
+                                <p class="ui-bar ui-bar-b">E</p>
+                            </div>
+                        </div>
+                        <a href="http://10.5.6.44:8080/StudySkill/controls_css3/html/box_model.html" class="mode_change_address" target="_blank">
+                            弹性盒模型
+                        </a>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                           &lt;div class="ui-grid-d">
+                               &lt;div class="ui-block-a" data-theme="b">
+                                   &lt;p class="ui-bar ui-bar-b">A&lt;/p>
+                               &lt;/div>
+                               &lt;div class="ui-block-b">
+                                   &lt;p class="ui-bar ui-bar-a">B&lt;/p>
+                               &lt;/div>
+                               &lt;div class="ui-block-c">
+                                   &lt;p class="ui-bar ui-bar-b">C&lt;/p>
+                               &lt;/div>
+                               &lt;div class="ui-block-d">
+                                   &lt;p class="ui-bar ui-bar-a">D&lt;/p>
+                               &lt;/div>
+                               &lt;div class="ui-block-e">
+                                   &lt;p class="ui-bar ui-bar-b">E&lt;/p>
+                               &lt;/div>
+                           &lt;/div>
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="jqm_theme" class="clearFix">
+                <h3>11、jquery mobile自定义主题样式</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p>首先，在主题编辑网站<a href="http://themeroller.jquerymobile.com" target="_blank">http://themeroller.jquerymobile.com</a>将主题编辑好，并下载到本地</p>
+                        <p>其次，在head里面加入如下链接即可</p>
+                        <pre class="brush:html">
+                            <link rel="stylesheet" href="css/themes/my-custom-theme.css" />
+                            <link rel="stylesheet" href="css/themes/jquery.mobile.icons.min.css" />
+                        </pre>
+                        <p>最后，在需要调用的地方写上data-theme="c"(这里我设置的是C)即可</p>
+                        <a href="testJqmTheme.html" class="mode_change_address" target="_blank">
+                            测试自定义主题
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <h1>二、组件动作</h1>
+            <div id="transition_mode" class="clearFix">
+                <h3>1、容器过度效果</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>data-transition</label>
+                            <label>data-transition="slide"——滑动，页面之间移动的最常见的转换，向前移动或是向后移动的外观(默认),即从右到左滑动的效果</label>
+                            <label>data-transition="slideup——卷起，用于打开对话款或显示额外信息的一个常见的转换。该转换给出的外观可以用来为当前活动的页面收集额外的输入信息</label>
+                            <label>data-transition="slidedown——向下滑动，该转换与卷起相对，但是可以用于实现类似的效果</label>
+                            <label>data-transition="pop——弹出，用于打开对话框或显示额外信息的常见转换，该转换给出的外观可以用来为当前活动的页面收集额外的输入信息</label>
+                            <label>data-transition="fade——淡入/淡出，用于入口页面或出口页面的一个创建的转换鲜果，渐变退色的动画效果活动的页面手机额外的输入信息</label>
+                            <label>data-transition="flip——翻转，用于显示额外信息的一个常见转换</label>
+                            <label>data-transition="none——不应用任何转换</label>
+                            <label>data-transition="slide" data-direction="reverse——反向过渡,和slide相反</label>
+                        </p>
+                        <a href="data_transition.html" class="mode_change_address" data-transition="slideup" target="_blank">
+                            测试过度效果
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="creating_widget_model" class="clearFix">
+                <h3>2、动态创建组件</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>$("#id").html(content).trigger('create')</label>
+                            很多时候我们在实际开发过程中需要动态创建组件，比如对话框，list，选项卡等，在这里我们通常的方法只能得到原生的html，并
+                            没有增强效果，因此，我们需要如下方式：
+                            <label>$("#id").html(content).trigger('create');</label>
+                            <label> $.mobile.pageContainer.trigger("create");</label>
+                        </p>
+                        </p>
+                        <div class="creating_widget_demo">
+                            <a href="#" id="createDialog" data-inline="true" data-role="button">动态创建dialog对话框</a>
+                            <a href="#" id="createListview" data-inline="true" data-role="button">动态创建list列表</a>
+                            <a href="#" id="createSelectview" data-inline="true" data-role="button">动态创建select</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="warning_area warning0 display_none">
+                    <div class="t">按钮禁用/启用</div>
+                    <p>a标签类按钮禁用需加上class='ui-disabled'</p>
+                    <p>botton标签类按钮禁用需加上disabled='disabled'</p>
+                    <div class="t">图标按钮的特殊样式</div>
+                    <p>图标按钮中文字超过4个字的按钮，需要添加class="ui-btn-icon-lineheight2em"</p>
+                </div>
+            </div>
+            <div id="widget_refresh" class="clearFix">
+                <h3>3、组件刷新</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>jquery mobile组件刷新</label>
+                            <label>说明：jqm组件的显示原理是把原始的web组件隐藏，而用jqm自定义的UI组件来代替原始的web组件显示。
+                            动态的改变了组件的值，其实改变的是原始组件的值，而jqm的组件的值并没有被更新，所以需要调用该组件的refresh方法
+                            来使其更新并显示。</label>
+                        </p>
+                        <div>
+
+                            <p class="model_hint">
+                                <label>1、list列表</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$('#id').listview('refresh');</p>
+                            <ul data-role="listview" data-inset="ture" id="list1">
+                                <li>测试数据1</li>
+                                <li>测试数据2</li>
+                                <li>测试数据3</li>
+                                <li>测试数据4</li>
+                            </ul>
+                            <input type="button" value="动态加载数据中..." id="list_click" data-inline="true"/>
+                            <pre class="brush: js;">
+                                 $("#list_click").toggle(
+                                    function () {
+                                        $("#list1").append("<li>动态加载数据——未刷新</li>");
+                                    },
+                                    function(){
+                                        $("#list1").append("<li>动态加载数据——刷新</li>").listview("refresh");
+                                    }
+                                 );
+                            </pre>
+                            <p class="model_hint">
+                                <label>2、slider</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").slider("refresh");</p>
+                            <div>
+                                <label for="slider1">滑块：</label>
+                                <input type="range" value="10" min="0" max="100" id="slider1"/>
+                            </div>
+                            <input type="button" value="动态加载数据50..." id="slider_click" data-inline="true"/>
+                            <pre class="brush: js;">
+                                 $("#slider_click").click(function () {
+                                    $("#slider1").val("50").slider("refresh");
+                                 });;
+                            </pre>
+                            <p class="model_hint">
+                                <label>3、switch开关</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").slider('refresh');</p>
+                            <div data-role="fieldcontain">
+                                <select name="switch1" id="switch1" data-role="slider">
+                                    <option value="off">关闭</option>
+                                    <option value="on">开启</option>
+                                </select>
+                            </div>
+                            <input type="button" value="动态改变开关..." id="switch_click" data-inline="true"/>
+                            <pre class="brush: js;">
+                                $("#switch_click").click(function () {
+                                    var myswitch = $("#switch1");
+                                    myswitch[0].selectedIndex = 1;//1、2分别表示开或关
+                                    myswitch.slider("refresh");
+                                });
+                            </pre>
+                            <p class="model_hint">
+                                <label>4、select菜单</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").selectmenu('refresh');</p>
+                            <div data-role="fieldcontain">
+                                <select name="select1" id="select1" data-native-menu="false" data-inline="true">
+                                    <option>请选择菜谱</option>
+                                    <option value="1">川菜</option>
+                                    <option value="2">粤菜</option>
+                                    <option value="3">浙菜</option>
+                                    <option value="4">广菜</option>
+                                </select>
+                            </div>
+                            <input type="button" value="动态改变select的选中值..." id="select_click" data-inline="true"/>
+                             <pre class="brush: js;">
+                                $("#select_click").click(function () {
+                                     var myswitch = $("#select1");
+                                     myswitch[0].selectedIndex = 3;
+                                     myswitch.selectmenu("refresh");
+                                });
+                            </pre>
+                            <p class="model_hint">
+                                <label>5、radio组件刷新</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").checkboxradio('refresh');</p>
+                            <div>
+                                <fieldset data-role="controlgroup">
+                                    <legend>请你选择你的性别:</legend>
+                                    <label for="man">男</label>
+                                    <input type="radio" value="1" name="man" id="man" class="radio1"/>
+                                    <label for="woman">女</label>
+                                    <input type="radio" value="2" name="man" id="woman" class="radio1 radio2"/>
+                                    <label for="neuter">中性</label>
+                                    <input type="radio" value="3" name="man" id="neuter" class="radio1"/>
+                                </fieldset>
+                            </div>
+                            <input type="button" value="方式一：动态改变radio的选中值..." id="radio_click_1" data-inline="true"/>
+                            <input type="button" value="方式二：动态改变radio的选中值..." id="radio_click_2" data-inline="true"/>
+                            <pre class="brush: js;">
+                               $("#radio_click_1").click(function () {
+                                    $(".radio1").prop("checked",false).checkboxradio('refresh');
+                                    $(".radio2").prop("checked", true).checkboxradio("refresh");
+                                });
+                                $("#radio_click_2").click(function () {
+                                    $("input[name='man']").removeAttr("checked").checkboxradio('refresh');
+                                    $("input[value='3']").attr("checked").checkboxradio('refresh');
+                                });
+                            </pre>
+                            <p class="model_hint">
+                                <label>6、checkbox复选刷新</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").checkboxradio('refresh');</p>
+                            <div>
+                                <fieldset data-role="controlgroup">
+                                    <legend>请选择喜欢的美女类型:</legend>
+                                    <label for="checkbox-2a">四川美女</label>
+                                    <input type="checkbox" name="checkbox-2a" id="checkbox-2a" value="10" class="checkbox_select">
+                                    <label for="checkbox-2b">重庆美女</label>
+                                    <input type="checkbox" name="checkbox-2b" id="checkbox-2b" value="20" class="checkbox_select">
+                                    <label for="checkbox-2c">上海美女</label>
+                                    <input type="checkbox" name="checkbox-2c" id="checkbox-2c" value="30" class="checkbox_select">
+                                </fieldset>
+                            </div>
+                            <input type="button" value="方式一：动态改变checkbox的选中值..." id="checkbox_click_1" data-inline="true"/>
+                            <input type="button" value="方式二：动态改变checkbox的选中值..." id="checkbox_click_2" data-inline="true"/>
+                            <pre class="brush: js;">
+                               $("#checkbox_click_1").click(function () {
+                                    $(".checkbox_select").prop("checked", true).checkboxradio("refresh");
+                                });
+                                $("#checkbox_click_2").toggle(
+                                    function () {
+                                        $('#checkbox-2a,#checkbox-2c').attr('checked', true).checkboxradio('refresh');
+                                    },
+                                    function () {
+                                        $('#checkbox-2a,#checkbox-2c').removeAttr('checked').checkboxradio('refresh');
+                                    }
+                                 )
+                            </pre>
+                            <p class="model_hint">
+                                <label>7、button刷新</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">方法：</label>$("#id").buttonMarkup('refresh')/button('refresh');</p>
+                            <div class="button0">
+                                <input type="button" value="按钮1" data-icon="delete" data-theme="b" id="button1"/>
+                                <button id="button2" data-icon="delete">按钮2</button>
+                            </div>
+                            <input type="button" value="方式一：动态改变button的值..." id="button_click_1" data-inline="true"/>
+                            <input type="button" value="方式二：动态改变button的值..." id="button_click_2" data-inline="true"/>
+                            <pre class="brush: js;">
+                               $("#button_click_1").toggle(
+                                    function () {
+                                        $("#button1").val("按钮修改完成——1").button("refresh");
+                                        $("#button2").text("按钮修改完成——2");
+                                    },
+                                    function () {
+                                        $("#button1").val("修改完成——3").button("refresh");
+                                        $("#button2").text("按钮修改完成——4");
+                                    }
+                                )
+                                $("#button_click_2").toggle(
+                                    function () {
+                                        var button_model = $("&lt;input type='button' value='开始' />");
+                                        $(".button0").append(button_model);
+                                        $(button_model).button("refresh");
+                                    },
+                                    function () {
+                                        var button_model = $("&lt;input type='button' value='开始—1' />");
+                                        $(".button0").append(button_model);
+                                        $(button_model).buttonMarkup("refresh");
+                                    }
+                                )
+                            </pre>
+                            <p class="model_hint">
+                                <label>8、table刷新</label>
+                            </p>
+                            <p class="model_content_hint"><label style="display: inline-block">table表格刷新方法：</label>$("#id").table('refresh');</p>
+                            <p class="model_content_hint"><label style="display: inline-block">table统计刷新方法：</label>$("#id").table-columntoggle( "refresh" );</p>
+                            <table data-role="table" data-mode="columntoggle" data-column-btn-text="请选择显示的列" class="ui-responsive table-stroke"
+                                   data-column-btn-theme="b" id="my_table" >
+                                <thead>
+                                <tr>
+                                    <th>序号</th>
+                                    <th data-priority="1">姓名</th>
+                                    <th data-priority="3">职业</th>
+                                    <th data-priority="2">工作年限</th>
+                                    <th class="table_address">居住地</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>001</td>
+                                    <td>王二小</td>
+                                    <td>放牛</td>
+                                    <td>10年</td>
+                                    <td>太原</td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>王二</td>
+                                    <td>修车</td>
+                                    <td>5年</td>
+                                    <td>石家庄</td>
+                                </tr>
+                                <tr>
+                                    <td>003</td>
+                                    <td>王富贵</td>
+                                    <td>开车</td>
+                                    <td>12年</td>
+                                    <td>北京</td>
+                                </tr>
+                                <tr>
+                                    <td>004</td>
+                                    <td>王二</td>
+                                    <td>公司老总</td>
+                                    <td>20年</td>
+                                    <td>成都</td>
+                                </tr>
+                                </tbody>
+                            </table>
+                            <input type="button" value="方式一：动态改变table的值..." id="table_click_1" data-inline="true"/>
+                            <input type="button" value="方式二：动态改变table选择显示btn的值" id="table_click_2" data-inline="true"/>
+                            <pre class="brush: js;">
+                                    $("#table_click_1").toggle(
+                                        function () {
+                                           var tr_obj = $("&lt;tr>&lt;td>005&lt;/td>&lt;td>杨波&lt;/td>&lt;td>销售总监&lt;/td>&lt;td>5年&lt;/td>&lt;td>四川成都&lt;/td>&lt;/tr>");
+                                            $("#my_table").append(tr_obj).table("refresh");
+                                            tr_obj.css("background","rgb(213, 253, 255)");
+                                        },
+                                        function () {
+                                            $("#add_tr").remove();
+                                        }
+                                    )
+                                    $("#table_click_2").one("click",function () {
+                                        $(".table_address").attr("data-priority","4");
+                                        $("#my_table").table('refresh');
+                                    });
+                            </pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="load_model" class="clearFix">
+                <h3>4、进度加载</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint">
+                            <label>加载器——jqm原生方法</label>
+                        </p>
+                        <div>
+                            <input type="button" value="显示进度条-a主题" id="show_bar_a" data-inline="true"/>
+                            <input type="button" value="显示进度条-a主题—文字" id="show_bar_text_a" data-inline="true"/>
+                            <input type="button" value="显示进度条-b主题" id="show_bar_b" data-inline="true"/>
+                            <input type="button" value="显示进度条-b主题—文字" id="show_bar_text_b" data-inline="true"/>
+                            <input type="button" value="自定义样式" id="user_defined" data-inline="true"/>
+                            <input type="button" value="隐藏进度条" id="hide_bar" data-inline="true"/>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush:js;">
+                           //显示加载器 jquery Mobile
+                            function showLoader(text, text_visible, theme, text_only, html_content) {
+                                $.mobile.loading('show', {
+                                    text: text,                  //加载器中显示的文字
+                                    textVisible: text_visible,  //是否显示文字
+                                    theme: theme,                //加载器主题样式a-b
+                                    textonly: text_only,        //是否只显示文字
+                                    html: html_content           //要显示的html内容，如图片等
+                                });
+                            }
+                            //隐藏加载器jQuery Mobile
+                            function hideLoader() {
+                                //隐藏加载器
+                                $.mobile.loading('hide');
+                            }
+                            $("#show_bar_a").tap(function () {
+                                showLoader("加载中...", true, "a", false, "");
+                            });
+                            $("#show_bar_text_a").tap(function () {
+                                showLoader("加载中...", true, "a", true, "");
+                            });
+                            $("#show_bar_b").tap(function () {
+                                showLoader("加载中...", true, "b", false, "");
+                            });
+                            $("#show_bar_text_b").tap(function () {
+                                showLoader("加载中...", true, "b", true, "");
+                            });
+                            $("#user_defined").tap(function () {
+                                showLoader("", true, "b", false, "<span class='loading'></span><h1>加载中...</h1>");
+                            });
+                            $("#hide_bar").tap(function () {
+                                hideLoader();
+                            });
+                       </pre>
+                    </div>
+                </div>
+            </div>
+            <div id="jqm_event" class="clearFix">
+                <h3>5、jqm事件执行过程</h3>
+                <div class="code_area">
+                    <p class="model_hint" style="text-indent: 2em;padding: 9px 14px;">Jquery Mobile提供了一些建于本地事件的自定义事件以用来创建一些有用的钩子. 要注意这些事件是建立于各种已存在的触摸事件之上，
+                        比如 鼠标和窗口事件，所以你根据这些事件的存在可以将它们绑定到手持或者桌面的环境中。
+                        在使用中你可以通过使用 live() 或者 bind()将他们绑定到其他的Jquery事件。</p>
+                    <div class="example_box">
+                        <a href="#popup_jqm_event_img" data-rel="popup" data-position-to="window" data-transition="fade">
+                            <span class="jqm_event_img"></span>
+                        </a>
+                        <div data-role="popup" id="popup_jqm_event_img" data-overlay-theme="b" data-theme="b" data-corners="false">
+                            <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                            <img  src="images/jqm_page_event.png" alt="" width="100%">
+                        </div>
+                        <a href="http://www.w3cschool.cc/jquerymobile/jquerymobile-ref-events.html" class="mode_change_address" target="_blank">
+                            jqm事件完整说明
+                        </a>
+                        <p class="model_hint"><label>①、1、mobileinit事件</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            jQuery Mobile 包括一个初始化事件，该事件甚至会先于jQuery的document.ready事件进行加载。
+                            jQuery Mobile 实际上在文档对象本身上触发其初始化事件，第一个触发的事件是mobileinit。
+                            当Jquery Mobile开始执行时，他就会在document对象上触发mobileinit 事件，因为mobileinit事件是在加载
+                            后马上触发，所以你需要在Jquery Mobile加载之前绑定你的事件处理函数</p>
+                        <pre class="brush: js;">
+                            如果要扩展 mobileinit 事件，您首先需要将它与一个自定义函数进行绑定。可使用 bind 方法扩展mobileinit事件，
+                            来覆盖默认配置（全局选项）。
+                            $(document).bind("mobileinit", function(){
+                            //覆盖的代码
+                            });
+                       </pre>
+                        <p class="model_hint"><label>②、1、pagebeforechange事件</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            页面切换的时候通过$(document).bind("pagebeforechange", beforechange);来绑定pagebeforechange事件的触发函数
+                            handleChangePage(e,data)。页面跳转时pagebeforechange事件会被触发两次，第一次触发时data.toPage是到达页面的url，
+                            类型是string，第二次触发时data.toPage不是String类型 ，此时可以获取到达页面的信息。为了获得到达页面的信息，
+                            所以我们需要获得第二次触发时候的event,可以简单通过if(typeof data.toPage != “string”)来判断，
+                            这时候可以用e.target.baseURI来获取到达页面的URI，并通过这个URI来解析出附带的参数信息。然后通过
+                            e.target.find(“pageId”)来获取到达页的相应组件，并进行相应的操作。
+                        </p>
+                        <a href="testData.html" class="mode_change_address" target="_blank">
+                            测试数据交换
+                        </a>
+                        <pre class="brush: js;">
+                                /**
+                                 * 自定义数据方法说明
+                                 * @param definedFun 自定义方法
+                                 */
+                                function beforechange(definedFun) {
+                                    $(document).unbind("pagebeforechange").bind("pagebeforechange", function(e,data){
+                                        //这个事件会调用两次，但每次的data内容不一样，所以要判断
+                                        if (typeof data.toPage != "string") {
+                                        //  该函数解析一个URL地址，并返回一个含所有参数值的对象，这些参数值能够让我们很轻松地访问URL地址上的参数属性。
+                                            var thisUrlObj = $.mobile.path.parseUrl(e.target.baseURI);
+                                        //取到page活动状态的容器对象
+                                            var pageActiveObj = $.mobile.path.parseUrl(data.toPage);
+                                            if(typeof definedFun == "function"){
+                                                definedFun(e,thisUrlObj,data,pageActiveObj);
+                                            }
+                                        }
+                                    });
+                                }
+                                /**
+                                 * 解析url参数示例——字符串格式id=34&key=perfect&action=go
+                                 * @param string 字符串
+                                 */
+                                function getUrlParam(string) {
+                                    var obj =  new Array();
+                                    if (string.indexOf("?") != -1) {
+                                        var string = string.substr(string.indexOf("?") + 1);
+                                        var strs = string.split("&");
+                                        for(var i = 0; i < strs.length; i ++) {
+                                            var tempArr = strs[i].split("=");
+                                            obj[i] = tempArr[1];
+                                        }
+                                    }
+                                    return obj;
+                                }
+                                /**
+                                 * 下一个页面数据方法
+                                 * @param pageUrl url地址
+                                 * @param sectionId 容器id
+                                 * @param definedFun 自定义方法
+                                 */
+                                function setNextPageData(pageUrl,sectionId,definedFun){
+                                    beforechange(definedFun);
+                                    $.mobile.changePage(pageUrl,{
+                                        transition: "slide",
+                                        type:"post",
+                                        data:"对面的美女看过来",//(object或string, 默认值: undefined) Ajax 请求时发送的数据。仅当pageUrl参数的值为一个URL时可用。
+                                        reverse: false //转场特效是否反向
+                                        changeHash: false  //断地址栏上的哈希值是否应该被更新。
+                                    })
+                                }
+                                $("#test_music").bind("tap",function(){
+                                    var user_url = "testData2.html";
+                                    var url_data = user_url+"?id=34&key=perfect&action=go";
+                                    setNextPageData(url_data,"#page1",function(event,thisUrlObj,data,pageActiveObj){
+                                        if (thisUrlObj.href.search(user_url) != -1) {
+                                            var page = $(event.target).find("#page2");
+                                            var ajax_data = data.options.data;
+                                            var url_data = getUrlParam(thisUrlObj.href);
+                                            page.find("h1").html(url_data[0]);
+                                            page.find("#test_book").html(url_data[1]);
+                                            page.find("h4").html(url_data[2]);
+                                            pageActiveObj.find("#test_music_text").html("欢迎你来到音乐专区");
+                                            pageActiveObj.find("#test_music_content").append('<p style="color: #ff0000">'+ajax_data+'</p>');
+                                        }
+                                    });
+                                })
+                        </pre>
+                        <p class="model_hint"><label>③、页面加载事件pagebeforeload和pageload</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            当一个外部页面加载到 DOM 时，会触发两个事件 —— 第一个事件是 pagebeforeload，第二个是 pageload 或 pageloadfailed。</br>
+                            第一个：pagebeforeload--->在加载请求发出之前触发，绑定到这个事件的回调函数可以该事件调用preventDefault()，来表明由他们来处理加载的请求。
+                            这样的做的话回调函数必须对通过数据对象传到回调函数的对象调用resolve()或者reject()。通过第二个参数传到回调函数的对象包含如下的属性：</br>
+                            url (字符串)：通过回调传到$.mobile.loadPage()的绝对或者相对地址</br>
+                            absUrl (字符串)：url的绝对地址版本。</br>
+                            dataUrl (字符串)：绝对地址的当识别页面或者更新浏览器地址的时候使用的绝对地址经过过滤的版本</br>
+                            deferred (对象)：针对此事件调用preventDefault()的回调函数必须针对此事件调用</br>
+                            resolve()或者reject()方法，使得changePage()的请求恢复。
+                        </p>
+                        <pre class="brush:js">
+                               $( document ).bind( "pagebeforeload", function( event,data){
+                                    // 阻止默认行为，告知浏览器本次事件由事件的回调函数（即本函数）处理
+                                    event.preventDefault();
+                                    // 自定义处理，如简单的弹出一个提示
+                                    alert('本次事件由开发者作出一些处理');
+                                    // 在本函数或者其它异步方法中调用 resolve()
+                                    // 告知 $.mobile.changePage() 方法继续页面请求并执行 done() 回调函数队列
+                                    data.deferred.resolve( data.absUrl, data.options, page );
+                                    //data.deferred.rejected( data.absUrl, data.options );
+                                });
+                        </pre>
+                        <p class="model_hint"><label>④、页面初始化事件pagebeforecreate和pagecreate</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            pagebeforecreate——>在页面开始初始化之前触发，这时 DOM 已被 jQuery Mobile 获得，但仍未进行 jQuery Mobile 增强，因此绑定这个事件并在回调函数中作出处理可以在页面被增强前进行自定义处理。
+                            另外若阻止事件的默认行为，会禁止页面组件初始化。</br>
+                            pagecreate——>在页面初始化时，即 DOM 刚开始被创建，并且需要进行 jQuery Mobile 的元素已经准备好（即加入待增强列表），但仍未实际开始进行 jQuery Mobile 增强前触发。
+                        </p>
+                        <p class="model_hint"><label>⑤、页面初始化事件pageinit</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            当页面初始化后触发，jQuery Mobile 建议使用这个事件的绑定代替 jQuery 中常用的 DOM ready() ，
+                            因为触发这个事件意味着页面已经直接或者通过 Ajax 加载好并增强，更适合用在 jQuery Mobile 开发中。
+                        </p>
+                        <p class="model_hint"><label>⑥、页面显示/隐藏事件(pagebeforeshow、pagebeforehide、pageshow、pagehide)</label>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            pagebeforeshow——>每次页面加载的时候都会触发,在页面渲染之前。此事件回调函数传回的数据对象中有一个
+                                "prevPage"属性，该属性是一个jquery集合对象，它可以获取正在切换远离页面的全部DOM元素。</br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            pagebeforehide——>每次转到新页面之前都会触发当前页面的该事件,在当前页面隐藏之前。此事件回调函数传回的
+                                数据对象中有一个"nextPage"属性，该属性是一个jquery集合对象，它可以获取正在切换目标页面的全部DOM元素</br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            pageshow——>每次页面加载的时候都会触发,在页面渲染之后。此事件回调函数传回的数据对象中有一个"prevPage"
+                                属性，该属性是一个jquery集合对象，它可以获取切换之前上一页面的全部DOM元素</br>
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            pagehide——>每次转到新页面之前都会触发当前页面的该事件,在当前页面隐藏之后。每次页面加载的时候都会触
+                                发,在页面渲染之后。此事件回调函数传回的数据对象中有一个"nextPage"属性，该属性是一个jquery集合对象，
+                                它可以获取切换之后当前页面的全部DOM元素
+                        </p>
+                        <pre class="brush:js">
+                            $("#page2").bind("pagebeforehide",function(event, ui){
+                                alert('1. ' + ui.nextPage[0].id + ' 正在显示中... ')
+                            })
+                            $("#page2").bind("pagebeforeshow",function(event, ui){
+                                alert('2. ' + ui.prevPage[0].id + ' 正在隐藏中... ')
+                            })
+                            $("#page2").bind("pagehide",function(event, ui){
+                                alert('3. ' + ui.nextPage[0].id + ' 显示完成... ')
+                            })
+                            $("#page2").bind("pageshow",function(event, ui){
+                                alert('4. ' + ui.prevPage[0].id + ' 隐藏完成... ')
+                            })
+                        </pre>
+                        <a href="testJqmEvent.html" class="mode_change_address" target="_blank">
+                            测试jqm整个事件执行过程
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="fixed_header_footer" class="clearFix">
+                <h3>6、公用固定头/尾部</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint"><label>移动端jqm公用固定header和footer的小技巧</label>
+                            要实现header或footer的固定，只需要在header或footer中添加data-position="fixed" 和 data-id="myfooter"属性就可以了。
+                        </p>
+                        <p class="model_hint"><label>注意</label>
+                            data-id这里有一点需要注意，就是data-id的值需要保持一样。举个例子：如果我们要footer固定转屏：
+                            从A页面转屏到B页面，A页面的footer设置的data-id="footer1"那B页面的footer也需要设置为data-id="footer1"，否则会失效。
+                        </p>
+                        <a href="testConmonHeader.html" class="mode_change_address" target="_blank">
+                            测试header和footer固定
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div id="fixed_navbar" class="clearFix">
+                <h3>7、固定头/尾部工具条</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint"><label>移动端jqm固定头/尾部工具条小技巧</label>
+                            要实现header或footer中navbar的固定，需设置data-transition的属性值为none，并且地址栏不变
+                        </p>
+                        <a href="navbar.html" class="mode_change_address"  target="_blank">
+                            测试固定头/尾部工具条
+                        </a>
+                        <pre class="brush:js">
+                             $(".navbar_btn a").each(function () {
+                                var anchor = $(this);
+                                anchor.bind("click", function () {
+                                    $.mobile.changePage(anchor.attr("href"), {
+                                        transition: "none",
+                                        changeHash: false
+                                    });
+                                    return false;
+                                });
+                            });
+                        </pre>
+                    </div>
+                </div>
+            </div>
+            <h1>三、扩展组件</h1>
+            <div id="iscroll_model" class="clearFix">
+                <h3>1、iscroll移动端滚动条</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint"><label>①、iscroll使用讲解——[最新版iscroll5]</label>
+                            之所以iscroll会诞生，主要是因为无论是在iphone、ipad、android 或是更早前的移动webkit都没有提供一种原生的方式来支持在一个固定高度的容器内滚动内容。
+                            这个不幸的规则导致所有web-app要模拟成app的样子时，只能由一个绝对定位的header 或是footer再加上一个可以内容的滚动的中间区域组成。
+                            幸运的是移动webkit提供了一种强大的硬件加速的CSS属性，这个属性可以用来模拟这个缺失的功能，iscroll从这里开始了前进之路。</p>
+                        <p class="model_hint"><label>②、iscroll基本结构</label>
+                            iScroll需要对所要进行滚动的元素进行初始化，并且不限定一个页面中使用iScroll的元素的个数（这里不考虑您的硬件配置）。
+                            滚动元素中内容的类型和长度在一定程度上将会影响iScroll脚本库里可以同时使用的元素的个数。
+                            使用iScroll这个脚本库时，DOM树的结构要足够简单，移除不必要的标签，尽量避免过多的标签嵌套使用。
+                        </p>
+                        <pre class="brush: html;">
+                            &lt;div id="wrapper">
+                                &lt;ul>
+                                    &lt;li>&lt;/li>
+                                    .....
+                                &lt;/ul>
+                            &lt;/div>
+                       </pre>
+                        <p class="model_hint"><label>③、iscroll部分参数详解</label>
+                            iScroll里的第一个参数很简单就是外容器的id，或者css语法格式的class，如'.home .scroll'。第二个参数允许你自定义一些属性配置和方法
+                        </p>
+                        <p><label>hScrollbar</label>是否显示水平滚动条(true/false)</p>
+                        <p><label>vScrollbar</label>是否显示垂直滚动条(true/false)</p>
+                        <p><label>fixedScrollbar</label>在iOS系统上,当元素拖动超出了scroller的边界时,滚动条会收缩,设置为true可以禁止滚动条超出scroller的可见区域。false否true 是默认在Android上为true，iOS上为false</p>
+                        <p><label>hideScrollbar</label>是否隐藏滚动条 false否true是,默认在Android上为false,iOS上为true</p>
+                        <p><label>fadeScrollbar</label>滚动条是否渐隐渐显 false否true是,默认在Android上为false,iOS上为true</p>
+                        <p><label>scrollbarClass</label>字定义滚动条的样式名,自定义class</p>
+                        <a href="http://www.gafish.net/api/iScroll.html" target="_blank" data-role="button" data-inline="true">iscroll4中文API</a>
+                        <a href="http://cubiq.org/iscroll-5" target="_blank" data-role="button" data-inline="true" >iscroll官网</a>
+                        <a href="testIscroll.html"  data-role="button" data-inline="true" target="_blank">iscroll上下拉动刷新示例</a>
+                        <a href="testIscroll2.html"  data-role="button" data-inline="true" target="_blank">iscroll滚动条示例</a>
+                    </div>
+                </div>
+            </div>
+            <div id="" class="clearFix display_none">
+                <h3>1、按钮</h3>
+                <div class="code_area">
+                    <div class="example_box">
+                        <p class="model_hint"><label>①、data-inline="true"</label>
+                            在框架中默认情况下按钮是横向独占根据屏幕宽度横向自适应的，但是我们在应用的应用中经常需要在一行中显示多个按钮，
+                            这时候我们就需要知道一个新的叫做内联模式的属性了data-inline="true"。</p>
+                        <div>
+                            <a href="#" data-role="button">取消</a>
+                            <a href="#" data-role="button" data-inline="true">保存</a>
+                        </div>
+                    </div>
+                    <div class="code_box">
+                       <pre class="brush: html;">
+                            &lt;a href="#" data-role="button">取消&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true">保存&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="left" data-icon="delete">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="right" data-icon="arrow-d">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="top" data-icon="arrow-u">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="bottom" data-icon="arrow-r">按钮&lt;/a>
+                            &lt;a href="#" data-role="button" data-inline="true" data-iconpos="notext" data-icon="delete">按钮&lt;/a>
+                       </pre>
+                    </div>
+                </div>
+                <div class="warning_area warning0">
+                    <div class="t">按钮禁用/启用</div>
+                    <p>a标签类按钮禁用需加上class='ui-disabled'</p>
+                    <p>botton标签类按钮禁用需加上disabled='disabled'</p>
+                    <div class="t">图标按钮的特殊样式</div>
+                    <p>图标按钮中文字超过4个字的按钮，需要添加class="ui-btn-icon-lineheight2em"</p>
+                </div>
+            </div>
+        </div>
+        <div class="side_nav comp" comp="type:'modelTopChange'">
+            <h4>jqm组件样式</h4>
+            <ul>
+                <li><a href="#button_model" data-role="none" rel="external">按钮</a></li>
+                <li><a href="#form_model" data-role="none" rel="external">表单</a></li>
+                <li><a href="#accordion_model" data-role="none" rel="external">手风琴</a></li>
+                <li><a href="#list_model" data-role="none" rel="external">list列表</a></li>
+                <li><a href="#popup_model" data-role="none" rel="external">popup</a></li>
+                <li><a href="#panel_model" data-role="none" rel="external">panel面板</a></li>
+                <li><a href="#tabs_model" data-role="none" rel="external">选项卡</a></li>
+                <li><a href="#search_model" data-role="none" rel="external">搜索</a></li>
+                <li><a href="#table_model" data-role="none" rel="external">table表格</a></li>
+                <li><a href="#layout_model" data-role="none" rel="external">网格布局</a></li>
+                <li><a href="#jqm_theme" data-role="none" rel="external">jqm自定义主题</a></li>
+
+            </ul>
+            <h4>jqm组件动作</h4>
+            <ul>
+                <li><a href="#transition_mode" data-role="none" rel="external">容器过度效果</a></li>
+                <li><a href="#creating_widget_model" data-role="none" rel="external">动态创建组件</a></li>
+                <li><a href="#widget_refresh" data-role="none" rel="external">动态刷新组件</a></li>
+                <li><a href="#load_model" data-role="none" rel="external">jqm加载器</a></li>
+                <li><a href="#jqm_event" data-role="none" rel="external">jqm事件执行过程</a></li>
+                <li><a href="#fixed_header_footer" data-role="none" rel="external">jqm公用固定头/尾</a></li>
+                <li><a href="#fixed_navbar" data-role="none" rel="external">jqm固定头/尾navbar</a></li>
+                <!--<li><a href="#search_model" data-role="none" rel="external">搜索</a></li>-->
+            </ul>
+            <h4>扩展组件</h4>
+            <ul>
+                <li><a href="#iscroll_model" data-role="none" rel="external">iscroll滚动条</a></li>
+                <!--<li><a href="#creating_widget_model" data-role="none" rel="external">动态创建组件</a></li>-->
+                <!--<li><a href="#widget_refresh" data-role="none" rel="external">动态刷新组件</a></li>-->
+                <!--<li><a href="#load_model" data-role="none" rel="external">jqm加载器</a></li>-->
+                <!--<li><a href="#jqm_event" data-role="none" rel="external">jqm事件执行过程</a></li>-->
+                <!--<li><a href="#panel_model" data-role="none" rel="external">panel面板</a></li>-->
+                <!--<li><a href="#tabs_model" data-role="none" rel="external">选项卡</a></li>-->
+                <!--<li><a href="#search_model" data-role="none" rel="external">搜索</a></li>-->
+            </ul>
+        </div>
+    </div>
+    <footer class="footer"></footer>
+</body>
+</html>

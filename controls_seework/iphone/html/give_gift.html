@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>送礼物</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="give_gift" class="background_white">
+    <div data-role="content" class="wrapper comp give_gift_content padding_lr_5 border_box" comp="type:'dialog',footerTop:'fixed',parentId:'give_gift'" id="give_gift_content">
+        <div class="scroller comp" comp="type:'definedSelect',selectType:'radio',selectObjClass:'give_gift_list'">
+            <p class="give_user">赠送给<img src="../../../skin/seework/iphone/images/user.png"></p>
+            <ul class="clearFlow give_gift_list " data-role="none">
+                <li class="" value="赞">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>赞</p>
+                </li>
+                <li value="表扬">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>表扬</p>
+                </li>
+                <li value="鼓掌">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>鼓掌</p>
+                </li>
+                <li value="倒彩">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>倒彩</p>
+                </li>
+                <li value="感谢">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>感谢</p>
+                </li>
+                <li value="安慰">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>安慰</p>
+                </li>
+                <li value="香槟">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>香槟</p>
+                </li>
+                <li value="生日蛋糕">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>生日蛋糕</p>
+                </li>
+                <li value="结婚快乐">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>结婚快乐</p>
+                </li>
+                <li value="生日快乐">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>生日快乐</p>
+                </li>
+                <li>
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>好人卡</p>
+                </li>
+                <li value="专家证">
+                    <span class="iphone120 file_120"></span>
+                    <span class="selected_bg"></span>
+                    <p>专家证</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="background_white">
+        <a href="#" data-role="button" class="blue_block_btn margin_t_10 margin_b_20 margin_lr_10" >赠送</a>
+    </footer>
+    <script type="text/javascript">
+        $("#give_gift").bind("pagebeforeshow",function(){
+            pageInit("give_gift");
+        })
+        $("#give_gift").bind("pageshow",function(){
+            pageShowInit("give_gift");
+            $.loadedScroll("give_gift_content",1,"v")
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

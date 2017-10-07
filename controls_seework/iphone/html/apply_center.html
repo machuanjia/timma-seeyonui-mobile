@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>应用中心</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="apply_center" data-title="应用中心" class="apply_center">
+    <div data-role="content" class="wrapper comp" comp="type:'dialog',footerTop:'fixed',definedHeight:'50',parentId:'apply_center'" id="apply_center_content">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',callBack:userList" id="apply_center_list">
+            <!--<ul data-role="listview" class="nav_list_box apply_center_list_item">-->
+                <!--<li>-->
+                    <!--<a href="#" data-transition="slide">-->
+                        <!--<div class="nav_list_box_left">-->
+                            <!--<img class="apply_model_type margin_r_5" src="../../../skin/seework/iphone/images/patorl_shop.png">-->
+                        <!--</div>-->
+                        <!--<div class="nav_list_box_center">-->
+                            <!--<h2>协作圈</h2>-->
+                            <!--<span></span>-->
+                            <!--<span></span>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="seewprk_menu">
+        <div data-role="navbar" class="seework_menu">
+            <ul>
+                <li>
+                    <a href="serve_list.html" data-icon="seework-home" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="apply-center" data-transition="slidefade" class="seework_menu_bar ui-btn-active"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="new-built" data-transition="slidefade" class="seework_menu_bar new_built_default"></a>
+                </li>
+                <li>
+                    <a href="work_link_man.html" data-icon="link-man" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="me" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+//            var url = "work_content.html";
+//            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+//                //匹配目标页面
+//                if (thisUrlObj.href.search(url) != -1) {
+//                    var ajax_data = dataObj.options.data;
+//                }
+//            })
+        }
+        $("#apply_center").bind("pagebeforeshow",function(){
+            $("#apply_center").find(".list_data").remove();
+            pageInit("apply_center");
+            listData($("#apply_center_list"),{
+                list_type:'applyModel',
+                data:[
+                    {
+                        'id':'002',
+                        'appImgUrl':'../../../skin/seework/iphone/images/patorl_shop.png',
+                        'appName':'巡店应用',
+                        'inquiryContent':["本月待巡店:<label>30</label>家","本月待巡店:<label>30</label>家"]
+                    },
+                    {
+                        'id':'003',
+                        'appImgUrl':'../../../skin/seework/iphone/images/sales.png',
+                        'appName':'销售管理',
+                        'inquiryContent':["本店回访<label>30</label>家"]
+                    },
+                    {
+                        'id':'004',
+                        'appImgUrl':'../../../skin/seework/iphone/images/hr_manage.png',
+                        'appName':'人事管理',
+                        'inquiryContent':["无统计数据"]
+                    },
+                    {
+                        'id':'005',
+                        'appImgUrl':'../../../skin/seework/iphone/images/apply_model.png',
+                        'appName':'应用',
+                        'inquiryContent':["无统计数据"]
+                    },
+                    {
+                        'id':'006',
+                        'appImgUrl':'../../../skin/seework/iphone/images/apply_model.png',
+                        'appName':'应用',
+                        'inquiryContent':null
+                    }
+                ]
+            });
+        });
+        $("#apply_center").bind("pageshow",function(){
+            pageShowInit("apply_center");
+            $.loadedScroll("apply_center_content",1,"v");
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

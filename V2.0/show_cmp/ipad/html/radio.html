@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库-单选</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../controls_ipad/seeyon.ui.ipad-debug.js"></script>
+    <!--高亮显示-->
+    <link href="../../docs/resource/syntaxhighlighter/styles/shCoreRDark.css" rel="stylesheet"/>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shCore.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <script src="../../docs/resource/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <!--demo-->
+    <link href="../../docs/resource/demo.css" rel="stylesheet"/>
+    <script src="../../docs/resource/demo.js"></script>
+    <link href="../../icon/common-debug.css" rel="stylesheet"/>
+    <link href="../../../controls_ipad/skin/default/css/css-debug.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="demo_page">
+    <section>
+        <h3 class="demo_title">用户单选</h3>
+        <div class="code">
+            <div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                <div class="ui-block-a margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio_checked30 margin_r_10" radio_value="1"></span>
+                        <span class="ico32 attend_meeting_32 margin_r_10"></span>参加
+                    </div>
+                </div>
+                <div class="ui-block-b margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="0"></span>
+                        <span class="ico32 unattended_meeting_32 margin_r_10"></span>
+                        不参加
+                    </div>
+                </div>
+                <div class="ui-block-c margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="-1"></span>
+                        <span class="ico32 unsure_32 margin_r_10"></span>
+                        待定
+                    </div>
+                </div>
+                <input type="hidden" value="1" id="receipt_select_value"/>
+            </div>
+        </div>
+        <a href="#" data-rel="popup" data-position-to="window" class="ui-btn ui-mini ui-btn-inline demo_dialog_btn"
+           style="color: #3eb249; font-weight: normal;">View Source</a>
+
+        <div id="" data-role="popup" data-overlay-theme="a" data-theme="b" class="demo_dialog">
+            <pre class="brush:html; code_pre"></pre>
+        </div>
+
+        <!--注：这是jqm原生单选，缺少图标集，暂时未使用-->
+        <!--<div class="ui-grid-b users_select">-->
+            <!--<div class="ui-block-a margin_tb_10">-->
+                <!--<input type="radio" name="user_radio" id="user_choice_1" value="1" checked="checked">-->
+                <!--<label for="user_choice_1">参加</label>-->
+            <!--</div>-->
+            <!--<div class="ui-block-b margin_tb_10">-->
+                <!--<input type="radio" name="user_radio" id="user_choice_2" value="0">-->
+                <!--<label for="user_choice_2">不参加</label>-->
+            <!--</div>-->
+            <!--<div class="ui-block-c margin_tb_10">-->
+                <!--<input type="radio" name="user_radio" id="user_choice_3" value="-1">-->
+                <!--<label for="user_choice_3">待定</label>-->
+            <!--</div>-->
+        <!--</div>-->
+    </section>
+    <script type="text/javascript">
+        $(function(){
+            pageInit();
+        })
+    </script>
+</div>
+</body>
+</html>

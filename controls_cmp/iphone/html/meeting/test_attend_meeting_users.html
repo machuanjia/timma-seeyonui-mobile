@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—会议列表模板页</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="attend_meeting_users">
+    <header data-role="header">
+        <h1 class="page_header_title">
+            与会人员
+        </h1>
+        <a href="test_meeting_details.html"  class="ui-btn ui-btn-inline ui-btn-icon-top
+        ui-btn-icon-b ui-icon-return" data-transition="slide"></a>
+    </header>
+    <div data-role="content">
+        <div  class="meeting_user_content comp" comp="type:'tabs'">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="attend_user">参加</a></li>
+                    <li><a href="#" class="tab-ui-btn-a" tgt="no_ensure">待定</a></li>
+                    <li><a href="#" class="tab-ui-btn-a" tgt="no_attend">不参加</a></li>
+                    <li><a href="#" class="tab-ui-btn-a" tgt="no_return_receipt">未回执</a></li>
+                </ul>
+            </div>
+            <div class="tabs_body">
+                <ul class="clearFlow ele_active" id="attend_user" >
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                </ul>
+                <ul class="clearFlow ele_hide" id="no_ensure">
+                    <li>王晔2</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                </ul>
+                <ul class="clearFlow ele_hide" id="no_attend">
+                    <li>王晔3</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                </ul>
+                <ul class="clearFlow ele_hide" id="no_return_receipt">
+                    <li><span class="ico_phone_28 see_28"></span>王晔晔</li>
+                    <li><span class="ico_phone_28 unseen_28"></span>李晓东</li>
+                    <li><span class="ico_phone_28 see_28"></span>郭晔晔</li>
+                    <li><span class="ico_phone_28 see_28"></span>吴小华</li>
+                    <li><span class="ico_phone_28 see_28"></span>王晓晔</li>
+                    <li><span class="ico_phone_28 see_28"></span>李晓东</li>
+                    <li><span class="ico_phone_28 see_28"></span>郭明</li>
+                    <li><span class="ico_phone_28 unseen_28"></span>吴华</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $("#attend_meeting_users").bind("pageshow",function(){
+            pageInit();
+        })
+    </script>
+</section>
+
+
+</body>
+</html>

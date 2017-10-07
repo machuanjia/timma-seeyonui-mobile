@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>移动端iscroll</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../controls_common/css/common-debug.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/test_iscroll.js"></script>
+    <link rel="stylesheet" href="css/iscroll.css"/>
+</head>
+<body>
+<section data-role="page" style="overflow: hidden">
+    <header data-role="header">
+        <h1>iScroll实例：下拉刷新，滚动翻页</h1>
+    </header>
+    <div data-role="content" id="wrapper">
+        <div class="scroller">
+            <div class="pullDown">
+                <span class="pullDownIcon"></span><span class="pullDownLabel">下拉刷新...</span>
+            </div>
+            <ul id="thelist">
+                <li>测试内容——1</li>
+                <li>测试内容——2</li>
+                <li>测试内容——3</li>
+                <li>测试内容——4</li>
+                <li>测试内容——5</li>
+                <li>测试内容——6</li>
+                <li>测试内容——7</li>
+                <li>测试内容——8</li>
+                <li>测试内容——9</li>
+                <li>测试内容——10</li>
+            </ul>
+            <div class="pullUp">
+                <span class="pullUpIcon"></span><span class="pullUpLabel">上拉加载更多...</span>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed">
+        <h4>
+            测试完成
+        </h4>
+    </footer>
+    <script type="text/javascript">
+        var  count = 1;
+        function getMoreInfo(obj,id){
+            var li_html = "";
+            setTimeout(function () {
+                for(var i = 0;i<4;i++){
+                    li_html +='<li>下拉获取更新内容——'+count+'</li>';
+                    count++;
+                }
+                $("#thelist").prepend(li_html);
+                obj.refresh();
+                if($("#wrapper").height() < $("#wrapper .scroller").height()){
+                    $("#wrapper .pullUp").show();
+                }
+            }, 1000);
+
+        }
+        function getMoreInfo2(obj,id){
+            var li_html = "";
+            setTimeout(function () {
+                for(var i = 0;i<4;i++){
+                    li_html +='<li>上拉拉获取更多内容——'+count+'</li>';
+                    count++;
+                }
+                $("#thelist").append(li_html);
+                obj.refresh();
+            }, 1000);
+
+        }
+        $(function(){
+            loaded("wrapper",getMoreInfo,getMoreInfo2);
+        })
+    </script>
+</section>
+</body>
+</html>

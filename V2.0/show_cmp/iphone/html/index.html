@@ -1,0 +1,1119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—所有模板</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../../controls_cmp/iphone/js/seeyon.ui.iphone-debug.js"></script>
+    <!--高亮显示-->
+    <link href="../../../css/doc.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../scripts/syntaxhighlighter/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="../../../scripts/modelShow.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+        $(function(){
+            pageInit();
+            commonUnit();
+        })
+    </script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet" />
+    <style type="text/css">
+        .ui-page-active{
+           overflow: hidden!important;
+        }
+        .ui-overlay-a,.ui-page-theme-a{
+            background-color: #fff!important;
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .ui-page-theme-a a{
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .content_reply_info .send_type span,
+        .user_reply_list .user_reply_type span{
+            vertical-align: top;
+        }
+
+    </style>
+</head>
+<body class="jqm_load">
+<header class="header">
+    <div class="nav_area">
+        <ul class="clearFix">
+            <li><a href="../../../../index.html" data-role="none" rel="external"><strong>SeeyonMobile</strong></a></li>
+            <li><a href="../../../getting-started/index.html" data-role="none" rel="external">起步</a></li>
+            <li class="li_active"><a href="javascript:void(0);" >iphone端组件</a></li>
+            <li><a href="model.html" data-role="none" rel="external">iphone端原型</a></li>
+            <li><a href="../../ipad/html/index.html" data-role="none" rel="external">ipad端组件</a></li>
+            <li><a href="../../ipad/html/model.html" data-role="none" rel="external">ipad端原型</a></li>
+            <li><a href="../../icon/index.html" data-role="none" rel="external">公用图标库和class类</a></li>
+            <li><a href="../../../knowledge/index.html" data-role="none" rel="external">JqueryMobile知识库</a></li>
+            <li><a href="../../../log/index.html" data-role="none" rel="external">日志</a></li>
+        </ul>
+    </div>
+    <div class="page_title_area">
+        <div class="page_title_box">
+            <div class="t">iphone端基本组件</div>
+            <div class="c">iphone端所有涉及到的基本组件</div>
+        </div>
+    </div>
+</header>
+<div id="content" class="clearFix">
+    <div class="main_body">
+        <div id="button_model" class="clearFix">
+            <h1>按钮</h1>
+            <p>按钮类型有两类，一类是a标签的方式，一类是button的方式，目前我们按钮采用的是a标签方式</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-a">提交</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-b">回复</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-c">确定</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-c ui-disabled" >确定</a>
+                    <a href="#" class="ui-btn ui-btn-c">确定</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"></a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-close"></a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply"></a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-attend-meeting">参加</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-unattended-meeting">不参加</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-unsure">待定</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-photo">拍照</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-voice">语音</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-associate">关联文档</a>
+                    <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-local_doc ui-btn-icon-lineheight2em">本地文件和视频</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a">提交 &lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-b">回复 &lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-c">确定 &lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-c ui-disabled" >确定</a>
+                     &lt;a href="#" class="ui-btn ui-btn-c">确定 &lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return">&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-close">&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply">&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-attend-meeting">参加&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-unattended-meeting">不参加&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-unsure">待定&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-photo">拍照&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-voice">语音</a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-associate">关联文档&lt;/a>
+                     &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-local_doc ui-btn-icon-lineheight2em">本地文件和视频&lt;/a>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">按钮禁用/启用</div>
+                <p>a标签类按钮禁用需加上class='ui-disabled'</p>
+                <p>botton标签类按钮禁用需加上disabled='disabled'</p>
+                <div class="t">图标按钮的特殊样式</div>
+                <p>图标按钮中文字超过4个字的按钮，需要添加class="ui-btn-icon-lineheight2em"</p>
+            </div>
+        </div>
+        <div id="on_off" class="clearFix">
+            <h1>开关</h1>
+            <p>按钮类型有两类，一类是a标签的方式，一类是button的方式，目前我们按钮采用的是a标签方式</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="" id="f2"/>
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="关"/>
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="关" checked="checked"/>
+                    <input type="checkbox" data-role="flipswitch" name="flip-checkbox" disabled="disabled" data-on-text="开" data-off-text="关" checked="checked"/>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                     &lt;input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="" id="f2"/>
+                     &lt;input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="关"/>
+                     &lt;input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开" data-off-text="关" checked="checked"/>
+                     &lt;input type="checkbox" data-role="flipswitch" name="flip-checkbox" disabled="disabled" data-on-text="开" data-off-text="关" checked="checked"/>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">开关使用说明</div>
+                <p>开关采用input[type="checkbox"]形式，默认是关，要设置默认打开许要添加属性checked="checked"</p>
+                <p>开关禁用需加上disabled='disabled'</p>
+            </div>
+        </div>
+        <div id="select_menu" class="clearFix">
+            <h1>选择菜单</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <select name="select_menu" data-native-menu="false" data-iconpos="right" data-inline="true">
+                        <option value="1">非常总要</option>
+                        <option value="2">总要</option>
+                        <option value="3">一般重要</option>
+                        <option value="4">不总要</option>
+                    </select>
+                    <select name="select_menu" data-iconpos="right" data-inline="true">
+                        <option value="1">非常总要</option>
+                        <option value="2">总要</option>
+                        <option value="3">一般重要</option>
+                        <option value="4">不总要</option>
+                    </select>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;select name="select_menu" data-native-menu="false" data-iconpos="right" data-inline="true">
+                          &lt;option value="1">非常总要 &lt;/option>
+                          &lt;option value="2">总要 &lt;/option>
+                          &lt;option value="3">一般重要 &lt;/option>
+                          &lt;option value="4">不总要 &lt;/option>
+                       &lt;/select>
+                      &lt;select name="select_menu" data-iconpos="right" data-inline="true">
+                          &lt;option value="1">非常总要 &lt;/option>
+                          &lt;option value="2">总要 &lt;/option>
+                          &lt;option value="3">一般重要 &lt;/option>
+                          &lt;option value="4">不总要 &lt;/option>
+                       &lt;/select>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">选择菜单使用说明</div>
+                <p>如果需要默认选中某一项，则在option中添加selected="selected"即可</p>
+            </div>
+        </div>
+        <div id="imitate_radio" class="clearFix">
+            <h1>单选</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                        <div class="ui-block-a margin_tb_5">
+                            <div class="iphone_radio">
+                                <span class="feedbackradio ico_phone_radio_checked30 margin_r_5" radio_value="1"></span>
+                                <span class="ico_phone_48 attend_meeting_48"></span>
+                                参加
+                            </div>
+                        </div>
+                        <div class="ui-block-b margin_tb_5">
+                            <div class="iphone_radio">
+                                <span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="0"></span>
+                                <span class="ico_phone_48 unattended_meeting_48"></span>
+                                不参加
+                            </div>
+                        </div>
+                        <div class="ui-block-c margin_tb_5">
+                            <div class="iphone_radio">
+                                <span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="-1"></span>
+                                <span class="ico_phone_48 unsure_48"></span>
+                                待定
+                            </div>
+                        </div>
+                        <input type="hidden" value="1" id="receipt_select_value"/>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                        &lt;div class="ui-block-a margin_tb_5">
+                            &lt;div class="iphone_radio">
+                                &lt;span class="feedbackradio ico_phone_radio_checked30 margin_r_5" radio_value="1">&lt;/span>
+                                &lt;span class="ico_phone_48 attend_meeting_48">&lt;/span>
+                                参加
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="ui-block-b margin_tb_5">
+                            &lt;div class="iphone_radio">
+                                &lt;span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="0">&lt;/span>
+                                &lt;span class="ico_phone_48 unattended_meeting_48">&lt;/span>
+                                不参加
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;div class="ui-block-c margin_tb_5">
+                            &lt;div class="iphone_radio">
+                                &lt;span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="-1">&lt;/span>
+                                &lt;span class="ico_phone_48 unsure_48">&lt;/span>
+                                待定
+                            &lt;/div>
+                        &lt;/div>
+                        &lt;input type="hidden" value="1" id="receipt_select_value"/>
+                     &lt;/div>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">单选使用说明</div>
+                <p>单选外层父级需要添加公共组件属性comp，inputId对应的值为单选所选取值的id</p>
+            </div>
+        </div>
+        <div id="imitate_checkbox" class="clearFix">
+            <h1>多选</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <label for="checkbox-v-2a">选项一</label>
+                    <input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a" value="2a"/>
+                    <label for="checkbox-v-2b">选项二</label>
+                    <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2b" value="2b" checked="checked"/>
+                    <label for="checkbox-v-2c">选项三</label>
+                    <input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c" value="2c" disabled="disabled" checked="checked"/>
+
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;label for="checkbox-v-2a">选项一&lt;/label>
+                       &lt;input type="checkbox" name="checkbox-v-2a" id="checkbox-v-2a" value="2a"/>
+                       &lt;label for="checkbox-v-2b">选项二&lt;/label>
+                       &lt;input type="checkbox" name="checkbox-v-2b" id="checkbox-v-2b" value="2b" checked="checked"/>
+                       &lt;label for="checkbox-v-2c">选项三&lt;/label>
+                       &lt;input type="checkbox" name="checkbox-v-2c" id="checkbox-v-2c" value="2c" disabled="disabled" checked="checked"/>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0 display_none">
+                <div class="t">单选使用说明</div>
+                <p>单选外层父级需要添加公共组件属性comp，inputId对应的值为单选所选取值的id</p>
+            </div>
+        </div>
+        <div id="page_header" class="clearFix">
+            <h1>页头</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <header data-role="header" class="page_header">
+                        <h1 class="page_header_title">
+                            会议
+                            <span></span>
+                        </h1>
+                    </header>
+                </div>
+                <div class="example_box">
+                    <header data-role="header" class="page_header">
+                        <h1 class="page_header_title">
+                            会议详情
+                            <span></span>
+                        </h1>
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"></a>
+                        <a href="#" class="ui-btn ui-btn-inline ui-btn-a">回执</a>
+                    </header>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;header data-role="header" class="page_header">
+                           &lt;h1 class="page_header_title">
+                               会议
+                               &lt;span>&lt;/span>
+                            &lt;/h1>
+                       &lt;/header>
+                       &lt;header data-role="header" class="page_header">
+                           &lt;h1 class="page_header_title">
+                               会议详情
+                               &lt;span>&lt;/span>
+                           &lt;/h1>
+                           &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return">&lt;/a>
+                           &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a">回执&lt;/a>
+                       &lt;/header>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0 display_none">
+                <div class="t">单选使用说明</div>
+                <p>单选外层父级需要添加公共组件属性comp，inputId对应的值为单选所选取值的id</p>
+            </div>
+        </div>
+        <div id="model_tabs" class="clearFix">
+            <h1>选项卡</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <p class="demo_title">1、文字选项卡</p>
+                    <div class="comp" comp="type:'tabs'">
+                        <div data-role="navbar">
+                            <ul class="model_header_tabs">
+                                <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="tabs1">选项卡一</a></li>
+                                <li><a href="#" class="tab-ui-btn-a" tgt="tabs2">选项卡二</a></li>
+                            </ul>
+                        </div>
+                        <div class="tabs_body">
+                            <div class="ele_active" id="tabs1">
+                                <h4>内容区域一</h4>
+                            </div>
+                            <div class="ele_hide" id="tabs2">
+                                <h4>内容区域二</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="demo_title">2、图标选项卡</p>
+                    <div class="comp" comp="type:'tabs'">
+                        <div data-role="navbar" class="navbar_add_icon">
+                            <ul>
+                                <li>
+                                    <a href="#" class="tab-ui-btn-a ui-btn-active" tgt="tabs3">
+                                        <span class="ico_phone_48 attend_meeting_48"></span>
+                                        参加
+                                        <span class="ico_phone_22 drop_up_btn_22 margin_l_20"></span>
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="#" class="tab-ui-btn-a" tgt="tabs4">
+                                        <span class="ico_phone_48 accessory_48"></span>
+                                        (<label>10</label>)
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="tabs_body">
+                            <div class="ele_active" id="tabs3">
+                                <h4>内容区域三</h4>
+                            </div>
+                            <div class="ele_hide" id="tabs4">
+                                <h4>内容区域四</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div class="comp" comp="type:'tabs'">
+                           &lt;div data-role="navbar">
+                               &lt;ul class="model_header_tabs">
+                                    &lt;li>&lt;a href="#" class="tab-ui-btn-a ui-btn-active" tgt="tabs1">选项卡一&lt;/a>&lt;/li>
+                                    &lt;li>&lt;a href="#" class="tab-ui-btn-a" tgt="tabs2">选项卡二&lt;/a>&lt;/li>
+                               &lt;/ul>
+                           &lt;/div>
+                           &lt;div class="tabs_body">
+                               &lt;div class="ele_active" id="tabs1">
+                                   &lt;h4>内容区域一&lt;/h4>
+                               &lt;/div>
+                               &lt;div class="ele_hide" id="tabs2">
+                                   &lt;h4>内容区域二&lt;/h4>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/div>
+                        &lt;div class="comp" comp="type:'tabs'">
+                            &lt;div data-role="navbar" class="navbar_add_icon">
+                                &lt;ul>
+                                    &lt;li>
+                                        &lt;a href="#" class="tab-ui-btn-a ui-btn-active" tgt="tabs3">
+                                            &lt;span class="ico_phone_48 attend_meeting_48">&lt;/span>
+                                            参加
+                                            &lt;span class="ico_phone_22 drop_up_btn_22 margin_l_20">&lt;/span>
+                                        &lt;/a>
+                                    &lt;/li>
+                                    &lt;li>
+                                        &lt;a href="#" class="tab-ui-btn-a" tgt="tabs4">
+                                            &lt;span class="ico_phone_48 accessory_48">&lt;/span>
+                                            (&lt;label>10&lt;/label>)
+                                        &lt;/a>
+                                    &lt;/li>
+                                &lt;/ul>
+                            &lt;/div>
+                            &lt;div class="tabs_body">
+                                &lt;div class="ele_active" id="tabs3">
+                                    &lt;h4>内容区域三&lt;/h4>
+                                &lt;/div>
+                                &lt;div class="ele_hide" id="tabs4">
+                                    &lt;h4>内容区域四&lt;/h4>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">选项卡使用说明</div>
+                <p>由于多页面切换含有data-tabs="tabs"的时候，iphone端页面会存在一定问题，所以不用jqm原生选项卡，在多页面使用的时候采用自定义的选项卡！</p>
+                <p>comp="type:'tabs'"，表示模拟tabs切换，tgt的属性值为需要显示的区域块的id</p>
+            </div>
+        </div>
+        <div id="nav_list_box" class="clearFix">
+            <h1>list列表</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <p class="demo_title">1、默认列表</p>
+                    <div class="nav_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_22 attend_meeting_22"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <div class="nav_list_box_center_font16 nav_list_box_center_marginBottom">
+                                    明天下午三点小会议室集合
+                                </div>
+                                <div class="nav_list_box_center_font12">
+                                    <label class="padding_r_5">12-12</label>
+                                    <label>10:33-11:30</label>
+                                </div>
+                            </div>
+                            <div class="nav_list_box_right">
+                                <div class="nav_list_box_right_ico">
+                                    <span class="ico_phone_22 accessory_22 navlisticon1"></span>
+                                    <span class="ico_phone_22 meeting_summary_22 navlisticon2"></span>
+                                </div>
+                                <div class="nav_list_box_right_name">卜宏宇</div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="demo_title">2、选中列表</p>
+                    <div class="nav_list_box nav_list_box_cur">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_22 attend_meeting_22"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <div class="nav_list_box_center_font16 nav_list_box_center_marginBottom">
+                                    明天下午三点小会议室集合
+                                </div>
+                                <div class="nav_list_box_center_font12">10:33-11:30</div>
+                            </div>
+                            <div class="nav_list_box_right">
+                                <div class="nav_list_box_right_ico">
+                                    <span class="ico_phone_22 accessory_22 navlisticon1"></span>
+                                    <span class="ico_phone_22 meeting_summary_22 navlisticon2"></span>
+                                </div>
+                                <div class="nav_list_box_right_name">卜宏宇</div>
+                            </div>
+                        </a>
+                    </div>
+                    <p class="demo_title">3、灰色列表</p>
+                    <div class="nav_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_22 unattended_meeting_22"></span>
+                            </div>
+                            <div class="nav_list_box_center nav_list_box_center_gr">
+                                <div class="nav_list_box_center_font16 nav_list_box_center_marginBottom">
+                                    明天下午三点小会议室集合
+                                </div>
+                                <div class="nav_list_box_center_font12">10:33-11:30</div>
+                            </div>
+                            <div class="nav_list_box_right">
+                                <div class="nav_list_box_right_ico">
+                                    <span class="ico_phone_22 accessory_22 navlisticon1"></span>
+                                    <span class="ico_phone_22 meeting_summary_22 navlisticon2"></span>
+                                </div>
+                                <div class="nav_list_box_right_name">卜宏宇</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                        &lt;div class="nav_list_box nav_list_box_def">
+                            &lt;a href="#" data-transition="slide">
+                                &lt;div class="nav_list_box_left">
+                                    &lt;span class="ico_phone_22 attend_meeting_22">&lt;/span>
+                                &lt;/div>
+                                &lt;div class="nav_list_box_center">
+                                    &lt;div class="nav_list_box_center_font16 nav_list_box_center_marginBottom">
+                                        明天下午三点小会议室集合
+                                    &lt;/div>
+                                    &lt;div class="nav_list_box_center_font12">
+                                        &lt;label class="padding_r_5">12-12&lt;/label>
+                                        &lt;label>10:33-11:30&lt;/label>
+                                    &lt;/div>
+                                &lt;/div>
+                                &lt;div class="nav_list_box_right">
+                                    &lt;div class="nav_list_box_right_ico">
+                                        &lt;span class="ico_phone_22 accessory_22 navlisticon1">&lt;/span>
+                                        &lt;span class="ico_phone_22 meeting_summary_22 navlisticon2">&lt;/span>
+                                    &lt;/div>
+                                    &lt;div class="nav_list_box_right_name">卜宏宇&lt;/div>
+                                &lt;/div>
+                            &lt;/a>
+                        &lt;/div>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">list列表说明</div>
+                <p>上面展示的默认列表，如果要换成选中状，在含有nav_list_box的div中添加class="nav_list_box_cur"</p>
+                <p>如果要换成灰色状态，在含有nav_list_box_center的div中添加class="nav_list_box_center_gr"</p>
+            </div>
+        </div>
+        <div id="accessory" class="clearFix">
+            <h1>附件</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <ul class="receipt_accessory_type padding_10">
+                        <li>
+                            <div class="accessory_underway margin_tb_10">
+                                <div class="accessory_underway_content">
+                                    <div class="accessory_icon padding_lr_10">
+                                        <span class="ico_phone_48 mp4_48 "></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content">
+                                            <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                            <label>.DVD</label>
+                                        </p>
+                                        <p class="underway_accessory_size">500MB</p>
+                                    </div>
+                                </div>
+                                <p class="accessory_underway_bar"></p>
+                                <span class="ico_phone_48 cancel_upload_48 model_info_close"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_fail margin_tb_15">
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 mp4_48 "></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">
+                                        <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                        <label>.DVD</label>
+                                    </p>
+                                    <p class="underway_accessory_size">500MB</p>
+                                </div>
+                                <span class="ico_phone_48 anew_upload_48 model_info_close"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_tb_15">
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 mp4_48 "></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">
+                                        <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                        <label>.DVD</label>
+                                    </p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <span class="ico_phone_48 cancel_upload_48 model_info_close"></span>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_tb_15">
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 mp4_48 "></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">
+                                        <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                        <label>.DVD</label>
+                                    </p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_icon padding_lr_10">
+                                    <span class="ico_phone_48 accessory_download_48 "></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;ul class="receipt_accessory_type padding_10">
+                           &lt;li>
+                               &lt;div class="accessory_underway margin_tb_10">
+                                   &lt;div class="accessory_underway_content">
+                                       &lt;div class="accessory_icon padding_lr_10">
+                                           &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                       &lt;/div>
+                                       &lt;div class="accessory_name">
+                                           &lt;p class="receipt_accessory_content">
+                                               &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                               &lt;label>.DVD&lt;/label>
+                                           &lt;/p>
+                                           &lt;p class="underway_accessory_size">500MB&lt;/p>
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;p class="accessory_underway_bar">&lt;/p>
+                                   &lt;span class="ico_phone_48 cancel_upload_48 model_info_close">&lt;/span>
+                               &lt;/div>
+                           &lt;/li>
+                           &lt;li>
+                               &lt;div class="accessory_fail margin_tb_15">
+                                   &lt;div class="accessory_icon padding_lr_10">
+                                       &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                   &lt;/div>
+                                   &lt;div class="accessory_name">
+                                       &lt;p class="receipt_accessory_content">
+                                           &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                           &lt;label>.DVD&lt;/label>
+                                       &lt;/p>
+                                       &lt;p class="underway_accessory_size">500MB&lt;/p>
+                                   &lt;/div>
+                                   &lt;span class="ico_phone_48 anew_upload_48 model_info_close">&lt;/span>
+                               &lt;/div>
+                           &lt;/li>
+                           &lt;li>
+                               &lt;div class="accessory_finish margin_tb_15">
+                                   &lt;div class="accessory_icon padding_lr_10">
+                                       &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                   &lt;/div>
+                                   &lt;div class="accessory_name">
+                                       &lt;p class="receipt_accessory_content">
+                                           &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                           &lt;label>.DVD&lt;/label>
+                                       &lt;/p>
+                                       &lt;p class="accessory_size">500MB&lt;/p>
+                                   &lt;/div>
+                                   &lt;span class="ico_phone_48 cancel_upload_48 model_info_close">&lt;/span>
+                               &lt;/div>
+                           &lt;/li>
+                           &lt;li>
+                               &lt;div class="accessory_finish margin_tb_15">
+                                   &lt;div class="accessory_icon padding_lr_10">
+                                       &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                   &lt;/div>
+                                   &lt;div class="accessory_name">
+                                       &lt;p class="receipt_accessory_content">
+                                           &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                           &lt;label>.DVD&lt;/label>
+                                       &lt;/p>
+                                       &lt;p class="accessory_size">500MB&lt;/p>
+                                   &lt;/div>
+                                   &lt;div class="accessory_icon padding_lr_10">
+                                       &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                   &lt;/div>
+                               &lt;/div>
+                           &lt;/li>
+                       &lt;/ul>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="content_header" class="clearFix">
+            <h1>会议头部</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <div class="content_header">
+                        <div class="content_header_title">
+                            <div>
+                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                                内容内容内容内容内容内容内容内容内容内容内容内容内容内容
+                            </div>
+                            <div>
+                                <span class="right ico_phone_22 accessory_22 content_header_icon"></span>
+                            </div>
+                        </div>
+                        <div class="content_manager_time clearFlow">
+                            <span class="content_header_time">
+                                <label class="padding_r_5">今天</label>
+                                <label>10:30-11:30</label>
+                            </span>
+                            <span class="content_header_name">卜宏宇</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div class="content_header">
+                           &lt;div class="content_header_title">
+                               &lt;div>内容内容内容内容&lt;/div>
+                               &lt;div>
+                                   &lt;span class="right ico_phone_22 accessory_22 content_header_icon">&lt;/span>
+                               &lt;/div>
+                           &lt;/div>
+                           &lt;div class="content_manager_time clearFlow">
+                                &lt;span class="content_header_time">
+                                    &lt;label class="padding_r_5">今天&lt;/label>
+                                    &lt;label>10:30-11:30&lt;/label>
+                                &lt;/span>
+                               &lt;span class="content_header_name">卜宏宇&lt;/span>
+                           &lt;/div>
+                       &lt;/div>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="content_body" class="clearFix">
+            <h1>会议内容</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <div class="content iphone_bg">
+                        <p>本期将和大家一起分享高效能人士七个习惯中的首要习惯——“积极主动”的相关内容。有这样一个事实</p>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div class="content">
+                           &lt;p>本期将和大家一起分享高效能人士七个习惯中的首要习惯——“积极主动”的相关内容。有这样一个事实&lt;/p>
+                      &lt;/div>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="content_list" class="clearFix">
+            <h1>会议列表</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <div class="content_list">
+                        <div>
+                            会议时间：<label class="padding_r_5">11-13</label><label>17:00-17:30</label>
+                        </div>
+                        <div class="content_participants">
+                            <a href="#" data-transition="slide" data-prefetch="true">
+                                <span class="content_participants_p">与会人员：<label>王未、单燕</label></span>
+                            </a>
+                            <span class="right ico_phone_48 spread_right_48"></span>
+                        </div>
+                        <div>会议地点：<label>第一会议室105</label></div>
+                        <div>主持人：<label>张小二</label></div>
+                        <div>主持人：<label>张小二</label></div>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div class="content_list">
+                           &lt;div>
+                               会议时间：&lt;label class="padding_r_5">11-13&lt;/label>&lt;label>17:00-17:30&lt;/label>
+                           &lt;/div>
+                           &lt;div class="content_participants">
+                               &lt;a href="#" data-transition="slide" data-prefetch="true">
+                                   &lt;span class="content_participants_p">与会人员：&lt;label>王未、单燕&lt;/label>&lt;/span>
+                               &lt;/a>
+                               &lt;span class="right ico_phone_48 spread_right_48">&lt;/span>
+                           &lt;/div>
+                           &lt;div>会议地点：&lt;label>第一会议室105&lt;/label>&lt;/div>
+                           &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                           &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                       &lt;/div>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="content_reply" class="clearFix">
+            <h1>意见回复</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <p class="demo_title">1、回复意见</p>
+                    <div data-role="collapsible" data-collapsed="false" data-iconpos="right" id="f1" data-inset="false"
+                         class="content_reply iphone_bg" >
+                        <h4 class="content_reply_title">回复意见(<label>12</label>)</h4>
+                        <ul>
+                            <li>
+                                <div class="content_reply_content">
+                                    <div class="first_content_reply padding_t_10 padding_b_5">
+                                        <div class="user_head">
+                                            <img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                        </div>
+                                        <div class="content_reply_info">
+                                            <p class="reply_person_info">
+                                                <label>赵康永</label>
+                                                <label class="padding_l_10">已阅</label>
+                                            </p>
+                                            <p class="reply_person_content padding_t_5">
+                                                智能手机终端不仅是一个信息提供息的接收设备，而且也是系统。
+                                            </p>
+                                            <ul class="receipt_accessory_type margin_r_40">
+                                                <li>
+                                                    <div class="accessory_finish margin_tb_15">
+                                                        <div class="accessory_icon padding_lr_10">
+                                                            <span class="ico_phone_48 mp4_48 "></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                                                <label>.DVD</label>
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_icon padding_lr_10">
+                                                            <span class="ico_phone_48 accessory_download_48 "></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="send_type">
+                                                <span class="padding_r_5">
+                                                    2012-07-19&nbsp;&nbsp;13:33
+                                                </span>
+                                                        发自
+                                                <span class="clientType">
+                                                  Android
+                                                </span>
+                                                客户端
+                                                <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply reply_btn"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                            class="content_reply iphone_bg" >
+                           &lt;h4 class="content_reply_title">回复意见(&lt;label>12&lt;/label>)&lt;/h4>
+                           &lt;ul>
+                               &lt;li>
+                                   &lt;div class="content_reply_content">
+                                       &lt;div class="first_content_reply padding_t_10 padding_b_5">
+                                           &lt;div class="user_head">
+                                               &lt;img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                           &lt;/div>
+                                           &lt;div class="content_reply_info">
+                                               &lt;p class="reply_person_info">
+                                                   &lt;label>赵康永&lt;/label>
+                                                   &lt;label class="padding_l_10">已阅&lt;/label>
+                                               &lt;/p>
+                                               &lt;p class="reply_person_content padding_t_5">
+                                                   智能手机终端不仅是一个信息提供息的接收设备，而且也是系统。
+                                               &lt;/p>
+                                               &lt;ul class="receipt_accessory_type margin_r_40">
+                                                   &lt;li>
+                                                       &lt;div class="accessory_finish margin_tb_15">
+                                                           &lt;div class="accessory_icon padding_lr_10">
+                                                               &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                                           &lt;/div>
+                                                           &lt;div class="accessory_name">
+                                                               &lt;p class="receipt_accessory_content">
+                                                                   &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                                   &lt;label>.DVD&lt;/label>
+                                                               &lt;/p>
+                                                               &lt;p class="accessory_size">500MB&lt;/p>
+                                                           &lt;/div>
+                                                           &lt;div class="accessory_icon padding_lr_10">
+                                                               &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                                           &lt;/div>
+                                                       &lt;/div>
+                                                   &lt;/li>
+                                               &lt;/ul>
+                                               &lt;div class="send_type">
+                                                    &lt;span class="padding_r_5">
+                                                        2012-07-19&nbsp;&nbsp;13:33
+                                                    &lt;/span>
+                                                       发自
+                                                    &lt;span class="clientType">
+                                                      Android
+                                                    &lt;/span>
+                                                   客户端
+                                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply reply_btn">&lt;/a>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/div>
+                                   &lt;/div>
+                               &lt;/li>
+                           &lt;/ul>
+                       &lt;/div>
+                  </pre>
+                </div>
+                <div class="example_box">
+                    <p class="demo_title">2、震荡回复</p>
+                    <div data-role="collapsible" data-collapsed="false" data-iconpos="right"  data-inset="false"
+                         class="content_reply iphone_bg" >
+                        <h4 class="content_reply_title">回复意见(<label>12</label>)</h4>
+                        <ul>
+                            <li>
+                                <div class="content_reply_content">
+                                    <div class="first_content_reply padding_t_10 padding_b_5">
+                                        <div class="user_head">
+                                            <img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                        </div>
+                                        <div class="content_reply_info">
+                                            <p class="reply_person_info">
+                                                <label>赵康永</label>
+                                                <label class="padding_l_10">已阅</label>
+                                            </p>
+                                            <p class="reply_person_content padding_t_5">
+                                                智能手机终端不仅是一个信息提供息的接收设备，而且也是系统。
+                                            </p>
+                                            <ul class="receipt_accessory_type margin_r_40">
+                                                <li>
+                                                    <div class="accessory_finish margin_tb_15">
+                                                        <div class="accessory_icon padding_lr_10">
+                                                            <span class="ico_phone_48 mp4_48 "></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                                                <label>.DVD</label>
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_icon padding_lr_10">
+                                                            <span class="ico_phone_48 accessory_download_48 "></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                            <div class="send_type">
+                                                <span class="padding_r_5">
+                                                     2012-07-19&nbsp;&nbsp;13:33
+                                                </span>
+                                                发自
+                                                <span class="clientType">
+                                                    Android
+                                                </span>
+                                                客户端
+                                                <a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply reply_btn"></a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="user_reply_content">
+                                        <div class="user_reply_list">
+                                            <div class="user_head">
+                                                <img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                            </div>
+                                            <div class="content_reply_info">
+                                                <p class="reply_person_info">
+                                                    <label>张大伟</label>
+                                                </p>
+                                                <p class="reply_person_content padding_t_5">
+                                                    智能手机终端不仅是1个。
+                                                </p>
+                                                <ul class="receipt_accessory_type margin_r_40">
+                                                    <li>
+                                                        <div class="accessory_finish margin_tb_15">
+                                                            <div class="accessory_icon padding_lr_10">
+                                                                <span class="ico_phone_48 mp4_48 "></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    <label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年</label>
+                                                                    <label>.DVD</label>
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_icon padding_lr_10">
+                                                                <span class="ico_phone_48 accessory_download_48 "></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <div class="user_reply_type">
+                                                    <span class="padding_r_5">
+                                                        2012-07-19&nbsp;&nbsp;13:33
+                                                     </span>
+                                                    发自
+                                                    <span class="clientType">Android</span>
+                                                    客户端
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right"  data-inset="false"
+                            class="content_reply iphone_bg" >
+                           &lt;h4 class="content_reply_title">回复意见(&lt;label>12&lt;/label>)&lt;/h4>
+                           &lt;ul>
+                               &lt;li>
+                                   &lt;div class="content_reply_content">
+                                       &lt;div class="first_content_reply padding_t_10 padding_b_5">
+                                           &lt;div class="user_head">
+                                               &lt;img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                           &lt;/div>
+                                           &lt;div class="content_reply_info">
+                                               &lt;p class="reply_person_info">
+                                                   &lt;label>赵康永&lt;/label>
+                                                   &lt;label class="padding_l_10">已阅&lt;/label>
+                                               &lt;/p>
+                                               &lt;p class="reply_person_content padding_t_5">
+                                                   智能手机终端不仅是一个信息提供息的接收设备，而且也是系统。
+                                               &lt;/p>
+                                               &lt;ul class="receipt_accessory_type margin_r_40">
+                                                   &lt;li>
+                                                       &lt;div class="accessory_finish margin_tb_15">
+                                                           &lt;div class="accessory_icon padding_lr_10">
+                                                               &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                                           &lt;/div>
+                                                           &lt;div class="accessory_name">
+                                                               &lt;p class="receipt_accessory_content">
+                                                                   &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                                   &lt;label>.DVD&lt;/label>
+                                                               &lt;/p>
+                                                               &lt;p class="accessory_size">500MB&lt;/p>
+                                                           &lt;/div>
+                                                           &lt;div class="accessory_icon padding_lr_10">
+                                                               &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                                           &lt;/div>
+                                                       &lt;/div>
+                                                   &lt;/li>
+                                               &lt;/ul>
+                                               &lt;div class="send_type">
+                                                &lt;span class="padding_r_5">
+                                                     2012-07-19&nbsp;&nbsp;13:33
+                                                &lt;/span>
+                                                   发自
+                                                &lt;span class="clientType">
+                                                    Android
+                                                &lt;/span>
+                                                   客户端
+                                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-reply reply_btn">&lt;/a>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/div>
+                                       &lt;div class="user_reply_content">
+                                           &lt;div class="user_reply_list">
+                                               &lt;div class="user_head">
+                                                   &lt;img src="../../../../skin/cmp/iphone/images/idea_user.png" />
+                                               &lt;/div>
+                                               &lt;div class="content_reply_info">
+                                                   &lt;p class="reply_person_info">
+                                                       &lt;label>张大伟&lt;/label>
+                                                   &lt;/p>
+                                                   &lt;p class="reply_person_content padding_t_5">
+                                                       智能手机终端不仅是1个。
+                                                   &lt;/p>
+                                                   &lt;ul class="receipt_accessory_type margin_r_40">
+                                                       &lt;li>
+                                                           &lt;div class="accessory_finish margin_tb_15">
+                                                               &lt;div class="accessory_icon padding_lr_10">
+                                                                   &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                                               &lt;/div>
+                                                               &lt;div class="accessory_name">
+                                                                   &lt;p class="receipt_accessory_content">
+                                                                       &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                                       &lt;label>.DVD&lt;/label>
+                                                                   &lt;/p>
+                                                                   &lt;p class="accessory_size">500MB&lt;/p>
+                                                               &lt;/div>
+                                                               &lt;div class="accessory_icon padding_lr_10">
+                                                                   &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                                               &lt;/div>
+                                                           &lt;/div>
+                                                       &lt;/li>
+                                                   &lt;/ul>
+                                                   &lt;div class="user_reply_type">
+                                                    &lt;span class="padding_r_5">
+                                                        2012-07-19&nbsp;&nbsp;13:33
+                                                     &lt;/span>
+                                                       发自
+                                                       &lt;span class="clientType">Android&lt;/span>
+                                                       客户端
+                                                   &lt;/div>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/div>
+                                   &lt;/div>
+                               &lt;/li>
+                           &lt;/ul>
+                       &lt;/div>
+                  </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_nav comp" comp="type:'modelTopChange'">
+        <ul>
+            <li><a href="#button_model" data-role="none" rel="external">按钮</a></li>
+            <li><a href="#on_off" data-role="none" rel="external">开关</a></li>
+            <li><a href="#select_menu" data-role="none" rel="external">选择菜单</a></li>
+            <li><a href="#imitate_radio" data-role="none" rel="external">单选</a></li>
+            <li><a href="#imitate_checkbox" data-role="none" rel="external">多选</a></li>
+            <li><a href="#page_header" data-role="none" rel="external">页头</a></li>
+            <li><a href="#model_tabs" data-role="none" rel="external">选项卡</a></li>
+            <li><a href="#nav_list_box" data-role="none" rel="external">list列表</a></li>
+            <li><a href="#accessory" data-role="none" rel="external">附件</a></li>
+            <li><a href="#content_header" data-role="none" rel="external">会议头部</a></li>
+            <li><a href="#content_body" data-role="none" rel="external">会议内容</a></li>
+            <li><a href="#content_list" data-role="none" rel="external">会议列表</a></li>
+            <li><a href="#content_reply" data-role="none" rel="external">意见回复</a></li>
+        </ul>
+    </div>
+</div>
+
+</body>
+</html>

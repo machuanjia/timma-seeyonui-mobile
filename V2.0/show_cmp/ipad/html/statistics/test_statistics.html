@@ -1,0 +1,847 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ipad统计</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../seeyon.ui.ipad-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../controls_common/css/common-debug.css" rel="stylesheet"/>
+    <link href="../../skin/default/css/css-debug.css" rel="stylesheet"/>
+
+</head>
+<body>
+<section data-role="page">
+<div class="layout-l">
+    <div class="nav_list_banner">统计</div>
+    <div id="statisticList" class="wrapper statistic_add">
+        <div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj,callBack:userList"></div>
+            <!--<div class="comp" comp="type:'list',modelPos:'left',callBack:statisticsData">-->
+                <!--<div class="nav_list_box nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">移动表单统计移动表单统计移动表单统计移动表单统计移动表单统计移动表单统计移动表单统计移动表单统计移动表单统计1</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">1月份北京区销售统计</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">2月份成都区销售统计</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">3月份天津区销售统计</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">4月份武汉区销售统计</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">5月份杭州区销售统计</div>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box folder_list_box nav_list_box_def">-->
+                    <!--<div class="statistic_title">6月份重庆区销售统计</div>-->
+                <!--</div>-->
+            <!--</div>-->
+        </div>
+        <div class="refresh_list">
+            <span class="ico_pad_28 refresh_28"></span>
+            <p>最近更新：<label class="refresh_data_time">2013-08-20&nbsp;&nbsp;12:33</label></p>
+        </div>
+    </div>
+<div class="layout-r defaultBG">
+    <div class="page_header">
+        <div class="page_header_title">移动表单统计</div>
+    </div>
+    <div id="content_bg" class="content_bg">
+        <!--<div class="scroller comp" comp="type:'list',listType:'dataShow',listGather:dataObj2,callBack:userList2"></div>-->
+        <!--<div class="scroller"></div>-->
+        <!--<div class="scroller comp" comp="type:'list',modelPos:'right'">-->
+            <!--&lt;!&ndash;文件夹&ndash;&gt;-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder" >-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--1月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--2月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--3月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--4月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash;文件&ndash;&gt;-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_file">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 statistics_chart_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--4月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_file">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 statistics_chart_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--5月份移动产品销售统计5月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30"></div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_file">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 statistics_chart_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--5月份移动产品销售统计5月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30"></div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_file">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 statistics_chart_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--5月份移动产品销售统计5月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30"></div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_file">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 statistics_chart_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--5月份移动产品销售统计5月份移动产品销售统计-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30"></div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--char-地区统计情况list-->
+<div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+     class="folder_panel" id="staticsics_area">
+    <div class="page_header">
+        <div class="left">
+            <a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-btn-b">返回</a>
+        </div>
+        <div class="right">
+            <a href="#no_chart_data" class="ui-btn ui-btn-inline ui-btn-a" data-rel="popup" data-position-to="window">测试无数据</a>
+        </div>
+        <div class="page_header_title">一月份移动产品销售统计</div>
+    </div>
+    <div id="statistic_area_content" class="content_bg">
+
+    </div>
+</div>
+<!--folder-1 文件夹1和文件夹2相互切换获取数据-->
+<div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+     class="folder_panel" id="staticsics_folder_one">
+    <div class="page_header">
+        <div class="left">
+            <a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-btn-b">返回</a>
+        </div>
+        <div class="right">
+            <a href="#no_chart_data" class="ui-btn ui-btn-inline ui-btn-a" data-rel="popup"  data-position-to="window">测试无数据</a>
+        </div>
+        <div class="page_header_title">一月份移动产品销售统计</div>
+    </div>
+    <div id="statistics_content_one" class="content_bg">
+        <!--<div class="scroller comp" comp="type:'list',modelPos:'right'">-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder_1">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--北京区统计情况-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder_1">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--上海区统计情况-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder_1">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--成都区统计情况-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="nav_list_box folder_list_box nav_list_box_def data_folder_1">-->
+                <!--<div class="nav_list_box_left padding_r_10 padding_l_20 ">-->
+                    <!--<span class="ico40 folder_40"></span>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_center">-->
+                    <!--<label>-->
+                        <!--杭州区统计情况-->
+                    <!--</label>-->
+                <!--</div>-->
+                <!--<div class="nav_list_box_right padding_r_30">-->
+                    <!--<span class="ico_pad_28 spread_right_28"></span>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+    </div>
+</div>
+<!--folder-2-->
+<div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+     class="folder_panel" id="staticsics_folder_two">
+    <div class="page_header">
+        <div class="left">
+            <a href="#staticsics_folder_one" data-rel="back" class="ui-btn ui-btn-inline ui-btn-b">返回</a>
+        </div>
+        <div class="right">
+            <a href="#no_chart_data" class="ui-btn ui-btn-inline ui-btn-a" data-rel="popup"  data-position-to="window">测试无数据</a>
+        </div>
+        <div class="page_header_title">一月份移动产品销售统计</div>
+    </div>
+    <div id="statistics_content_two" class="content_bg">
+        <div class="scroller comp" comp="type:'list',modelPos:'right'">
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        北京区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        上海区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        成都区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        杭州区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        武汉区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        天津区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        桂林区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        北京区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        上海区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        成都区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        杭州区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        武汉区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        天津区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+            <div class="nav_list_box folder_list_box nav_list_box_def data_folder_2">
+                <div class="nav_list_box_left padding_r_10 padding_l_20 ">
+                    <span class="ico40 folder_40"></span>
+                </div>
+                <div class="nav_list_box_center">
+                    <label>
+                        桂林区统计情况
+                    </label>
+                </div>
+                <div class="nav_list_box_right padding_r_30">
+                    <span class="ico_pad_28 spread_right_28"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--详情统计情况-->
+<div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+     class="folder_panel" id="staticsics_details">
+    <div class="page_header">
+        <div class="left">
+            <a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-btn-b" id="staticsics_details_btn">返回</a>
+        </div>
+        <div class="right">
+            <a href="#" class="ui-btn ui-btn-inline ui-btn-a">筛选</a>
+            <a href="#" class="ui-btn ui-btn-inline ui-btn-a">统计图</a>
+        </div>
+        <div class="page_header_title">成都区统计情况</div>
+    </div>
+    <div id="statistic_details_content" class="content_bg">
+        <div class="statistics_filter padding_25">
+            <div class="padding_tb_5">
+                单据状态：<label>未审核，审核通过，审核不通过，未核定，核定通过，核定不通过</label>
+            </div>
+            <div class="padding_tb_5">
+                流程状态：<label>未结束，已结束，终止</label>
+            </div>
+            <div class="padding_tb_5">
+                统计时间：<label>2013-10-19</label>
+            </div>
+        </div>
+        <div class="statistics_content">
+
+        </div>
+    </div>
+</div>
+<!--系统提示-->
+<div class="no_chart_data" id="no_chart_data" data-role="popup">
+    <h3>提示</h3>
+    <p class="padding_20 padding_tb_5">系统中没有统计数据</p>
+    <p class="padding_20 padding_tb_5">
+        <a href="#" data-rel="back">好的</a>
+    </p>
+</div>
+</section>
+<script type="text/javascript">
+    function userList(obj){
+        $("#content_bg").empty();
+        var content_html = $('<div class="scroller comp" comp="type:\'list\',listType:\'dataShow\',listGather:dataObj2,callBack:userList2"></div>');
+        $("#content_bg").append(content_html);
+         var compObj = eval("({" + content_html.attr("comp") + "})");
+         listPart($("#content_bg").find(".scroller"),compObj);
+    }
+    function userList2(obj){
+        var obj_state = obj.find(".folder_40").length;
+        if(obj_state){
+
+            $("#staticsics_folder_one").panel("open");
+            var content_html = $('<div class="scroller comp" comp="type:\'list\',listType:\'dataShow\',listGather:dataObj3"></div>');
+            $("#statistics_content_one").empty();
+            $("#statistics_content_one").append(content_html);
+            var compObj = eval("({" + content_html.attr("comp") + "})");
+            listPart($("#statistics_content_one").find(".scroller"),compObj);
+        }
+        else{
+            $("#staticsics_area").panel("open");
+            var content_html = $('<div class="scroller comp" comp="type:\'list\',listType:\'dataShow\',listGather:dataObj4"></div>');
+            $("#statistic_area_content").empty();
+            $("#statistic_area_content").append(content_html);
+            var compObj = eval("({" + content_html.attr("comp") + "})");
+            listPart($("#statistic_area_content").find(".scroller"),compObj);
+        }
+    }
+    function dataObj(){
+        var dataObj = {
+            list_type:'folder',
+            list_folder_layout:'one',
+            list_num: "420",
+            list_show_num: "50",
+            update_time: "2014-08-18&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'centerContent':'移动表单统计移动表单统计移动表单统计'
+            },
+                {
+                    'listId':'002',
+                    'centerContent':'1月份北京销售区移动表单统计'
+                },
+                {
+                    'listId':'003',
+                    'centerContent':'3月份北京销售区移动表单统计'
+                },
+                {
+                    'listId':'004',
+                    'centerContent':'4月份北京销售区移动表单统计'
+                }
+            ],
+            callback:function(){
+                loaded('statisticList',waitHeld,waitHeld);
+            }
+        };
+        return dataObj;
+    }
+    function dataObj2(){
+        var dataObj = {
+            list_type:'folder',
+            update_time: "2014-08-27&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'leftIcon':'folder_40',
+                'centerContent':'1月份移动产品销售统计',
+                'rightIcon':["1"]
+            },
+                {
+                    'listId':'002',
+                    'leftIcon':'folder_40',
+                    'centerContent':'2月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'003',
+                    'leftIcon':'folder_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'004',
+                    'leftIcon':'folder_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'005',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'5月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'006',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'6月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'007',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'7月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'008',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'8月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'009',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'9月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'010',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'10月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'011',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'11月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'012',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'12月份移动产品销售统计',
+                    'rightIcon':["1"]
+                }
+            ],
+            callback:function(){
+                $.loadedScroll("content_bg","1","v",function(){
+                    if(parseInt($("#content_bg").css("height")) == 0){
+                        var _r = $('.layout-r');
+                        var _h = $('body').height();
+                        var _header_height = _r.children("div[class='page_header']").outerHeight(true);
+                        $("#content_bg").height(_h - _header_height);
+                    }
+                });
+            }
+        }
+        return dataObj;
+    }
+    function dataObj3(){
+        var dataObj = {
+            list_type:'folder',
+            update_time: "2014-08-27&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'leftIcon':'folder_40',
+                'centerContent':'1月份移动产品销售统计',
+                'rightIcon':["1"]
+            },
+                {
+                    'listId':'002',
+                    'leftIcon':'folder_40',
+                    'centerContent':'2月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'003',
+                    'leftIcon':'folder_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'004',
+                    'leftIcon':'folder_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'005',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'5月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'006',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'6月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'007',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'7月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'008',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'8月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'009',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'9月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'010',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'10月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'011',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'11月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'012',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'12月份移动产品销售统计',
+                    'rightIcon':["1"]
+                }
+            ],
+            callback:function(){
+                $.loadedScroll("statistics_content_one","1","v",function(){
+                    if(parseInt($("#statistics_content_one").css("height")) == 0){
+                        var _r = $('.layout-r');
+                        $("#staticsics_folder_one").width(_r.width());
+                        var _h = $('body').height();
+                        var _header_height = _r.children("div[class='page_header']").outerHeight(true);
+                        $("#statistics_content_one").height(_h - _header_height);
+                        $("#statistics_content_one").width(_r.width());
+                    }
+                });
+            }
+        }
+        return dataObj;
+    }
+    function dataObj4(){
+        var dataObj = {
+            list_type:'folder',
+            update_time: "2014-08-27&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'leftIcon':'statistics_chart_40',
+                'centerContent':'1月份移动产品销售统计',
+                'rightIcon':["1"]
+            },
+                {
+                    'listId':'002',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'2月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'003',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'004',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'4月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'005',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'5月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'006',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'6月份移动产品销售统计',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'007',
+                    'leftIcon':'statistics_chart_40',
+                    'centerContent':'7月份移动产品销售统计',
+                    'rightIcon':["1"]
+                }
+            ],
+            callback:function(){
+                $.loadedScroll("statistic_area_content","1","v",function(){
+                    if(parseInt($("#statistic_area_content").css("height")) == 0){
+                        var _r = $('.layout-r');
+                        $("#staticsics_area").width(_r.width());
+                        var _h = $('body').height();
+                        var _header_height = _r.children("div[class='page_header']").outerHeight(true);
+                        $("#statistic_area_content").height(_h - _header_height);
+                        $("#statistic_area_content").width(_r.width());
+                    }
+                });
+            }
+        }
+        return dataObj;
+    }
+    /**
+     *  下拉刷新获取数据方法
+     *  myScroll.refresh();        // 数据加载完成后，调用界面更新方法
+     */
+    function waitHeld(obj,id) {
+        setTimeout(function () {
+            listData(id,{
+                list_type:'folder',
+                list_folder_layout:'one',
+                list_num: "420",
+                list_show_num: "50",
+                update_time: "2014-08-27&nbsp;&nbsp;15:30",
+                data:[{
+                    'listId':'003',
+                    'centerContent':'5月份北京销售区移动表单统计'
+                },
+                    {
+                        'listId':'004',
+                        'centerContent':'6月份北京销售区移动表单统计'
+                    },
+                    {
+                        'listId':'005',
+                        'centerContent':'7月份北京销售区移动表单统计'
+                    }
+                ]
+            });
+            $.refreshScroll(id);
+        }, 1000);
+    }
+    $(function () {
+        pageInit();
+//        $(".data_folder").bind("tap",function(){
+//            $("#staticsics_folder_one").panel("open")
+//        })
+//        $(".data_file").bind("tap",function(){
+//            $("#staticsics_details").panel("open")
+//        })
+//        $(".data_folder_1").bind("tap",function(){
+//            $("#staticsics_folder_two").panel("open");
+//        })
+//        $(".data_folder_2").bind("tap",function(){
+//            $("#staticsics_details").panel("open");
+//        })
+    })
+</script>
+</body>
+</html>

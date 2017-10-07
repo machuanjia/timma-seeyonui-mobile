@@ -1,0 +1,227 @@
+@charset "utf-8";
+/* CSS Document */
+
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td,a{
+    margin:0;
+    padding:0;
+    font-family: "华文细黑";
+    font-weight: normal;
+    text-shadow: none;
+    box-shadow: none;
+}
+
+/*
+ *  遮罩层
+**/
+.layout_opacity_5{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0.65;
+    -webkit-opacity: 0.65;
+    background-color: rgba(0,0,0,0.65);
+    width: 100%;
+    height: 100%;
+    z-index: 100;
+}
+input, button, select, textarea, a {
+    outline: none;
+    -webkit-appearance: none;
+    border-color: transparent;
+
+}
+input{
+    -webkit-appearance:none; /*去除系统默认的样式*/
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);   /* 点击高亮的颜色*/
+}
+textarea{resize:none}
+input:focus{
+
+}
+a {
+    text-decoration: none;
+}
+.display_none{
+    display: none;
+}
+.display_block{
+    display: block;
+}
+.font_arial{
+    font-family: Arial;
+}
+/*修改webkit内核滚动条样式*/
+::-webkit-scrollbar {
+    width: 0px;
+}
+/*
+ *  弹性盒模型
+**/
+.flexible_box{
+    display: -webkit-box;
+    display: -moz-box;
+    display: box;
+}
+/*
+ *  弹性盒模型-自适应
+**/
+.adaptive_box_flex{
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+}
+.margin_b_5{
+    margin-bottom: 5px;
+}
+.margin_b_10{
+    margin-bottom: 10px;
+}
+.margin_b_15{
+    margin-bottom: 15px;
+}
+.margin_b_30{
+    margin-bottom: 30px;
+}
+
+
+ .margin_t_30{
+     margin-top: 30px;
+}
+ body{
+     background-color: #EBECED;
+ }
+.work_user_binding{
+    padding: 40px 39px;
+    text-align: center;
+}
+
+.work_logo {
+    display: inline-block;
+    width: 92px;
+    height: 92px;
+    background: url("images/work_logo.png") no-repeat;
+    background-size: 92px 92px;
+    vertical-align: middle;
+}
+
+.user_bind_head{
+    display: inline-block;
+    width: 92px;
+    height: 92px;
+    border-radius: 50%;
+    vertical-align:middle;
+    margin: 50px 0 45px;
+}
+.work_user_bind_content{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: #fff;
+}
+.work_user_bind_content.work_user_bind_success{
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    bottom: 15px;
+    right: 15px;
+    width: auto;
+    height: auto;
+    border-radius: 6px;
+    border: 1px solid #ddd;
+}
+.work_user_bind_content .work_user_binding{
+    padding: 40px 39px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.work_user_bind_content .work_user_binding .flexible_box{
+    padding: 10px 10px 6px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+.work_user_bind_content .work_user_binding  .user_hint{
+    padding-top: 2px;
+    text-align: left;
+    border: none;
+    font-size: 11px;
+    color: #ffa304;
+}
+.opactiy_0{
+    opacity: 0;
+}
+.work_user_bind_content .user_hint span{
+    margin: 0px 5px 0 0;
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: url("images/hint_icon.png") no-repeat;
+    background-size: 12px 12px;
+    vertical-align: top;
+}
+.work_user_bind_content .work_user_binding label{
+    display: inline-block;
+    padding-top: 1px;
+    width: 60px;
+    text-align: left;
+    font-size: 13px;
+    color: #939393;
+    vertical-align: top;
+}
+.work_user_bind_content .work_user_binding input{
+    display: block;
+    width: 60px;
+    text-align: left;
+    font-size: 13px;
+    color: #939393;
+}
+.work_user_bind_content .work_user_bind_finish,
+.work_user_bind_content .work_user_remove_bind{
+    padding: 24px;
+    text-align: center;
+}
+.work_user_bind_content .work_user_bind_finish span{
+    margin: 30px 0;
+}
+.work_user_bind_content .work_user_bind_finish p,
+.work_user_bind_content .work_user_bind_finish label{
+    font-size: 13px;
+    color: #939393;
+    line-height: 18px;
+}
+.work_user_bind_content .work_user_bind_finish p{
+    padding: 0 4px;
+}
+.work_user_bind_content .work_user_bind_finish .user_bind_hinit{
+    font-size: 16px;
+    color: #000;
+    margin-bottom: 16px;
+    padding: 0;
+}
+.work_user_bind_content .work_user_bind_finish button{
+    margin-top: 44px;
+}
+.work_user_remove_bind p{
+    font-size: 16px;
+    color: #000;
+    text-align: center;
+    padding: 18px 0 10px;
+    text-indent: 4px;
+}
+.blue_block_btn{
+    display: block;
+    width: 100%;
+    padding: 8px 0 7px;
+    font-size: 17px;
+    background-color: #0078FE;
+    color: #fff;
+    border-radius: .3125em;
+}
+.blue_block_btn:active {
+    background-color: #8DBFF4;
+}

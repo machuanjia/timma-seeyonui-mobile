@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>议事</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="seework_home" data-title="议事">
+    <div data-role="content" id="userInfo" class="over_y_auto wrapper no_content_135 no_content_hide">
+        <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+
+        </div>
+    </div>
+
+    <!--<div data-role="popup" id="popupDialog" data-overlay-theme="b" data-theme="a" data-dismissible="false" class="work_popup_content">-->
+        <!--<div role="main" class="ui-content">-->
+            <!--<h3 class="ui-title">确定要退出seework吗？</h3>-->
+            <!--<div class="work_popup_content_btn">-->
+                <!--<a href="#" data-role="button" data-inline="true" data-rel="back">取消</a>-->
+                <!--<a href="#"  data-role="button" data-inline="true" data-rel="back">确认</a>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</div>-->
+    <!--<a href="work_start.html" data-prefetch="true" data-position="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>-->
+    <a href="#"  data-transition="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,"",function(e,thisUrlObj,data,pageActiveObj){
+//                alert(e.target.baseURI)
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    list_refresh_type: "down",
+                    data:[
+//                        {
+//                            'listId':'001',
+//                            'replyNum':"20"
+//                        },
+//                        {
+//                            'listId':'002',
+//                            'replyNum':"87"
+//                        },
+//                        {
+//                            'listId':'003',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"40"
+//                        },
+//                        {
+//                            'listId':'004',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"10月&nbsp;&nbsp;&nbsp销售",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"5"
+//                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三张小三张小三张小三',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四张小四张小四',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七张小七张小七张小七张小七',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"33"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    data:[
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八张小八张小八张小八张小八张小八',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"88"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  pagecreate ——请求数据
+         */
+        $("#seework_home").bind("pagecreate",function(){});
+        /**
+         *  pagebeforeshow ——执行pageInit方法，并填充初始化数据
+         */
+        $("#seework_home").bind("pagebeforeshow",function(){
+            /**
+             *  pageInit ——执行pageInit方法，并填充初始化数据
+             */
+            pageInit("seework_home",function(){
+                listData($("#userInfo"),{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要dfdsf',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"12"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要dfdsf',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"12"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要dfdsf',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"12"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要dfdsf',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"12"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                },"listSearch");
+            });
+        })
+        /**
+         *  pageshow ——执行滚动条初始化方法，并绑定各种事件等等
+         */
+        $("#seework_home").bind("pageshow",function(){
+            pageShowInit("seework_home");
+            loaded('userInfo',userInfoList,userMoreInfoList);
+            $(".new_built_btn").bind("tap",function(){
+                $.createHinitDialog("seework_home","popTd","确定要退出seework吗？",function(){
+
+                    var url = "work_content.html";
+                    var data_obj = "SDsadadad";
+                    toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                        //匹配目标页面
+                        if (thisUrlObj.href.search(url) != -1) {
+                            var ajax_data = dataObj.options.data;
+                        }
+                    })
+                },function(){
+//                    alert("s");
+                })
+            });
+
+//            $.hideLayerOpen();
+//            $.showLoaderHide("描述最多100字",true,"c",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

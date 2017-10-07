@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>列表</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="flow_form_list">
+    <header data-role="header" class="form_list_header">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+    </header>
+    <div data-role="content" class="comp" comp="type:'tabs',tabType:'navbar',tabParentId:'tabs_body',scrollState:true">
+        <div data-role="navbar" class="form_nav_bar" >
+            <ul class="model_header_tabs">
+                <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="waitHeld">待办(<label>10</label>)</a></li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="endHeld">已办(<label>10</label>)</a></li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="sendOut">已发(<label>10</label>)</a></a></li>
+            </ul>
+        </div>
+        <div class="tabs_body" id="tabs_body">
+            <div class="wrapper over_y_auto pos_relative flow_form_list_content no_content_135 no_content_hide" id="waitHeld">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',morePageNum:true,callBack:userList">
+
+                </div>
+            </div>
+            <div class="wrapper over_y_auto display_none flow_form_list_content no_content_135 no_content_hide" id="endHeld">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',morePageNum:true,callBack:userList">
+
+                </div>
+            </div>
+            <div class="wrapper over_y_auto display_none flow_form_list_content no_content_135 no_content_hide" id="sendOut">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',morePageNum:true,callBack:userList">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    center_tag:false,//标签图标显示与否
+                    reply_type:"flowForm",//回复流程状态
+                    all_num:"100",//共有条数
+                    more_num:"60",//还有条数
+                    list_refresh_type: "down",
+                    data:[
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"成华店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"1"
+                        },
+                        {
+                            'listId':'004',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"成华店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"1"
+                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'009',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小9',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                });
+                $.refreshScroll(id,12);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    center_tag:false,//标签图标显示与否
+                    reply_type:"flowForm",//回复流程状态
+                    all_num:"100",//共有条数
+                    more_num:"60",//还有条数
+                    data:[
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                });
+                $.refreshScroll(id,14);
+            }, 1000);
+        }
+        $("#flow_form_list").bind("pagebeforeshow",function(){
+            pageInit("flow_form_list");
+            listData($("#endHeld"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                center_tag:false,//标签图标显示与否
+                reply_type:"flowForm",//回复流程状态
+                all_num:"100",//共有条数
+                more_num:"60",//还有条数
+                list_refresh_type: "down",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    }
+                ]
+            });
+            listData($("#sendOut"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                center_tag:false,//标签图标显示与否
+                reply_type:"flowForm",//回复流程状态
+                all_num:"100",//共有条数
+                more_num:"60",//还有条数
+                list_refresh_type: "down",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"2"
+                    }
+                ]
+            });
+            listData($("#waitHeld"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                center_tag:false,//标签图标显示与否
+                reply_type:"flowForm",//回复流程状态
+                all_num:"100",//共有条数
+                more_num:"60",//还有条数
+                list_refresh_type: "down",
+                data:[
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"12"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"工作纪要",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                ]
+            });
+        })
+        $("#flow_form_list").bind("pageshow",function(){
+            loaded('endHeld',userInfoList,userMoreInfoList,2,8);
+            loaded('sendOut',userInfoList,userMoreInfoList,2,8);
+            loaded('waitHeld',userInfoList,userMoreInfoList,2,8);
+//            /**
+//             *  含有上拉下拉数据滚动条加载方法说明
+//             * @param id 当前需要控制的对象的id名
+//             * @param refreshFunc 	下拉刷新数据方法
+//             * @param loadMoreFunc 上拉获取更多方法
+//             * @param items 加载总条数
+//             * @param defaultItems 默认条数显示上拉,可不传，默认值20条
+//             */
+//            loaded('waitHeld',userInfoList,userMoreInfoList,2,8);
+//            /**
+//             *  刷新上拉下拉滚动条说明
+//             * @param id 当前需要控制的对象的id名
+//             * @param items 加载总条数
+//             */
+//            $.refreshScroll(id,14);
+
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

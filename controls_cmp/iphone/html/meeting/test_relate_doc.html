@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—关联文档</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="return_receipt">
+    <header data-role="header">
+        <h1 class="page_header_title">
+            关联文档
+            <span></span>
+        </h1>
+        <a href="test_meeting_return.html" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b
+        ui-icon-return" data-transition="slide"></a>
+    </header>
+    <div data-role="content">
+        <div class="comp" comp="type:'tabs',callBack:userTabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="cooperate">协同</a></li>
+                    <li><a href="#" class="tab-ui-btn-a"  tgt="doc">文档</a></li>
+                </ul>
+            </div>
+            <div class="tabs_body">
+                <div class="ele_active comp" id="cooperate" comp="type:'list',callBack:userList">
+                    <div class="nav_list_box text_list_box nav_list_box_def padding_lr_10">
+                        <a href="#" data-transition="slide">
+                            <span>
+                              待办(<label>5</label>)
+                            </span>
+                        </a>
+                    </div>
+                    <div class="nav_list_box text_list_box nav_list_box_def padding_lr_10">
+                        <a href="#" data-transition="slide">
+                            已办(<label>5</label>)
+                        </a>
+                    </div>
+                    <div class="nav_list_box text_list_box nav_list_box_def padding_lr_10">
+                        <a href="#" data-transition="slide">
+                            已发(<label>5</label>)
+                        </a>
+                    </div>
+                </div>
+                <div class="ele_hide comp" id="doc" comp="type:'list'">
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>我的知识库(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right"></div>
+                        </a>
+                    </div>
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70 margin_r_5"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>集团文档(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70 margin_r_5"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>项目文档项目文档项目文档项目文档项目文档dfdsgsgsgsg项目文档项目文档项目文d档项目文档项目文档项目文档项目文档项目文档项目文档项目文档(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        function userList(obj){
+
+        }
+        function userTabs(obj){
+
+        }
+        $("#return_receipt").bind("pageshow",function(){
+            pageInit();
+            $(".writing_content textarea").focus(function(){
+                $(".writing_content p").hide();
+            })
+        })
+    </script>
+</section>
+</body>
+</html>

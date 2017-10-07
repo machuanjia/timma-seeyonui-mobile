@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>门店信息</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="store_info">
+    <div data-role="content" id="store_inquiry_content" class="comp"
+         comp="type:'tabs',tabType:'navbar',hideLayerOpen:true,scrollState:true,tabBorderClass:'form_tab_none',callBack:formListTab">
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none" id="test1">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" tgt="inquiry_province">
+                        <span backTgt="inquiry_province">四川省</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_city">
+                        <span backTgt="inquiry_city">成都市</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content">
+            <div id="inquiry_province" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_province',
+                tabBorderClass:'form_tab_none',changeParentId:'store_inquiry_content',callBack:userInquiry">
+                <div class="scroller" id="inquiry_province_list">
+
+                </div>
+            </div>
+            <div id="inquiry_city" class="wrapper display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_city'
+                 ,tabBorderClass:'form_tab_none',changeParentId:'store_inquiry_content',callBack:userInquiry">
+                <div id="inquiry_city_list" class="scroller">
+
+                </div>
+            </div>
+            <div id="test" class="display_none">
+                车市阿斯达艾丝凡
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative form_inquiry_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+                    <!--<div class="form_list_item">-->
+                        <!--<p class="form_list_item_active">列表1具体内容</p>-->
+                        <!--<p>列表2:具体内容</p>-->
+                        <!--<p>列头3:具体内容</p>-->
+                        <!--<p>列头4:具体内容</p>-->
+                    <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <a href="#"  data-transition="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+        /**
+         * tab扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         * @param tgtId navbar点击对应区域打开的id
+         */
+        function formListTab(thisObj,domObj,tgtId){
+//            switch (tgtId){
+//                case "inquiry_province":
+//
+//                    break;
+//                case "inquiry_city":
+//
+//                    break;
+//            }
+        }
+        /**
+         * tab_body区域展示扩展方法
+         * @param domObj 当前点击对象
+         * @param objId 当前点击对象的objId,如果domObj没有objId属性，则objId为null
+         */
+        function userInquiry(domObj,objId){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'007',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'009',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市成华区33号'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#store_info").bind("pageshow",function(){
+            pageInit();
+            listData("inquiry_province_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'全部'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_province",1,"v");
+                }
+            })
+            listData("inquiry_city_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'哈尔滨'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_city",1,"v");
+                }
+            })
+            listData($("#search_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ],
+                        'lockState':true
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ],
+                callback:function(){
+                    loaded('search_result',userInfoList,userMoreInfoList);
+                }
+            });
+
+            //多余一个需要手动清除ui-grid-solo
+//            var liHtml = '<li>'+
+//                            '<a href="#" tgt="test">'+
+//                                    '<span backTgt="inquiry_province">四川sdadad省</span><span class="iphone16 arrow_b_16"></span>'+
+//                                    '<p></p>'+
+//                            '</a>'+
+//                        '</li>';
+//
+//            $(".model_header_tabs").append(liHtml+liHtml);
+//            $('#test1').navbar('refresh');
+//            $.showLoader("标为关注",trues,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

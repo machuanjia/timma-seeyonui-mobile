@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>统计表查看</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="statistics_chart">
+    <header data-role="header">
+        <div class="left">
+            <a href="test_statistic_detail.html"  class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+               data-transition="slide"></a>
+        </div>
+        <h1 class="page_header_title">
+            北京区统计情况图表
+            <span></span>
+        </h1>
+        <div class="right">
+            <a href="test_statistic_filter.html"  class="ui-btn ui-btn-inline ui-btn-a" data-transition="slide">筛选</a>
+            <a href="#no_chart_data"  class="ui-btn ui-btn-inline ui-btn-a" data-rel="popup" data-position-to="window">统计图</a>
+        </div>
+    </header>
+    <div data-role="content">
+        <div class="statistics_filter padding_tb_5 statistics_chart">
+            <div class="layout_left_right padding_tb_5">
+                <div class="layout_list_box_left">
+                    单据状态：
+                </div>
+                <div class="layout_list_box_right padding_r_10">
+                    <label class="margin_r_10">未审核</label>
+                    <label class="margin_r_10">审核通过</label>
+                    <label class="margin_r_10">审核不通过</label>
+                    <label class="margin_r_10">未核定</label>
+                    <label class="margin_r_10">核定通过</label>
+                    <label class="margin_r_10">核定不通过</label>
+                </div>
+            </div>
+            <div class="layout_left_right padding_tb_5">
+                <div class="layout_list_box_left">
+                    流程状态：
+                </div>
+                <div class="layout_list_box_right padding_r_10">
+                    <label class="margin_r_10">未结束</label>
+                    <label class="margin_r_10">已结束</label>
+                    <label class="margin_r_10">终止</label>
+                </div>
+            </div>
+            <div class="layout_left_right padding_tb_5">
+                <div class="layout_list_box_left">
+                    统计时间：
+                </div>
+                <div class="layout_list_box_right padding_r_10">
+                    <label>2013-09-18</label>
+                </div>
+            </div>
+        </div>
+        <div class="statistics_content">
+            <table data-role="table"  class="ui-responsive table-stroke" data-column-btn-theme="b">
+                <thead>
+                    <tr>
+                        <th>人员</th>
+                        <th>部分</th>
+                        <th>职位</th>
+                        <th>项目</th>
+                        <th>描述</th>
+                        <th>报销全额</th>
+                        <th>备注</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>王小二</td>
+                        <td>研发</td>
+                        <td>经理</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>2013年10月</td>
+                    </tr>
+                    <tr>
+                        <td>王小二</td>
+                        <td>研发</td>
+                        <td>经理</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>2013年10月</td>
+                    </tr>
+                    <tr>
+                        <td>王小二</td>
+                        <td>研发</td>
+                        <td>经理</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>2013年10月</td>
+                    </tr>
+                    <tr>
+                        <td>王小二</td>
+                        <td>研发</td>
+                        <td>经理</td>
+                        <td>1</td>
+                        <td>1</td>
+                        <td>11</td>
+                        <td>2013年10月</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <div class="no_chart_data" id="no_chart_data" data-role="popup">
+        <h3>提示</h3>
+        <p class="padding_20 padding_tb_5">系统中没有统计数据</p>
+        <p class="padding_20 padding_tb_5">
+            <a href="#" data-rel="back">好的</a>
+        </p>
+    </div>
+</section>
+</body>
+</html>

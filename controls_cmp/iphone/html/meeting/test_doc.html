@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+    <title>控件库(iphone端)—文档</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+</head>
+</head>
+<body>
+<section data-role="page" id="my_doc">
+    <header data-role="header">
+          <h1 class="page_header_title">
+              文档<span></span></h1>
+    </header>
+    <div data-role="content">
+        <div class="comp" comp="type:'tabs',callBack:userTabs">
+            <div data-role="navbar" class="doc_bar">
+                <ul>
+                    <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="recent_reade">最近阅读</a></li>
+                    <li><a href="#" class="tab-ui-btn-a"  tgt="all_doc">全部</a></li>
+                </ul>
+            </div>
+            <div class="tabs_body overflow_hidden">
+                <div class="ele_active comp" id="recent_reade" comp="type:'list',listType:'dataShow',listGather:dataObj,callBack:userList">
+                    <!--<div class="nav_list_box doc_list_box nav_list_box_def">-->
+                        <!--<a href="#" data-transition="slide">-->
+                            <!--<div class="nav_list_box_left">-->
+                                <!--<span class="pdf_phone_70"></span>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_center">-->
+                                <!--<div class="nav_list_box_center_font16 nav_list_box_center_marginBottom">-->
+                                    <!--明天下午三点小会议室集合skdsaldjksadjksadjskal你顺路快递叫阿雷克斯塑料袋开讲啦是滴是滴s.PDF-->
+                                <!--</div>-->
+                                <!--<div class="nav_list_box_center_font12">-->
+                                    <!--<label>728MB&nbsp;今天11:30&nbsp;王昭（致远软件）</label>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                            <!--<div class="nav_list_box_right">-->
+                                <!--<span class="ico_phone_22 accessory_22 margin_t_15"></span>-->
+                            <!--</div>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                </div>
+                <div class="ele_hide set_li_buttom comp" id="all_doc" comp="type:'list'">
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>我的知识库(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right"></div>
+                        </a>
+                    </div>
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>集团文档(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right">
+                            </div>
+                        </a>
+                    </div>
+                    <div class="nav_list_box folder_list_box nav_list_box_def">
+                        <a href="#" data-transition="slide">
+                            <div class="nav_list_box_left">
+                                <span class="ico_phone_70 folder_phone_70"></span>
+                            </div>
+                            <div class="nav_list_box_center">
+                                <span>项目文档项目文档项目文档项目文档项目文档dfdsgsgsgsg项目文档项目文档项目文d档项目文档项目文档项目文档项目文档项目文档项目文档项目文档(<label>100</label>)</span>
+                            </div>
+                            <div class="nav_list_box_right">
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    function userTabs(obj){
+
+    }
+    function userList(obj){
+
+    }
+    function dataObj(){
+        var dataObj = {
+            list_type:'doc',
+            list_num: "420",
+            update_time: "2014-08-15&nbsp;&nbsp;12:30",
+            more_num: "50",
+            data:[{
+                'listId':'001',
+                'transitionUrl':'#',
+                'leftIcon':'rar_phone_70',
+                'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                'centerTime':'11-11&nbsp;10:33-11:30',
+                'rightIcon':["1"]
+            },
+                {
+                    'listId':'002',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'003',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'004',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'005',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'006',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'007',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'008',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'009',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'010',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'011',
+                    'transitionUrl':'#',
+                    'leftIcon':'html_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'012',
+                    'transitionUrl':'#',
+                    'leftIcon':'rar_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                },
+                {
+                    'listId':'013',
+                    'transitionUrl':'#',
+                    'leftIcon':'rar_phone_70',
+                    'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                    'centerTime':'728MB&nbsp;今天11:30&nbsp;王昭（致远软件）',
+                    'rightIcon':["1"]
+                }
+            ]
+        };
+        return dataObj;
+    }
+    $("#my_doc").bind("pageshow",function(){
+        pageInit();
+        $.loadedScroll("recent_reade",1,'v',function(){
+            var _h = $('body').height();
+            var header_h = $("#my_doc > header").height();
+            var doc_bar_h = $("#my_doc .doc_bar").height();
+            $("#recent_reade").height(_h - header_h - doc_bar_h);
+        });
+    })
+</script>
+</body>
+</html>

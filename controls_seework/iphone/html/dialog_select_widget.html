@@ -1,0 +1,52 @@
+<section class="work_select_range" id="work_select_range" data-role="popup" data-dismissible="false">
+<!--<section class="work_select_range" id="work_select_range" >-->
+    <header data-role="header" data-tap-toggle="false" data-position="fixed" class="comp"
+            comp="type:'localSearch',pageId:'work_select_range',letterPosition:'letter_position',scrollId:'work_select_all_user'">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+        <div class="user_search_bg display_none_important">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索" autofocus="true"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+    </header>
+    <div  class="wrapper work_select_all_user comp" id="work_select_all_user"
+          comp="type:'tabs',tabType:'navbar',tabParentId:'tabs_body',scrollState:true,letterActive:'work_link_all_user'">
+        <div data-role="navbar" class="form_nav_bar">
+            <ul class="model_header_tabs">
+                <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="work_link_all_user">全部人员</a></li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="work_link_organization_content">部门</a></li>
+            </ul>
+        </div>
+        <div class="tabs_body" id="tabs_body">
+            <div class="wrapper over_y_auto work_link_all_user_letter comp"  id="work_link_all_user"
+                 comp="type:'dialog',definedHeightClass:'model_header_tabs',parentId:'work_select_range'">
+                <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',selectObj:'link_man_title',
+                workSelectUserId:'work_select_user',defindButtonId:'selectOk',selectBack:userSelect,callBack:userLink" id="user_info_list"></div>
+            </div>
+            <div class="wrapper work_link_all_user work_select_department link_deparment comp display_none"
+                 comp="type:'dialog',footerTop:'fixed',definedHeightClass:'model_header_tabs',parentId:'work_select_range'" id="work_link_organization_content">
+                <div class="scroller comp" id="user_department"
+                     comp="type:'list',listType:'dataShow',selectType:'checkbox',selectObj:'link_man_title',
+                     workSelectUserId:'work_select_user',defindButtonId:'selectOk',selectBack:userSelect,callBack:userLink" >
+                    <a href="#" data-role="button" data-inline="true" class="reutrn_btn work_select_return display_none">
+                        <span class="iphone32 return_32"></span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="letter_position comp" comp="type:'letterPosition',scrollId:'work_link_all_user'"></div>
+    <footer class="work_select_user_footer flexible_box border_top work_shade_footer">
+        <div class="adaptive_box_flex padding_lr_10 over_x_auto comp" id="work_select_user"
+             comp="type:'headSelect',personDepartmentId:'tabs_body',defindButtonId:'selectOk',scrollId:'work_select_user',callBack:headChange">
+            <div class="scroller_h clearFix">
+
+            </div>
+        </div>
+        <div class="padding_10">
+            <a href="#"  data-transition="slidefade" class="blue_btn_inline gray_btn_inline" data-role="button" id="selectOk">确定</a>
+        </div>
+    </footer>
+    <div class="layout_opacity_5 display_none"></div>
+</section>

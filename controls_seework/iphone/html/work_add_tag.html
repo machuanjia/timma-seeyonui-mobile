@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>添加标签</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_add_tag" class="background_white">
+    <header data-role="header" data-tap-toggle="false" data-position="fixed" class="background_white">
+        <div class="flexible_box tag_input_bg comp" id="tag_input_bg" comp="type:'inputTag',inputId:'tag_search',tagListId:'user_tag_gather'">
+            <div class="add_new_tag">
+                <p>
+                    <span class="tag_hide"></span>
+                    <!--<span objid="002">开发部</span>-->
+                    <!--<span objid="003">开发部sd</span>-->
+                    <!--<span objid="004">开发部sdsardsasd</span>-->
+                </p>
+            </div>
+            <div class="adaptive_box_flex tag_import">
+                <input type="text" data-role="none" placeholder="添加新标签" id="tag_search"/>
+            </div>
+            <!--<a href="work_start.html" data-prefetch="true">是的撒旦法方</a>-->
+        </div>
+    </header>
+    <div data-role="content" class="wrapper user_tag_gather" id="user_tag_gather">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'checkbox',tagInputId:'tag_input_bg',
+                    tagSearchId:'tag_search',selectTag:'yes',selectBack:userSelectTag">
+            <p class="user_tag_title">我的标签</p>
+            <!--<ul data-role="listview" class="nav_list_box group_contact_person_list">-->
+                <!--<li>-->
+                    <!--<a href="#" data-transition="slidefade">-->
+                        <!--<div class="nav_list_box_left">-->
+                            <!--<span class="iphone40 select_range_40"></span>-->
+                        <!--</div>-->
+                        <!--<div class="nav_list_box_center">-->
+                            <!--<div class="nav_list_box_center_font16 ">-->
+                                <!--标签一-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+                <!--<li>-->
+                    <!--<a href="#" data-transition="slidefade">-->
+                        <!--<div class="nav_list_box_left">-->
+                            <!--<span class="iphone40 select_range_40"></span>-->
+                        <!--</div>-->
+                        <!--<div class="nav_list_box_center">-->
+                            <!--<div class="nav_list_box_center_font16 ">-->
+                                <!--标签二-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+    <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="padding_tb_10 work_shade_footer border_top align_center">
+        <a href="#" class="blue_btn_inline tag_ensure" data-role="button" >确定</a>
+    </footer>
+    <script type="text/javascript">
+//        /**
+//         * 用户标签选取扩展方法
+//         * @param obj 当前点击对象
+//         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+//         */
+//        function userSelectTag(obj,objId){
+//            var tag_name = obj.find(".type_name").html();
+//            var tag_hide = $(".tag_hide").html(tag_name);
+//            var this_tag_width = tag_hide.outerWidth() + 5;
+//            var this_tag_content_width = $(".tag_input_bg .add_new_tag p").outerWidth();
+//            if($(".tag_input_bg .add_new_tag p").find("span[objId='"+objId+"']").length && objId != "user_change_tag"){
+//                $(".tag_input_bg .add_new_tag p").find("span[objId='"+objId+"']").remove();
+//                $(".tag_input_bg .add_new_tag p").outerWidth(this_tag_content_width - this_tag_width);
+//            }else{
+//                $(".tag_input_bg .add_new_tag p").outerWidth(this_tag_content_width + this_tag_width).append('<span objId="'+objId+'">'+tag_name+'</span>');
+//            }
+//            if(objId == "user_change_tag"){
+//                obj.remove();
+//                $("#tag_search").val("");
+////                模拟键盘删除事件
+//                var tag_e = jQuery.Event("keyup");
+//                tag_e.which = 8;
+//                $("#tag_search").trigger(tag_e);
+//            }
+//        }
+        /**
+         * 用户输入标签
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+//        function userInputTag(obj,objId){
+////            alert(objId)
+//        }
+        $("#work_add_tag").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("user_tag_gather",1,'v',function(){
+                var _h = $('#work_add_tag').height();
+                var header_h = $('#work_add_tag').find("header").outerHeight();
+                var footer_h = $('#work_add_tag').find("footer").outerHeight();
+                $("#user_tag_gather").height(_h - header_h - footer_h);
+            });
+            listData($("#user_tag_gather .scroller"),{
+                list_type:'selectUserDepartment',
+                list_role:"tag",
+                search_id:'tag_search',
+                data:[
+                    {
+                        'listId':'001',
+                        'typeName':'张红'
+                    },
+                    {
+                        'listId':'002',
+                        'typeName':'开发部'
+                    },
+                    {
+                        'listId':'003',
+                        'typeName':'测试部'
+                    },
+                    {
+                        'listId':'004',
+                        'typeName':'综合管理sdas部'
+                    },
+                    {
+                        'listId':'005',
+                        'typeName':'sda综合管理部'
+                    },
+                    {
+                        'listId':'006',
+                        'typeName':'综合实打实的管理部'
+                    },
+                    {
+                        'listId':'007',
+                        'typeName':'综合实sdasfsa打实的管理部'
+                    }
+                ],
+                callback:function(){
+                    $.refreshScroll("user_tag_gather");
+                }
+            });
+        })
+        $(".tag_ensure").bind("tap",function(){
+            $(".user_add_tag").html("工作纪要&nbsp;9月&nbsp;");
+        })
+    </script>
+</section>
+</body>
+</html>

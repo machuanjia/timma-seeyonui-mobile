@@ -1,0 +1,739 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—所有模板</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../../../controls_cmp/ipad/js/seeyon.ui.ipad-debug.js"></script>
+    <!--高亮显示-->
+    <link href="../../../css/doc.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../scripts/syntaxhighlighter/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="../../../scripts/modelShow.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+        $(function(){
+            pageInit();
+            commonUnit();
+        })
+    </script>
+    <!--自定义样式-->
+    <link href="../../icon/common-debug.css" rel="stylesheet" />
+    <link href="../../../../skin/cmp/ipad/skin.css" rel="stylesheet" />
+    <style type="text/css">
+        .ui-page-active{
+           overflow: hidden!important;
+        }
+        .ui-overlay-a,.ui-page-theme-a{
+            background-color: #fff!important;
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .ui-page-theme-a a{
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .content_reply_info .send_type span,
+        .user_reply_list .user_reply_type span{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body class="jqm_load jqm_ipad">
+<header class="header">
+    <div class="nav_area">
+        <ul class="clearFix">
+            <li><a href="../../../../index.html" data-role="none" rel="external"><strong>SeeyonMobile</strong></a></li>
+            <li><a href="../../../getting-started/index.html" data-role="none" rel="external">起步</a></li>
+            <li><a href="../../iphone/html/index.html" data-role="none" rel="external">iphone端组件</a></li>
+            <li><a href="../../iphone/html/model.html" data-role="none" rel="external">iphone端原型</a></li>
+            <li><a href="index.html" data-role="none" rel="external">ipad端组件</a></li>
+            <li class="li_active"><a href="javascript:void(0);" class="">ipad端原型</a></li>
+            <li><a href="../../icon/index.html" data-role="none" rel="external">公用图标库和class类</a></li>
+            <li><a href="../../../knowledge/index.html" data-role="none" rel="external">JqueryMobile知识库</a></li>
+            <li><a href="../../../log/index.html" data-role="none" rel="external">日志</a></li>
+        </ul>
+    </div>
+    <div class="page_title_area">
+        <div class="page_title_box">
+            <div class="t">ipad端页面原型</div>
+            <div class="c">ipad端所有涉及到页面原型展示</div>
+        </div>
+    </div>
+</header>
+<div id="content" class="clearFix">
+    <div class="main_body">
+        <div id="meeting_list" class="clearFix">
+            <h1>会议——左侧数据加载</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#ipad_meeting1" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/ipad_meeting.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="ipad_meeting1" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/ipad_meeting.jpg" width="100%" alt="">
+                    </div>
+                    <a href="layoutDragIndex.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                    &lt;section data-role="page" id="meeting_list">
+                        &lt;section data-role="page">
+                            &lt;div class="layout-l">
+                                &lt;div class="nav_list_banner">会议&lt;/div>
+                                &lt;div data-role="tabs" >
+                                    &lt;div data-role="navbar">
+                                        &lt;ul class="model_header_tabs">
+                                            &lt;li>&lt;a href="#waitHeld" class="tab-ui-btn-a ui-btn-active" data-ajax="false">待召开&lt;/a>&lt;/li>
+                                            &lt;li>&lt;a href="#endHeld" class="tab-ui-btn-a" data-ajax="false">已召开&lt;/a>&lt;/li>
+                                        &lt;/ul>
+                                    &lt;/div>
+                                    &lt;div id="waitHeld" class="wrapper no_content1">
+                                        &lt;div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj,callBack:userList">&lt;/div>
+                                    &lt;/div>
+                                    &lt;div id="endHeld" class="wrapper ele_hide">
+                                        &lt;div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj2,callBack:userList">&lt;/div>
+                                    &lt;/div>
+                                &lt;/div>
+                                &lt;div class="refresh_list">
+                                    &lt;span class="ico_pad_28 refresh_28">&lt;/span>
+                                    &lt;p>最近更新：&lt;label class="refresh_data_time">2013-08-20&nbsp;&nbsp;12:33&lt;/label>&lt;/p>
+                                &lt;/div>
+                            &lt;/div>
+                            &lt;div class="layout-r defaultBG">
+
+                            &lt;/div>
+                        &lt;/section>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t"><1>、type='list'公用方法介绍</div>
+                <p class="warning_text">comp="type:'list',listType:'dataRefresh',listGather:listDataObj,callBack:userList"</p>
+                <p>1、type:'list'——表示定义一个list列表</p>
+                <p>2、listType:'dataRefresh'——表示列表类型为刷新数据列表</p>
+                <p>3、listGather:'listDataObj'——列表初始化数据对象</p>
+                <div>
+                    <pre class="brush:js;">
+                        function listDataObj(){
+                            var listDataObj = {
+                                list_type:'nav',
+                                list_num: "420",
+                                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                                more_num: "50",
+                                data:[{
+                                    'listId':'001',
+                                    'transitionUrl':'test_meeting_details.html',
+                                    'leftIcon':'attend_meeting_22',
+                                    'centerContent':'明天下午三点小会议天下午三点小会议室集合',
+                                    'centerTime':'11-11&nbsp;10:33-11:30',
+                                    'rightIcon':["1","2"],
+                                    'rightName':'卜宏宇'
+                                },
+                                    {
+                                        'listId':'002',
+                                        'transitionUrl':'test_meeting_details.html',
+                                        'leftIcon':'unattended_meeting_22',
+                                        'centerContent':'明天下午三点小会议室集合',
+                                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                                        'rightIcon':["1"],
+                                        'rightName':'卜宏宇2'
+                                    }
+                                ],
+                                callback:function(){
+                                    loaded('waitHeld',waitHeld,waitHeld);
+                                }
+                            };
+                            return listDataObj;
+                        }
+                    </pre>
+                </div>
+                <p>4、callBack:'userList'——回调函数，有相关业务就写，没有可以省略</p>
+                <div class="t"><2>、初始换方式</div>
+                <div>
+                    <pre class="brush:js;">
+                        $("#meeting_list").bind("pageshow",function(){
+                            pageInit();
+                        })
+                    </pre>
+                </div>
+                <div class="t"><3>、数据刷新方法说明</div>
+                <div>
+                    <pre class="brush:js;">
+                        /**
+                         * 初始化iScroll控件-默认是纵向刷新滚动条，即state=0
+                         * @param id 当前需要控制的对象的id名
+                         * @param refreshFunc 	下拉刷新数据方法
+                         * @param loadMoreFunc  上拉获取更多方法
+                         */
+                        function loaded(id,refreshFunc,loadMoreFunc) {
+                            $.loadedScroll(id,0,refreshFunc,loadMoreFunc);
+                        }
+                        function waitHeld(obj,id) {
+                            setTimeout(function () {
+                                listData(id,{
+                                    list_type:'nav',
+                                    list_num: "400",
+                                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                                    more_num: "50",
+                                    data:[{
+                                        'listId':'003',
+                                        'transitionUrl':'test_meeting_details.html',
+                                        'leftIcon':'unattended_meeting_22',
+                                        'centerContent':'明天下午三点小会议室集合3',
+                                        'centerTime':'11-11&nbsp;10:33-11:30',
+                                        'rightIcon':["1","2"],
+                                        'rightName':'卜宏宇3'
+                                    },
+                                        {
+                                            'listId':'004',
+                                            'transitionUrl':'test_meeting_details2.html',
+                                            'leftIcon':'unattended_meeting_22',
+                                            'centerContent':'明天下午三点小会议室集合4',
+                                            'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                                            'rightIcon':["1","2"],
+                                            'rightName':'卜宏宇4'
+                                        }
+                                    ]
+                                });
+                                $.refreshScroll(id);
+                            }, 1000);
+                        }
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="meeting_details" class="clearFix">
+            <h1>会议——右侧详情</h1>
+            <p>会议右侧详情主要表现为会议介绍，意见回复</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_meeting_details" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/ipad_meeting_details.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_meeting_details" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow  ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/ipad_meeting_details.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/ipad/html/meeting/test_meeting.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                      //右侧
+                       &lt;div class="layout-r defaultBG">
+                           &lt;div class="page_header">
+                               &lt;div class="right">
+                                   &lt;a href="#fast_receipt" class="ui-btn ui-btn-inline ui-btn-d add_btn_position" data-position-to="#add_btn" data-rel="popup">
+                                       快速回执&lt;span id="add_btn">&lt;/span>
+                                   &lt;/a>
+                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a" id="meeting_summary_btn">纪要&lt;/a>
+                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a" id="return_btn">回执&lt;/a>
+                               &lt;/div>
+                               &lt;div class="page_header_title">会议详情&lt;/div>
+                           &lt;/div>
+                           &lt;div class="content_header">
+                               &lt;div class="content_header_title">
+                                   &lt;div>会议来了会议来了会议来了会议来了会议来了会议&lt;/div>
+                                   &lt;div>
+                                       &lt;span class="right ico14 accessory_14">&lt;/span>
+                                   &lt;/div>
+                               &lt;/div>
+                               &lt;div class="clearFlow">
+                                   &lt;span class="content_header_time">
+                                        &lt;label>2013年11月15日&lt;/label>&lt;label>10:30-11:30&lt;/label>
+                                   &lt;/span>
+                                   &lt;span class="content_header_name padding_r_10">胡小一&lt;/span>
+                               &lt;/div>
+                           &lt;/div>
+                           &lt;div id="content_bg" class="content_bg">
+                               &lt;div class="scroller">
+                                   &lt;div class="content">
+                                       会议内容会议内容会议内议内容会议内容。
+                                   &lt;/div>
+                                   &lt;div class="content_list">
+                                       &lt;div>
+                                           会议时间：&lt;label>17:00-17:30&lt;/label>
+                                       &lt;/div>
+                                       &lt;div class="content_participants">
+                                           &lt;a href="#meeting_user" data-rel="popup" data-position-to="#meeting_user_position" data-transition="pop">
+                                                &lt;span class="content_participants_p">
+                                                    与会人员：&lt;label>胡小一、周小小、罗丽、王栋、图腾、小 午、田田、周读、陈凯、胡小一&lt;/label>
+                                                &lt;/span>
+                                               &lt;span class="right ico_pad_28 spread_right_28 spread_right_position">&lt;/span>
+                                               &lt;span class="right" id="meeting_user_position">&lt;/span>
+                                           &lt;/a>
+                                       &lt;/div>
+                                       &lt;div>会议地点：&lt;label>第一会议室105&lt;/label>&lt;/div>
+                                       &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                                       &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                                   &lt;/div>
+                                   &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                                        class="content_reply margin_20 margin_b_0 comp" comp="type:'slide',scrollId:'content_bg'">
+                                       &lt;h4 class="content_reply_title">
+                                           &lt;span class="margin_r_5">附件(&lt;label>12&lt;/label>)&lt;/span>
+                                           &lt;span>关联文档(&lt;label>12&lt;/label>)&lt;/span>
+                                       &lt;/h4>
+                                       &lt;ul class="details_accessory padding_20 padding_b_0 clearFlow">
+                                           &lt;li>
+                                               &lt;div class="accessory_finish margin_5 margin_b_15">
+                                                   &lt;div class="padding_lr_10">
+                                                       &lt;span class="ico35 mp3_35 margin_t_10">&lt;/span>
+                                                   &lt;/div>
+                                                   &lt;div class="accessory_name">
+                                                       &lt;p class="receipt_accessory_content">致远十年致远十年致远十年&lt;/p>
+                                                       &lt;p class="accessory_size">500MB&lt;/p>
+                                                   &lt;/div>
+                                                   &lt;div class="accessory_download_icon padding_lr_10">
+                                                       &lt;span class="ico40 accessory_download_40">&lt;/span>
+                                                   &lt;/div>
+                                               &lt;/div>
+                                           &lt;/li>
+                                       &lt;/ul>
+                                   &lt;/div>
+                                   &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                                    class="content_reply margin_20 margin_b_0 comp" comp="type:'slide',scrollId:'content_bg'">
+                                   &lt;h4 class="content_reply_title">
+                                       回复意见(&lt;label>12&lt;/label>)
+                                   &lt;/h4>
+                                   &lt;ul>
+                                       &lt;li class="margin_tb_20 margin_l_10 margin_r_10">
+                                           &lt;div class="content_reply_content">
+                                               &lt;div class="first_content_reply padding_b_5">
+                                                   &lt;div class="user_head">
+                                                       &lt;img src="../../skin/default/images/user1.png" class="user_head_pic" />
+                                                   &lt;/div>
+                                                   &lt;div class="content_reply_info padding_l_10">
+                                                       &lt;p class="reply_person_info">
+                                                             &lt;label>赵康永&lt;/label>
+                                                              &lt;span class="start_time">
+                                                                 &lt;label class="padding_r_5">9-26&lt;/label>
+                                                                 &lt;label>13:33&lt;/label>
+                                                              &lt;/span>
+                                                       &lt;/p>
+                                                       &lt;p class="reply_type margin_t_15 margin_b_5">
+                                                           &lt;label>已阅&lt;/label>
+                                                           &lt;a href="#popup_content_reply" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-inline ui-btn-c">回复&lt;/a>
+                                                       &lt;/p>
+                                                       &lt;p class="reply_person_content padding_tb_15">
+                                                           与研发沟通达成的一致，客服上报人做好提前预警。
+                                                       &lt;/p>
+                                                       &lt;div>
+                                                           &lt;ul class="details_accessory padding_r_15 clearFlow">
+                                                               &lt;li>
+                                                                   &lt;div class="accessory_finish margin_5 margin_b_15">
+                                                                       &lt;div class="padding_lr_10">
+                                                                           &lt;span class="ico35 mp3_35 margin_t_10">&lt;/span>
+                                                                       &lt;/div>
+                                                                       &lt;div class="accessory_name">
+                                                                           &lt;p class="receipt_accessory_content">
+                                                                               致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                           &lt;/p>
+                                                                           &lt;p class="accessory_size">500MB&lt;/p>
+                                                                       &lt;/div>
+                                                                       &lt;div class="accessory_download_icon padding_lr_10">
+                                                                           &lt;span class="ico40 accessory_download_40">&lt;/span>
+                                                                       &lt;/div>
+                                                                   &lt;/div>
+                                                               &lt;/li>
+                                                           &lt;/ul>
+                                                       &lt;/div>
+                                                       &lt;p class="send_type padding_t_5">发自&lt;label class="clientType">iphone&lt;/label>客户端&lt;/p>
+                                                   &lt;/div>
+                                               &lt;/div>
+                                               &lt;div class="user_reply_content margin_t_15 padding_lr_20">
+                                                   &lt;div class="user_reply_list user_reply_first_list">
+                                                       &lt;div class="user_head">
+                                                           &lt;img src="../../skin/default/images/user1.png" class="margin_t_20"/>
+                                                       &lt;/div>
+                                                       &lt;div class="content_reply_info padding_t_20 padding_l_10">
+                                                           &lt;p class="reply_person_info">
+                                                               &lt;label>张大伟(致远软件)&lt;/label>
+                                                                &lt;span class="start_time">
+                                                                      &lt;label class="padding_r_5">2012-08-12&lt;/label>
+                                                                       &lt;label>13:33&lt;/label>
+                                                                &lt;/span>
+                                                           &lt;/p>
+                                                           &lt;p class="reply_person_content padding_tb_15">
+                                                               非常好！全力保障客户问题，研发沟通达成一致。
+                                                           &lt;/p>
+                                                           &lt;p class="user_reply_type padding_b_20 padding_t_5">发自&lt;label class="clientType">Android&lt;/label>客户端&lt;/p>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                                   &lt;div class="user_reply_list">
+                                                       &lt;div class="user_head">
+                                                           &lt;img src="../../skin/default/images/user1.png" class="margin_t_20"/>
+                                                       &lt;/div>
+                                                       &lt;div class="content_reply_info padding_t_20 padding_l_10">
+                                                           &lt;p class="reply_person_info">
+                                                               &lt;label>张大伟&lt;/label>
+                                                               &lt;span class="start_time">
+                                                                    &lt;label class="padding_r_5">2012-08-12&lt;/label>
+                                                                     &lt;label>13:33&lt;/label>
+                                                                &lt;/span>
+                                                           &lt;/p>
+                                                           &lt;p class="reply_person_content padding_tb_15">
+                                                               非常好！全力保障客户问题，研发沟通达成一致。
+                                                           &lt;/p>
+                                                           &lt;p class="user_reply_type padding_b_15">发自&lt;label class="clientType">Android&lt;/label>客户端&lt;/p>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/li>
+                                   &lt;/ul>
+                                 &lt;/div>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/div>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t"><1>、type='slide'公用方法介绍</div>
+                <p class="warning_text">comp="type:'slide',scrollId:'content_bg'"</p>
+                <p>1、type:'slide'——表示定义一个折叠组件扩展方法，该方法主要作用是刷新滚动条</p>
+                <p>2、scrollId:'content_bg'——表示折叠组件的id</p>
+                <div class="t"><2>、滚动条初始化方法</div>
+                <div>
+                    <pre class="brush:js;">
+                       /**
+                         * 初始化iScroll控件
+                         * @param id 当前需要控制的对象的id名
+                         * @param state 状态值，0表示含有上下拉刷新，1表示只有滚动条
+                         * @param refreshFunc  当state为0时，表示下拉刷新数据方法，当state为1时,表示为为"h"，横向滚动条，"v"，纵向滚动条
+                         * @param loadMoreFunc 当state为0时，上拉获取更多方法，当state为1时,表示用于确定宽或高的自定义方法
+                         */
+                        $.loadedScroll = function(id,state,refreshFunc,loadMoreFunc){}
+                        //会议详情
+                         $.loadedScroll("content_bg","1","v",function(){
+                            if(parseInt($("#content_bg").css("height")) == 0){
+                                var _r = $('.layout-r');
+                                var _h = $('body').height();
+                                var _header_height = _r.children("div[class='page_header']").outerHeight(true) +
+                                        _r.children("div[class='content_header']").outerHeight(true);
+                                $("#content_bg").height(_h - _header_height);
+                            }
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="meeting_return" class="clearFix">
+            <h1>会议——回执</h1>
+            <p>回执在ipad端表现为dialog弹出层</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_meeting_return" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/ipad_meeting_return.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_meeting_return" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow  ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/ipad_meeting_return.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/ipad/html/meeting/test_meeting.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;div id="popup_content" data-role="popup" data-overlay-theme="b">
+                           &lt;div class="return_receipt_center return_receipt_select">
+                               &lt;div data-role="header" class="ui-header-a ui-box-shadow">
+                                   &lt;h1>回执&lt;/h1>
+                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" data-rel="back">取消&lt;/a>
+                                   &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a" data-iconpos="notext" data-rel="back">提交&lt;/a>
+                               &lt;/div>
+                               &lt;div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                                   &lt;div class="ui-block-a margin_tb_10">
+                                       &lt;div class="ipad_radio">
+                                           &lt;span class="feedbackradio ico_pad_radio_checked30 margin_r_10" radio_value="1">&lt;/span>
+                                           &lt;span class="ico32 attend_meeting_32 margin_r_10">&lt;/span>参加
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="ui-block-b margin_tb_10">
+                                       &lt;div class="ipad_radio">
+                                           &lt;span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="0">&lt;/span>
+                                           &lt;span class="ico32 unattended_meeting_32 margin_r_10">&lt;/span>
+                                           不参加
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="ui-block-c margin_tb_10">
+                                       &lt;div class="ipad_radio">
+                                           &lt;span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="-1">&lt;/span>
+                                           &lt;span class="ico32 unsure_32 margin_r_10">&lt;/span>
+                                           待定
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;input type="hidden" value="1" id="receipt_select_value"/>
+                               &lt;/div>
+                               &lt;div class="return_receipt_input">
+                                   &lt;p class="hint_text">请输入处理意见&lt;/p>
+                                   &lt;textarea>&lt;/textarea>
+                                   &lt;p class="hint_num">&lt;label>150&lt;/label>&lt;label>常用语&lt;/label>&lt;/p>
+                               &lt;/div>
+                               &lt;div data-role="tabs" class="comp" comp="type:'tabsOne'">
+                               &lt;div data-role="navbar" class="navbar_add_icon attend_meeting_nav">
+                                   &lt;ul>
+                                       &lt;li>&lt;a href="#receipt_accessory" class="tab-ui-btn-a" data-ajax="false">
+                                           &lt;span class="ico32 accessory_32">&lt;/span>(&lt;label>10&lt;/label>)
+                                       &lt;/a>&lt;/li>
+                                   &lt;/ul>
+                               &lt;/div>
+                               &lt;div id="receipt_accessory">
+                                   &lt;div class="ui-grid-c padding_lr_50 receipt_accessory_center">
+                                       &lt;div class="ui-block-a margin_tb_25">
+                                           &lt;a href="#"
+                                              class="ui-btn ui-btn-inline ui-icon-photo ui-btn-icon-top ui-btn-icon-a">拍照&lt;/a>
+                                       &lt;/div>
+                                       &lt;div class="ui-block-b margin_tb_25">
+                                           &lt;a href="#"
+                                              class="ui-btn ui-btn-inline ui-icon-voice ui-btn-icon-top ui-btn-icon-a">语言&lt;/a>
+                                       &lt;/div>
+                                       &lt;div class="ui-block-c margin_tb_25">
+                                           &lt;a href="#"
+                                              class="ui-btn ui-btn-inline ui-icon-associate ui-btn-icon-top ui-btn-icon-a">关联文档&lt;/a>
+                                       &lt;/div>
+                                       &lt;div class="ui-block-d margin_tb_25">
+                                           &lt;a href="#" class="ui-btn ui-btn-inline ui-icon-local_doc
+                                ui-btn-icon-top ui-btn-icon-a ui-btn-icon-lineheight2em">本地文件和视频&lt;/a>
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="receipt_accessory_bg">
+                                       &lt;ul class="receipt_accessory_type padding_10 clearFlow">
+                                           &lt;li>
+                                               &lt;div class="accessory_underway margin_5 margin_b_15">
+                                                   &lt;div class="accessory_underway_content">
+                                                       &lt;div class="padding_lr_10">
+                                                           &lt;span class="ico35 mp3_35 margin_t_10">&lt;/span>
+                                                       &lt;/div>
+                                                       &lt;div class="accessory_name">
+                                                           &lt;p class="receipt_accessory_content">
+                                                               致远十年致远十年致远十年致远
+                                                           &lt;/p>
+                                                           &lt;p class="underway_accessory_size">500MB&lt;/p>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                                   &lt;p class="accessory_underway_bar">&lt;/p>
+                                                   &lt;span class="ico_pad_28 cancel_upload_28 model_info_close">&lt;/span>
+                                               &lt;/div>
+                                           &lt;/li>
+                                       &lt;/ul>
+                                   &lt;/div>
+                                 &lt;/div>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/div>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">jquery mobile popup组件方法介绍——popup弹出层居中</div>
+                <p class="warning_text">1、原生打开/关闭方式(适用于展示类页面)</p>
+                <p>在需要弹出对话框的按钮中通过data属性实现</p>
+                <div>
+                    <pre class="brush:html">
+                        //弹出层按钮——打开
+                        &lt;a href="#popup_content" data-rel="popup" data-position-to="window"
+                           data-transition="pop" class="ui-btn ui-btn-inline ui-btn-a" >弹出层&lt;/a>
+                        //popup弹出层
+                        &lt;div id="popup_content" data-role="popup" data-overlay-theme="b">
+                            /弹出层按钮——关闭
+                            &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" data-rel="back">取消&lt;/a>
+                        &lt;/div>
+                    </pre>
+                </div>
+                <p class="warning_text">2、js打开/关闭方式(适用于有数据交换的页面)</p>
+                <div>
+                    <pre class="brush:html">
+                        //弹出层按钮
+                        &lt;a href="#" data-rel="popup" data-position-to="window"
+                           data-transition="pop" class="ui-btn ui-btn-inline ui-btn-a" id="f0">弹出层&lt;/a>
+                        //popup弹出层
+                        &lt;div id="popup_content" data-role="popup" data-overlay-theme="b">&lt;/div>
+                    </pre>
+                    <pre class="brush:js">
+                        ///popup——打开
+                         $("#f0").unbind().bind("tap",function(){
+                            $("#popup_content").popup("open",{
+                                transition:"pop",
+                                positionTo:"#meeting_user_position_summary"
+                            })
+                          })
+                         //popup——关闭
+                         $("#f0").unbind().bind("tap",function(){
+                            $("#popup_content").popup("close")
+                          })
+                    </pre>
+                    <a href="http://api.jquerymobile.com/popup/" class="mode_change_address" target="_blank">
+                        JqueryMobile——Popup弹出层API
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="append_meeting" class="clearFix">
+            <h1>会议——与会人员</h1>
+            <p>与会人员主要内容是人员名单，主要方法是tabs切换</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_append_meeting" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/ipad_meeting_name.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_append_meeting" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow  ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/ipad_meeting_name.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/ipad/html/meeting/test_meeting.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                      &lt;div id="meeting_user" data-role="popup" >
+                          &lt;p class="meeting_user_bg">&lt;/p>
+                          &lt;span class="trigon">&lt;/span>
+                          &lt;p class="meeting_user_title">与会人员&lt;/p>
+                          &lt;div class="meeting_user_content">
+                              &lt;div class="meeting_user_content_bg">
+                                  &lt;div data-role="tabs" >
+                                      &lt;div data-role="navbar">
+                                          &lt;ul class="model_header_tabs">
+                                              &lt;li>&lt;a href="#attend_user" class="tab-ui-btn-a ui-btn-active" data-ajax="false">参加&lt;/a>&lt;/li>
+                                              &lt;li>&lt;a href="#no_ensure" class="tab-ui-btn-a" data-ajax="false">待定&lt;/a>&lt;/li>
+                                              &lt;li>&lt;a href="#no_attend" class="tab-ui-btn-a" data-ajax="false">不参加&lt;/a>&lt;/li>
+                                              &lt;li>&lt;a href="#no_return_receipt" class="tab-ui-btn-a" data-ajax="false">未回执&lt;/a>&lt;/li>
+                                          &lt;/ul>
+                                      &lt;/div>
+                                      &lt;ul id="attend_user">
+                                          &lt;li>王晔1&lt;/li>
+                                          &lt;li>李晓东&lt;/li>
+                                      &lt;/ul>
+                                      &lt;ul id="no_ensure">
+                                          &lt;li>王晔2&lt;/li>
+                                          &lt;li>李晓东&lt;/li>
+                                      &lt;/ul>
+                                      &lt;ul id="no_attend">
+                                          &lt;li>王晔3&lt;/li>
+                                          &lt;li>李晓东&lt;/li>
+                                      &lt;/ul>
+                                      &lt;ul id="no_return_receipt">
+                                          &lt;li>&lt;span class="ico_phone_28 see_28 margin_r_5">&lt;/span>王晔晔&lt;/li>
+                                          &lt;li>&lt;span class="ico_phone_28 unseen_28 margin_r_5">&lt;/span>李晓东&lt;/li>
+                                      &lt;/ul>
+                                  &lt;/div>
+                              &lt;/div>
+                          &lt;/div>
+                      &lt;/div>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">jquery mobile popup组件方法介绍——popup弹出层指定某一位置</div>
+                <p class="warning_text">1、原生打开/关闭方式(适用于展示类页面)</p>
+                <p>在需要弹出对话框的按钮中通过data属性实现</p>
+                <div>
+                    <pre class="brush:html">
+                        //弹出层按钮——打开
+                        &lt;a href="#popup_content" data-rel="popup" data-position-to="#meeting_user_position_summary"
+                           data-transition="pop" class="ui-btn ui-btn-inline ui-btn-a" >弹出层&lt;/a>
+                        &lt;span class="ico_32 folder_32" id="meeting_user_position_summary">&lt;/span>
+                        //popup弹出层
+                        &lt;div id="popup_content" data-role="popup" data-overlay-theme="b">
+                            /弹出层按钮——关闭
+                            &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" data-rel="back">取消&lt;/a>
+                        &lt;/div>
+                    </pre>
+                </div>
+                <p class="warning_text">2、js打开/关闭方式(适用于有数据交换的页面)</p>
+                <div>
+                    <pre class="brush:html">
+                        //弹出层按钮
+                        &lt;a href="#" data-rel="popup" data-position-to="#meeting_user_position_summary"
+                           data-transition="pop" class="ui-btn ui-btn-inline ui-btn-a" id="f0">弹出层&lt;/a>
+                        &lt;span class="ico_32 folder_32" id="meeting_user_position_summary">&lt;/span>
+                        //popup弹出层
+                        &lt;div id="popup_content" data-role="popup" data-overlay-theme="b">&lt;/div>
+                    </pre>
+                    <pre class="brush:js">
+                        //popup——打开
+                         $("#f0").unbind().bind("tap",function(){
+                            $("#popup_content").popup("open",{
+                                transition:"pop",
+                                positionTo:"#meeting_user_position_summary"
+                            })
+                          })
+                         //popup——关闭
+                         $("#f0").unbind().bind("tap",function(){
+                            $("#popup_content").popup("close")
+                          })
+                    </pre>
+                    <a href="http://api.jquerymobile.com/popup/" class="mode_change_address" target="_blank">
+                        JqueryMobile——Popup弹出层API
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="meeting_summary" class="clearFix">
+            <h1>会议——会议纪要</h1>
+            <p>与会人员主要内容是人员名单，主要方法是tabs切换</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_meeting_summary" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/ipad_meeting_summary.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_meeting_summary" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow  ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/ipad_meeting_summary.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/ipad/html/meeting/test_meeting.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                     &lt;a href="#meeting_summary" class="ui-btn ui-btn-inline ui-btn-a" id="meeting_summary_btn">纪要</a>
+                     &lt;div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+                         class="layout_panel " id="meeting_summary" data-dismissible="false" data-swipe-close="false">
+                      &lt;/div>
+                  </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t">jquery mobile panel组件方法介绍</div>
+                <p class="warning_text">打开/关闭方式(适用于有数据交换的页面)</p>
+                <div>
+                    <pre class="brush:js">
+                        //panel——打开
+                         $("#meeting_summary").unbind().bind("tap",function(){
+                            $("#popup_content").panel("open",{
+                                position:"right",
+                                display:"overlay",
+                                theme: "b"
+                            })
+                          })
+                         //panel——关闭
+                         $("#meeting_summary").unbind().bind("tap",function(){
+                            $("#popup_content").panel("close");
+                          })
+                    </pre>
+                    <a href="http://api.jquerymobile.com/panel/" class="mode_change_address" target="_blank">
+                        JqueryMobile——Panel面板API
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_nav comp" comp="type:'modelTopChange'">
+        <ul>
+            <li><a href="#meeting_list" data-role="none"  rel="external">会议列表</a></li>
+            <li><a href="#meeting_details" data-role="none"  rel="external">会议详情</a></li>
+            <li><a href="#meeting_return" data-role="none" rel="external">会议回执</a></li>
+            <li><a href="#append_meeting" data-role="none" rel="external">与会人员</a></li>
+            <li><a href="#meeting_summary" data-role="none" rel="external">会议纪要</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

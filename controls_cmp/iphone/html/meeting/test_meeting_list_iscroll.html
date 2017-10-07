@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—会议列表模板页</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../js/seeyon.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet"/>
+
+</head>
+<body>
+<section data-role="page" id="meeting_list">
+    <header data-role="header">
+        <h1 class="page_header_title">
+            会议
+            <span></span>
+        </h1>
+    </header>
+    <div data-role="content">
+        <div class="comp" comp="type:'tabs',callBack:userTabs">
+            <div data-role="navbar">
+                <ul>
+                    <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="waitHeld">待召开</a></li>
+                    <li><a href="#" class="tab-ui-btn-a" tgt="endHeld">已召开</a></li>
+                </ul>
+            </div>
+            <div class="tabs_body">
+                <div id="waitHeld" class="ele_active wrapper">
+                    <div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:dataObj,callBack:userList">
+
+                    </div>
+                </div>
+                <div id="endHeld" class="ele_hide wrapper">
+                    <div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:dataObj,callBack:userList">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<script type="text/javascript">
+    function userTabs(obj,index){
+
+    }
+    function userList(dom){
+
+    }
+    function dataObj(){
+        var dataObj = {
+            list_type:'nav',
+            list_num: "420",
+            update_time: "2014-08-15&nbsp;&nbsp;12:30",
+            more_num: "50",
+            data:[{
+                'listId':'001',
+                'transitionUrl':'test_meeting_details.html',
+                'leftIcon':'attend_meeting_22',
+                'centerContent':'明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合明天下午三点小会议室集合',
+                'centerTime':'11-11&nbsp;10:33-11:30',
+                'rightIcon':["1","2"],
+                'rightName':'卜宏宇'
+            },
+                {
+                    'listId':'002',
+                    'transitionUrl':'test_meeting_details.html',
+                    'leftIcon':'unattended_meeting_22',
+                    'centerContent':'明天下午三点小会议室集合',
+                    'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                    'rightIcon':["1"],
+                    'rightName':'卜宏宇2'
+                }
+            ],
+            callback:function(){
+                loaded('waitHeld',waitHeld,waitHeld);
+            }
+        };
+        return dataObj;
+    }
+    /**
+     *  下拉刷新获取数据方法
+     *  myScroll.refresh();        // 数据加载完成后，调用界面更新方法
+     */
+    function waitHeld(obj,id) {
+        setTimeout(function () {
+            listData(id,{
+                list_type:'nav',
+                list_num: "400",
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                more_num: "50",
+                data:[{
+                    'listId':'003',
+                    'transitionUrl':'test_meeting_details.html',
+                    'leftIcon':'attend_meeting_22',
+                    'centerContent':'明天下午三点小会议室集合3',
+                    'centerTime':'11-11&nbsp;10:33-11:30',
+                    'rightIcon':["1","2"],
+                    'rightName':'卜宏宇3'
+                },
+                    {
+                        'listId':'004',
+                        'transitionUrl':'test_meeting_details2.html',
+                        'leftIcon':'attend_meeting_22',
+                        'centerContent':'明天下午三点小会议室集合4',
+                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                        'rightIcon':["1","2"],
+                        'rightName':'卜宏宇4'
+                    },
+                    {
+                        'listId':'005',
+                        'transitionUrl':'test_meeting_details.html',
+                        'leftIcon':'attend_meeting_22',
+                        'centerContent':'明天下午三点小会议室集合5',
+                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                        'rightIcon':["1"],
+                        'rightName':'卜宏宇4'
+                    }
+                ]
+            });
+            $.refreshScroll(id);
+        }, 1000);
+    }
+    function endHeld(obj,id){
+        setTimeout(function(){
+            $.refreshScroll(id);
+        },1000)
+    }
+    $("#meeting_list").bind("pageshow",function(){
+        pageInit();
+        loaded('waitHeld',waitHeld,waitHeld);
+        loaded('endHeld',endHeld,endHeld);
+    })
+</script>
+</section>
+</body>
+</html>

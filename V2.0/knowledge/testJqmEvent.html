@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>事件执行过程</title>
+    <meta charset="utf-8"/>
+    <title>JqueryMobile知识库</title>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+</head>
+<body>
+<section data-role="page" id="page0">
+    <header data-role="header">
+        <h1>头部</h1>
+    </header>
+    <div data-role="content">
+        <p>内容区</p>
+        <a href="testData.html" data-role="button">测试pageload事件</a>
+        <a href="testData3.html" data-role="button">测试pageloadfailed事件</a>
+    </div>
+    <footer data-role="footer">
+        <h3>尾部</h3>
+    </footer>
+    <script type="text/javascript">
+        $("#page0").bind("pageinit",function(){
+            alert("触发 pageinit 事件 - 页面已初始化，DOM 已加载，jQuery Mobile已完成页面增强。")
+        });
+        $("#page0").bind("pagebeforecreate",function(){
+            alert("触发 pagebeforecreate 事件 - 页面即将初始化。jQuery Mobile 仍未开始增强页面。");
+        });
+        $("#page0").bind("pagecreate",function(){
+            alert("触发 pagecreate 事件 - 已创建页面，但增强未完成。");
+        });
+        $("#page0").bind("pageshow",function(){
+            alert("触发 pageshow 事件 - 页面已初始化，DOM 已加载，jQuery Mobile已完成页面增强，可进行自定义操作");
+        });
+        $(document).bind("pageload",function(event,data){
+            var urlObj = $.mobile.path.parseUrl(event.target.baseURI);
+            console.log(urlObj.href)
+            alert("触发 pageload 事件！\nURL: " + urlObj.href);
+        });
+        $(document).bind("pageloadfailed",function(event,data){
+            alert("抱歉，被请求页面不存在。");
+        });
+    </script>
+</section>
+</body>
+</html>

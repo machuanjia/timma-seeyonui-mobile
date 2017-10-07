@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>巡店轨迹</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../V2.0/show_seewrok/icon/seework-common-debug.css" rel="stylesheet"/>
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+
+    <script type="text/javascript" src="http://api.map.baidu.com/api?&ak=B0308cf28ef6e5b5b9f22c5243a99648&v=2.0"></script>
+    <script src=" http://developer.baidu.com/map/jsdemo/demo/convertor.js" type="text/javascript"></script>
+</head>
+<body>
+<section data-role="page" id="patorl_shop_track">
+    <header data-role="header"  class="patorl_track_header comp" comp="type:'patorlTrack',activeClass:'patorl_header_active',callBack:userHeadChange" id="patorl_track_header">
+        <div class="scroller_h">
+            <ul class="ul_li_float clearFlow">
+                <li class="patorl_header_active">
+                    <a href="#" objid="001">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="002">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="003">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="004">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="005">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="006">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" objid="007">
+                        <img src="../../../skin/seework/iphone/images/user_head.png" alt=""/>
+                        <p>张小一</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </header>
+
+    <div data-role="content" class="wrapper over_y_auto pos_relative patorl_track_content no_content_1351 no_content_hide" id="patorl_track_result">
+        <div class="scroller comp " comp="type:'list',listType:'dataRefresh',mapPage:true,callBack:userList">
+            <!--<a href="#" data-transition="slidefade" objid="001" class="patorl_track_list">-->
+                <!--<div class="patrol_shop_time">-->
+                        <!--<span>-->
+                            <!--11-12</br>-->
+                            <!--14:20-->
+                        <!--</span>-->
+                <!--</div>-->
+                <!--<div class="form_list_item adaptive_box_flex">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title"></p>-->
+                            <!--<p class="inquiry_centent">成都成华店</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title">地址：&nbsp;</p>-->
+                            <!--<p class="inquiry_centent">四川省成都市成华区33号</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="#" data-transition="slidefade" objid="002" class="patorl_track_list">-->
+                <!--<div class="patrol_shop_time">-->
+                        <!--<span>-->
+                            <!--11-12</br>-->
+                            <!--14:20-->
+                        <!--</span>-->
+                <!--</div>-->
+                <!--<div class="form_list_item adaptive_box_flex">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title"></p>-->
+                            <!--<p class="inquiry_centent">成都成华店</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title">地址：&nbsp;</p>-->
+                            <!--<p class="inquiry_centent">四川省成都市成华区33号</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="#" data-transition="slidefade" objid="003" class="patorl_track_list">-->
+                <!--<div class="patrol_shop_time">-->
+                        <!--<span>-->
+                            <!--11-12</br>-->
+                            <!--14:20-->
+                        <!--</span>-->
+                <!--</div>-->
+                <!--<div class="form_list_item adaptive_box_flex">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title"></p>-->
+                            <!--<p class="inquiry_centent">成都成华店</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title">地址：&nbsp;</p>-->
+                            <!--<p class="inquiry_centent">四川省成都市成华区33号</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="#" data-transition="slidefade" objid="003" class="patorl_track_list">-->
+                <!--<div class="patrol_shop_time">-->
+                        <!--<span>-->
+                            <!--11-12</br>-->
+                            <!--14:20-->
+                        <!--</span>-->
+                <!--</div>-->
+                <!--<div class="form_list_item adaptive_box_flex">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title"></p>-->
+                            <!--<p class="inquiry_centent">成都成华店</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title">地址：&nbsp;</p>-->
+                            <!--<p class="inquiry_centent">四川省成都市成华区33号</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</a>-->
+            <!--<a href="#" data-transition="slidefade" objid="003" class="patorl_track_list">-->
+                <!--<div class="patrol_shop_time">-->
+                        <!--<span>-->
+                            <!--11-12</br>-->
+                            <!--14:20-->
+                        <!--</span>-->
+                <!--</div>-->
+                <!--<div class="form_list_item adaptive_box_flex">-->
+                    <!--<ul>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title"></p>-->
+                            <!--<p class="inquiry_centent">成都成华店</p>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<p class="inquiry_title">地址：&nbsp;</p>-->
+                            <!--<p class="inquiry_centent">四川省成都市成华区33号</p>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--</a>-->
+        </div>
+    </div>
+    <input type="hidden" class="map_page_num" value="1" maxValue="10"/>
+    <a href="patrol_track_map.html"  data-transition="slidefade" data-role="button" data-inline="ture" class="map_btn">地图</a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+//            alert(objId)
+//            var url = "work_content.html";
+            toNextPage(url,null,null)
+        }
+        /**
+         * 头像变话扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性objid
+         */
+        function userHeadChange(obj,objId){
+            $("#patorl_track_result .list_data_content").empty();
+            listData($("#patorl_track_result"),{
+                list_type:'patrolTrack',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'002',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'003',
+                        'listDate':'2014-11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'004',
+                        'listDate':'2013-11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'005',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'006',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'007',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号四川省成都市成华区33号四川省成都市成华区33号'
+                            }
+                        ]
+                    }
+                ],
+                callback:function(){
+                    $.refreshScroll("patorl_track_result",true);
+                }
+            });
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'patrolTrack',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'010',
+                            'listDate':'11-10</br>12:30',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市sada成华区33号'
+                                }
+                            ]
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'patrolTrack',
+                    data:[
+                        {
+                            'listId':'010',
+                            'listDate':'11-10</br>12:30',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'地址',
+                                    'listContent':'四川省成都市sada成华区33号'
+                                }
+                            ]
+                        }
+                    ]
+                });
+                $(".map_page_num").val("2");
+                $.refreshScroll(id);
+
+            }, 1000);
+        }
+        $("#patorl_shop_track").bind("pageshow",function(){
+            $.loadedScroll("patorl_track_header",1,"h",function(){
+                var li_w =  $("#patorl_track_header").find("li").outerWidth();
+                var li_len =  $("#patorl_track_header").find("li").length;
+                var _w = li_w * li_len + 1;
+                $("#patorl_track_header").find("ul").width(_w);
+            });
+            pageInit();
+            listData($("#patorl_track_result"),{
+                list_type:'patrolTrack',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'002',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'003',
+                        'listDate':'2014-11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'004',
+                        'listDate':'2013-11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'005',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成sdas华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'006',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'007',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    },
+                    {
+                        'listId':'008',
+                        'listDate':'11-10</br>12:30',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'地址',
+                                'listContent':'四川省成都市成华区33号'
+                            }
+                        ]
+                    }
+                ],
+                callback:function(){
+                    loaded("patorl_track_result",userInfoList,userMoreInfoList,"map_page");
+                }
+            });
+        })
+    </script>
+</section>
+</body>
+</html>

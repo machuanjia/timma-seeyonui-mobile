@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>地图标注</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="map_sign" address_info_id="my_pos">
+    <script type="text/javascript" src="http://api.map.baidu.com/api?&ak=B0308cf28ef6e5b5b9f22c5243a99648&v=2.0"></script>
+    <script src=" http://developer.baidu.com/map/jsdemo/demo/convertor.js" type="text/javascript"></script>
+
+    <div class="form_add_property border_top_bottom background_white margin_t_15">
+        <a href="#" data-transition="slidefade" class="flexible_box padding_15">
+            <div class="adaptive_box_flex form_color_black font_16 flexible_box">
+                <span>地图标注</span><span class="padding_lr_10 color_93  map_position adaptive_box_flex" id="my_pos">标注地图位置</span>
+            </div>
+            <div>
+                <span class="iphone24 send_24 margin_t_f_2"></span>
+            </div>
+        </a>
+    </div>
+    <div id="my_map" class="display_none"></div>
+    <script type="text/javascript" src="../js/map_position.js"></script>
+    <script type="text/javascript">
+        function getAddressInfo(address){
+            var address_id = $("section.ui-page-active").attr("address_info_id");
+            $("#"+address_id).html(address.province + "" + address.city + "" + address.district + "" + address.street + "" + address.streetNumber);
+        }
+        $("#map_sign").bind("pageshow",function(){
+            getPosition(getLocalMapInfo);
+        })
+    </script>
+</section>
+</body>
+</html>

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>个人主页</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta content="telephone=no" name="format-detection" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="personal_page">
+    <header data-role="header" class="personal_page_header flexible_box padding_10" data-theme="personal">
+        <div class="padding_lr_15">
+            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+        </div>
+        <div class="adaptive_box_flex">
+            <h4>张菲儿<span class="iphone40 woman_40 margin_l_10 margin_t_f_4"></span></h4>
+            <p>销售部&nbsp;&nbsp;销售部主管</p>
+            <a href="tel:15884497418" data-role="none">
+                <span class="iphone48 telephone_48"></span>
+            </a>
+            <a href="sms:15884497418" data-role="none">
+                <span class="iphone48 message_48"></span>
+            </a>
+            <span class="iphone48 gift_48"></span>
+        </div>
+        <div class="">
+            <span class="iphone48 follow_me_48"></span>
+        </div>
+    </header>
+    <div data-role="content" class="personal_page_content comp"  comp="type:'tabs',tabType:'navbar',initTgt:'cooperation_share',tabParentId:'tabs_body2',scrollState:true" id="personal_page_content">
+        <div data-role="navbar" class="form_nav_bar personal_nav_bar margin_t_5">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" class="tab-ui-btn-a ui-btn-active cooperation_share_icon" tgt="cooperation_share">
+                        <span class="iphone48 cooperation_share_48"></span>
+                        <h4>协作分享</h4>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="tab-ui-btn-b personal_info_icon"  tgt="personal_info">
+                        <span class="iphone48 personal_info_48"></span>
+                        <h4>个人资料</h4>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body" id="tabs_body2">
+            <div class="wrapper over_y_auto pos_relative personal_page_list_content no_content_135 no_content_hide" id="cooperation_share">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+
+                </div>
+            </div>
+            <div class="wrapper over_y_auto display_none personal_page_list_content " id="personal_info">
+                <div class="scroller">
+                    <div class="write_user_info_content border_b border_radius_6">
+                        <h4 class="border_bottom">基本资料</h4>
+                        <div class="flexible_box user_telephone border_bottom">
+                            <div class="user_info_title">
+                                部门
+                            </div>
+                            <div class="adaptive_box_flex">
+                                <p class="text_ellipsis padding_r_15">销售部\企划部(兼)</p>
+                            </div>
+                        </div>
+                        <div class="flexible_box user_telephone border_bottom">
+                            <div class="user_info_title">
+                                岗位
+                            </div>
+                            <div class="adaptive_box_flex">
+                                <p class="text_ellipsis padding_r_15">销售主管\市场人员(兼)</p>
+                            </div>
+                        </div>
+                        <div class="flexible_box user_telephone border_bottom">
+                            <div class="user_info_title">
+                                手机号
+                            </div>
+                            <div class="adaptive_box_flex">
+                                <p class="text_ellipsis padding_r_15">13880887894</p>
+                            </div>
+                        </div>
+                        <div class="flexible_box user_describe">
+                            <div class="user_info_title">
+                                备注
+                            </div>
+                            <div class="adaptive_box_flex">
+                                <p class="padding_r_15">设计人内容，内容内容其它内容，它内容，设计内容</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,"",function(e,thisUrlObj,data,pageActiveObj){
+//                alert(e.target.baseURI)
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    list_refresh_type: "down",
+                    data:[
+//                        {
+//                            'listId':'001',
+//                            'replyNum':"20"
+//                        },
+//                        {
+//                            'listId':'002',
+//                            'replyNum':"87"
+//                        },
+//                        {
+//                            'listId':'003',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"40"
+//                        },
+//                        {
+//                            'listId':'004',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"10月&nbsp;&nbsp;&nbsp销售",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"5"
+//                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三张小三张小三张小三',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四张小四张小四',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七张小七张小七张小七张小七',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"33"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    data:[
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八张小八张小八张小八张小八张小八',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"88"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#personal_page").bind("pagebeforeshow",function(){
+            pageInit("personal_page");
+            listData($("#cooperation_share"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    }
+                ]
+            });
+        })
+        $("#personal_page").bind("pageshow",function(){
+            loaded('cooperation_share',userInfoList,userMoreInfoList,8,5);
+            $.loadedScroll("personal_info",1,"v");
+//            pageShowInit("write_user_info");
+        })
+    </script>
+</section>
+</body>
+</html>

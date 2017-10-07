@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>表单查询2</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="form_inquiry">
+    <div data-role="content" id="form_inquiry_content" class="comp"
+         comp="type:'tabs',tabType:'navbar',scrollState:true,hideLayerOpen:true,tabBorderClass:'form_tab_none',callBack:formListTab">
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" class="ui-btn-active1" tgt="inquiry_com_list">
+                        <span>查询值1</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_city">
+                        <span>城市控件</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_three">
+                        <span>开关</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  tgt="inquiry_four">
+                        <span>日期</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content">
+            <div id="inquiry_com_list" class="wrapper common_inquiry comp" comp="type:'tabInquiry',actObj:'p',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="scroller com_inquiry_list">
+                    <p>全部</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                </div>
+            </div>
+            <div id="inquiry_city" class="display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',hintObjId:'inquiry_city_list',hintBack:cityChange,actObj:'.city_list_2 a',hideLayerClose:true,
+                 letterClass:'letter_position_inquiry',tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div id="inquiry_city_list" class="wrapper city_list_letter">
+                    <div class="scroller" id="city_list_content">
+                        <!--<ul data-role="listview" class="nav_list_box city_list list_data">-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全部-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li data-role="list-divider" group_type="A">A</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--成都-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--德阳-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li data-role="list-divider" group_type="B">B</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+                <div id="inquiry_city_list_2" class="wrapper_right inquiry_city_list_2">
+                    <div class="scroller" id="city_list_content_2">
+                        <!--<ul data-role="listview" class="nav_list_box city_list_2 list_data">-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--四川-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--重庆-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                            <!--<li>-->
+                                <!--<a href="#" >-->
+                                    <!--全区-->
+                                <!--</a>-->
+                            <!--</li>-->
+                        <!--</ul>-->
+                    </div>
+                </div>
+                <div class="letter_position letter_position_inquiry comp" comp="type:'letterPosition',scrollId:'inquiry_city_list'"></div>
+            </div>
+            <div id="inquiry_three" class="display_none common_inquiry clearFix comp" comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="border_bottom padding_tb_5 padding_lr_10 margin_b_5 flexible_box" >
+                    <div class="adaptive_box_flex inquiry_on_off_text">
+                        开关
+                    </div>
+                    <input type="checkbox" data-role="flipswitch"  data-on-text="" data-off-text="" />
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+            <div id="inquiry_four" class="display_none common_inquiry clearFix padding_t_10 comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_inquiry_content',callBack:userInquiry">
+                <div class="user_defind_date inquiry_text margin_b_5 margin_lr_10">
+                    <span class="user_defind_date_hint">请选择日期</span>
+                    <input type="date" data-role="none" />
+                    <span class="iphone40 calendar_40 user_defind_date_btn"></span>
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative form_inquiry_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+                    <!--<div class="form_list_item">-->
+                        <!--<p class="form_list_item_active">列表1具体内容</p>-->
+                        <!--<p>列表2:具体内容</p>-->
+                        <!--<p>列头3:具体内容</p>-->
+                        <!--<p>列头4:具体内容</p>-->
+                    <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+//            var url = "work_content.html";
+//            var data_obj = "SDsadadad";
+//            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+//                //匹配目标页面
+//                if (thisUrlObj.href.search(url) != -1) {
+//                    var ajax_data = dataObj.options.data;
+//                }
+//            })
+        }
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function cityChange(obj,objId){
+            var tab_left_w = parseInt($("body").width()*0.45);
+            var tab_right_w = $("body").width() - tab_left_w;
+            $("#inquiry_city_list").width(tab_left_w);
+            $("#inquiry_city_list_2").width(tab_right_w);
+            $(".letter_position_inquiry").css("right","55%");
+            listData("city_list_content_2",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'大连'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_city_list_2",1,"v");
+                }
+            },"city_list_2");
+        }
+
+        /**
+         * tab扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         * @param tgtId navbar点击对应区域打开的id
+         */
+        function formListTab(thisObj,domObj,tgtId){
+           var tab_height = parseInt($("body").height()*0.8);
+            var tab_w = parseInt($("body").width());
+            var tab_de_height = 87;
+            switch (tgtId){
+                case "inquiry_com_list":
+                    var p_list = $("#inquiry_com_list").find("p").length;
+                    var obj_h = p_list * 45;
+                    if(obj_h > tab_height){
+                        $(".inquiry_content").height(tab_height);
+                    }
+                    else{
+                        $(".inquiry_content").height(obj_h);
+                    }
+                    break;
+                case "inquiry_city":
+                    $(".inquiry_content").height(tab_height);
+                    $("#inquiry_city").height(tab_height);
+                    $("#inquiry_city_list").width(tab_w);
+                    $("#inquiry_city_list_2").width(0);
+                    $(".letter_position_inquiry").css("right","0px");
+                    $.refreshScroll("inquiry_city_list");
+                    break;
+                default :
+                    $(".inquiry_content").height(tab_de_height);
+
+            }
+        }
+        /**
+         * tab_body区域展示扩展方法
+         * @param domObj 当前点击对象
+         * @param objId 当前点击对象的objId,如果domObj没有objId属性，则objId为null
+         */
+        function userInquiry(domObj,objId){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'004',
+                            'listData':[
+                                {
+                                    'listTitle':'列表4',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'005',
+                            'listData':[
+                                {
+                                    'listTitle':'列表05',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'0010',
+                            'listData':[
+                                {
+                                    'listTitle':'列表11',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#form_inquiry").bind("pageshow",function(){
+            pageInit();
+            listData("city_list_content",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'全部'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'B',
+                        'cityName':'北京'
+                    },{
+                        'listId':'002',
+                        'letterType':'C',
+                        'cityName':'重庆'
+                    },{
+                        'listId':'003',
+                        'letterType':'C',
+                        'cityName':'成都'
+                    },{
+                        'listId':'004',
+                        'letterType':'C',
+                        'cityName':'长春'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'D',
+                        'cityName':'东莞'
+                    },{
+                        'listId':'006',
+                        'letterType':'D',
+                        'cityName':'大连'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'H',
+                        'cityName':'杭州'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'H',
+                        'cityName':'合肥'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'H',
+                        'cityName':'呼和浩特'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'H',
+                        'cityName':'哈尔滨'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_city_list",1,"v");
+                }
+            })
+
+            $.loadedScroll("inquiry_com_list",1,"v");
+            listData($("#search_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'列表1',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':true
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'列表40',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ],
+                callback:function(){
+                    loaded('search_result',userInfoList,userMoreInfoList);
+                }
+            });
+
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

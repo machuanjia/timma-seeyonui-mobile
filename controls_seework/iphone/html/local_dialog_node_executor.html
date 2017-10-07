@@ -1,0 +1,109 @@
+<section data-role="page" id="form_node_executor">
+    <div data-role="content" class="overflow_hidden wrapper padding_lr_10 padding_t_5 border_box" id="form_node_executor_content">
+        <div class="scroller">
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 approve_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name" id="form_department_name">**部<span>[审批]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 inform_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name">上节点部门主管<span>[告知]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+            <div class="select_node_executor margin_b_5 flexible_box border_all_form border_radius_6">
+                <div class="padding_r_10">
+                    <span class="iphone72 deal_with_72"></span>
+                </div>
+                <div class="adaptive_box_flex">
+                    <h2 class="form_department_name">发起者部门主管<span>[办理]</span></h2>
+                    <div class="executor_info">
+                        <h2 class="form_executor_hint">执行人:</h2>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            <label>向思雨</label>
+                        </p>
+                        <span class="iphone64 add_person_64 margin_b_10"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="border_top">
+        <a href="#" data-role="button" class="blue_block_btn  margin_tb_15 margin_lr_10" >确定</a>
+    </footer>
+    <script type="text/javascript">
+        /**
+         * 初始化数据处理
+         */
+        $("#form_node_executor").bind("pagecreate",function(){
+
+
+        })
+        /**
+         * 初始化page
+         */
+        $("#form_node_executor").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("form_node_executor_content",1,'v',function(){
+                var _h = $('body').height();
+                var footer_h = $("#form_node_executor footer").outerHeight();
+                $("#form_node_executor_content").outerHeight(_h - footer_h);
+            },"destroy");
+        })
+    </script>
+</section>

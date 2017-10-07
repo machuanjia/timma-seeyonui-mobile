@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>seework</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="serve_list" class="serve_list">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false" class="comp"
+            comp="type:'tabs',tabType:'navbar',tabParentId:'tabs_body',sectionId:'serve_list',initTgt:'waitHeld',scrollState:true,secondTitleBack:userSelect">
+        <div data-role="navbar" class="form_nav_bar">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" class="tab-ui-btn-a ui-btn-active ui_btn_active serve_special_bar specialBar" tgt="waitTitle">
+                        <label>待办</label>
+                        <span class="iphone16 arrow_b_16 wait_deal_b_16"></span>
+                    </a>
+                </li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="findHeld">协作</a></li>
+            </ul>
+        </div>
+    </header>
+    <div data-role="content" class="tabs_body" id="tabs_body">
+        <div class="more_nav_titlie display_none serve_list_content" id="waitTitle">
+            <h1 tgt="waitHeld"><span class="iphone48 wait_deal_48"></span><label>待办</label></h1>
+            <h1 tgt="storeManage"><span class="iphone48 store_manage_48"></span><label>门店管理</label></h1>
+        </div>
+        <div class="wrapper comp over_y_auto serve_list_content no_content_135 no_content_hide" id="waitHeld"
+             comp="type:'dialog',footerTop:'fixed',definedHeight:'50',parentId:'serve_list'">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',morePageNum:true,callBack:userList">
+
+            </div>
+        </div>
+        <div class="wrapper comp over_y_auto display_none serve_list_content no_content_135 no_content_hide" id="storeManage"
+             comp="type:'dialog',footerTop:'fixed',definedHeight:'50',parentId:'serve_list'">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',morePageNum:true,callBack:userList">
+
+            </div>
+        </div>
+        <div class="wrapper comp over_y_auto display_none serve_list_content no_content_135 no_content_hide" id="findHeld"
+             comp="type:'dialog',footerTop:'fixed',definedHeight:'50',parentId:'serve_list'">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="seewprk_menu">
+        <div data-role="navbar" class="seework_menu">
+            <ul>
+                <li>
+                    <a href="#" data-icon="seework-home" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="apply_center.html" data-icon="apply-center" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="new-built" data-transition="slidefade" class="seework_menu_bar new_built_default"></a>
+                </li>
+                <li>
+                    <a href="work_link_man.html" data-icon="link-man" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="personal_page.html" data-icon="me" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        /**
+         * 二级tabs切换
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象对应的内容区id
+         */
+        function userSelect(obj,objId){
+            if(objId == "storeManage"){
+                listData($("#storeManage"),{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    center_tag:false,//标签图标显示与否
+                    reply_type:"flowForm",//回复流程状态
+                    all_num:"100",//共有条数
+                    more_num:"60",//还有条数
+                    data:[
+                        {
+                            'listId':'001',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'9-17&nbsp;10:33',
+                            'replyNum':"1"
+                        },
+                        {
+                            'listId':'002',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'004',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一4',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                },"listSearch");
+            }
+        }
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    center_tag:false,//标签图标显示与否
+                    reply_type:"flowForm",//回复流程状态
+                    all_num:"80",//共有条数
+                    more_num:"40",//还有条数
+                    list_refresh_type: "down",
+                    data:[
+                        {
+                            'listId':'003',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"成华店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"1"
+                        },
+                        {
+                            'listId':'004',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小一',
+                            'centerContent':'巡店任务单',
+                            'centertag':"成华店",
+                            'userTime':'11-11&nbsp;11:30',
+                            'replyNum':"1"
+                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'009',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小9',
+                            'centerContent':'巡店任务单',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        function userFindList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    list_refresh_type: "down",
+                    data:[
+//                        {
+//                            'listId':'001',
+//                            'replyNum':"20"
+//                        },
+//                        {
+//                            'listId':'002',
+//                            'replyNum':"87"
+//                        },
+//                        {
+//                            'listId':'003',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"40"
+//                        },
+//                        {
+//                            'listId':'004',
+//                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+//                            'userName':'张小一',
+//                            'centerContent':'销售部9月第一周工作纪要',
+//                            'centertag':"10月&nbsp;&nbsp;&nbsp销售",
+//                            'userTime':'11-11&nbsp;11:30',
+//                            'replyNum':"5"
+//                        },
+                        {
+                            'listId':'005',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                            'userName':'张小三张小三张小三张小三',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-9-17&nbsp;11:30',
+                            'replyNum':"2"
+                        },
+                        {
+                            'listId':'006',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小四张小四张小四',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        },
+                        {
+                            'listId':'007',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小七张小七张小七张小七张小七',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"33"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    center_tag:false,//标签图标显示与否
+                    reply_type:"flowForm",//回复流程状态
+                    all_num:"80",//共有条数
+                    more_num:"10",//还有条数
+                    data:[
+                        {
+                            'listId':'0008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八',
+                            'centerContent':'巡店任务单sadsad',
+                            'centertag':"武侯店",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"3"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        function userFindMoreList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'listInfo',
+                    data:[
+                        {
+                            'listId':'008',
+                            'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                            'userName':'张小八张小八张小八张小八张小八张小八',
+                            'centerContent':'销售部9月第一周工作纪要',
+                            'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                            'userTime':'2014-12-11&nbsp;11:30',
+                            'replyNum':"88"
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#serve_list").bind("pagebeforeshow",function(){
+            pageInit("serve_list");
+            listData($("#findHeld"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要dfdsf',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要3",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"12"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'销售部9月第一周工作纪要',
+                        'centertag':"工作纪要&nbsp;&nbsp;&nbsp9月&nbsp;&nbsp;&nbsp销售&nbsp;&nbsp;&nbsp安排&nbsp;&nbsp;&nbsp工作纪要2&nbsp;&nbsp;&nbsp工作纪要454753",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    }
+                ]
+            },"listSearch");
+
+            listData($("#waitHeld"),{
+                list_type:'listInfo',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                center_tag:false,//标签图标显示与否
+                reply_type:"flowForm",//回复流程状态
+                all_num:"100",//共有条数
+                more_num:"60",//还有条数
+                data:[
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"工作纪要",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"工作纪要",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'9-17&nbsp;10:33',
+                        'replyNum':"1"
+                    },
+                    {
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"武侯店",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    },
+                    {
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'userName':'张小一',
+                        'centerContent':'巡店任务单',
+                        'centertag':"工作纪要",
+                        'userTime':'11-11&nbsp;11:30',
+                        'replyNum':"3"
+                    }
+                ]
+            },"listSearch");
+        })
+        $("#serve_list").bind("pageshow",function(){
+            pageShowInit("serve_list");
+            loaded('findHeld',userFindList,userFindMoreList);
+            loaded('storeManage',userInfoList,userMoreInfoList);
+            loaded('waitHeld',userInfoList,userMoreInfoList,6,5);
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

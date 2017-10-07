@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>正文内容</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="flow_form_main" class="flow_form_main">
+    <div data-role="content" class="overflow_hidden wrapper" id="flow_form_content">
+        <div class="scroller">
+            <div class="user_create_form_content">
+                <h1 class="form_title font_18"><span class="form_logo"></span>人员费用报销单</h1>
+                <div class="flexible_box single_text background_white border_top_bottom_form margin_t_15 margin_b_10">
+                    <p class="padding_r_5 font_16 form_color_red">报销部门</p>
+                    <p class="adaptive_box_flex">
+                        <input type="text" class="border_bottom_form font_16 form_color_black" data-role="none" value="产品部"/>
+                    </p>
+                </div>
+                <div class="double_text background_white border_top_bottom_form margin_tb_10">
+                    <p class="padding_r_15 form_color_red">报销部门</p>
+                    <textarea data-role="none" class="border_all_form font_16 form_color_black">内容内容内容内容内容内容内容内容，内容内容内容内容内容内容内容内容内容内容内容内容</textarea>
+                </div>
+
+                <div data-role="collapsible" class="detail_form margin_tb_10 border_top_bottom_form" data-iconpos="right" data-collapsed-icon="form-close"  data-expanded-icon="form-spread">
+                    <h2 class="font_16 form_color_red">费用明细（1）</h2>
+                    <!--<div class="detail_form_content">-->
+
+                    <!--</div>-->
+                </div>
+            </div>
+
+            <div class="form_add_property border_top_bottom background_white">
+                <div class="accessory_area padding_10 border_bottom background_white">
+                    <ul class="accessory_content">
+                        <li>
+                            <div class="accessory_left">
+                                <span class="iphone64 html_64 accessory_name"></span>
+                            </div>
+                            <div class="accessory_center">
+                                附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档
+                            </div>
+                            <div class="accessory_right font_arial">
+                                34KB
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_left">
+                                <span class="iphone64 html_64 accessory_name"></span>
+                            </div>
+                            <div class="accessory_center">
+                                附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档附件文档
+                            </div>
+                            <div class="accessory_right font_arial">
+                                34KB
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <a href="#" data-transition="slidefade" class="flexible_box padding_lr_10">
+                    <div class="adaptive_box_flex form_color_black font_14">
+                        <span class="iphone24 processes_24 margin_r_5 margin_t_f_2"></span>查看流程
+                    </div>
+                    <div>
+                        <span class="iphone24 send_24 margin_t_f_2"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="seework_content_reply background_white margin_t_10 margin_b_20 padding_b_10 border_bottom border_top comp" comp="type:'tabs',tabType:'navbar',scrollId:'flow_form_content'">
+                <div data-role="navbar">
+                    <ul>
+                        <li ><a href="#user_reply" class="ui-btn-active" tgt="user_reply">回复(<label class="font_arial">5</label>)</a></li>
+                        <li><a href="#remind_me" tgt="remind_me">提醒我的(<label>10</label>)</a></li>
+                    </ul>
+                </div>
+                <div class="tabs_body">
+                    <div id="user_reply" class="user_reply_area border_radius_4" >
+                        <div class="user_reply_content border_bottom">
+                            <div class="flexible_box">
+                                <div class="flexible_content_left">
+                                    <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                                </div>
+                                <div class="flexible_content_right adaptive_box_flex">
+                                    <p class="font_14 color_8">杨发</p>
+                                    <p class="font_14 color_black"><label class="form_pass margin_r_10">通过</label>收到，谢谢，已做交付。</p>
+                                    <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user_reply_content user_shake_content border_bottom">
+                            <div class="flexible_box">
+                                <div class="flexible_content_left">
+                                    <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                                </div>
+                                <div class="flexible_content_right adaptive_box_flex">
+                                    <p class="font_14 color_8">杨发</p>
+                                    <p class="font_14 color_black"><label class="form_pass margin_r_10">通过</label>收到，谢谢，已做交付。</p>
+                                    <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                                </div>
+                            </div>
+                            <div class="user_shake_reply border_radius_4  border_bottom">
+                                <div class="flexible_box border_bottom">
+                                    <div class="flexible_content_left">
+                                        <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                                    </div>
+                                    <div class="flexible_content_right adaptive_box_flex">
+                                        <p class="font_14 color_8">杨发</p>
+                                        <p class="font_14 color_black">收到，谢谢，已做交付。</p>
+                                        <ul class="accessory_content margin_tb_5">
+                                            <li>
+                                                <div class="accessory_left">
+                                                    <span class="iphone64 html_64 accessory_name"></span>
+                                                </div>
+                                                <div class="accessory_center">
+                                                    附件文档附件文
+                                                </div>
+                                                <div class="accessory_right">
+                                                    34KB
+                                                </div>
+                                            </li>
+                                        </ul>
+                                        <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="user_reply_content border_bottom">
+                            <div class="flexible_box">
+                                <div class="flexible_content_left">
+                                    <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                                </div>
+                                <div class="flexible_content_right adaptive_box_flex">
+                                    <p class="font_14 color_8">杨发</p>
+                                    <p class="font_14 color_black">收到，谢谢，已做交付。</p>
+                                    <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="remind_me" class="remind_me_area border_radius_4 display_none">
+                        <div class="flexible_box border_bottom">
+                            <div class="flexible_content_left">
+                                <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            </div>
+                            <div class="flexible_content_right adaptive_box_flex">
+                                <p class="font_14 color_8">杨紫sdsdsd</p>
+                                <p class="font_14 color_black">请注意查看</p>
+                                <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                            </div>
+                        </div>
+                        <div class="flexible_box border_bottom">
+                            <div class="flexible_content_left">
+                                <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            </div>
+                            <div class="flexible_content_right adaptive_box_flex">
+                                <p class="font_14 color_8">杨紫</p>
+                                <p class="font_14 color_black">请注意查看</p>
+                                <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                            </div>
+                        </div>
+                        <div class="flexible_box border_bottom">
+                            <div class="flexible_content_left">
+                                <img src="../../../skin/seework/iphone/images/user.png" alt=""/>
+                            </div>
+                            <div class="flexible_content_right adaptive_box_flex">
+                                <p class="font_14 color_8">杨紫</p>
+                                <p class="font_14 color_black">请注意查看</p>
+                                <p class="font_11 color_b2 font_arial">2014-9-11&nbsp;&nbsp;13:14</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="flow_form_content_footer seework_content_footer background_white add_user_reply_content1">
+        <!--审批更多-->
+        <div class="ui-grid-c padding_t_12 padding_b_8 flow_form_tabs border_bottom display_none approve_more_content" >
+            <div class="ui-block-a pos_relative">
+                <span class="iphone48 temporary_storage_48"></span>
+                <p class="flow_font_blue">暂存代办</p>
+            </div>
+            <div class="ui-block-b">
+                <span class="iphone48 save_bill_48"></span>
+                <p class="flow_font_blue">保存单据</p>
+            </div>
+        </div>
+        <!--审批-->
+        <div class="ui-grid-c padding_t_8 padding_b_4 flow_form_tabs border_bottom ">
+            <div class="ui-block-a pos_relative" id="approve_pass">
+                <span class="iphone48 approve_pass_48"></span>
+                <p class="flow_font_green">通过</p>
+            </div>
+            <div class="ui-block-b">
+                <span class="iphone48 approve_stop_48"></span>
+                <p class="flow_font_red">终止</p>
+            </div>
+            <div class="ui-block-c">
+                <span class="iphone48 approve_return_48"></span>
+                <p class="flow_font_orange">退回</p>
+            </div>
+            <div class="ui-block-d" id="approve_more">
+                <span class="iphone48 approve_more_48"></span>
+                <p class="flow_font_blue">更多</p>
+            </div>
+        </div>
+        <!--办理-->
+        <div class="ui-grid-c padding_t_8 padding_b_4 flow_form_tabs border_bottom display_none">
+            <div class="ui-block-a pos_relative">
+                <span class="iphone48 deal_with_48"></span>
+                <p class="flow_font_green">办理</p>
+            </div>
+            <div class="ui-block-b">
+                <span class="iphone48 approve_return_48"></span>
+                <p class="flow_font_orange">退回</p>
+            </div>
+            <div class="ui-block-c">
+                <span class="iphone48 temporary_storage_48"></span>
+                <p class="flow_font_blue">暂存代办</p>
+            </div>
+            <div class="ui-block-d">
+                <span class="iphone48 save_bill_48"></span>
+                <p class="flow_font_blue">保存单据</p>
+            </div>
+        </div>
+        <!--告知—已阅-->
+        <div class="ui-grid-a padding_t_8 padding_b_4 flow_form_tabs border_bottom display_none">
+            <div class="ui-block-a pos_relative">
+                <span class="iphone48 check_over_48"></span>
+                <p class="flow_font_green">已阅</p>
+            </div>
+            <div class="ui-block-b">
+                <span class="iphone48 save_bill_48"></span>
+                <p class="flow_font_blue">保存单据</p>
+            </div>
+        </div>
+        <!--添加回复-->
+        <div class="add_user_reply flexible_box padding_10 padding_l_8 display_none">
+            <input type="text" data-role="none" placeholder="添加回复" class="display_block adaptive_box_flex comp"
+                   comp="type:'focus',scrollId:'seework_user_content'"/>
+            <!--<textarea type="text" data-role="none" placeholder="添加回复" class="display_block adaptive_box_flex" /></textarea>-->
+            <span class="iphone48 more_48 user_more_handle margin_t_2"></span>
+        </div>
+        <!--回复附件选择-->
+        <div class="add_user_reply_set flexible_box display_none">
+            <div class="adaptive_box_flex">
+                <div class="ui-grid-d comp" comp="type:'tabs',contentTabBody:'seework_accessory_area',callBack:userSpread">
+                    <div class="ui-block-a" tgt="seework_accessory_type">
+                        <span class="iphone48 accessory_48"></span>
+                    </div>
+                    <div class="ui-block-b" tgt="expression_lib">
+                        <span class="iphone48 expression_48"></span>
+                    </div>
+                    <div class="ui-block-c" tgt="remind_me" >
+                        <span class="iphone48 remind_48"></span>
+                    </div>
+                    <div class="ui-block-d" tgt="seework_countersign">
+                        <span class="iphone48 countersign_48"></span>
+                    </div>
+                    <div class="ui-block-e" tgt="seework_content_set">
+                        <span class="iphone48 set_48"></span>
+                    </div>
+                </div>
+            </div>
+            <a href="#" data-role="button" data-inline="ture" class="user_reply_submit">发送</a>
+        </div>
+        <!--回复附件选择区-->
+        <div class="seework_accessory_area tabs_body display_none">
+            <div id="seework_accessory_type" class="display_none">
+                <div class="ui-grid-c seework_accessory_type border_bottom margin_lr_10">
+                    <div class="ui-block-a pos_relative" >
+                        <span class="iphone48 picture_48"></span>
+                        <p>图片2</p>
+                        <form id="account-form" action="/mobile/account" method="post" data-ajax="false">
+                            <input type="file" class="picture_input" data-role="none"/>
+                        </form>
+                    </div>
+                    <div class="ui-block-b" id="relevancy_id">
+                        <span class="iphone48 relevancy_flie_48"></span>
+                        <p>关联</p>
+                    </div>
+                </div>
+                <div class="seework_accessory_centent pos_relative picture_area" id="accessory_file_list">
+                    <div class="scroller_h clearFlow">
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 relevancy_flie_112"></span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 relevancy_flie_upload_112 picture_upload_bg">
+                               <label class="iphone32 pic_load_32"></label>
+                            </span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 picture_upload_112 picture_upload_bg">
+                               <label class="iphone32 pic_load_32"></label>
+                            </span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <span class="iphone112 relevancy_flie_112"></span>
+                            <label class="picture_title">标题标题标题标题标题标题</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                        <p>
+                            <img src="../../../skin/seework/iphone/images/pic_2.png" alt=""/>
+                            <span class="iphone32 picture_close_32 picture_close"></span>
+                            <label class="picture_title">照片名</label>
+                            <label class="picture_size font_arial">200K</label>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="expression_lib margin_b_5 display_none comp" id="expression_lib" comp="type:'expression',tapType:'userDined'"></div>
+            <div class="seework_content_set flexible_box display_none" id="seework_content_set">
+                <div class="adaptive_box_flex">
+                    <span class="iphone24 hide_reply_content_24"></span>
+                    <span>隐藏回复内容</span>
+                </div>
+                <div>
+                    <input type="checkbox" data-role="flipswitch"  data-on-text="" data-off-text="" />
+                </div>
+            </div>
+        </div>
+        <!--<a href="#" data-role="button" class="blue_block_btn margin_t_10 margin_b_20 margin_lr_10" >取消</a>-->
+    </footer>
+    <script type="text/javascript">
+        function userLink(){
+
+        }
+        function userSpread(obj,objTgt){
+            if(objTgt == "seework_accessory_type"){
+                $.loadedScroll("accessory_file_list", 1, 'h', function () {
+                    var _w = 80* $('#accessory_file_list').find("p").length;
+                    $("#accessory_file_list").children("div").width(_w);
+                });
+            }
+            else if(objTgt == "remind_me"){
+//                $(".add_user_reply input").blur();
+                setTimeout(function(){
+                    var _h = $('body').height();
+                    $("#work_select_send_range").height(_h);
+
+                    var popupUrl = 'dialog_select_send_range.html';
+                    createDialog(popupUrl,"flow_form_main","work_select_send_range",function(){
+                        $.loadedScroll("work_range_content",1,'v',function(){
+                            var footer_h = $('#work_select_send_range').find("footer").outerHeight();
+                            var content_h = _h - footer_h;
+                            $("#work_range_content").outerHeight(content_h);
+                            $('#work_select_send_range').find("footer").css("top",content_h + "px");
+                        });
+                        $.loadedScroll("send_range_select_user",1,'h');
+                        //userState——状态说明：0，发起人状态；1—看过状态；2——未看过状态；3——回复状态
+                        listData($("#work_select_range_data"),{
+                            list_type:'sendRange',
+                            list_select:true,
+                            data:[
+                                {
+                                    'listId':'001',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'1',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'002',
+                                    'leftImgUrl':'../../skin/seework/images/more_user_head.png',
+                                    'userState':'2',
+                                    'userName':'开发部',
+                                    'job':"5"
+                                },
+                                {
+                                    'listId':'003',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'2',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'004',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'3',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'005',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'4',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'006',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'4',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'007',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'2',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'008',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'2',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'009',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'2',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                },
+                                {
+                                    'listId':'010',
+                                    'leftImgUrl':'../../skin/seework/images/user.png',
+                                    'userState':'4',
+                                    'userName':'张小一',
+                                    'job':"测试工程师"
+                                }
+                            ],
+                            callback:function(){
+                                $.refreshScroll("work_range_content");
+                            }
+                        });
+                    })
+                },300)
+            }
+            else if(objTgt == "seework_countersign"){
+                var url = 'dialog_node_executor.html';
+                createDialog(url,"flow_form_main","form_node_executor",function(){
+                    listData($("#list_data_content"),{
+                        list_type:'selectUserDepartment',
+                        letter_position:"none",
+                        data:[
+                            {
+                                'letterType':null,
+                                'listId':'001',
+                                'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                'typeName':'张红',
+                                'job':'测试工程师',
+                                'telphone':null,
+                                'personNum':null
+                            },
+                            {
+                                'letterType':null,
+                                'listId':'002',
+                                'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                                'typeName':'张强',
+                                'job':"测试工程师",
+                                'telphone':null,
+                                'personNum':null
+                            }
+
+                        ]
+                    });
+                    listData($("#list_data_content2"),{
+                        list_type:'selectUserDepartment',
+                        letter_position:"none",
+                        data:[
+                            {
+                                'letterType':null,
+                                'listId':'001',
+                                'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                                'typeName':'张红',
+                                'job':'测试工程师',
+                                'telphone':null,
+                                'personNum':null
+                            },
+                            {
+                                'letterType':null,
+                                'listId':'002',
+                                'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                                'typeName':'张强',
+                                'job':"测试工程师",
+                                'telphone':null,
+                                'personNum':null
+                            }
+
+                        ]
+                    });
+                },function(){
+                    var this_html = '<div data-role="collapsible" class="select_node_executor border_bottom comp" comp="type:\'slide\',scrollId:\'form_node_executor_content\'" ' +
+                            'data-iconpos="right" data-collapsed-icon="form-close"  data-expanded-icon="form-spread">'+
+                            '<h2 class="flexible_box">'+
+                            '<span class="iphone72 approve_72"></span>'+
+                    '<p class="adaptive_box_flex">**部<span>[审批]</span></p>'+
+                            '<p>选择执行gsdfg人</p>'+
+                    '</h2>'+
+                    '<div class="node_executor_content comp" comp="type:\'list\',listType:\'dataShow\',selectType:\'checkbox\'" ' +
+                            'id="list_data_content">'+
+                           '</div>'+
+                    '</div>';
+                    $("#form_node_executor_content .scroller").append(this_html);
+                    return "changeHtml"
+                });
+
+
+                $(".add_person_64").live("tap",function(){
+                    var popupUrl = 'local_dialog_send_range.html';
+                    $.openLocalDialog(popupUrl);
+                })
+                $("#user_select_ensure").live("tap",function(){
+                    $.closeDialog("work_select_range",function(){
+                        $.openDialog("form_node_executor");
+                    });
+                })
+            }
+
+        }
+        $("#flow_form_main").bind("pagebeforeshow",function(){
+            pageInit("flow_form_main");
+
+        })
+        $("#flow_form_main").bind("pageshow",function(){
+
+            $.loadedScroll("flow_form_content",1,'v',function(){
+                var _h = $('#flow_form_main').height();
+                //解决安卓和苹果滚动条范围不一样的问题
+                $("#flow_form_content .scroller").css("padding-bottom","55px");
+                $("#flow_form_content").height(_h);
+            });
+            $("#approve_more").unbind().bind("click",function(){
+                if($(".approve_more_content").hasClass("display_none")){
+                    $(".approve_more_content").removeClass("display_none");
+                    //解决安卓和苹果滚动条范围不一样的问题
+                    $("#flow_form_content .scroller").css("padding-bottom","116px");
+                    $.refreshScroll("flow_form_content");
+                }
+                else{
+                    $(".approve_more_content").addClass("display_none");
+                    //解决安卓和苹果滚动条范围不一样的问题
+                    $("#flow_form_content .scroller").css("padding-bottom","55px");
+                    $.refreshScroll("flow_form_content");
+                }
+            });
+            $("#approve_pass").unbind().bind("click",function(){
+                $(".flow_form_content_footer").addClass("add_user_reply_content");
+                $(".flow_form_content_footer").children("div").addClass("display_none");
+                $.hideLayerOpen(function(){
+                    $(".flow_form_content_footer").removeClass("add_user_reply_content");
+                })
+                $(".add_user_reply").removeClass("display_none");
+            });
+            $(".user_more_handle").unbind().bind("tap",function(){
+                $.hideLayerOpen(function(){
+                    $(".flow_form_content_footer").removeClass("add_user_reply_content");
+                })
+                $(".flow_form_content_footer").addClass("add_user_reply_content");
+            })
+            $("#add_accessory").unbind().bind("tap",function(){
+                if($(".work_start_footer").hasClass("display_none")){
+                    $.hideLayerOpen(function(){
+                        $(".work_start_footer").addClass("display_none");
+                    });
+                    $(".work_start_footer").removeClass("display_none");
+                }
+                else{
+                    $(".work_start_footer").addClass("display_none");
+                }
+            });
+//            $.hideLayerOpen(function(){
+//                $(".work_start_footer").addClass("display_none");
+//            });
+        })
+    </script>
+</section>
+</body>
+</html>

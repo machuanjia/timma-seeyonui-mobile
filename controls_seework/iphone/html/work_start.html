@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>发起事项</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_start">
+    <div data-role="content" class="overflow_hidden work_start_content wrapper" id="work_start_content">
+        <div class="scroller">
+            <div class="user_input_content background_white border_bottom margin_b_5">
+                <input type="text" placeholder="请输入标题" data-role="none"
+                       class="work_title border_bottom font_16 comp" comp="type:'focus',scrollId:'work_start_content'"/>
+                <textarea placeholder="请输入内容" class="work_content comp" data-role="none" comp="type:'focus',scrollId:'work_start_content'"></textarea>
+                <div class="user_defined_tag flexible_box">
+                    <p class="adaptive_box_flex" id="test_tag">
+                        <!--<a href="work_add_tag.html" data-rel="dialog" data-prefetch="true">-->
+                            <span class="iphone48 add_tag_48"></span>
+                            <span class="vertical_align_b user_add_tag">添加标签</span>
+                        <!--</a>-->
+                    </p>
+                    <p>
+                        <span class="iphone48 expression_48 margin_r_15 open_expression"></span>
+                        <span class="iphone48 accessory_48 open_accessory"></span>
+                    </p>
+                </div>
+            </div>
+            <!--表情-->
+            <div class="expression_lib margin_b_5 border_top_bottom background_white expression_hint display_none comp" comp="type:'expression'">
+                <!--<div class="flexible_box">-->
+                    <!--<p>-->
+                        <!--<span class="iphone48 brow_jiong_48"></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span class="iphone48 brow_se_48"></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="flexible_box">-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="flexible_box">-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+                <!--<div class="flexible_box">-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                    <!--<p>-->
+                        <!--<span></span>-->
+                    <!--</p>-->
+                <!--</div>-->
+            </div>
+
+            <!--&lt;!&ndash;图片放大区&ndash;&gt;-->
+            <!--<div data-role="popup" id="picture_amplify" class="picture_amplify" data-overlay-theme="b" data-corners="false">-->
+                <!--<a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-btn-a ui-icon-delete ui-btn-icon-notext ui-btn-right iphone32 picture_close_32"></a>-->
+                <!--<img  src="../../skin/seework/images/pic_5.png" style="max-height: 380px">-->
+            <!--</div>-->
+
+            <div class="picture_area display_none background_white margin_b_5 border_bottom display_none1" id="picture_area">
+               <div class="scroller_h clearFlow">
+                   <p>
+                       <span class="iphone32 picture_close_32 picture_close"></span>
+                       <span class="iphone112 relevancy_flie_112"></span>
+                       <label class="picture_title">标题标题标题标题标题标题</label>
+                       <label class="picture_size font_arial">200K</label>
+                   </p>
+                   <p>
+                       <span class="iphone32 picture_close_32 picture_close"></span>
+                       <span class="iphone112 relevancy_flie_upload_112 picture_upload_bg">
+                          <label class="iphone32 pic_load_32"></label>
+                       </span>
+                       <label class="picture_title">标题标题标题标题标题标题</label>
+                       <label class="picture_size font_arial">200K</label>
+                   </p>
+                   <p>
+                       <span class="iphone32 picture_close_32 picture_close"></span>
+                       <span class="iphone112 picture_upload_112 picture_upload_bg">
+                           <label class="iphone32 pic_load_32"></label>
+                       </span>
+                       <label class="picture_title">标题标题标题标题标题标题</label>
+                       <label class="picture_size font_arial">200K</label>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+                   <p>
+                       <a href="#" data-rel="popup" data-position-to="window" data-transition="fade">
+                           <span class="iphone32 picture_close_32 picture_close"></span>
+                           <img src="../../../skin/seework/iphone/images/pic_1.png" alt=""/>
+                           <label class="picture_title">标题标题标题标题标题标题</label>
+                           <label class="picture_size font_arial">200K</label>
+                       </a>
+                   </p>
+               </div>
+            </div>
+
+            <div class="user_select_send border_top_bottom">
+                <a href="#"  class="flexible_box">
+                    <div class="adaptive_box_flex">
+                        <span class="iphone24 person_24 margin_r_5"></span><span class="font_14 color_black vertical_align_m">发送范围</span>
+                    </div>
+                    <div>
+                        <span class="vertical_align_m color_black margin_r_5 " id="f2">17人</span><span class="iphone24 send_24"></span>
+                    </div>
+                </a>
+            </div>
+            <div class="flexible_box user_select_send border_bottom">
+                <div class="adaptive_box_flex">
+                    <span class="iphone24 follow_person_24 margin_r_5"></span><span class="font_14 color_black vertical_align_m">关注</span>
+                </div>
+                <div class="select_on_off">
+                    <input type="checkbox" data-role="flipswitch"  data-on-text="" data-off-text="" />
+                </div>
+            </div>
+            <a href="#" data-role="button" class="blue_block_btn margin_tb_15 margin_lr_10" id="send_to_list">发送</a>
+            <!--<a href="#" data-role="button" class="blue_block_btn margin_tb_15 margin_lr_10" id="f3">发送</a>-->
+        </div>
+    </div>
+    <!--附件-->
+    <footer data-role="footer" data-tap-toggle="false" data-position="fixed" class="work_start_footer display_none">
+        <div class="ui-grid-c work_accessory_select border_top_bottom margin_lr_10">
+            <!--<div class="ui-block-a" id="f12">-->
+                <!--<span class="iphone120 picture_120"></span>-->
+                <!--<p>图片s</p>-->
+                <!--&lt;!&ndash;<input type="file" class="picture_input" data-role="none"/>&ndash;&gt;-->
+                <!--<form id="account-form" action="/mobile/account" method="post" data-ajax="false">-->
+               <!--<input type="file" class="picture_input" />-->
+                <!--</form>-->
+            <!--</div>-->
+            <!--<div class="ui-block-b" id="relevancy_type">-->
+                <!--<span class="iphone120 relevancy_120"></span>-->
+                <!--<p>关联</p>-->
+            <!--</div>-->
+            <div class="ui-block-a pos_relative" id="f12">
+                <span class="iphone48 picture_48"></span>
+                <p>图片2</p>
+                <!--<form id="account-form" action="/mobile/account" method="post" data-ajax="false">-->
+                    <input type="file" class="picture_input" data-role="none"/>
+                <!--</form>-->
+            </div>
+            <div class="ui-block-b" id="relevancy_type">
+                <span class="iphone48 relevancy_flie_48"></span>
+                <p>关联</p>
+            </div>
+        </div>
+        <a href="#" data-role="button" class="blue_block_btn margin_t_10 margin_b_20 margin_lr_10" >取消</a>
+    </footer>
+    <script type="text/javascript" src="../js/work_start.js"></script>
+</section>
+</body>
+</html>

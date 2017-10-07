@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>明细</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="store_details">
+    <div data-role="content" class="wrapper over_y_auto no_content_1351 no_content_hide" id="store_details_result">
+        <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'拜访人',
+                                    'listContent':'刘宗敏'
+                                },
+                                {
+                                    'listTitle':'拜访日期',
+                                    'listContent':'2014-10-25&nbsp11:30'
+                                },
+                                {
+                                    'listTitle':'门店',
+                                    'listContent':'互惠超市华阳店'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'007',
+                            'listData':[
+                                {
+                                    'listTitle':'拜访人',
+                                    'listContent':'刘宗敏'
+                                },
+                                {
+                                    'listTitle':'拜访日期',
+                                    'listContent':'2014-10-25&nbsp11:30'
+                                },
+                                {
+                                    'listTitle':'门店',
+                                    'listContent':'互惠超市华阳店'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'009',
+                            'listData':[
+                                {
+                                    'listTitle':'拜访人',
+                                    'listContent':'刘宗敏'
+                                },
+                                {
+                                    'listTitle':'拜访日期',
+                                    'listContent':'2014-10-25&nbsp11:30'
+                                },
+                                {
+                                    'listTitle':'门店',
+                                    'listContent':'互惠超市华阳店'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#store_details").bind("pageshow",function(){
+            pageInit();
+            listData($("#store_details_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'拜访人',
+                                'listContent':'刘宗敏'
+                            },
+                            {
+                                'listTitle':'拜访日期',
+                                'listContent':'2014-10-25&nbsp11:30'
+                            },
+                            {
+                                'listTitle':'门店',
+                                'listContent':'互惠超市华阳店'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'拜访人',
+                                'listContent':'刘宗敏'
+                            },
+                            {
+                                'listTitle':'拜访日期',
+                                'listContent':'2014-10-25&nbsp11:30'
+                            },
+                            {
+                                'listTitle':'门店',
+                                'listContent':'互惠超市华阳店'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'拜访人',
+                                'listContent':'刘宗敏'
+                            },
+                            {
+                                'listTitle':'拜访日期',
+                                'listContent':'2014-10-25&nbsp11:30'
+                            },
+                            {
+                                'listTitle':'门店',
+                                'listContent':'互惠超市华阳店'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'拜访人',
+                                'listContent':'刘宗敏'
+                            },
+                            {
+                                'listTitle':'拜访日期',
+                                'listContent':'2014-10-25&nbsp11:30'
+                            },
+                            {
+                                'listTitle':'门店',
+                                'listContent':'互惠超市华阳店'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ],
+                callback:function(){
+                    loaded('store_details_result',userInfoList,userMoreInfoList);
+                }
+            });
+//            $.showLoader("标为关注",trues,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

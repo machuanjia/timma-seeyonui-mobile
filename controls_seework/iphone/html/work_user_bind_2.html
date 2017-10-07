@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>seework账户</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <link href="../../../skin/seework/iphone/css-bind-debug.css" rel="stylesheet"/>
+</head>
+<body>
+<div class="work_user_bind_content work_user_bind_success1">
+    <!--用户绑定-->
+    <div class="work_user_binding ">
+        <span class="work_logo margin_b_10"></span>
+        <p class="user_hint margin_b_5 opactiy_0"><span></span>访问地址与用户名、密码不匹配，请重新输入</p>
+        <p class="flexible_box margin_b_10">
+            <label for="visit_address">访问地址</label>
+            <input type="text" class="adaptive_box_flex"id="visit_address"/>
+        </p>
+        <p class="flexible_box margin_b_10">
+            <label for="user_name">用户名</label>
+            <input type="text" class="adaptive_box_flex" id="user_name"/>
+        </p>
+        <p class="flexible_box">
+            <label for="user_password">密码</label>
+            <input type="password" class="adaptive_box_flex"id="user_password"/>
+        </p>
+        <button class="blue_block_btn margin_t_30">绑定</button>
+    </div>
+    <!--用户绑定成功-->
+    <div class="work_user_bind_finish display_none">
+        <span class="work_logo margin_b_30"></span>
+        <p class="user_bind_hinit">账户绑定成功啦!</p>
+        <p>欢迎您，张小一！现在您可以在微信上使用<label class="font_arial">seework</label>的功能了！</p>
+        <button  class="blue_block_btn">开始使用</button>
+    </div>
+
+    <!--用户解除绑定-->
+    <div class="work_user_remove_bind display_none">
+        <p>该微信号已绑定<label class="font_arial">seework</label>账户:</p>
+        <img src="../../../skin/seework/iphone/images/user.png" alt="" class="user_bind_head"/>
+        <button  class="blue_block_btn margin_t_30">解除绑定</button>
+    </div>
+</div>
+<script type="text/javascript">
+    function $(id){
+        return document.getElementById(id);
+    }
+    window.onload = function(){
+        $("visit_address").onfocus = function(){
+            this.style.color = "#000";
+        }
+        $("user_name").onfocus = function(){
+            this.style.color = "#000";
+        }
+        $("user_password").onfocus = function(){
+            this.style.color = "#000";
+        }
+    }
+</script>
+</body>
+</html>

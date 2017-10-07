@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>无流程表单列表</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="form_list">
+    <div data-role="content" id="form_list_content" class="comp"
+         comp="type:'tabs',tabType:'navbar',tabBorderClass:'form_tab_none',scrollState:true,hideLayerOpen:true,callBack:formListTab">
+        <h1 class="form_title form_title_blue font_18"><span class="form_logo"></span>人员费用报销单</h1>
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" tgt="inquiry_com_list">
+                        <span>查询值1</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_two">
+                        <span>文本框</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_three">
+                        <span>开关</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#"  tgt="inquiry_four">
+                        <span>日期</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content inquiry_content_titile">
+            <div id="inquiry_com_list" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'p',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_list_content',callBack:userInquiry">
+                <div class="scroller com_inquiry_list">
+                    <p>全部</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                    <p>查询值1</p>
+                </div>
+            </div>
+            <div id="inquiry_two" class="display_none common_inquiry clearFix comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_list_content',callBack:userInquiry">
+                <div class="user_search_bg inquiry_text">
+                    <input type="search" data-type="search" id="user_search" placeholder="请输入查询值"/>
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+            <div id="inquiry_three" class="display_none common_inquiry clearFix comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_list_content',callBack:userInquiry">
+                <div class="border_bottom padding_tb_5 padding_lr_10 margin_b_5 flexible_box" >
+                    <div class="adaptive_box_flex inquiry_on_off_text">
+                        开关
+                    </div>
+                    <input type="checkbox" data-role="flipswitch"  data-on-text="" data-off-text="" />
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+            <div id="inquiry_four" class="display_none common_inquiry clearFix padding_t_10 comp"
+                 comp="type:'tabInquiry',actObj:'.inquiry_ensure_btn',hideLayerClose:true,
+            tabBorderClass:'form_tab_none',changeParentId:'form_list_content',callBack:userInquiry">
+                <div class="user_defind_date inquiry_text margin_b_5 margin_lr_10">
+                    <span class="user_defind_date_hint">请选择日期</span>
+                    <input type="date" data-role="none" />
+                    <span class="iphone40 calendar_40 user_defind_date_btn"></span>
+                </div>
+                <button class="blue_btn_inline right inquiry_ensure_btn">确定</button>
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative form_list_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+                    <!--<div class="form_list_item">-->
+                        <!--<a href="#" data-transition="slidefade">-->
+                            <!--<ul>-->
+                                <!--<li>-->
+                                    <!--<p>列表1：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表2：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表3：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表4：&nbsp;</p>-->
+                                    <!--<p>具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容</p>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                        <!--</a>-->
+                    <!--</div>-->
+                    <!--<div class="form_list_item">-->
+                        <!--<a href="#" data-transition="slidefade">-->
+                            <!--<ul>-->
+                                <!--<li>-->
+                                    <!--<p>列表1：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表2：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表3：&nbsp;</p>-->
+                                    <!--<p>具体内容</p>-->
+                                <!--</li>-->
+                                <!--<li>-->
+                                    <!--<p>列表4：&nbsp;</p>-->
+                                    <!--<p>具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容具体内容</p>-->
+                                <!--</li>-->
+                            <!--</ul>-->
+                            <!--<span class="iphone32 locking_32 locking_state"></span>-->
+                        <!--</a>-->
+                    <!--</div>-->
+            </div>
+        </div>
+    </div>
+    <a href="create_form.html"  data-transition="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+//            alert(objId)
+//            var url = "work_content.html";
+//            var data_obj = "SDsadadad";
+//            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+//                //匹配目标页面
+//                if (thisUrlObj.href.search(url) != -1) {
+//                    var ajax_data = dataObj.options.data;
+//                }
+//            })
+        }
+
+        /**
+         * tab扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         * @param tgtId navbar点击对应区域打开的id
+         */
+        function formListTab(thisObj,domObj,tgtId){
+            var tab_height = parseInt($("body").height()*0.8);
+            var tab_w = parseInt($("body").width());
+            var tab_de_height = 87;
+            switch (tgtId){
+                case "inquiry_com_list":
+                    var p_list = $("#inquiry_com_list").find("p").length;
+                    var obj_h = p_list * 45;
+                    if(obj_h > tab_height){
+                        $(".inquiry_content").height(tab_height);
+                    }
+                    else{
+                        $(".inquiry_content").height(obj_h);
+                    }
+                    break;
+                default :
+                    $(".inquiry_content").height(tab_de_height);
+            }
+        }
+        /**
+         * tab_body区域展示扩展方法
+         * @param domObj 当前点击对象
+         * @param objId 当前点击对象的objId,如果domObj没有objId属性，则objId为null
+         */
+        function userInquiry(domObj,objId){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'005',
+                            'listData':[
+                                {
+                                    'listTitle':'列表1',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'列表1',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'00100',
+                            'listData':[
+                                {
+                                    'listTitle':'列表7',
+                                    'listContent':'具体内容'
+                                },
+                                {
+                                    'listTitle':'列表2',
+                                    'listContent':'具体内容具体内容具体内容具体内容'
+                                },
+                                {
+                                    'listTitle':'列表3',
+                                    'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#form_list").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("inquiry_com_list",1,"v");
+            listData($("#search_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'列表1',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':true
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'列表40',
+                                'listContent':'具体内容'
+                            },
+                            {
+                                'listTitle':'列表2',
+                                'listContent':'具体内容具体内容具体内容具体内容'
+                            },
+                            {
+                                'listTitle':'列表3',
+                                'listContent':'具体内容具体内容具体内容具体内容具体内容具体内容'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ],
+                callback:function(){
+                    loaded('search_result',userInfoList,userMoreInfoList);
+                }
+            });
+//            $.showLoader("标为关注",true,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

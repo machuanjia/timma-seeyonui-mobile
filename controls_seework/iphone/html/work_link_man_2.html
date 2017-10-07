@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>联系人</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_link_man" class="background_white">
+    <header data-role="header" data-tap-toggle="false" data-position="fixed" class="work_user_search comp"
+            comp="type:'localSearch',pageId:'work_link_man',letterPosition:'letter_position',scrollId:'work_link_all_user'">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+        <div class="user_search_bg display_none_important">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索" autofocus="true"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+    </header>
+    <div data-role="content" class="wrapper work_link_all_user work_link_all_user_letter" id="work_link_all_user">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'radio',callBack:userSelectPerson" id="userid">
+            <div class="nav_list_box organize_structure">
+                <a href="work_content.html" data-transition="slidefade">
+                    <div class="nav_list_box_left">
+                        <span class="iphone32 organization_32 margin_r_10"></span>
+                    </div>
+                    <div class="nav_list_box_center">
+                        组织结构
+                    </div>
+                    <div class="nav_list_box_right">
+                        <span class="link_person_num_bg"><label>84</label>人</span>
+                        <span class="iphone24 send_24"></span>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="letter_position comp" comp="type:'letterPosition',scrollId:'work_link_all_user'"></div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * 点击某条数据
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userSelectPerson(obj,objId){
+//            alert(objId)
+        }
+        $("#work_link_man").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("work_link_all_user",1,'v',function(){
+                var _h = $('body').height();
+                var header_h = $('#work_link_man').find("header").height();
+                var footer_h = $('#work_link_man').find("footer").height();
+                $("#work_link_all_user").height(_h - header_h - footer_h);
+            });
+            listData($("#userid"),{
+                list_type:'selectUserDepartment',
+                search_id:'user_search',
+                select_type:'none',
+                data:[
+                    {
+                        'letterType':'A',
+                        'listId':'000',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师测试工程师测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小二',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'B',
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小三',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'C',
+                        'listId':'004',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小四',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'D',
+                        'listId':'005',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'006',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴6',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'007',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴7',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'008',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴8',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'009',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴9',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'010',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴10',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'011',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴11',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'012',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'013',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴11',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'014',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'G',
+                        'listId':'0101',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴101',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'G',
+                        'listId':'01200',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴1200',
+                        'job':"测试工程师",
+                        'personNum':null
+                    }
+                ],
+                callback:function(){
+                    $.refreshScroll("work_link_all_user");
+                }
+            });
+        })
+    </script>
+</section>
+</body>
+</html>

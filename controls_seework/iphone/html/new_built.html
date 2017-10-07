@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>新建</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="new_built" class="background_white">
+    <div data-role="content" class="wrapper new_built_type" id="new_built_type">
+        <div class="scroller">
+            <fieldset class="new_built_item">
+                <legend>协作事项</legend>
+                <ul class="ul_li_float">
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 cooperation_item_104"></span>
+                            <h4>协作事项</h4>
+                        </a>
+                    </li>
+                </ul>
+            </fieldset>
+            <fieldset class="new_built_item">
+                <legend>巡店</legend>
+                <ul class="ul_li_float">
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 shop_104"></span>
+                            <h4>门店信息更多更长名称更更长名称更更长名称更更长名称更</h4>
+                        </a>
+
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 check_record_104"></span>
+                            <h4>检查记录</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 work_order_104"></span>
+                            <h4>任务单</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 shop_104"></span>
+                            <h4>门店信息</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 check_record_104"></span>
+                            <h4>检查记录</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 work_order_104"></span>
+                            <h4>任务单</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 check_record_104"></span>
+                            <h4>检查记录</h4>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" data-transition="slidefade">
+                            <span class="iphone104 work_order_104"></span>
+                            <h4>任务单</h4>
+                        </a>
+                    </li>
+                </ul>
+            </fieldset>
+        </div>
+    </div>
+    <a href="javascript:void (0)" data-role="none" class="delete_built_item"></a>
+    <script type="text/javascript">
+        $("#new_built").bind("pagebeforeshow",function(){
+            pageInit("new_built");
+        })
+        $("#new_built").bind("pageshow",function(){
+            $.loadedScroll("new_built_type",1,"v");
+        })
+    </script>
+</section>
+</body>
+</html>

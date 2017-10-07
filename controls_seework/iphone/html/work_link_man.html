@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>联系人</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_link_man" class="work_link_man background_white">
+    <header data-role="header" data-position="fixed" data-tap-toggle="false" class="work_user_search comp"
+            comp="type:'localSearch',pageId:'work_link_man',letterPosition:'letter_position',scrollId:'work_link_all_user'">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+        <div class="user_search_bg display_none_important">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索" autofocus="true"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+    </header>
+    <div data-role="content" class="comp work_link_all_user"
+         comp="type:'tabs',tabType:'navbar',tabParentId:'tabs_body',scrollState:true,letterActive:'work_link_all_user',callBack:userTabChange">
+        <div data-role="navbar" class="form_nav_bar">
+            <ul class="model_header_tabs">
+                <li><a href="#" class="tab-ui-btn-a ui-btn-active" tgt="work_link_all_user">全部人员</a></li>
+                <li><a href="#" class="tab-ui-btn-a" tgt="work_link_organization_content">部门</a></li>
+            </ul>
+        </div>
+        <div class="tabs_body link_man_content" id="tabs_body">
+            <div class="wrapper over_y_auto  work_link_all_user_letter comp" comp="type:'dialog',footerTop:'fixed',definedHeight:'50',definedHeightClass:'model_header_tabs',parentId:'work_link_man'" id="work_link_all_user">
+                <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'radio',selectObj:'link_man_title',callBack:userSelectPerson" id="all_user_list">
+                    <!--<ul data-role="listview" class="nav_list_box group_contact_person_list link_man list_data  ui-listview" data-filter="true" data-input="#user_search">-->
+                        <!--<li data-role="list-divider" group_type="星星科技公司" role="heading" class="ui-li-divider ui-bar-inherit ui-first-child">星星科技公司</li>-->
+                        <!--<li>-->
+                            <!--<div>-->
+                                <!--<div class="nav_list_box_left">-->
+                                    <!--<img src="../../../skin/seework/iphone/images/more_user_head.png" alt="" class="user_head" />-->
+                                <!--</div>-->
+                                <!--<div class="nav_list_box_center">-->
+                                    <!--<p class="nav_list_box_center_font16 type_name">张小一</p>-->
+                                    <!--<p class=" nav_list_box_center_font11 job">-->
+                                        <!--测试工程师-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="nav_list_box_right">-->
+                                    <!--<a href="sms:15884497417" data-role="none"><span class="iphone48 message_48 "></span></a>-->
+                                    <!--<a href="tel:15884497417" data-role="none"><span class="iphone48 telephone_48 "></span></a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                        <!--<li>-->
+                            <!--<div>-->
+                                <!--<div class="nav_list_box_left">-->
+                                    <!--<img src="../../../skin/seework/iphone/images/more_user_head.png" alt="" class="user_head" />-->
+                                <!--</div>-->
+                                <!--<div class="nav_list_box_center">-->
+                                    <!--<p class="nav_list_box_center_font16 type_name">张小一</p>-->
+                                    <!--<p class=" nav_list_box_center_font11 job">-->
+                                        <!--测试工程师-->
+                                    <!--</p>-->
+                                <!--</div>-->
+                                <!--<div class="nav_list_box_right">-->
+                                    <!--<a href="sms:15884497417" data-role="none"><span class="iphone48 message_48"></span></a>-->
+                                    <!--<a href="tel:15884497417" data-role="none"><span class="iphone48 telephone_48"></span></a>-->
+                                <!--</div>-->
+                            <!--</div>-->
+                        <!--</li>-->
+                    <!--</ul>-->
+                </div>
+            </div>
+            <div class="wrapper work_link_all_user work_select_department link_deparment comp display_none"
+                 comp="type:'dialog',footerTop:'fixed',definedHeightClass:'model_header_tabs',parentId:'work_link_man'" id="work_link_organization_content">
+                <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'radio',selectObj:'link_man_title',callBack:userSelectPerson" id="user_department">
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="letter_position comp" comp="type:'letterPosition',scrollId:'work_link_all_user'"></div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" data-id="seewprk_menu">
+        <div data-role="navbar" class="seework_menu">
+            <ul>
+                <li>
+                    <a href="serve_list.html" data-icon="seework-home" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="apply_center.html" data-icon="apply-center" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="new-built" data-transition="slidefade" class="seework_menu_bar new_built_default"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="link-man" data-transition="slidefade" class="seework_menu_bar ui-btn-active"></a>
+                </li>
+                <li>
+                    <a href="#" data-icon="me" data-transition="slidefade" class="seework_menu_bar"></a>
+                </li>
+            </ul>
+        </div>
+    </footer>
+    <script type="text/javascript">
+        /**
+         * tab切换扩展
+         * @param obj 当前点击对象
+         * @param domObj 整个tab对象
+         * @param tab_activce tab活动状态的自定义属性
+         */
+        function userTabChange(obj,domObj,tab_activce){
+
+        }
+        /**
+         * 点击某条数据
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userSelectPerson(obj,objId){
+            var url = "work_link_department.html";
+            toNextPage(url,"","");
+//            alert(objId)
+        }
+        $("#work_link_man").bind("pagebecreate",function(){
+
+        })
+        $("#work_link_man").bind("pagebeforeshow",function(){
+            pageInit("work_link_man");
+            listData($("#all_user_list"),{
+                list_type:'linkMan',
+                search_id:'user_search',
+                select_type:'none',
+                data:[
+                    {
+                        'letterType':'A',
+                        'listId':'000',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师测试工程师测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小一',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'A',
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小二',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'B',
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小三',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'C',
+                        'listId':'004',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user_head.png',
+                        'typeName':'张小四',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'D',
+                        'listId':'005',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'006',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴6',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'007',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴7',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'008',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴8',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'E',
+                        'listId':'009',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴9',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'010',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴10',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'011',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴11',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'012',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'013',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴11',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'F',
+                        'listId':'014',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'G',
+                        'listId':'0101',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴101',
+                        'job':"测试工程师",
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'G',
+                        'listId':'01200',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴1200',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    }
+                ]
+            });
+            listData($("#user_department"),{
+                list_type:'linkMan',
+                search_id:'user_search',
+                select_type:'none',
+                data:[
+                    {
+                        'letterType':'成员',
+                        'listId':'0140',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/user.png',
+                        'typeName':'张小吴12',
+                        'job':"测试工程师",
+                        'telphone':'15884497418',
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'设计部',
+                        'job':null,
+                        'telphone':null,
+                        'personNum':"50"
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'开发部',
+                        'job':null,
+                        'telphone':null,
+                        'personNum':"50"
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'测试部',
+                        'job':null,
+                        'telphone':null,
+                        'personNum':"50"
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'004',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'综合管理部',
+                        'job':null,
+                        'telphone':null,
+                        'personNum':"50"
+                    }
+                ]
+            });
+        })
+        $("#work_link_man").bind("pageshow",function(){
+           pageShowInit("work_link_man")
+            $.loadedScroll("work_link_all_user",1,'v');
+            $.loadedScroll("work_link_organization_content",1,'v');
+
+//            $.showLoader("L",true,"e",true,"");
+        })
+
+    </script>
+</section>
+</body>
+</html>

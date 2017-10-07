@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>移动端iscroll2</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../controls_common/css/common-debug.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/iscroll.js"></script>
+    <script type="text/javascript" src="js/test_iscroll.js"></script>
+    <link rel="stylesheet" href="css/iscroll.css"/>
+    <style type="text/css">
+        #wrapper span{
+            display: inline-block;
+            width: 1900px;
+            height: 1200px;
+            background: url("images/1.jpg") no-repeat;
+            background-size: 1900px 1200px;
+        }
+    </style>
+</head>
+<body>
+<section data-role="page">
+    <header data-role="header" data-position="fixed">
+        <h1>iScroll实例：滚动条</h1>
+    </header>
+    <div data-role="content" id="wrapper">
+        <div class="scroller2">
+            <span></span>
+        </div>
+    </div>
+    <footer data-role="footer" data-position="fixed">
+        <h4>
+            测试完成
+        </h4>
+    </footer>
+    <script type="text/javascript">
+        $(function(){
+            loaded("wrapper",1);
+        })
+    </script>
+</section>
+</body>
+</html>

@@ -1,0 +1,1884 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ipad会议</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script src="../../seeyon.ui.ipad-debug.js"></script>
+    <script src="../../../../controls_common/script/iscroll.js"></script>
+    <!--自定义样式-->
+    <link href="../../../../controls_common/css/common-debug.css" rel="stylesheet" />
+    <link href="../../skin/default/css/css-debug.css" rel="stylesheet" />
+</head>
+<body>
+<section data-role="page">
+    <div class="layout-l">
+        <div class="nav_list_banner">会议</div>
+        <div data-role="tabs" >
+            <div data-role="navbar">
+                <ul class="model_header_tabs">
+                    <li><a href="#waitHeld" class="tab-ui-btn-a ui-btn-active" data-ajax="false">待召开</a></li>
+                    <li><a href="#endHeld" class="tab-ui-btn-a" data-ajax="false">已召开</a></li>
+                </ul>
+            </div>
+            <div id="waitHeld" class="wrapper no_content1">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj,callBack:userList"></div>
+            </div>
+            <div id="endHeld" class="wrapper ele_hide">
+                <div class="scroller comp" comp="type:'list',listType:'dataRefresh',modelPos:'left',listGather:dataObj2,callBack:userList"></div>
+            </div>
+        </div>
+        <div class="refresh_list">
+            <span class="ico_pad_28 refresh_28"></span>
+            <p>最近更新：<label class="refresh_data_time">2013-08-20&nbsp;&nbsp;12:33</label></p>
+        </div>
+    </div>
+    <div class="layout-r defaultBG">
+        <div class="page_header">
+            <div class="right">
+                <a href="#fast_receipt" class="ui-btn ui-btn-inline ui-btn-d add_btn_position" data-position-to="#add_btn" data-rel="popup">
+                    快速回执<span id="add_btn"></span>
+                </a>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-a" id="meeting_summary_btn">纪要</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-a" id="return_btn">回执</a>
+            </div>
+            <div class="page_header_title">会议详情</div>
+        </div>
+
+        <div class="content_header">
+            <div class="content_header_title">
+                <div>会议来了会议来了会议来了会议来了会议来了会议</div>
+                <div>
+                    <span class="right ico14 accessory_14"></span>
+                </div>
+            </div>
+            <div class="clearFlow">
+                   <span class="content_header_time">
+                        <label>2013年11月15日</label><label>10:30-11:30</label>
+                   </span>
+                <span class="content_header_name padding_r_10">胡小一</span>
+            </div>
+        </div>
+        <div id="content_bg" class="content_bg">
+            <div class="scroller">
+                <div class="content">
+                    <div id="f2" >
+                        <div class="scroller" style="width: 1500px">
+                            会议内容会议内容会议内容会议内容会议内容会议内容，会议内容会议内容，会议内容会议内容会议内容。
+                            会议内容会议内容会议内容会议内容。会议内容会议内容会议内容会议内容议内容。会议内容会议内容会议内容会议内容。
+                            会议内容会议内容会议内容会议内容。会议内容会议内容会议内容会议内容议内容。会议内容会议内容会议内容会议内容。
+                            会议内容会议内容会议内容会议内容。会议内容会议内容会议内容会议内容议内容。会议内容会议内容会议内容会议内容。
+                        </div>
+                    </div>
+                </div>
+                <div class="content_list">
+                    <div>
+                        会议时间：<label>17:00-17:30</label>
+                    </div>
+                    <div class="content_participants">
+                        <a href="#meeting_user" data-rel="popup" data-position-to="#meeting_user_position" data-transition="pop">
+                                    <span class="content_participants_p">
+                                        与会人员：<label>胡小一、周小小、罗丽、王栋、图腾、小 午、田田、周读、陈凯、胡小一</label>
+                                    </span>
+                            <span class="right ico_pad_28 spread_right_28 spread_right_position"></span>
+                            <span class="right" id="meeting_user_position"></span>
+                        </a>
+                    </div>
+                    <div>会议地点：<label>第一会议室105</label></div>
+                    <div>主持人：<label>张小二</label></div>
+                    <div>主持人：<label>张小二</label></div>
+                </div>
+                <div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                     class="content_reply margin_20 margin_b_0 comp" comp="type:'slide',scrollId:'content_bg'">
+                    <h4 class="content_reply_title">
+                        <span class="margin_r_5">附件(<label>12</label>)</span>
+                        <span>关联文档(<label>12</label>)</span>
+                    </h4>
+                    <ul class="details_accessory padding_20 padding_b_0 clearFlow">
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+                <div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                     class="content_reply margin_20 margin_b_0 comp" comp="type:'slide',scrollId:'content_bg'">
+                    <h4 class="content_reply_title">
+                        回复意见(<label>12</label>)
+                    </h4>
+                    <ul>
+                        <li class="margin_tb_20 margin_l_10 margin_r_10">
+                            <div class="content_reply_content">
+                                <div class="first_content_reply padding_b_5">
+                                    <div class="user_head">
+                                        <img src="../../skin/default/images/user1.png" class="user_head_pic" />
+                                    </div>
+                                    <div class="content_reply_info padding_l_10">
+                                        <p class="reply_person_info">
+                                            <label>赵康永</label>
+                                                    <span class="start_time">
+                                                        <label class="padding_r_5">9-26</label>
+                                                        <label>13:33</label>
+                                                    </span>
+                                        </p>
+                                        <p class="reply_type margin_t_15 margin_b_5">
+                                            <label>已阅</label>
+                                            <a href="#popup_content_reply" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-inline ui-btn-c">回复</a>
+                                        </p>
+                                        <p class="reply_person_content padding_tb_15">
+                                            与研发沟通达成的一致，客服上报人做好提前预警。
+                                        </p>
+                                        <div>
+                                            <ul class="details_accessory padding_r_15 clearFlow">
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="send_type padding_t_5">发自<label class="clientType">iphone</label>客户端</p>
+                                    </div>
+                                </div>
+                                <div class="user_reply_content margin_t_15 padding_lr_20">
+                                    <div class="user_reply_list user_reply_first_list">
+                                        <div class="user_head">
+                                            <img src="../../skin/default/images/user1.png" class="margin_t_20"/>
+                                        </div>
+                                        <div class="content_reply_info padding_t_20 padding_l_10">
+                                            <p class="reply_person_info">
+                                                <label>张大伟(致远软件)</label>
+                                                        <span class="start_time">
+                                                             <label class="padding_r_5">2012-08-12</label>
+                                                             <label>13:33</label>
+                                                        </span>
+                                            </p>
+                                            <p class="reply_person_content padding_tb_15">
+                                                非常好！全力保障客户问题，研发沟通达成一致。
+                                            </p>
+                                            <div>
+                                                <ul class="details_accessory padding_r_15 clearFlow">
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <p class="user_reply_type padding_b_20 padding_t_5">发自<label class="clientType">Android</label>客户端</p>
+                                        </div>
+                                    </div>
+                                    <div class="user_reply_list">
+                                        <div class="user_head">
+                                            <img src="../../skin/default/images/user1.png" class="margin_t_20"/>
+                                        </div>
+                                        <div class="content_reply_info padding_t_20 padding_l_10">
+                                            <p class="reply_person_info">
+                                                <label>张大伟</label>
+                                                        <span class="start_time">
+                                                             <label class="padding_r_5">2012-08-12</label>
+                                                             <label>13:33</label>
+                                                        </span>
+                                            </p>
+                                            <p class="reply_person_content padding_tb_15">
+                                                非常好！全力保障客户问题，研发沟通达成一致。
+                                            </p>
+                                            <div>
+                                                <ul class="details_accessory padding_r_15 clearFlow">
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                    <li>
+                                                        <div class="accessory_finish margin_5 margin_b_15">
+                                                            <div class="padding_lr_10">
+                                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                                            </div>
+                                                            <div class="accessory_name">
+                                                                <p class="receipt_accessory_content">
+                                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                                </p>
+                                                                <p class="accessory_size">500MB</p>
+                                                            </div>
+                                                            <div class="accessory_download_icon padding_lr_10">
+                                                                <span class="ico40 accessory_download_40"></span>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                            <p class="user_reply_type padding_b_15">发自<label class="clientType">Android</label>客户端</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="margin_tb_20 margin_l_10 margin_r_10">
+                            <div class="content_reply_content">
+                                <div class="first_content_reply padding_b_5">
+                                    <div class="user_head">
+                                        <img src="../../skin/default/images/user1.png" class="user_head_pic" />
+                                    </div>
+                                    <div class="content_reply_info padding_l_10">
+                                        <p class="reply_person_info">
+                                            <label>赵康永</label>
+                                                    <span class="start_time">
+                                                        <label class="padding_r_5">9-26</label>
+                                                        <label>13:33</label>
+                                                    </span>
+                                        </p>
+                                        <p class="reply_type margin_t_15 margin_b_5">
+                                            <label>已阅</label>
+                                            <a href="#popup_content_reply" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-inline ui-btn-c">回复</a>
+                                        </p>
+                                        <p class="reply_person_content padding_tb_15">
+                                            与研发沟通达成的一致，客服上报人做好提前预警。
+                                        </p>
+                                        <div>
+                                            <ul class="details_accessory padding_r_15 clearFlow">
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="send_type padding_t_5">发自<label class="clientType">iphone</label>客户端</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="margin_tb_20 margin_l_10 margin_r_10">
+                            <div class="content_reply_content">
+                                <div class="first_content_reply padding_b_5">
+                                    <div class="user_head">
+                                        <img src="../../skin/default/images/user1.png" class="user_head_pic" />
+                                    </div>
+                                    <div class="content_reply_info padding_l_10">
+                                        <p class="reply_person_info">
+                                            <label>赵康永</label>
+                                                    <span class="start_time">
+                                                        <label class="padding_r_5">9-26</label>
+                                                        <label>13:33</label>
+                                                    </span>
+                                        </p>
+                                        <p class="reply_type margin_t_15 margin_b_5">
+                                            <label>已阅</label>
+                                            <a href="#popup_content_reply" data-rel="popup" data-position-to="window" data-transition="pop" class="ui-btn ui-btn-inline ui-btn-c">回复</a>
+                                        </p>
+                                        <p class="reply_person_content padding_tb_15">
+                                            与研发沟通达成的一致，客服上报人做好提前预警。
+                                        </p>
+                                        <div>
+                                            <ul class="details_accessory padding_r_15 clearFlow">
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                                <li>
+                                                    <div class="accessory_finish margin_5 margin_b_15">
+                                                        <div class="padding_lr_10">
+                                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                                        </div>
+                                                        <div class="accessory_name">
+                                                            <p class="receipt_accessory_content">
+                                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                                            </p>
+                                                            <p class="accessory_size">500MB</p>
+                                                        </div>
+                                                        <div class="accessory_download_icon padding_lr_10">
+                                                            <span class="ico40 accessory_download_40"></span>
+                                                        </div>
+                                                    </div>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <p class="send_type padding_t_5">发自<label class="clientType">iphone</label>客户端</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--会议纪要-->
+    <div data-role="panel" data-position="right" data-display="overlay" data-theme="a"
+         class="layout_panel " id="meeting_summary" data-dismissible="false" data-swipe-close="false">
+        <div class="page_header">
+            <div class="left">
+                <a href="#" data-rel="close" class="ui-btn ui-btn-inline ui-btn-b">返回</a>
+            </div>
+            <div class="page_header_title">会议纪要</div>
+        </div>
+        <div class="content_header">
+            <div class="content_header_title">
+                <div>
+                    会议来了会议来了会议来了会议来了会议来了会议
+                </div>
+                <div>
+                    <span class="right ico14 accessory_14"></span>
+                </div>
+            </div>
+            <div class="clearFlow">
+                            <span class="content_header_time">
+                                <label>2013年11月15日</label><label>10:30-11:30</label>
+                            </span>
+                <span class="content_header_name padding_r_10">胡小一</span>
+            </div>
+        </div>
+        <div id="meeting_summary_content" class="content_bg">
+            <div class="scroller">
+                <div class="content">
+                    <div>
+                        会议内容会议内容会议内容会议内容会议内容会议内容，会议内容会议内容，会议内容会议内容会议内容。
+                        会议内容会议内容会议内容会议内容。会议内容会议内容会议内容会议内容议内容。会议内容会议内容会议内容会议内容。
+                    </div>
+                </div>
+                <div class="content_list">
+                    <div>
+                        会议时间：<label>17:00-17:30</label>
+                    </div>
+                    <div class="content_participants">
+                        <a href="#" data-rel="popup" data-position-to="#meeting_user_position_summary" data-transition="pop">
+                            <span class="content_participants_p">
+                                  与会人员：<label>胡小一、周小小、罗丽、王栋、图腾、小 午、田田、周读、陈凯、胡小一</label>
+                             </span>
+                            <span class="right ico_pad_28 spread_right_28 spread_right_position"></span>
+                            <span class="right" id="meeting_user_position_summary"></span>
+                        </a>
+                    </div>
+                    <div>会议地点：<label>第一会议室105</label></div>
+                    <div>主持人：<label>张小二</label></div>
+                    <div>主持人：<label>张小二</label></div>
+                </div>
+                <div data-role="collapsible" data-collapsed="false" data-iconpos="right" data-inset="false"
+                     class="content_reply content_accessory margin_20 comp" comp="type:'slide',scrollId:'meeting_summary_content'">
+                    <h4 class="content_accessory_title">
+                        <span class="margin_r_5">附件(<label>12</label>)</span>
+                        <span>关联文档(<label>12</label>)</span>
+                    </h4>
+                    <ul class="details_accessory padding_20 padding_b_0 clearFlow">
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <div class="accessory_finish margin_5 margin_b_15">
+                                <div class="padding_lr_10">
+                                    <span class="ico35 mp3_35 margin_t_10"></span>
+                                </div>
+                                <div class="accessory_name">
+                                    <p class="receipt_accessory_content">致远十年致远十年致远十年</p>
+                                    <p class="accessory_size">500MB</p>
+                                </div>
+                                <div class="accessory_download_icon padding_lr_10">
+                                    <span class="ico40 accessory_download_40"></span>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--快速回执-->
+    <div class="fast_receipt" id="fast_receipt" data-role="popup">
+        <a href="#" data-rel="back">参加</a>
+        <a href="#" data-rel="back">不参加</a>
+        <a href="#" data-rel="back">待定</a>
+    </div>
+
+    <!--与会人员-->
+    <div id="meeting_user" data-role="popup" >
+        <p class="meeting_user_bg"></p>
+        <span class="trigon"></span>
+        <p class="meeting_user_title">与会人员</p>
+        <div class="meeting_user_content">
+            <div class="meeting_user_content_bg">
+                <div data-role="tabs" >
+                    <div data-role="navbar">
+                        <ul class="model_header_tabs">
+                            <li><a href="#attend_user" class="tab-ui-btn-a ui-btn-active" data-ajax="false">参加</a></li>
+                            <li><a href="#no_ensure" class="tab-ui-btn-a" data-ajax="false">待定</a></li>
+                            <li><a href="#no_attend" class="tab-ui-btn-a" data-ajax="false">不参加</a></li>
+                            <li><a href="#no_return_receipt" class="tab-ui-btn-a" data-ajax="false">未回执</a></li>
+                        </ul>
+                    </div>
+                    <ul id="attend_user">
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东你说的</li>
+                        <li>郭明说的</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>吴华</li>
+                        <li>王晔1</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                    </ul>
+                    <ul id="no_ensure">
+                        <li>王晔2</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                    </ul>
+                    <ul id="no_attend">
+                        <li>王晔3</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                        <li>王晓晔</li>
+                        <li>李晓东</li>
+                        <li>郭明</li>
+                        <li>吴华</li>
+                    </ul>
+                    <ul id="no_return_receipt">
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东你说的</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>李晓东你说的</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东你说的</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>小华阿萨说的</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晔晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>郭晔晔</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴小华</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>王晓晔</li>
+                        <li><span class="ico_phone_28 unseen_28 margin_r_5"></span>李晓东</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span></span>郭明</li>
+                        <li><span class="ico_phone_28 see_28 margin_r_5"></span>吴华</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--实际与会人员-->
+    <div id="meeting_user_summary" data-role="popup" >
+        <p class="meeting_user_bg"></p>
+        <span class="trigon"></span>
+        <p class="meeting_user_title">实际与会人员</p>
+        <div class="meeting_user_content">
+            <div class="meeting_user_content_bg">
+                <ul>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东你说的</li>
+                    <li>郭明说的</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>吴华</li>
+                    <li>王晔1</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                    <li>王晓晔</li>
+                    <li>李晓东</li>
+                    <li>郭明</li>
+                    <li>吴华</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <!--会议回执-->
+    <div id="popup_content" data-role="popup" data-overlay-theme="b">
+        <div class="return_receipt_center return_receipt_select">
+            <div data-role="header" class="ui-header-a ui-box-shadow">
+                <h1>回执</h1>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" data-rel="back">取消</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-a" data-iconpos="notext" data-rel="back">提交</a>
+            </div>
+            <div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                <div class="ui-block-a margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio_checked30 margin_r_10" radio_value="1"></span>
+                        <span class="ico32 attend_meeting_32 margin_r_10"></span>参加
+                    </div>
+                </div>
+                <div class="ui-block-b margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="0"></span>
+                        <span class="ico32 unattended_meeting_32 margin_r_10"></span>
+                        不参加
+                    </div>
+                </div>
+                <div class="ui-block-c margin_tb_10">
+                    <div class="ipad_radio">
+                        <span class="feedbackradio ico_pad_radio30 margin_r_10" radio_value="-1"></span>
+                        <span class="ico32 unsure_32 margin_r_10"></span>
+                        待定
+                    </div>
+                </div>
+                <input type="hidden" value="1" id="receipt_select_value"/>
+            </div>
+            <div class="return_receipt_input">
+                <p class="hint_text">请输入处理意见</p>
+                <textarea></textarea>
+
+                <p class="hint_num"><label>150</label><label>常用语</label></p>
+            </div>
+            <div data-role="tabs" class="comp" comp="type:'tabsOne'">
+                <div data-role="navbar" class="navbar_add_icon attend_meeting_nav">
+                    <ul>
+                        <li><a href="#receipt_accessory" class="tab-ui-btn-a" data-ajax="false">
+                            <span class="ico32 accessory_32"></span>(<label>10</label>)
+                        </a></li>
+                    </ul>
+                </div>
+                <div id="receipt_accessory">
+                    <div class="ui-grid-c padding_lr_50 receipt_accessory_center">
+                        <div class="ui-block-a margin_tb_25">
+                            <a href="#"
+                               class="ui-btn ui-btn-inline ui-icon-photo ui-btn-icon-top ui-btn-icon-a">拍照</a>
+                        </div>
+                        <div class="ui-block-b margin_tb_25">
+                            <a href="#"
+                               class="ui-btn ui-btn-inline ui-icon-voice ui-btn-icon-top ui-btn-icon-a">语言</a>
+                        </div>
+                        <div class="ui-block-c margin_tb_25">
+                            <a href="#"
+                               class="ui-btn ui-btn-inline ui-icon-associate ui-btn-icon-top ui-btn-icon-a">关联文档</a>
+                        </div>
+                        <div class="ui-block-d margin_tb_25">
+                            <a href="#" class="ui-btn ui-btn-inline ui-icon-local_doc
+                    ui-btn-icon-top ui-btn-icon-a ui-btn-icon-lineheight2em">本地文件和视频</a>
+                        </div>
+                    </div>
+                    <div class="receipt_accessory_bg">
+                        <ul class="receipt_accessory_type padding_10 clearFlow">
+                            <li>
+                                <div class="accessory_underway margin_5 margin_b_15">
+                                    <div class="accessory_underway_content">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content">
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            </p>
+                                            <p class="underway_accessory_size">500MB</p>
+                                        </div>
+                                    </div>
+                                    <p class="accessory_underway_bar"></p>
+                                    <span class="ico_pad_28 cancel_upload_28 model_info_close"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content">
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                        </p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content">
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                        </p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content">
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                        </p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_underway margin_lr_15 margin_tb_10">
+                                    <div class="accessory_underway_content">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content">
+                                                致远十年致远十年致远十年致远十年致远十年致远十年
+                                            </p>
+                                            <p class="underway_accessory_size">500MB</p>
+                                        </div>
+                                    </div>
+                                    <p class="accessory_underway_bar"></p>
+                                    <span class="ico_pad_28 cancel_upload_28 model_info_close"></span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="accessory_finish margin_5 margin_b_15">
+                                    <div class="padding_lr_10">
+                                        <span class="ico35 mp3_35 margin_t_10"></span>
+                                    </div>
+                                    <div class="accessory_name">
+                                        <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                        <p class="accessory_size">500MB</p>
+                                    </div>
+                                    <div class="accessory_download_icon padding_lr_10">
+                                        <span class="ico40 accessory_download_40"></span>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--意见回复-->
+    <div id="popup_content_reply" data-role="popup" data-overlay-theme="b">
+        <div class="return_receipt_center">
+            <div data-role="header" class="ui-header-a ui-box-shadow" id="dialog1">
+                <h1>意见回复</h1>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-b" data-iconpos="notext" id="fee">取消</a>
+                <a href="#" class="ui-btn ui-btn-inline ui-btn-a" data-iconpos="notext" data-rel="back">发送</a>
+            </div>
+            <div class="return_receipt_input">
+                    <p class="hint_text">请输入处理意见</p>
+                    <textarea  id="opinion_content"></textarea>
+                    <p class="hint_num"><label>150</label><label>常用语</label></p>
+                </div>
+            <div data-role="tabs" >
+                <div data-role="navbar" class="navbar_add_icon attend_meeting_nav">
+                        <ul>
+                            <li>
+                                <a href="#opinion_receipt_accessory" class="tab-ui-btn-a ui-btn-active" data-ajax="false">
+                                    <span class="ico32 accessory_32"></span>(<label>10</label>)
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#banner_set_up" class="tab-ui-btn-a" data-ajax="false">
+                                    <span class="ico32 set_up_32"></span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="opinion_receipt_accessory">
+                        <div class="ui-grid-c padding_lr_50 receipt_accessory_center">
+                            <div class="ui-block-a margin_tb_25">
+                                <a href="#"
+                                   class="ui-btn ui-btn-inline ui-icon-photo ui-btn-icon-top ui-btn-icon-a">拍照</a>
+                            </div>
+                            <div class="ui-block-b margin_tb_25">
+                                <a href="#"
+                                   class="ui-btn ui-btn-inline ui-icon-voice ui-btn-icon-top ui-btn-icon-a">语言</a>
+                            </div>
+                            <div class="ui-block-c margin_tb_25">
+                                <a href="#"
+                                   class="ui-btn ui-btn-inline ui-icon-associate ui-btn-icon-top ui-btn-icon-a">关联文档</a>
+                            </div>
+                            <div class="ui-block-d margin_tb_25">
+                                <a href="#" class="ui-btn ui-btn-inline ui-icon-local_doc
+                        ui-btn-icon-top ui-btn-icon-a ui-btn-icon-lineheight2em">本地文件和视频</a>
+                            </div>
+                        </div>
+                        <div class="receipt_accessory_bg">
+                            <ul class="receipt_accessory_type padding_10 clearFlow">
+                                <li>
+                                    <div class="accessory_underway margin_5 margin_b_15">
+                                        <div class="accessory_underway_content">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                </p>
+                                                <p class="underway_accessory_size">500MB</p>
+                                            </div>
+                                        </div>
+                                        <p class="accessory_underway_bar"></p>
+                                        <span class="ico_pad_28 cancel_upload_28 model_info_close"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content">
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            </p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content">
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            </p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content">
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                                致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年
+                                            </p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_underway margin_lr_15 margin_tb_10">
+                                        <div class="accessory_underway_content">
+                                            <div class="padding_lr_10">
+                                                <span class="ico35 mp3_35 margin_t_10"></span>
+                                            </div>
+                                            <div class="accessory_name">
+                                                <p class="receipt_accessory_content">
+                                                    致远十年致远十年致远十年致远十年致远十年致远十年
+                                                </p>
+                                                <p class="underway_accessory_size">500MB</p>
+                                            </div>
+                                        </div>
+                                        <p class="accessory_underway_bar"></p>
+                                        <span class="ico_pad_28 cancel_upload_28 model_info_close"></span>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                                <li>
+                                    <div class="accessory_finish margin_5 margin_b_15">
+                                        <div class="padding_lr_10">
+                                            <span class="ico35 mp3_35 margin_t_10"></span>
+                                        </div>
+                                        <div class="accessory_name">
+                                            <p class="receipt_accessory_content"> 致远十年致远十年致远十年</p>
+                                            <p class="accessory_size">500MB</p>
+                                        </div>
+                                        <div class="accessory_download_icon padding_lr_10">
+                                            <span class="ico40 accessory_download_40"></span>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div id="banner_set_up">
+                        <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                            <div class="switch_list_box_left">
+                                隐藏意见
+                            </div>
+                            <div class="switch_list_box_right">
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                       data-off-text=""/>
+                            </div>
+                        </div>
+                        <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                            <div class="switch_list_box_left">
+                                对发起者隐藏
+                            </div>
+                            <div class="switch_list_box_right">
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                       data-off-text=""/>
+                            </div>
+                        </div>
+                        <div class="switch_list_box nav_list_box_def padding_tb_20 padding_l_60 padding_r_80">
+                            <div class="switch_list_box_left">
+                                发送消息
+                            </div>
+                            <div class="switch_list_box_right">
+                                <input type="checkbox" data-role="flipswitch" name="flip-checkbox" data-on-text="开"
+                                       data-off-text=""/>
+                            </div>
+                        </div>
+                    </div>
+               </div>
+        </div>
+    </div>
+</section>
+<script type="text/javascript">
+    function userList(thisObj){
+        $.loadedScroll("content_bg","1","v",function(){
+            if(parseInt($("#content_bg").css("height")) == 0){
+                var _r = $('.layout-r');
+                var _h = $('body').height();
+                var _header_height = _r.children("div[class='page_header']").outerHeight(true) +
+                        _r.children("div[class='content_header']").outerHeight(true);
+                $("#content_bg").height(_h - _header_height);
+            }
+        });
+        $.loadedScroll("f2","1","h","");
+    }
+    function dataObj(){
+        var dataObj = {
+            list_type:'nav',
+            list_num: "420",
+            list_show_num: "50",
+            update_time: "2014-08-15&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'leftIcon':'attend_meeting_14',
+                'centerContent':'会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了',
+                'centerSub':'11-11&nbsp;10:33-11:30',
+                'rightIcon':[1,2],
+                'rightName':'卜宏宇'
+            },
+                {
+                    'listId':'002',
+                    'leftIcon':'unattended_meeting_14',
+                    'centerContent':'明天下午三点小会议室集合',
+                    'centerSub':'2013-11-11&nbsp;10:33-11:30',
+                    'rightIcon':[1],
+                    'rightName':'卜宏宇2'
+                }
+            ],
+            callback:function(){
+                loaded('waitHeld',waitHeld,waitHeld);
+            }
+        };
+        return dataObj;
+    }
+    function dataObj2(){
+        var dataObj = {
+            list_type:'nav',
+            list_num: "420",
+            list_show_num: "50",
+            update_time: "2014-08-15&nbsp;&nbsp;12:30",
+            data:[{
+                'listId':'001',
+                'leftIcon':'attend_meeting_14',
+                'centerContent':'会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了会议来了',
+                'centerSub':'11-11&nbsp;10:33-11:30',
+                'rightIcon':[1,2],
+                'rightName':'卜宏宇'
+            },
+                {
+                    'listId':'002',
+                    'leftIcon':'unattended_meeting_14',
+                    'centerContent':'明天下午三点小会议室集合',
+                    'centerSub':'2013-11-11&nbsp;10:33-11:30',
+                    'rightIcon':[1],
+                    'rightName':'卜宏宇2'
+                }
+            ],
+            callback:function(){
+                loaded('endHeld',waitHeld,waitHeld);
+            }
+        };
+        return dataObj;
+    }
+    /**
+     *  下拉刷新获取数据方法
+     *  myScroll.refresh();        // 数据加载完成后，调用界面更新方法
+     */
+    function waitHeld(obj,id) {
+        setTimeout(function () {
+            listData(id,{
+                list_type:'nav',
+                list_num: "420",
+                list_show_num: "50",
+                update_time: "2014-08-27&nbsp;&nbsp;12:30",
+                data:[{
+                    'listId':'003',
+                    'leftIcon':'accessory_14',
+                    'centerContent':'明天下午三点小会议室集合3',
+                    'centerSub':'11-11&nbsp;10:33-11:30',
+                    'rightIcon':[1,2],
+                    'rightName':'卜宏宇3'
+                },
+                    {
+                        'listId':'004',
+                        'leftIcon':' unattended_meeting_14',
+                        'centerContent':'明天下午三点小会议室集合4',
+                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                        'rightIcon':[1,2],
+                        'rightName':'卜宏宇4'
+                    },
+                    {
+                        'listId':'005',
+                        'leftIcon':'accessory_14',
+                        'centerContent':'明天下午三点小会议室集合5',
+                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                        'rightIcon':[1],
+                        'rightName':'卜宏宇4'
+                    }
+                ]
+            });
+            $.refreshScroll(id);
+        }, 1000);
+    }
+    function endHeld(obj,id){
+        setTimeout(function(){
+            $.refreshScroll(id);
+        },1000)
+    }
+    $(function () {
+        pageInit();
+        $("#meeting_summary ").bind("tap",function(){
+            if($("#meeting_user_summary").parent().hasClass("ui-popup-active")){
+                $("#meeting_user_summary").parent().removeClass("ui-popup-active").addClass("ui-popup-hidden");
+            }
+        })
+        $("#meeting_summary_btn").tap(function(){
+            $("#meeting_summary").panel("open",{position:"right",display: "overlay",theme: "b" })
+            $.loadedScroll("meeting_summary_content","1","v",function(){
+                if(parseInt($("#meeting_summary_content").css("height")) == 0){
+                    var _r = $('.layout_panel');
+                    var _h = $('body').height();
+                    var _header_height = _r.find('.page_header').outerHeight(true) +
+                            _r.find('.content_header').outerHeight(true);
+                    $("#meeting_summary_content").height(_h - _header_height);
+                }
+            });
+        });
+        $("#meeting_summary .content_participants a").tap(function(){
+            $("#meeting_user_summary").popup("open",{
+                transition:"pop",
+                positionTo:"#meeting_user_position_summary"
+            })
+        });
+        $("#return_btn").tap(function(){
+              $("#popup_content").popup("open",{
+//              $("#popup_content_reply").popup("open",{
+                  transition:"pop",
+                  positionTo:"window"
+              })
+//            回执附件高度
+            $("#popup_content .receipt_accessory_bg").height($('body').height() - 559)
+//            $("#popup_content .receipt_accessory_bg").height($('body').height() - 715)
+        });
+
+        $("#meeting_user_summary").tap(function(){
+                $("#meeting_user_summary").popup("close");
+        })
+        $(".reply_type a").each(function(){
+            $(this).tap(function(){
+                $("#popup_content_reply").popup("open",{
+                    transition:"pop",
+                    positionTo:"window"
+                })
+//            会议回执附件高度
+                $("#popup_content_reply .receipt_accessory_bg").height($('body').height() - 559)
+//            $("#popup_content .receipt_accessory_bg").height($('body').height() - 715)
+            })
+
+        })
+        $(window).hashchange(function(){
+            var hash = location.hash;
+            $("#popup_content_reply .ui-tabs .ui-tabs-nav li").each(function(){
+                    if($(this).attr("tabindex") == "0"){
+                        $(this).children().addClass("ui-btn-active");
+                    }
+                })
+        })
+        $(".return_receipt_input textarea").focus(function(){
+            $(".hint_text").hide();
+            $(".hint_num").hide();
+        });
+
+        $("#fee").unbind().bind("tap",function(){
+            var _dialog = $.dialog({
+                partentId: 'dialog1',
+                content_text:'确定取消会议回执吗？',
+                buttons: [{
+                    name: "是",
+                    userTap: function () {
+                        $("#dialog1").find(".dialog_box").remove();
+                        $("#popup_content_reply").popup("close");
+                    }
+                },
+                    {
+                        name: "否",
+                        userTap: function () {
+                            $("#dialog1").find(".dialog_box").remove();
+                            alert("2");
+                        }
+                    }
+                ]
+            });
+        })
+    })
+</script>
+</body>
+</html>

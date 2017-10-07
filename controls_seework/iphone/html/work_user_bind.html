@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>seework账户</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" class="work_user_bind" id="work_user_bind">
+    <div data-role="content" class="work_user_bind_content work_user_bind_success1 background_white">
+        <!--用户绑定-->
+          <div class="work_user_binding ">
+              <span class="work_logo margin_b_30"></span>
+              <p class="flexible_box margin_b_10">
+                  <label for="visit_address">访问地址</label>
+                  <input type="text" data-role="none"
+                         class="adaptive_box_flex comp" comp="type:'focus'" id="visit_address"/>
+              </p>
+              <p class="flexible_box margin_b_10">
+                  <label for="user_name">用户名</label>
+                  <input type="text" data-role="none" class="adaptive_box_flex comp" comp="type:'focus'" id="user_name"/>
+              </p>
+              <p class="flexible_box">
+                  <label for="user_password">密码</label>
+                  <input type="password" data-role="none" class="adaptive_box_flex comp" comp="type:'focus'" id="user_password"/>
+              </p>
+              <a href="#" data-role="button" class="blue_block_btn margin_t_30">绑定</a>
+          </div>
+        <!--用户绑定成功-->
+        <div class="work_user_bind_finish display_none">
+            <span class="work_logo margin_b_30"></span>
+            <p class="user_bind_hinit">账户绑定成功啦!</p>
+            <p>欢迎您，张小一！现在您可以在微信上使用<label class="font_arial">seework</label>的功能了！</p>
+            <a href="#" data-role="button" class="blue_block_btn">开始使用</a>
+        </div>
+
+        <!--用户解除绑定-->
+        <div class="work_user_remove_bind display_none">
+            <p>该微信号已绑定<label class="font_arial">seework</label>账户:</p>
+            <img src="../../../skin/seework/iphone/images/user.png" alt="" class="user_bind_head"/>
+            <a href="#" data-role="button" class="blue_block_btn margin_t_30">解除绑定</a>
+        </div>
+    </div>
+    <script type="text/javascript" src="../js/work_user_bind.js"></script>
+</section>
+</body>
+</html>

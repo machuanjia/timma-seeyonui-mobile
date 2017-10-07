@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>检查记录</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="store_check_record">
+    <div data-role="content" id="store_inquiry_content" class="comp" comp="type:'tabs',tabType:'navbar',
+    tabBorderClass:'form_tab_none',callBack:formListTab">
+        <div data-role="navbar" class="form_nav_bar form_nav_bar_2 form_tab_none">
+            <ul class="model_header_tabs">
+                <li>
+                    <a href="#" tgt="inquiry_store">
+                        <span backTgt="inquiry_store">店名</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" tgt="inquiry_store_person">
+                        <span backTgt="inquiry_store_person">巡店员</span><span class="iphone16 arrow_b_16"></span>
+                        <p></p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+        <div class="tabs_body display_none inquiry_content">
+            <div id="inquiry_store" class="wrapper common_inquiry comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_store',
+                tabBorderClass:'form_tab_none',changeParentId:'store_inquiry_content',callBack:userInquiry">
+                <div class="scroller" id="inquiry_store_list">
+
+                </div>
+            </div>
+            <div id="inquiry_store_person" class="wrapper display_none common_inquiry clearFix pos_relative comp"
+                 comp="type:'tabInquiry',actObj:'.city_list a',hideLayerClose:true,backFillTgt:'inquiry_store_person'
+                 ,tabBorderClass:'form_tab_none',changeParentId:'store_inquiry_content',callBack:userInquiry">
+                <div id="inquiry_store_person_list" class="scroller">
+
+                </div>
+            </div>
+        </div>
+        <div class="wrapper over_y_auto pos_relative form_inquiry_content no_content_1351 no_content_hide" id="search_result">
+            <div class="scroller comp" comp="type:'list',listType:'dataRefresh',callBack:userList">
+
+            </div>
+        </div>
+    </div>
+    <a href="#"  data-transition="slidefade" data-role="button" data-inline="ture" class="new_built_btn"></a>
+    <script type="text/javascript">
+        /**
+         * list点击数据扩展方法
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userList(obj,objId){
+            var url = "work_content.html";
+            var data_obj = "SDsadadad";
+            toNextPage(url,data_obj,function(event,thisUrlObj,dataObj,pageActiveObj){
+                //匹配目标页面
+                if (thisUrlObj.href.search(url) != -1) {
+                    var ajax_data = dataObj.options.data;
+                }
+            })
+        }
+        /**
+         * 搜索扩展方法
+         * @param thisObj 当前点击对象
+         * @param domObj 父级对象
+         */
+        function formListTab(thisObj,domObj){
+            var temp = thisObj.attr("tgt");
+            if(domObj.find(".tabs_body").hasClass("display_none")){
+                domObj.find(".tabs_body").removeClass("display_none");
+                $.hideLayerOpen(function(){
+                    $("#store_inquiry_content").find(".tabs_body").addClass("display_none");
+                    $("#store_inquiry_content").find(".ui-btn").removeClass("ui-btn-active");
+                    $("#store_inquiry_content").find("div[data-role='navbar']").addClass("form_tab_none");
+                });
+            }
+            switch (temp){
+                case "inquiry_store":
+                    $.refreshScroll("inquiry_store");
+                    break;
+                case "inquiry_store_person":
+                    $.refreshScroll("inquiry_store_person");
+                    break;
+            }
+        }
+        /**
+         * tabs切换扩展方法
+         * @param thisObj 当前点击对象
+         */
+        function userInquiry(thisObj){
+//            $.hideLayerClose();
+        }
+        /**
+         *  下拉刷新获取数据方法
+         */
+        function userInfoList(obj,id) {
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    list_refresh_type: "down",
+                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                    data:[
+                        {
+                            'listId':'006',
+                            'listData':[
+                                {
+                                    'listTitle':'sdsad',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'合格率',
+                                    'listContent':'800%'
+                                },
+                                {
+                                    'listTitle':'巡店员',
+                                    'listContent':'张小玲'
+                                },
+                                {
+                                    'listTitle':'巡店时间',
+                                    'listContent':'2014-10-15'
+                                }
+                            ],
+                            'lockState':false
+                        },
+                        {
+                            'listId':'007',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'合格率',
+                                    'listContent':'80%'
+                                },
+                                {
+                                    'listTitle':'巡店员',
+                                    'listContent':'张小w玲'
+                                },
+                                {
+                                    'listTitle':'巡店时间',
+                                    'listContent':'2014-10-15'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        /**
+         *  点击加载更多获取数据方法
+         */
+        function userMoreInfoList(obj,id){
+            setTimeout(function () {
+                listData(id,{
+                    list_type:'inquirylist',
+                    data:[
+                        {
+                            'listId':'009',
+                            'listData':[
+                                {
+                                    'listTitle':'',
+                                    'listContent':'成都成华店'
+                                },
+                                {
+                                    'listTitle':'合格率',
+                                    'listContent':'80%'
+                                },
+                                {
+                                    'listTitle':'巡店员',
+                                    'listContent':'张小玲'
+                                },
+                                {
+                                    'listTitle':'巡店时间',
+                                    'listContent':'2014-10-15'
+                                }
+                            ],
+                            'lockState':false
+                        }
+                    ]
+                });
+                $.refreshScroll(id);
+            }, 1000);
+        }
+        $("#store_check_record").bind("pageshow",function(){
+            pageInit();
+            listData("inquiry_store_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'000',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'成都武侯店'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_store",1,"v");
+                }
+            })
+            listData("inquiry_store_person_list",{
+                list_type:'citylist',
+                data:[
+                    {
+                        'listId':'001',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },{
+                        'listId':'002',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },{
+                        'listId':'003',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },{
+                        'listId':'004',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },
+                    {
+                        'listId':'005',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },{
+                        'listId':'006',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },
+                    {
+                        'listId':'007',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },
+                    {
+                        'listId':'008',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },
+                    {
+                        'listId':'009',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    },
+                    {
+                        'listId':'010',
+                        'letterType':'',
+                        'cityName':'王小一'
+                    }
+                ],
+                callback:function(){
+                    $.loadedScroll("inquiry_store_person",1,"v");
+                }
+            })
+            listData($("#search_result"),{
+                list_type:'inquirylist',
+                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                data:[
+                    {
+                        'listId':'001',
+                        'listData':[
+                            {
+                                'listTitle':'sdasd',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'合格率',
+                                'listContent':'80%'
+                            },
+                            {
+                                'listTitle':'巡店员',
+                                'listContent':'张小玲'
+                            },
+                            {
+                                'listTitle':'巡店时间',
+                                'listContent':'2014-10-15'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'002',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'合格率',
+                                'listContent':'80%'
+                            },
+                            {
+                                'listTitle':'巡店员',
+                                'listContent':'张小玲'
+                            },
+                            {
+                                'listTitle':'巡店时间',
+                                'listContent':'2014-10-15'
+                            }
+                        ],
+                        'lockState':true
+                    },
+                    {
+                        'listId':'003',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'合格率',
+                                'listContent':'80%'
+                            },
+                            {
+                                'listTitle':'巡店员',
+                                'listContent':'张小玲'
+                            },
+                            {
+                                'listTitle':'巡店时间',
+                                'listContent':'2014-10-15'
+                            }
+                        ],
+                        'lockState':false
+                    },
+                    {
+                        'listId':'004',
+                        'listData':[
+                            {
+                                'listTitle':'',
+                                'listContent':'成都成华店'
+                            },
+                            {
+                                'listTitle':'合格率',
+                                'listContent':'80%'
+                            },
+                            {
+                                'listTitle':'巡店员',
+                                'listContent':'张小玲'
+                            },
+                            {
+                                'listTitle':'巡店时间',
+                                'listContent':'2014-10-15'
+                            }
+                        ],
+                        'lockState':false
+                    }
+                ],
+                callback:function(){
+                    loaded('search_result',userInfoList,userMoreInfoList);
+                }
+            });
+
+            //多余一个需要手动清除ui-grid-solo
+//            var liHtml = '<li>'+
+//                            '<a href="#" tgt="test">'+
+//                                    '<span backTgt="inquiry_store">四川sdadad省</span><span class="iphone16 arrow_b_16"></span>'+
+//                                    '<p></p>'+
+//                            '</a>'+
+//                        '</li>';
+//
+//            $(".model_header_tabs").append(liHtml+liHtml);
+//            $('#test1').navbar('refresh');
+//            $.showLoader("标为关注",trues,"d",true,"");
+        })
+    </script>
+</section>
+
+</body>
+</html>

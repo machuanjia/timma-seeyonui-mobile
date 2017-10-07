@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>jqm自定义主题</title>
+    <meta charset="utf-8"/>
+    <script src="../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/jqm_theme_c.css"/>
+    <link rel="stylesheet" href="css/jquery.mobile.icons.min.css"/>
+    <script src="../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+</head>
+<body>
+<section data-role="page" data-theme="c">
+    <header data-role="header">
+        <h1>测试自定义主题</h1>
+    </header>
+    <div data-role="content">
+        <fieldset data-role="controlgroup" data-theme="c">
+            <legend>Vertical:</legend>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2a" value="One" checked="checked">
+            <label for="radio-choice-v-2a">One</label>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2b" value="Two">
+            <label for="radio-choice-v-2b">Two</label>
+            <input type="radio" name="radio-choice-v-2" id="radio-choice-v-2c" value="Three">
+            <label for="radio-choice-v-2c">Three</label>
+        </fieldset>
+        <div >
+            <label for="slider">Slider:</label>
+            <input type="range" name="slider" id="slider" value="20" min="0" max="100"  data-highlight="true" data-theme="c"/>
+            <label for="select-choice-1" class="select">请选择菜单：</label>
+            <select name="select-choice-1" id="select-choice-1" data-theme="c" data-native-menu="false">
+                <option value="1">川菜</option>
+                <option value="2">粤菜</option>
+                <option value="3">浙菜</option>
+                <option value="4">广菜</option>
+            </select>
+        </div>
+
+        <div data-role="rangeslider" data-highlight="false" data-theme="c">
+            <label for="range-1c">Rangeslider:</label>
+            <input type="range" name="range-1a" id="range-1c" min="0" max="100" value="40">
+            <label for="range-1d">Rangeslider:</label>
+            <input type="range" name="range-1b" id="range-1d" min="0" max="100" value="80">
+        </div>
+        <div data-role="rangeslider" data-mini="true" data-theme="c">
+            <label for="range-6a" class="ui-hidden-accessible">>Mini rangeslider:</label>
+            <input type="range" name="range-6a" id="range-6a" min="0" max="100" value="0">
+            <label for="range-6b">>Mini rangeslider:</label>
+            <input type="range" name="range-6b" id="range-6b" min="0" max="100" value="80">
+        </div>
+        <input type="text" placeholder="请输入文字"/>
+        <ul data-role="listview" data-inset="true">
+            <li><a href="#">测试数据1</a></li>
+            <li><a href="#">测试数据2</a></li>
+            <li><a href="#">测试数据3</a></li>
+            <li><a href="#">测试数据4</a></li>
+            <li><a href="#">测试数据5</a></li>
+        </ul>
+    </div>
+    <footer data-role="footer">
+        <h3>测试完成</h3>
+    </footer>
+</section>
+</body>
+</html>

@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>控件库(iphone端)—所有模板</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no" />
+    <script src="../../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet" />
+    <script src="../../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../../controls_common/script/iscroll.js"></script>
+    <script src="../../../../controls_cmp/iphone/js/seeyon.ui.iphone-debug.js"></script>
+    <!--高亮显示-->
+    <link href="../../../css/doc.css" rel="stylesheet" />
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shCore.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushJScript.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushXml.js"></script>
+    <script type="text/javascript" src="../../../scripts/syntaxhighlighter/scripts/shBrushCss.js"></script>
+    <link type="text/css" rel="stylesheet" href="../../../scripts/syntaxhighlighter/styles/shCoreDefault.css" />
+    <script type="text/javascript" src="../../../scripts/modelShow.js"></script>
+    <script type="text/javascript">
+        SyntaxHighlighter.all();
+        $(function(){
+            pageInit();
+            commonUnit();
+        })
+    </script>
+    <!--自定义样式-->
+    <link href="../../../../skin/cmp/iphone/skin.css" rel="stylesheet" />
+    <style type="text/css">
+        .ui-page-active{
+           overflow: hidden!important;
+        }
+        .ui-overlay-a,.ui-page-theme-a{
+            background-color: #fff!important;
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .ui-page-theme-a a{
+            font-family: "Microsoft YaHei",SimSun, Arial, Helvetica, sans-serif!important;
+        }
+        .content_reply_info .send_type span,
+        .user_reply_list .user_reply_type span{
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body class="jqm_load">
+<header class="header">
+    <div class="nav_area">
+        <ul class="clearFix">
+            <li><a href="../../../../index.html" data-role="none" rel="external"><strong>SeeyonMobile</strong></a></li>
+            <li><a href="../../../getting-started/index.html" data-role="none" rel="external">起步</a></li>
+            <li><a href="index.html" data-role="none" rel="external">iphone端组件</a></li>
+            <li class="li_active"><a href="javascript:void(0);" >iphone端原型</a></li>
+            <li><a href="../../ipad/html/index.html" data-role="none" rel="external">ipad端组件</a></li>
+            <li><a href="../../ipad/html/model.html" data-role="none" rel="external">ipad端原型</a></li>
+            <li><a href="../../icon/index.html" data-role="none" rel="external">公用图标库和class类</a></li>
+            <li><a href="../../../knowledge/index.html" data-role="none" rel="external">JqueryMobile知识库</a></li>
+            <li><a href="../../../log/index.html" data-role="none" rel="external">日志</a></li>
+        </ul>
+    </div>
+    <div class="page_title_area">
+        <div class="page_title_box">
+            <div class="t">iphone端页面原型</div>
+            <div class="c">iphone端所有涉及到页面原型展示</div>
+        </div>
+    </div>
+</header>
+<div id="content" class="clearFix">
+    <div class="main_body">
+        <div id="meeting_list" class="clearFix">
+            <h1>会议——会议列表</h1>
+            <p>会议列表主要内容包含2部分，待召开和已召开的会议,主要方法是list数据刷新</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popupParis" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/meeting_list.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popupParis" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/meeting_list.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/meeting/test_meeting_list.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                    &lt;section data-role="page" id="meeting_list">
+                        &lt;header data-role="header">
+                            &lt;h1 class="page_header_title">
+                                会议
+                                &lt;span>&lt;/span>
+                            &lt;/h1>
+                        &lt;/header>
+                        &lt;div data-role="content">
+                            &lt;div class="comp" comp="type:'tabs',callBack:userTabs">
+                                &lt;div data-role="navbar">
+                                    &lt;ul class="model_header_tabs">
+                                        &lt;li>&lt;a href="#" class="tab-ui-btn-a ui-btn-active" tgt="waitHeld">待召开&lt;/a>&lt;/li>
+                                        &lt;li>&lt;a href="#" class="tab-ui-btn-a" tgt="endHeld">已召开&lt;/a>&lt;/li>
+                                    &lt;/ul>
+                                &lt;/div>
+                                &lt;div class="tabs_body">
+                                    &lt;div id="waitHeld" class="ele_active wrapper">
+                                        &lt;div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:listDataObj,callBack:userList">&lt;/div>
+                                    &lt;/div>
+                                    &lt;div id="endHeld" class="ele_hide wrapper">
+                                        &lt;div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:listDataObj2,callBack:userList">&lt;/div>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                     &lt;/section>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t"><1>、type='list'公用方法介绍</div>
+                <p class="warning_text">comp="type:'list',listType:'dataRefresh',listGather:listDataObj,callBack:userList"</p>
+                <p>1、type:'list'——表示定义一个list列表</p>
+                <p>2、listType:'dataRefresh'——表示列表类型为刷新数据列表</p>
+                <p>3、listGather:'listDataObj'——列表初始化数据对象</p>
+                <div>
+                    <pre class="brush:js;">
+                        function listDataObj(){
+                            var listDataObj = {
+                                list_type:'nav',
+                                list_num: "420",
+                                update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                                more_num: "50",
+                                data:[{
+                                    'listId':'001',
+                                    'transitionUrl':'test_meeting_details.html',
+                                    'leftIcon':'attend_meeting_22',
+                                    'centerContent':'明天下午三点小会议天下午三点小会议室集合',
+                                    'centerTime':'11-11&nbsp;10:33-11:30',
+                                    'rightIcon':["1","2"],
+                                    'rightName':'卜宏宇'
+                                },
+                                    {
+                                        'listId':'002',
+                                        'transitionUrl':'test_meeting_details.html',
+                                        'leftIcon':'unattended_meeting_22',
+                                        'centerContent':'明天下午三点小会议室集合',
+                                        'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                                        'rightIcon':["1"],
+                                        'rightName':'卜宏宇2'
+                                    }
+                                ],
+                                callback:function(){
+                                    loaded('waitHeld',waitHeld,waitHeld);
+                                }
+                            };
+                            return listDataObj;
+                        }
+                    </pre>
+                </div>
+                <p>4、callBack:'userList'——回调函数，有相关业务就写，没有可以省略</p>
+                <div class="t"><2>、初始换方式</div>
+                <div>
+                    <pre class="brush:js;">
+                        $("#meeting_list").bind("pageshow",function(){
+                            pageInit();
+                        })
+                    </pre>
+                </div>
+                <div class="t"><3>、数据刷新方法说明</div>
+                <div>
+                    <pre class="brush:js;">
+                        /**
+                         * 初始化iScroll控件-默认是纵向刷新滚动条，即state=0
+                         * @param id 当前需要控制的对象的id名
+                         * @param refreshFunc 	下拉刷新数据方法
+                         * @param loadMoreFunc  上拉获取更多方法
+                         */
+                        function loaded(id,refreshFunc,loadMoreFunc) {
+                            $.loadedScroll(id,0,refreshFunc,loadMoreFunc);
+                        }
+                        function waitHeld(obj,id) {
+                            setTimeout(function () {
+                                listData(id,{
+                                    list_type:'nav',
+                                    list_num: "400",
+                                    update_time: "2014-08-15&nbsp;&nbsp;12:30",
+                                    more_num: "50",
+                                    data:[{
+                                        'listId':'003',
+                                        'transitionUrl':'test_meeting_details.html',
+                                        'leftIcon':'unattended_meeting_22',
+                                        'centerContent':'明天下午三点小会议室集合3',
+                                        'centerTime':'11-11&nbsp;10:33-11:30',
+                                        'rightIcon':["1","2"],
+                                        'rightName':'卜宏宇3'
+                                    },
+                                        {
+                                            'listId':'004',
+                                            'transitionUrl':'test_meeting_details2.html',
+                                            'leftIcon':'unattended_meeting_22',
+                                            'centerContent':'明天下午三点小会议室集合4',
+                                            'centerTime':'2013-11-11&nbsp;10:33-11:30',
+                                            'rightIcon':["1","2"],
+                                            'rightName':'卜宏宇4'
+                                        }
+                                    ]
+                                });
+                                $.refreshScroll(id);
+                            }, 1000);
+                        }
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="meeting_details" class="clearFix">
+            <h1>会议——会议详情</h1>
+            <p>会议详情主要内容是意见回复，主要方法是滚动条</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_meeting_details" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/meeting_details.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_meeting_details" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/meeting_details.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/meeting/test_meeting_details.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                   &lt;section data-role="page" id="meeting_details">
+                       &lt;header data-role="header" data-position="fixed" data-tap-toggle="false">
+                           &lt;h1 class="page_header_title">
+                               会议详情
+                               &lt;span>&lt;/span>
+                           &lt;/h1>
+                           &lt;a data-rel="back" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+                              data-transition="slide">&lt;/a>
+                           &lt;a href="test_meeting_summary.html"  class="ui-btn ui-btn-inline ui-btn-a" data-transition="slide">纪要&lt;/a>
+                       &lt;/header>
+                       &lt;div data-role="content" id="f1" class="overflow_hidden">
+                           &lt;div class="scroller">
+                               &lt;div class="content_header">
+                                   &lt;div class="content_header_title">
+                                       &lt;div>一期需求规格说明书会需求会一期需求会&lt;/div>
+                                       &lt;div>&lt;span class="right ico_phone_22 accessory_22 content_header_icon">&lt;/span>&lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="content_manager_time clearFlow">
+                                        &lt;span class="content_header_time">
+                                             &lt;label class="padding_r_5">今天&lt;/label>
+                                             &lt;label>10:30-11:30&lt;/label>
+                                        &lt;/span>
+                                       &lt;span class="content_header_name">卜宏宇&lt;/span>
+                                   &lt;/div>
+                               &lt;/div>
+                               &lt;div class="content">
+                                   &lt;p>本期将和大家一起分享高效能人士七个习惯中的首要习惯——“积极主动”的相关内容。有这样一个事实&lt;/p>
+                               &lt;/div>
+                               &lt;div class="content_list">
+                                   &lt;div>
+                                       会议时间：&lt;label class="padding_r_5">11-13&lt;/label>&lt;label>10:30-11:30&lt;/label>
+                                   &lt;/div>
+                                   &lt;div class="content_participants">
+                                       &lt;a href="test_attend_meeting_users.html"  data-transition="slide">
+                                           &lt;span class="content_participants_p">与会人员：&lt;label>王未、胡赞一、唐玉婷、季洪利、单燕、王未、胡赞一、唐玉婷、季洪利、单燕&lt;/label>&lt;/span>
+                                       &lt;/a>
+                                       &lt;span class="right ico_phone_48 spread_right_48">&lt;/span>
+                                   &lt;/div>
+                                   &lt;div>会议地点：&lt;label>第一会议室105&lt;/label>&lt;/div>
+                                   &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                                   &lt;div>主持人：&lt;label>张小二&lt;/label>&lt;/div>
+                               &lt;/div>
+                               &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right"  data-inset="false"
+                                    class="content_reply margin_15 comp" comp="type:'slide',scrollId:'f1'">
+                                   &lt;h4 class="content_reply_title">&lt;span class="margin_r_5">附件(&lt;label>12&lt;/label>)&lt;/span>&lt;span>关联文档(&lt;label>12&lt;/label>)&lt;/span>&lt;/h4>
+                                   &lt;ul class="receipt_accessory_type padding_lr_10 padding_tb_5">
+                                       &lt;li>
+                                           &lt;div class="accessory_finish margin_tb_15">
+                                               &lt;div class="accessory_icon padding_lr_10">
+                                                   &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                               &lt;/div>
+                                               &lt;div class="accessory_name">
+                                                   &lt;p class="receipt_accessory_content">
+                                                       &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                       &lt;label>.DVD&lt;/label>
+                                                   &lt;/p>
+                                                   &lt;p class="accessory_size">500MB&lt;/p>
+                                               &lt;/div>
+                                               &lt;div class="accessory_icon padding_lr_10">
+                                                   &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/li>
+                                   &lt;/ul>
+                               &lt;/div>
+                               &lt;div data-role="collapsible" data-collapsed="false" data-iconpos="right"  data-inset="false"
+                                    class="content_reply margin_15 margin_b_0 comp" comp="type:'slide',scrollId:'f1'">
+                                   &lt;h4 class="content_reply_title">回复意见(&lt;label>12&lt;/label>)&lt;/h4>
+                                   &lt;ul>
+                                       &lt;li>
+                                           &lt;div class="content_reply_content">
+                                               &lt;div class="first_content_reply padding_t_10 padding_b_5">
+                                                   &lt;div class="user_head">
+                                                       &lt;img src="../../skin/default/images/idea_user.png" class="user_head_pic"/>
+                                                   &lt;/div>
+                                                   &lt;div class="content_reply_info">
+                                                       &lt;p class="reply_person_info">
+                                                           &lt;label>赵康永&lt;/label>
+                                                           &lt;label class="margin_l_10">已阅&lt;/label>
+                                                       &lt;/p>
+                                                       &lt;p class="reply_person_content padding_t_5">
+                                                           智能手机终端不仅是一个信息提供息的接收设备，而且也是系统。
+                                                       &lt;/p>
+                                                       &lt;ul class="receipt_accessory_type margin_r_40">
+                                                           &lt;li>
+                                                               &lt;div class="accessory_finish margin_tb_15">
+                                                                   &lt;div class="accessory_icon padding_lr_10">
+                                                                       &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                                                   &lt;/div>
+                                                                   &lt;div class="accessory_name">
+                                                                       &lt;p class="receipt_accessory_content">
+                                                                           &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                                           &lt;label>.DVD&lt;/label>
+                                                                       &lt;/p>
+                                                                       &lt;p class="accessory_size">500MB&lt;/p>
+                                                                   &lt;/div>
+                                                                   &lt;div class="accessory_icon padding_lr_10">
+                                                                       &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                                                   &lt;/div>
+                                                               &lt;/div>
+                                                           &lt;/li>
+                                                       &lt;/ul>
+                                                       &lt;div class="send_type">
+                                                            &lt;span class="padding_r_5">
+                                                                2012-07-19&nbsp;&nbsp;13:33
+                                                            &lt;/span>
+                                                                           发自
+                                                            &lt;span class="clientType">
+                                                               Android
+                                                            &lt;/span>
+                                                           客户端
+                                                           &lt;a href="test_meeting_return.html" class="ui-btn ui-btn-inline ui-btn-icon-top
+                                            ui-btn-icon-b ui-icon-reply reply_btn" data-transition="slide">&lt;/a>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                               &lt;/div>
+                                               &lt;div class="user_reply_content">
+                                                   &lt;div class="user_reply_list">
+                                                       &lt;div class="user_head">
+                                                           &lt;img src="../../skin/default/images/idea_user.png" class="user_head_pic"/>
+                                                       &lt;/div>
+                                                       &lt;div class="content_reply_info">
+                                                           &lt;p class="reply_person_info">
+                                                               &lt;label>张大伟&lt;/label>
+                                                           &lt;/p>
+                                                           &lt;p class="reply_person_content padding_t_5">
+                                                               智能手机终端不仅是一个。
+                                                           &lt;/p>
+                                                           &lt;div class="user_reply_type">
+                                                                &lt;span class="padding_r_5">
+                                                                    2012-07-19&nbsp;&nbsp;13:33
+                                                                &lt;/span>
+                                                                               发自
+                                                                &lt;span class="clientType">
+                                                                   Android
+                                                                &lt;/span>
+                                                               客户端
+                                                           &lt;/div>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                               &lt;/div>
+                                           &lt;/div>
+                                       &lt;/li>
+                                   &lt;/ul>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/div>
+                       &lt;footer data-role="footer" data-position="fixed" data-tap-toggle="false">
+                           &lt;div data-role="navbar">
+                               &lt;ul>
+                                   &lt;li>&lt;a href="#" id="fast_dialog_bg" class="tab-ui-btn-a" data-rel="popup" data-position-to="window">&lt;span class="ico_phone_48 rapid_receipt_48 margin_r_5 footer_icon">&lt;/span>快速回执&lt;/a>&lt;/li>
+                                   &lt;li>&lt;a href="test_meeting_return.html" class="tab-ui-btn-a" data-transition="slide">&lt;span class="ico_phone_48 return__receipt_48 margin_r_5 footer_icon">&lt;/span>回执&lt;/a>&lt;/li>
+                               &lt;/ul>
+                           &lt;/div>
+                       &lt;/footer>
+                   &lt;/section>
+                   </pre>
+                </div>
+            </div>
+            <div class="warning_area warning0">
+                <div class="t"><1>、type='slide'公用方法介绍</div>
+                <p class="warning_text">comp="type:'slide',scrollId:'f1'"</p>
+                <p>1、type:'slide'——表示定义一个折叠组件扩展方法</p>
+                <p>2、scrollId:'f1'——表示折叠组件的id</p>
+                <div class="t"><2>、初始换方式</div>
+                <div>
+                    <pre class="brush:js;">
+                       $("#meeting_details").bind("pageshow", function () {
+                            $.loadedScroll("f1",1,'v',function(){
+                                var _h = $('body').height();
+                                var header_h = $("#meeting_details > header").height();
+                                var footer_h = $("#meeting_details > footer").height();
+                                $("#meeting_details > div[data-role='content']").height(_h - header_h -footer_h);
+                            });
+                            pageInit();
+                            $("#fast_dialog_bg").bind("tap",function(){
+                                var dialog_html = $('&lt;div class="popup_dialog" id="fast_dialog" data-role="popup" data-dismissible="false">'+
+                                            '&lt;header>快速回执&lt;/header>'+
+                                            '&lt;div class="user_text">'+
+                                                '&lt;a href="#" data-rel="back">参加&lt;/a>'+
+                                                '&lt;a href="#" data-rel="back">不参加&lt;/a>'+
+                                                '&lt;a href="#" data-rel="back">待定&lt;/a>'+
+                                                '&lt;/div>'+
+                                            '&lt;footer>'+
+                                                '&lt;a href="#" data-rel="back">取消&lt;/a>'+
+                                                '&lt;/footer>'+
+                                            '&lt;/div>');
+                                $("#meeting_details").append(dialog_html).trigger("create");
+                                $(dialog_html).popup("open",{
+                                    transition:"pop"
+                                });
+                            })
+                        })
+                    </pre>
+                </div>
+                <div class="t"><3>、滚动条初始化方法</div>
+                <div>
+                    <pre class="brush:js;">
+                       /**
+                         * 初始化iScroll控件
+                         * @param id 当前需要控制的对象的id名
+                         * @param state 状态值，0表示含有上下拉刷新，1表示只有滚动条
+                         * @param refreshFunc  当state为0时，表示下拉刷新数据方法，当state为1时,表示为为"h"，横向滚动条，"v"，纵向滚动条
+                         * @param loadMoreFunc 当state为0时，上拉获取更多方法，当state为1时,表示用于确定宽或高的自定义方法
+                         */
+                        $.loadedScroll = function(id,state,refreshFunc,loadMoreFunc){}
+                        //会议详情
+                        $.loadedScroll("f1",1,'v',function(){
+                            var _h = $('body').height();
+                            var header_h = $("#meeting_details > header").height();
+                            var footer_h = $("#meeting_details > footer").height();
+                            $("#meeting_details > div[data-role='content']").height(_h - header_h -footer_h);
+                        });
+                    </pre>
+                </div>
+            </div>
+        </div>
+        <div id="append_meeting" class="clearFix">
+            <h1>会议——与会人员</h1>
+            <p>与会人员主要内容是人员名单，主要方法是tabs切换</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_append_meeting" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/append_meeting.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_append_meeting" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/append_meeting.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/meeting/test_attend_meeting_users.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;select name="select_menu" data-native-menu="false" data-iconpos="right" data-inline="true">
+                       &lt;section data-role="page" id="attend_meeting_users">
+                           &lt;header data-role="header">
+                               &lt;h1 class="page_header_title">
+                                   与会人员
+                               &lt;/h1>
+                               &lt;a href="test_meeting_details.html"  class="ui-btn ui-btn-inline ui-btn-icon-top
+                                ui-btn-icon-b ui-icon-return" data-transition="slide">&lt;/a>
+                           &lt;/header>
+                           &lt;div data-role="content">
+                               &lt;div  class="meeting_user_content comp" comp="type:'tabs'">
+                                   &lt;div data-role="navbar">
+                                       &lt;ul>
+                                           &lt;li>&lt;a href="#" class="tab-ui-btn-a ui-btn-active" tgt="attend_user">参加&lt;/a>&lt;/li>
+                                           &lt;li>&lt;a href="#" class="tab-ui-btn-a" tgt="no_ensure">待定&lt;/a>&lt;/li>
+                                           &lt;li>&lt;a href="#" class="tab-ui-btn-a" tgt="no_attend">不参加&lt;/a>&lt;/li>
+                                           &lt;li>&lt;a href="#" class="tab-ui-btn-a" tgt="no_return_receipt">未回执&lt;/a>&lt;/li>
+                                       &lt;/ul>
+                                   &lt;/div>
+                                   &lt;div class="tabs_body">
+                                       &lt;ul class="clearFlow ele_active" id="attend_user" >
+                                           &lt;li>王晔1&lt;/li>
+                                           &lt;li>李晓东&lt;/li>
+                                       &lt;/ul>
+                                       &lt;ul class="clearFlow ele_hide" id="no_ensure">
+                                           &lt;li>王晔2&lt;/li>
+                                           &lt;li>李晓东&lt;/li>
+                                       &lt;/ul>
+                                       &lt;ul class="clearFlow ele_hide" id="no_attend">
+                                           &lt;li>王晔3&lt;/li>
+                                           &lt;li>李晓东&lt;/li>
+                                       &lt;/ul>
+                                       &lt;ul class="clearFlow ele_hide" id="no_return_receipt">
+                                           &lt;li>&lt;span class="ico_phone_28 see_28">&lt;/span>王晔晔&lt;/li>
+                                           &lt;li>&lt;span class="ico_phone_28 unseen_28">&lt;/span>李晓东&lt;/li>
+                                       &lt;/ul>
+                                   &lt;/div>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/section>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="meeting_return" class="clearFix">
+            <h1>会议——会议回执</h1>
+            <p>与会人员主要内容是意见回复和附件上传，主要方法是附件关联</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_meeting_return" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="meeting/images/meeting_return.jpg" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_meeting_return" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="meeting/images/meeting_return.jpg" width="100%" alt="">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/meeting/test_meeting_return.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                       &lt;section data-role="page" id="return_receipt">
+                           &lt;header data-role="header">
+                               &lt;a href="test_meeting_details.html" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+                                  data-transition="slide">&lt;/a>
+                               &lt;h1 class="page_header_title">
+                                   回执
+                               &lt;/h1>
+                               &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-a">回执&lt;/a>
+                           &lt;/header>
+                           &lt;div data-role="content" class="receipt_content">
+                               &lt;div class="ui-grid-b users_select comp" comp="type:'radio',inputId:'receipt_select_value'">
+                                   &lt;div class="ui-block-a margin_tb_5">
+                                       &lt;div class="iphone_radio">
+                                           &lt;span class="feedbackradio ico_phone_radio_checked30 margin_r_5" radio_value="1">&lt;/span>
+                                           &lt;span class="ico_phone_48 attend_meeting_48">&lt;/span>
+                                           参加
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="ui-block-b margin_tb_5">
+                                       &lt;div class="iphone_radio">
+                                           &lt;span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="0">&lt;/span>
+                                           &lt;span class="ico_phone_48 unattended_meeting_48">&lt;/span>
+                                           不参加
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;div class="ui-block-c margin_tb_5">
+                                       &lt;div class="iphone_radio">
+                                           &lt;span class="feedbackradio ico_phone_radio30 margin_r_5" radio_value="-1">&lt;/span>
+                                           &lt;span class="ico_phone_48 unsure_48">&lt;/span>
+                                           待定
+                                       &lt;/div>
+                                   &lt;/div>
+                                   &lt;input type="hidden" value="1" id="receipt_select_value"/>
+                               &lt;/div>
+                               &lt;div class="writing_content">
+                                   &lt;p class="hint_text">请输入处理意见&lt;/p>
+                                   &lt;textarea>&lt;/textarea>
+                                   &lt;p class="hint_num">150&lt;/p>
+                               &lt;/div>
+                               &lt;div class="comp" comp="type:'tabs',callback:userTabs">
+                                   &lt;div data-role="navbar" class="navbar_add_icon">
+                                       &lt;ul>
+                                           &lt;li>
+                                               &lt;a href="#" class="tab-ui-btn-a">
+                                                   &lt;span class="ico_phone_48 accessory_48">&lt;/span>
+                                                   (&lt;label>10&lt;/label>)
+                                               &lt;/a>
+                                           &lt;/li>
+                                       &lt;/ul>
+                                   &lt;/div>
+                                   &lt;div class="tabs_body">
+                                       &lt;div class="ui-grid-c accessory_upload_type">
+                                           &lt;div class="ui-block-a margin_tb_10">
+                                               &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-photo">拍照&lt;/a>
+                                           &lt;/div>
+                                           &lt;div class="ui-block-b margin_tb_10">
+                                               &lt;a href="#" class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-voice">语音&lt;/a>
+                                           &lt;/div>
+                                           &lt;div class="ui-block-c margin_tb_10">
+                                               &lt;a href="test_relate_doc.html" data-transition="slide"
+                                                  class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-associate">关联文档&lt;/a>
+                                           &lt;/div>
+                                           &lt;div class="ui-block-d margin_tb_10">
+                                               &lt;a href="#"
+                                                  class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-a ui-icon-local_doc ui-btn-icon-lineheight2em">本地文件和视频&lt;/a>
+                                           &lt;/div>
+                                       &lt;/div>
+                                       &lt;div class="receipt_accessory">
+                                           &lt;ul class="receipt_accessory_type padding_10">
+                                               &lt;li>
+                                                   &lt;div class="accessory_finish margin_tb_15">
+                                                       &lt;div class="accessory_icon padding_lr_10">
+                                                           &lt;span class="ico_phone_48 mp4_48 ">&lt;/span>
+                                                       &lt;/div>
+                                                       &lt;div class="accessory_name">
+                                                           &lt;p class="receipt_accessory_content">
+                                                               &lt;label>致远十年致远十年致远十年致远十年致远十年致远十年致远十年致远十年&lt;/label>
+                                                               &lt;label>.DVD&lt;/label>
+                                                           &lt;/p>
+                                                           &lt;p class="accessory_size">500MB&lt;/p>
+                                                       &lt;/div>
+                                                       &lt;div class="accessory_icon padding_lr_10">
+                                                           &lt;span class="ico_phone_48 accessory_download_48 ">&lt;/span>
+                                                       &lt;/div>
+                                                   &lt;/div>
+                                               &lt;/li>
+                                           &lt;/ul>
+                                       &lt;/div>
+                                   &lt;/div>
+                               &lt;/div>
+                           &lt;/div>
+                       &lt;/section>
+                  </pre>
+                </div>
+            </div>
+        </div>
+        <div id="statistics_home" class="clearFix">
+            <h1>统计——统计首页列表</h1>
+            <p>统计首页列表,主要方法是list数据刷新</p>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_statistics_home" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="statistics/images/statistics_home.png" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_statistics_home" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="statistics/images/statistics_home.png" alt="" width="100%">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/statistics/test_statistic_home.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                    &lt;section data-role="page" id="statistics_home">
+                        &lt;header data-role="header">
+                           &lt;h1 class="page_header_title">
+                               统计
+                               &lt;span>&lt;/span>
+                           &lt;/h1>
+                        &lt;/header>
+                        &lt;div data-role="content">
+                            &lt;div id="statisticsList" class="wrapper statistic_add">
+                                &lt;div class="scroller comp" comp="type:'list',listType:'dataRefresh',listGather:homeDataObj,callBack:userList">&lt;/div>
+                            &lt;/div>
+                        &lt;/div>
+                     &lt;/section>
+                   </pre>
+                </div>
+            </div>
+        </div>
+        <div id="statistics_table" class="clearFix">
+            <h1>统计——统计表查看</h1>
+            <div class="code_area">
+                <div class="example_box">
+                    <a href="#popup_statistics_table" data-rel="popup" data-position-to="window" data-transition="fade">
+                        <img  src="statistics/images/statistics_table.png" alt="" width="100%">
+                    </a>
+                    <div data-role="popup" id="popup_statistics_table" data-overlay-theme="b" data-theme="b" data-corners="false">
+                        <a href="#" data-rel="back" class="ui-btn ui-corner-all ui-shadow ui-icon-delete ui-btn-icon-notext ui-btn-right">关闭</a>
+                        <img  src="statistics/images/statistics_table.png" alt="" width="100%">
+                    </div>
+                    <a href="../../../../controls_cmp/iphone/html/statistics/test_statistic_area_table.html" class="mode_change_address" target="_blank">查看原型</a>
+                </div>
+                <div class="code_box">
+                  <pre class="brush: html;">
+                    &lt;section data-role="page" id="statistics_chart">
+                       &lt;header data-role="header">
+                           &lt;div class="left">
+                               &lt;a href="test_statistic_detail.html"  class="ui-btn ui-btn-inline ui-btn-icon-top ui-btn-icon-b ui-icon-return"
+                                  data-transition="slide">&lt;/a>
+                           &lt;/div>
+                           &lt;h1 class="page_header_title">
+                               北京区统计情况图表
+                               &lt;span>&lt;/span>
+                           &lt;/h1>
+                           &lt;div class="right">
+                               &lt;a href="test_statistic_filter.html"  class="ui-btn ui-btn-inline ui-btn-a" data-transition="slide">筛选&lt;/a>
+                               &lt;a href="#no_chart_data"  class="ui-btn ui-btn-inline ui-btn-a" data-rel="popup" data-position-to="window">统计图&lt;/a>
+                           &lt;/div>
+                       &lt;/header>
+                        &lt;div data-role="content">
+                            &lt;div class="statistics_filter padding_tb_5 statistics_chart">
+                                &lt;div class="layout_left_right padding_tb_5">
+                                    &lt;div class="layout_list_box_left">
+                                        单据状态：
+                                    &lt;/div>
+                                    &lt;div class="layout_list_box_right padding_r_10">
+                                        &lt;label class="margin_r_10">未审核&lt;/label>
+                                        &lt;label class="margin_r_10">审核通过&lt;/label>
+                                        &lt;label class="margin_r_10">审核不通过&lt;/label>
+                                        &lt;label class="margin_r_10">未核定&lt;/label>
+                                        &lt;label class="margin_r_10">核定通过&lt;/label>
+                                        &lt;label class="margin_r_10">核定不通过&lt;/label>
+                                    &lt;/div>
+                                &lt;/div>
+                                &lt;div class="layout_left_right padding_tb_5">
+                                    &lt;div class="layout_list_box_left">
+                                        流程状态：
+                                    &lt;/div>
+                                    &lt;div class="layout_list_box_right padding_r_10">
+                                        &lt;label class="margin_r_10">未结束&lt;/label>
+                                        &lt;label class="margin_r_10">已结束&lt;/label>
+                                        &lt;label class="margin_r_10">终止&lt;/label>
+                                    &lt;/div>
+                                &lt;/div>
+                                &lt;div class="layout_left_right padding_tb_5">
+                                    &lt;div class="layout_list_box_left">
+                                        统计时间：
+                                    &lt;/div>
+                                    &lt;div class="layout_list_box_right padding_r_10">
+                                        &lt;label>2013-09-18&lt;/label>
+                                    &lt;/div>
+                                &lt;/div>
+                            &lt;/div>
+                            &lt;div class="statistics_content">
+                                &lt;table data-role="table"  class="ui-responsive table-stroke" data-column-btn-theme="b">
+                                    &lt;thead>
+                                    &lt;tr>
+                                        &lt;th>人员&lt;/th>
+                                        &lt;th>部分&lt;/th>
+                                        &lt;th>职位&lt;/th>
+                                        &lt;th>项目&lt;/th>
+                                        &lt;th>描述&lt;/th>
+                                        &lt;th>报销全额&lt;/th>
+                                        &lt;th>备注&lt;/th>
+                                    &lt;/tr>
+                                    &lt;/thead>
+                                    &lt;tbody>
+                                    &lt;tr>
+                                        &lt;td>王小二&lt;/td>
+                                        &lt;td>研发&lt;/td>
+                                        &lt;td>经理&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>11&lt;/td>
+                                        &lt;td>2013年10月&lt;/td>
+                                    &lt;/tr>
+                                    &lt;tr>
+                                        &lt;td>王小二&lt;/td>
+                                        &lt;td>研发&lt;/td>
+                                        &lt;td>经理&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>11&lt;/td>
+                                        &lt;td>2013年10月&lt;/td>
+                                    &lt;/tr>
+                                    &lt;tr>
+                                        &lt;td>王小二&lt;/td>
+                                        &lt;td>研发&lt;/td>
+                                        &lt;td>经理&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>11&lt;/td>
+                                        &lt;td>2013年10月&lt;/td>
+                                    &lt;/tr>
+                                    &lt;tr>
+                                        &lt;td>王小二&lt;/td>
+                                        &lt;td>研发&lt;/td>
+                                        &lt;td>经理&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>1&lt;/td>
+                                        &lt;td>11&lt;/td>
+                                        &lt;td>2013年10月&lt;/td>
+                                    &lt;/tr>
+                                    &lt;/tbody>
+                                &lt;/table>
+                            &lt;/div>
+                        &lt;/div>
+
+                        &lt;div class="no_chart_data" id="no_chart_data" data-role="popup">
+                            &lt;h3>提示&lt;/h3>
+                            &lt;p class="padding_20 padding_tb_5">系统中没有统计数据&lt;/p>
+                            &lt;p class="padding_20 padding_tb_5">
+                                &lt;a href="#" data-rel="back">好的&lt;/a>
+                            &lt;/p>
+                        &lt;/div>
+                     &lt;/section>
+                   </pre>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="side_nav comp" comp="type:'modelTopChange'">
+        <h4>会议模块</h4>
+        <ul>
+            <li><a href="#meeting_list" data-role="none"  rel="external">会议列表</a></li>
+            <li><a href="#meeting_details" data-role="none"  rel="external">会议详情</a></li>
+            <li><a href="#append_meeting" data-role="none" rel="external">与会人员</a></li>
+            <li><a href="#meeting_return" data-role="none" rel="external">会议回执</a></li>
+        </ul>
+        <h4>统计模块</h4>
+        <ul>
+            <li><a href="#statistics_home" data-role="none"  rel="external">统计首页list</a></li>
+            <li><a href="#statistics_table" data-role="none"  rel="external">统计表查看</a></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>选择关注人员</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="select_attention_users" class="select_attention_users" data-title="选择关注人员">
+    <header data-role="header" class="select_users_header select_no_psesons_state">
+        <h1 class="select_no_psesons_state">推荐</h1>
+        <a href="#" data-role="button" class="white_block_btn ui-btn-right select_no_psesons_state" ><span class="iphone24 follow_all_24"></span>全部关注</a>
+    </header>
+    <div data-role="content" class="wrapper select_attention_users_content no_content_1351 no_users_hinit background_white comp" id="select_attention_users_content"
+         comp="type:'defindHeight',footerTop:'fixed',definedheaderHeight:'34',definedFooterHeight:'60',parentId:'select_attention_users'">
+        <div class="scroller select_no_psesons_state comp" comp="type:'definedSelect',selectType:'checkbox',selectObjClass:'select_users_item'">
+            <!--<div class="select_users_item ">-->
+                <!--<ul data-role="none" class="ul_li_float clearFlow">-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                    <!--<li>-->
+                        <!--<img src="../../../skin/seework/iphone/images/user.png" alt=""/>-->
+                        <!--<h4>张小一</h4>-->
+                        <!--<p>销售主管</p>-->
+                        <!--<span class="selected_bg"></span>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        </div>
+        <p class="select_no_psesons_state">关注更多人员请到联系人中进行添加</p>
+    </div>
+    <footer data-role="footer" data-position="fixed" data-tap-toggle="false" class="">
+        <a href="#" data-role="button" class="white_block_btn margin_10" >开始使用</a>
+    </footer>
+    <script type="text/javascript">
+        $("#select_attention_users").bind("pagebeforeshow",function(){
+            pageInit("select_attention_users");
+            listData($("#select_attention_users_content"),{
+                list_type:'selectUsers',
+                no_person_state:"select_no_psesons_state",
+                no_person_pos:"select_attention_users_content",
+                data:[
+                    {
+                        'listId':'001',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'002',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'003',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'004',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'005',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'006',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'007',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'008',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'009',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'001',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'002',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'003',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'004',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'005',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'006',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'007',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'008',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'009',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'001',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'002',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'003',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'004',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'005',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'006',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'007',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'008',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'009',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'001',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'002',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'003',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'004',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'005',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'006',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'007',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'008',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    },
+                    {
+                        'listId':'009',
+                        'personUrl':"../../../skin/seework/iphone/images/user.png",
+                        'personName':"张小一",
+                        'personJob':"销售主管"
+                    }
+                ],
+                callback:function(state){
+                    if(!state){
+                        var this_h = $("#select_attention_users_content").height() + 33;
+                        $("#select_attention_users_content").height(this_h);
+                    }
+                }
+            });
+        })
+        $("#select_attention_users").bind("pageshow",function(){
+            $.loadedScroll("select_attention_users_content",2);
+//            $.hideLayerOpen();
+//            $.showLoader("标为关注",true,"d",true,"");
+        });
+    </script>
+</section>
+
+</body>
+</html>

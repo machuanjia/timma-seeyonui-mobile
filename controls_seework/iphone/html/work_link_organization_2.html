@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>组织机构</title>
+    <meta charset="utf-8">
+    <meta name="apple-touch-fullscreen" content="yes"/>
+    <meta name="apple-mobile-web-app-capable" content="yes"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no"/>
+    <script src="../../../controls_common/script/jquery-debug.js"></script>
+    <!--jquery.mobile-->
+    <link href="../../../controls_common/jquery.moblie/jquery.mobile-debug.css" rel="stylesheet"/>
+    <script src="../../../controls_common/jquery.moblie/jquery.mobile-debug.js"></script>
+    <script type="text/javascript" src="../../../controls_common/script/iscroll.js"></script>
+    <script src="../js/seework.ui.iphone-debug.js"></script>
+    <!--自定义样式-->
+    <link href="../../../skin/seework/iphone/skin.css" rel="stylesheet"/>
+</head>
+<body>
+<section data-role="page" id="work_link_organization">
+    <header data-role="header" data-tap-toggle="false" data-position="fixed" class="work_user_search comp"
+            comp="type:'localSearch',pageId:'work_link_organization',scrollId:'work_link_organization_content'">
+        <div class="imitate_search">
+            <a href="#" class="ui-btn ui-btn-search"><span class="padding_lr_10"></span>搜索</a>
+        </div>
+        <div class="user_search_bg display_none_important">
+            <input type="text" data-type="search" id="user_search" placeholder="按发起人搜索" autofocus="true"/>
+            <a href="#" data-role="none" class="search_text">搜索</a>
+        </div>
+    </header>
+    <div data-role="content" class="wrapper work_link_all_user work_select_department" id="work_link_organization_content">
+        <div class="scroller comp" comp="type:'list',listType:'dataShow',selectType:'radio',callBack:userSelectPerson" id="userid">
+            <!--<ul data-role="listview" class="nav_list_box group_contact_person_list list_data">-->
+                <!--<li>-->
+                    <!--<a href="#" data-transition="slidefade" objid="001" class="ui-btn ui-btn-icon-right ui-icon-carat-r">-->
+                        <!--<div class="nav_list_box_left">-->
+                            <!--<img src="../../skin/seework/images/more_user_head.png" alt="" class="user_head">-->
+                        <!--</div>-->
+                        <!--<div class="nav_list_box_center">-->
+                            <!--<div class="nav_list_box_center_font16 type_name">设计部</div>-->
+                        <!--</div>-->
+                        <!--<div class="nav_list_box_right">-->
+                            <!--<p class="nav_list_box_right_font11 font_arial job">-->
+                                <!--<span class="link_person_num"><label>82</label>人</span>-->
+                                <!--<span class="iphone24 send_24 "></span>-->
+                            <!--</p>-->
+                        <!--</div>-->
+                    <!--</a>-->
+                <!--</li>-->
+            <!--</ul>-->
+        </div>
+    </div>
+    <script type="text/javascript">
+        /**
+         * 点击某条数据
+         * @param obj 当前点击对象
+         * @param objId 当前点击对象的自定义属性，对应下面的listId，每条数据的唯一标示符
+         */
+        function userSelectPerson(obj,objId){
+//            alert(objId)
+        }
+        $("#work_link_organization").bind("pageshow",function(){
+            pageInit();
+            $.loadedScroll("work_link_organization_content",1,'v',function(){
+                var _h = $('#work_link_organization').height();
+                var header_h = $('#work_link_organization').find("header").height();
+                var footer_h = $('#work_link_organization').find("footer").height();
+                $("#work_link_organization_content").height(_h - header_h - footer_h);
+            });
+            listData($("#userid"),{
+                list_type:'selectUserDepartment',
+                letter_position:"none",
+                search_id:'user_search',
+                select_type:'none',
+                data:[
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'001',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'设计部',
+                        'job':null,
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'002',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'开发部',
+                        'job':null,
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'003',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'测试部',
+                        'job':null,
+                        'personNum':null
+                    },
+                    {
+                        'letterType':'星星科技公司',
+                        'listId':'004',
+                        'leftImgUrl':'../../../skin/seework/iphone/images/more_user_head.png',
+                        'typeName':'综合管理部',
+                        'job':null,
+                        'personNum':null
+                    }
+                ],
+                callback:function(){
+                    $.refreshScroll("work_link_organization_content");
+                }
+            });
+        })
+    </script>
+</section>
+</body>
+</html>
